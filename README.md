@@ -4,6 +4,14 @@ A responsive React + Express Islamic companion with menu-driven navigation, live
 
 The pre-existing Kotlin/Gradle prototype remains in `backend/src/main/kotlin`, `frontend/src/jsMain`, and `shared`. The Node/React application is independent of Gradle. The original `islamicunity.html` is preserved.
 
+## Public homepage
+
+The root URL now presents the emerald-and-gold homepage based on the supplied design research. It includes an original SVG/CSS app illustration, six linked feature cards, a community mission section, Android download links, a support section, contact links, FAQ, and website privacy details. The illustration is labelled as a web-app preview with sample timings; it is not presented as an Android screenshot. The title, description, canonical URL, and social metadata are included in `frontend/index.html`; `frontend/public/social-preview.png` is a 1200 × 630 capture of the implemented homepage.
+
+Use **Open web app**, a feature card, or a direct route such as `#prayer_times`, `#qibla`, `#quran`, or `#tasbih` to reach the interactive tools. `#home`, `#features`, `#about`, `#download`, `#donate`, `#contact`, and `#privacy` are homepage sections. The dashboard includes a link back to the homepage. The homepage and tools share the same persisted language selection, with full English, Hindi, Urdu, and Arabic homepage text and RTL layouts.
+
+Download buttons use the verified [Google Play listing](https://play.google.com/store/apps/details?id=com.islamicunity.android). Contact and contribution links open email drafts to the support address published there, `m3hmedia@gmail.com`. The previous donation URL returned 404, so no payment checkout or invented donation destination is used. The site does not collect payments or claim unverified download counts, ratings, testimonials, or donation-allocation percentages. No analytics, custom-domain purchase, or third-party subscription has been added.
+
 ## Run locally
 
 Install Node.js 22.12+ and run from the project root:

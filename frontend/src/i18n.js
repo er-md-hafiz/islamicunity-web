@@ -183,6 +183,7 @@ const labels = {
   Isha: ["Isha", "इशा", "عشاء", "العشاء"],
 };
 Object.assign(labels, {
+  websiteHome: ["Home", "होम", "ہوم", "الرئيسية"],
   tomorrow: ["Tomorrow", "कल", "کل", "غدًا"],
   overline: [
     "YOUR SPACE FOR FAITH & PEACE",

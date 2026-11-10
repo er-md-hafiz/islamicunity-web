@@ -48,6 +48,7 @@ import {
 } from "lucide-react";
 import { translate, locales } from "./i18n";
 import { api } from "./api";
+import LandingPage from "./LandingPage";
 import "./styles.css";
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -279,7 +280,10 @@ function App() {
   }, [dark]);
   useEffect(() => {
     api("menu")
-      .then((data) => { setMenu(data); setMenuError(""); })
+      .then((data) => {
+        setMenu(data);
+        setMenuError("");
+      })
       .catch((e) => setMenuError(e.message));
     api("quran")
       .then(setVerse)
@@ -1014,6 +1018,14 @@ function App() {
       <div className="main-shell">
         <header className="topbar">
           <div className="topbar-title">
+            <a
+              className="lp-back-home"
+              href="#home"
+              aria-label="Islamic Unity homepage"
+            >
+              <ChevronLeft size={13} />
+              <span>{t("websiteHome")}</span>
+            </a>
             <button
               className="mobile-menu icon-button"
               aria-label="Open navigation"
@@ -1574,4 +1586,23 @@ function FeatureContent({ content, page, speak, t }) {
     </div>
   );
 }
-createRoot(document.getElementById("root")).render(<App />);
+function Site() {
+  const [route, setRoute] = useState(location.hash.slice(1));
+  useEffect(() => {
+    const change = () => setRoute(location.hash.slice(1));
+    window.addEventListener("hashchange", change);
+    return () => window.removeEventListener("hashchange", change);
+  }, []);
+  const isHomepage = [
+    "",
+    "home",
+    "features",
+    "about",
+    "download",
+    "donate",
+    "contact",
+    "privacy",
+  ].includes(route);
+  return isHomepage ? <LandingPage section={route} /> : <App />;
+}
+createRoot(document.getElementById("root")).render(<Site />);

@@ -43,7 +43,11 @@ test("production index, assets and every menu page work under the repository pat
       apiCalls.push(r.url());
   });
   await page.goto(prefix + "index.html");
-  await expect(page).toHaveTitle("Islamic Unity Web Page");
+  await expect(page).toHaveTitle(
+    "Islamic Unity — Your Complete Islamic Companion",
+  );
+  await expect(page.locator("#homepage-title")).toBeVisible();
+  await page.locator(".lp-purpose-strip a").click();
   await expect(page.locator(".prayer-grid")).toBeVisible();
   await expect(page.locator(".schedule-note")).toContainText(
     "Timings by Aladhan",
@@ -51,6 +55,10 @@ test("production index, assets and every menu page work under the repository pat
   const menu = await (await page.request.get(prefix + "data/menu.json")).json();
   for (const item of menu.home.items) {
     await page.goto(prefix + "#" + item.id);
+    if (item.id === "donate") {
+      await expect(page.locator(".lp-donate")).toBeVisible();
+      continue;
+    }
     await expect(page.locator(".page-content")).not.toBeEmpty();
     await expect(page.locator(".page-content .loading")).toHaveCount(0);
     await expect(page.getByRole("alert")).toHaveCount(0);
@@ -70,6 +78,6 @@ test("static mode calculates Qibla and future calendar dates", async ({
 });
 test("provider failure shows a labelled sample schedule", async ({ page }) => {
   await page.route("https://api.aladhan.com/**", (r) => r.abort());
-  await page.goto(prefix);
+  await page.goto(prefix + "#prayer_times");
   await expect(page.locator(".schedule-note")).toContainText("Demo timings");
 });

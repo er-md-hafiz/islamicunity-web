@@ -7,26 +7,55 @@ const timings = {
   Maghrib: "17:32",
   Isha: "18:51",
 };
-test('next prayer after Isha uses tomorrow’s Fajr schedule',async({page})=>{
-  await page.clock.install({time:new Date('2026-11-10T15:00:00Z')});
-  await page.route('**/api/prayertimes?*',route=>{
-    const date = new URL(route.request().url()).searchParams.get('date');
-    return route.fulfill({json:{date,timings:{...timings,Fajr:date==='2026-11-11'?'05:27':'05:25'},timezone:'Asia/Kolkata',sample:false}});
+test("next prayer after Isha uses tomorrow’s Fajr schedule", async ({
+  page,
+}) => {
+  await page.clock.install({ time: new Date("2026-11-10T15:00:00Z") });
+  await page.route("**/api/prayertimes?*", (route) => {
+    const date = new URL(route.request().url()).searchParams.get("date");
+    return route.fulfill({
+      json: {
+        date,
+        timings: {
+          ...timings,
+          Fajr: date === "2026-11-11" ? "05:27" : "05:25",
+        },
+        timezone: "Asia/Kolkata",
+        sample: false,
+      },
+    });
   });
-  await page.goto('/');await expect(page.locator('.next-prayer')).toContainText('5:27 AM');await expect(page.locator('.next-label')).toContainText('Tomorrow');
+  await page.goto("/#prayer_times");
+  await expect(page.locator(".next-prayer")).toContainText("5:27 AM");
+  await expect(page.locator(".next-label")).toContainText("Tomorrow");
 });
-test('enabled prayer reminder appears at the scheduled time',async({page})=>{
-  await page.clock.install({time:new Date('2026-11-10T06:37:40Z')});
-  await page.clock.pauseAt(new Date('2026-11-10T06:37:50Z'));
-  await page.addInitScript(()=>{localStorage.setItem('iu-reminders',JSON.stringify({Dhuhr:true}));});
-  await page.goto('/');await expect(page.locator('.prayer-grid')).toBeVisible();
-  await page.clock.runFor(11000);await expect(page.getByRole('status')).toContainText('Dhuhr');
+test("enabled prayer reminder appears at the scheduled time", async ({
+  page,
+}) => {
+  await page.clock.install({ time: new Date("2026-11-10T06:37:40Z") });
+  await page.clock.pauseAt(new Date("2026-11-10T06:37:50Z"));
+  await page.addInitScript(() => {
+    localStorage.setItem("iu-reminders", JSON.stringify({ Dhuhr: true }));
+  });
+  await page.goto("/#prayer_times");
+  await expect(page.locator(".prayer-grid")).toBeVisible();
+  await page.clock.runFor(11000);
+  await expect(page.getByRole("status")).toContainText("Dhuhr");
 });
-test('geolocation updates prayer and Qibla coordinates',async({page,context})=>{
-  await context.grantPermissions(['geolocation']);await context.setGeolocation({latitude:19.076,longitude:72.8777});
-  await page.goto('/#qibla');await page.locator('.location-button').click();
-  await expect(page.locator('.location-button')).toContainText('Current location');
-  await expect(page.locator('.expanded.qibla-card .helper').first()).toContainText('19.0760');
+test("geolocation updates prayer and Qibla coordinates", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["geolocation"]);
+  await context.setGeolocation({ latitude: 19.076, longitude: 72.8777 });
+  await page.goto("/#qibla");
+  await page.locator(".location-button").click();
+  await expect(page.locator(".location-button")).toContainText(
+    "Current location",
+  );
+  await expect(
+    page.locator(".expanded.qibla-card .helper").first(),
+  ).toContainText("19.0760");
 });
 test.beforeEach(async ({ page }) => {
   await page.route("**/api/prayertimes?*", (route) =>
@@ -46,8 +75,8 @@ test("menu routes render and counter persists after reload", async ({
   page,
 }) => {
   const errors = [];
-  page.on('pageerror', e => errors.push(e.message));
-  await page.goto("/");
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("/#prayer_times");
   await page
     .getByRole("button", { name: "Digital Tasbih", exact: false })
     .first()
@@ -61,8 +90,12 @@ test("menu routes render and counter persists after reload", async ({
   const menu = await (await page.request.get("/api/menu")).json();
   for (const item of menu.home.items) {
     await page.goto("/#" + item.id);
+    if (item.id === "donate") {
+      await expect(page.locator(".lp-donate")).toBeVisible();
+      continue;
+    }
     await expect(page.locator(".page-content")).not.toBeEmpty();
-    await expect(page.locator('.page-content .loading')).toHaveCount(0);
+    await expect(page.locator(".page-content .loading")).toHaveCount(0);
     await expect(page.getByRole("alert")).toHaveCount(0);
   }
   expect(errors).toEqual([]);
@@ -80,7 +113,7 @@ test("Hindi and Urdu navigation, mobile layout and accessible drawer", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/#prayer_times");
   await page
     .getByRole("combobox", { name: "Language", exact: true })
     .selectOption("hi");
@@ -132,7 +165,7 @@ test("Hindi speech prefers a female Hindi device voice", async ({ page }) => {
       }
     };
   });
-  await page.goto("/");
+  await page.goto("/#prayer_times");
   await page.getByRole("button", { name: "Speak times" }).click();
   const speech = await page.evaluate(() => window.__speech);
   expect(speech.lang).toBe("hi-IN");
@@ -152,7 +185,7 @@ test("sample fallback is labelled and API errors offer retry", async ({
       },
     }),
   );
-  await page.goto("/");
+  await page.goto("/#prayer_times");
   await expect(page.locator(".schedule-note")).toContainText("Demo timings");
   await page.unroute("**/api/prayertimes?*");
   await page.route("**/api/prayertimes?*", (route) =>

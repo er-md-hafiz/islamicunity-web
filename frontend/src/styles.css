@@ -2089,7 +2089,7 @@ footer > span:last-child {
     font-size: 7px;
     letter-spacing: 1px;
   }
-  h1 {
+  .welcome-heading h1 {
     font-size: 27px !important;
   }
   .welcome-heading > div > p {
