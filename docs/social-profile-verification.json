@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-11-10T19:10:11.787Z",
+  "originalYouTubeUrl": "https://www.youtube.com/@mediamedia",
+  "originalYouTubeStatus": 404,
+  "records": [
+    {
+      "name": "facebook",
+      "url": "https://www.facebook.com/m3hmedia/",
+      "status": 200,
+      "title": "Facebook",
+      "enabled": false,
+      "evidence": "Facebook CometErrorRoute: content not available; cannot verify public profile identity."
+    },
+    {
+      "name": "x",
+      "url": "https://x.com/m3hmedia",
+      "status": 404,
+      "title": "User Profile Not Found - X | 404 Error",
+      "enabled": false,
+      "evidence": "User Profile Not Found - X | 404 Error"
+    },
+    {
+      "name": "instagram",
+      "url": "https://www.instagram.com/m3hmedia/",
+      "status": 200,
+      "title": "M3H Media (&#064;m3hmedia) • Instagram photos and videos",
+      "enabled": true,
+      "evidence": "M3H Media (@m3hmedia) profile metadata"
+    },
+    {
+      "name": "youtube",
+      "url": "https://www.youtube.com/@m3hmedia",
+      "status": 200,
+      "title": "M3H Media - YouTube",
+      "enabled": true,
+      "evidence": "M3H Media channel; same author URL returned by YouTube oEmbed for the existing Quran video gZ0ExPQrxlw. User confirmed corrected handle."
+    }
+  ],
+  "notes": "Facebook and X intentionally unlinked to honor the requirement to verify profiles before publishing. HTTP 200 alone is insufficient; Facebook returns an unavailable-content error route."
+}

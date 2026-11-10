@@ -22,11 +22,12 @@ export const footerColumns = [
     ["Request a Feature", `${API}islamicunity.html`],
   ] },
 ];
-// The project contains placeholders, not verified social profiles. The user
-// requested the website link and unlinked icons until official URLs are supplied.
-export const socialProfiles = [
-  { name: "Facebook", icon: "facebook", url: null },
-  { name: "Instagram", icon: "instagram", url: null },
-  { name: "Twitter / X", icon: "x", url: null },
-  { name: "YouTube", icon: "youtube", url: null },
-];
+// User-supplied profiles checked before publication. A URL alone does not enable
+// an unavailable or unverified account. See docs/social-profile-verification.json.
+export const socialMedia = Object.freeze({
+  facebook: { name: "Facebook", icon: "facebook", url: "https://www.facebook.com/m3hmedia/", enabled: false },
+  instagram: { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/m3hmedia/", enabled: true },
+  youtube: { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/@m3hmedia", enabled: true },
+  x: { name: "Twitter / X", icon: "x", url: "https://x.com/m3hmedia", enabled: false },
+});
+export const socialProfiles = Object.values(socialMedia);

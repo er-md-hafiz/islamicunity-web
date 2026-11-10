@@ -6,7 +6,9 @@ The homepage, every React tool section (including Quran and the video library), 
 
 The footer follows the supplied emerald/gold design with four desktop columns, two tablet columns, and a stacked phone layout. It contains the exact supplied Quick Links, Islamic Resources and Contact URLs, the supplied email, a dynamic copyright year, and a current-document Back to top button. Reduced-motion preferences suppress smooth scrolling. Focus styling, labelled navigation, readable contrast and 44px link/icon targets are included. English supplied copy has its own language/direction so it stays readable on Arabic/Urdu pages and in dark themes.
 
-No official social profile URLs were configured in this project. The user confirmed: **use the Islamic Unity website link and leave unverified social profiles unlinked**. Facebook, Instagram, X and YouTube therefore appear as accessible, unlinked icons. `footer-data.mjs` can receive verified profiles later; configured social links open in a new tab with `noopener noreferrer`. No social handles, demo profiles or `href="#"` links were invented. The existing website privacy destination remains available alongside the new app-policy link.
+Social profiles are stored in the reusable `socialMedia` configuration object in `footer-data.mjs`. Instagram `@m3hmedia` and the user-confirmed YouTube `@m3hmedia` are active, labelled links that open in a new tab with `noopener noreferrer`. The originally supplied YouTube `@mediamedia` returned 404; the corrected channel also matches the author of the existing Quran videos. Facebook `m3hmedia` returns an unavailable-content error route and X `@m3hmedia` returns 404, so their icons remain unlinked pending verification, as required by the user. See [profile verification](./social-profile-verification.json). No alternate Facebook/X handles were guessed. The website and website-privacy links remain available.
+
+Brand marks use vendored Font Awesome Free 7.3.1 Brands SVGs from the official FortAwesome repository, with source comments and `brands/LICENSE.txt` retained. They need no external icon font or new dependency. Active icons have gold hover/focus colors and a subtle lift, disabled under reduced-motion preferences.
 
 The duplicate dashboard footer was replaced. Other legacy legal/contact/charity/calculator notes are preserved as styled content sections before the global footer. Donation and QR body layouts now stack vertically so their existing content stays above the footer; payment recipients, amounts, QR code and payment behavior are unchanged. Imported resource hashes were refreshed in the migration manifest, while native menu IDs, fragments, analytics, visibility and binary resources remain unchanged.
 
@@ -35,14 +37,14 @@ The footer uses the explicitly supplied `islamicunity-api` URLs. Those are separ
 - Six new browser tests verify footer coverage across every menu route and all 15 HTML pages, every supplied link, social configuration, dynamic year, desktop/tablet/phone layout, dark/RTL layout, Back to top, direct resource clicks, old hashes, whole-card links and legacy feature navigation.
 - Existing resource integrity tests continue checking all 45 files, the compatibility alias and native menu identifiers. Calculator, quiz, games, guide language switching, donation controls, Quran text/audio and video regression tests remain passing.
 - Desktop and mobile footer screenshots were inspected. The donation page was checked at 390px with no horizontal overflow. No payment, email, subscription or social action was initiated.
-- The build and all 60 automated tests passed: 24 production browser tests, 13 original app/homepage browser tests, 10 Quran lifecycle tests, four video-data tests, six API tests and three deployment-order tests. Resource-integrity validation passes separately.
+- The full footer/navigation delivery passed all 60 automated tests: 24 production browser tests, 13 original app/homepage browser tests, 10 Quran lifecycle tests, four video-data tests, six API tests and three deployment-order tests. The subsequent social-link update reruns all six footer/navigation tests, including exact active/disabled links, brand SVGs, hover and reduced-motion behavior. Resource-integrity validation passes separately.
 - Physical Android/iOS devices were not available; phone/tablet checks use Chrome viewport emulation.
 
 ## Changed files
 
-- Shared footer: `frontend/src/footer/SiteFooter.jsx`, `register-footer.js`, `footer-data.mjs`, `site-footer.css`, `legacy-entry.js`.
+- Shared footer: `frontend/src/footer/SiteFooter.jsx`, `register-footer.js`, `footer-data.mjs`, `site-footer.css`, `legacy-entry.js`, and the four vendored SVGs plus license in `brands/`.
 - Routing/UI: `shared/resource-navigation.mjs`, `frontend/src/main.jsx`, `frontend/src/LandingPage.jsx`, `frontend/vite.config.js`.
 - Standalone footer mounts: `frontend/public/CurrencyGuide.html`, `donate.html`, `download-app-qr.html`, `GamesAndPuzzles.html`, `Hajj.html`, `IslamicCharity.html`, `islamicunity.html`, `iu_ads.html`, `PrayerGuide.html`, `PrivacyPolicy.html`, `quiz.html`, `SupportOurCommunity.html`, `terms_and_conditions.html`, `Umrah.html`, `ZakatCalculator.html`.
 - Resource exports/integrity: `backend/server.js`, `frontend/scripts/export-static.mjs`, `migration/resource-manifest.json`.
 - Tests: `tests/footer-navigation.spec.js`, `tests/app.spec.js`, `tests/homepage.spec.js`, `tests/pages.spec.js`, `playwright.pages.config.js`.
-- Documentation: this file, `docs/footer-link-verification.json`, `README.md`.
+- Documentation: this file, `docs/footer-link-verification.json`, `docs/social-profile-verification.json`, `README.md`.

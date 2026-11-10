@@ -1,15 +1,18 @@
 import css from "./site-footer.css?inline";
 import { footerColumns, socialProfiles } from "./footer-data.mjs";
+import facebook from "./brands/facebook-f.svg?raw";
+import instagram from "./brands/instagram.svg?raw";
+import youtube from "./brands/youtube.svg?raw";
+import x from "./brands/x-twitter.svg?raw";
 
+const brandIcons = { facebook, instagram, youtube, x };
 const icons = {
-  facebook: '<path d="M14 21v-8h3l.5-4H14V7c0-1 .3-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 2-5 5v3H7v4h3v8z" fill="currentColor" stroke="none"/>',
-  instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>',
-  x: '<path d="M4 3h4l12 18h-4zM20 3 4 21"/>',
-  youtube: '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/>',
   up: '<path d="m6 14 6-6 6 6M12 8v13"/>',
   moon: '<path d="M20.5 13A9 9 0 0 1 11 3a9 9 0 1 0 9.5 10Z"/><path d="m19 2 .6 1.4L21 4l-1.4.6L19 6l-.6-1.4L17 4l1.4-.6Z"/>',
 };
-const icon = name => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]}</svg>`;
+const icon = name => brandIcons[name]
+  ? brandIcons[name].replace("<svg ", `<svg data-brand="${name}" width="20" height="20" aria-hidden="true" `)
+  : `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]}</svg>`;
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 class SiteFooter extends HTMLElement {
@@ -26,9 +29,9 @@ class SiteFooter extends HTMLElement {
             <a class="brand" href="${escape(home)}" id="footer-brand">${icon("moon")}<span>Islamic <b>Unity</b></span></a>
             <p>Your complete Islamic companion for prayer, Quran, learning, and community. Providing accurate Islamic tools and resources for Muslims worldwide.</p>
             <div class="website-links"><a class="website-link" href="${escape(home)}">Islamic Unity website ↗</a><a class="website-link" href="${escape(home)}#privacy">Website privacy</a></div>
-            <div class="socials" aria-label="Social media">${socialProfiles.map(profile => profile.url
-              ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(profile.name)}">${icon(profile.icon)}</a>`
-              : `<span class="social-unavailable" role="img" aria-label="${escape(profile.name)} — coming soon" title="${escape(profile.name)} — coming soon">${icon(profile.icon)}</span>`).join("")}</div>
+            <div class="socials" aria-label="Social media">${socialProfiles.map(profile => profile.enabled && profile.url
+              ? `<a href="${escape(profile.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(profile.name)} (opens in a new tab)" title="${escape(profile.name)}">${icon(profile.icon)}</a>`
+              : `<span class="social-unavailable" role="img" aria-label="${escape(profile.name)} — unavailable" title="${escape(profile.name)} — unavailable">${icon(profile.icon)}</span>`).join("")}</div>
           </section>
           ${footerColumns.map((column, n) => `<nav aria-labelledby="footer-column-${n}"><h2 id="footer-column-${n}">${escape(column.title)}</h2><ul>${column.links.map(([label, url]) => `<li><a href="${escape(url)}"${url.startsWith("https:") ? ' target="_blank" rel="noopener noreferrer"' : ""}>${escape(label)}</a></li>`).join("")}</ul></nav>`).join("")}
         </div>

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
-import { footerColumns } from "../frontend/src/footer/footer-data.mjs";
+import { footerColumns, socialMedia } from "../frontend/src/footer/footer-data.mjs";
 import { resourcePages } from "../shared/resource-navigation.mjs";
 const prefix = "/islamicunity-web/";
 const manifest = JSON.parse(readFileSync("migration/resource-manifest.json", "utf8"));
@@ -25,7 +25,7 @@ test("one shared semantic footer appears on the homepage, every app route and ev
   }
   expect(errors).toEqual([]); expect(missing).toEqual([]);
 });
-test("all supplied footer URLs, contact email, real website link and unlinked social icons are correct", async ({ page }) => {
+test("footer URLs, contact email and verified social links use correct brands and accessible new-tab labels", async ({ page }) => {
   await page.goto(prefix + "index.html");
   const footer = page.locator("iu-site-footer");
   for (const column of footerColumns) {
@@ -37,8 +37,25 @@ test("all supplied footer URLs, contact email, real website link and unlinked so
     }
   }
   await expect(footer.getByRole("link", { name: "Islamic Unity website", exact: false })).toHaveAttribute("href", prefix + "index.html");
-  await expect(footer.locator(".socials a")).toHaveCount(0);
-  await expect(footer.locator(".social-unavailable")).toHaveCount(4);
+  await expect(footer.locator(".socials a")).toHaveCount(2);
+  await expect(footer.locator(".social-unavailable")).toHaveCount(2);
+  for (const profile of Object.values(socialMedia)) {
+    if (profile.enabled) {
+      const link = footer.getByRole("link", { name: `${profile.name} (opens in a new tab)`, exact: true });
+      await expect(link).toHaveAttribute("href", profile.url);
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+      await expect(link.locator(`svg[data-brand="${profile.icon}"]`)).toHaveCount(1);
+    } else {
+      await expect(footer.locator(`a[href="${profile.url}"]`)).toHaveCount(0);
+      await expect(footer.getByRole("img", { name: `${profile.name} — unavailable`, exact: true })).toBeAttached();
+    }
+  }
+  const instagram = footer.getByRole("link", { name: "Instagram (opens in a new tab)", exact: true });
+  await instagram.hover();
+  await expect.poll(() => instagram.evaluate(el => getComputedStyle(el).transform)).toBe("matrix(1, 0, 0, 1, 0, -3)");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect.poll(() => instagram.evaluate(el => getComputedStyle(el).transform)).toBe("none");
   await expect(footer.locator('.year')).toHaveText(String(new Date().getFullYear()));
   await expect(footer.getByRole("link", { name: "islamic.unity.app@gmail.com" })).toHaveAttribute("href", "mailto:islamic.unity.app@gmail.com");
 });
