@@ -36,6 +36,8 @@ jobs:
         run: npm run test:resources
       - name: Test Quran playback lifecycle
         run: npm run test:quran
+      - name: Test Quran video data and safe media mappings
+        run: npm run test:video
       - name: Build the site
         run: npm run build
         env:

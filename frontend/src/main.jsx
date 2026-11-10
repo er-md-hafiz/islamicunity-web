@@ -50,6 +50,7 @@ import { translate, locales } from "./i18n";
 import { api } from "./api";
 import LandingPage from "./LandingPage";
 import QuranAudioPlayer from "./quran/QuranAudioPlayer";
+import SurahVideoLibrary from "./video/SurahVideoLibrary";
 import "./styles.css";
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -346,7 +347,7 @@ function App() {
     };
   }, []);
   useEffect(() => {
-    if (core.includes(page) || page === "settings") return;
+    if (core.includes(page) || page === "settings" || page === "video") return;
     let active = true;
     setContent(null);
     setContentError("");
@@ -1190,6 +1191,8 @@ function App() {
                 {VerseCard({ expanded: true })}
                 <QuranAudioPlayer language={language} />
               </>
+            ) : page === "video" ? (
+              <SurahVideoLibrary language={language} />
             ) : page === "tasbih" ? (
               <>
                 <PageHeading title={t(page)} subtitle={t("tasbihSubtitle")} />

@@ -1,0 +1,405 @@
+{
+  "checkedAt": "2026-11-10T18:43:43.758Z",
+  "method": "YouTube oEmbed metadata requests; confirms published video metadata, not actual playback or regional embedding eligibility",
+  "totalSurahs": 114,
+  "videoEntries": 66,
+  "successfulMetadata": 66,
+  "results": [
+    {
+      "number": 1,
+      "videoId": "gZ0ExPQrxlw",
+      "status": 200,
+      "title": "Surah Al-Fatihah | سورة الفاتحة | Beautiful Quran Recitation | 001.mp3  #islamicunity #quran #islam"
+    },
+    {
+      "number": 2,
+      "videoId": "s8ZLsx4N-BM",
+      "status": 200,
+      "title": "Surah Al-Baqarah (سورة البقرة) Full Recitation | Islamic Unity App | M3H Media  #002 #surah #quran"
+    },
+    {
+      "number": 3,
+      "videoId": "rTzmxBzlcLg",
+      "status": 200,
+      "title": "Surah Aal-E-Imran (سورة آل عمران) Full Recitation | Islamic Unity App | M3H Media #003 #surah #quran"
+    },
+    {
+      "number": 4,
+      "videoId": "JMfmHtg6tE4",
+      "status": 200,
+      "title": "Surah An-Nisa (سورة النساء) Full Recitation | Islamic Unity App | M3H Media     #004 #surah #quran"
+    },
+    {
+      "number": 5,
+      "videoId": "oQpQcSOg-EE",
+      "status": 200,
+      "title": "Surah Al-Ma'idah (سورة المائدة) Full Recitation | Islamic Unity App | M3H Media #005 #surah #quran"
+    },
+    {
+      "number": 6,
+      "videoId": "x3uJ3CXJ-OY",
+      "status": 200,
+      "title": "Surah Al-An'am (سورة الأنعام) Full Recitation | Islamic Unity App | M3H Media #006 #surah #alanam"
+    },
+    {
+      "number": 7,
+      "videoId": "-2KczMfpaEU",
+      "status": 200,
+      "title": "Surah Al-A'raf (سورة الأعراف) Full Recitation | Islamic Unity App | M3H Media #007 #surah #alaraf"
+    },
+    {
+      "number": 8,
+      "videoId": "A3zJpMjnRlU",
+      "status": 200,
+      "title": "Surah Al-Anfal (سورة الأنفال) Full Recitation | Islamic Unity App | M3H Media #008 #surah #quran"
+    },
+    {
+      "number": 9,
+      "videoId": "F1AtQzA_owI",
+      "status": 200,
+      "title": "Surah At-Tawbah (سورة التوبة) — Full Recitation | Islamic Unity App #009 #surah #quran #attawbah #ai"
+    },
+    {
+      "number": 10,
+      "videoId": "90q2EhDV8fo",
+      "status": 200,
+      "title": "Surah Yunus (سورة يونس) — Full Recitation | Islamic Unity App #010 #surah #quran #yunus #allah #ai"
+    },
+    {
+      "number": 11,
+      "videoId": "ZABRhgzNG4w",
+      "status": 200,
+      "title": "Surah Hud (سورة هود) — Full Recitation | Islamic Unity App #011 #surah #quran #hud #islamicunity #ai"
+    },
+    {
+      "number": 12,
+      "videoId": "jrsDKy5-1KY",
+      "status": 200,
+      "title": "Surah Yusuf (سورة يوسف) — Full Recitation | Islamic Unity App #012 #surah #quran #yusuf #allah #ai"
+    },
+    {
+      "number": 13,
+      "videoId": "g3AAYQcJBTg",
+      "status": 200,
+      "title": "Surah Ar-Ra'd (سورة الرعد) — Full Recitation | Islamic Unity App #013 #surah #quran #islamicunity"
+    },
+    {
+      "number": 14,
+      "videoId": "nDCn_8naoSo",
+      "status": 200,
+      "title": "Surah Ibrahim (سورة إبراهيم) — Full Recitation | Islamic Unity App #014 #surah #quran #islamicunity"
+    },
+    {
+      "number": 15,
+      "videoId": "kjHgdZ-xVf4",
+      "status": 200,
+      "title": "Surah Al-Hijr (سورة الحجر) — Full Recitation | Islamic Unity App #015 #surah #quran #alhijr #ai"
+    },
+    {
+      "number": 16,
+      "videoId": "bk21UJPKrSI",
+      "status": 200,
+      "title": "Surah An-Nahl (سورة النحل) — Full Recitation | Islamic Unity App #016 #annahl #surah #quran #islam"
+    },
+    {
+      "number": 17,
+      "videoId": "ClANIaDUKEs",
+      "status": 200,
+      "title": "Surah Al-Isra (سورة الإسراء) — Full Recitation | Islamic Unity App #017 #surah #alisra #quran #islam"
+    },
+    {
+      "number": 18,
+      "videoId": "OhH4aFMgYvI",
+      "status": 200,
+      "title": "Surah Al-Kahf (سورة الكهف) — Full Recitation | Beautiful Quran Audio | Islamic Unity App #018 #surah"
+    },
+    {
+      "number": 19,
+      "videoId": "0CY9bKDb304",
+      "status": 200,
+      "title": "Surah Maryam (سورة مريم) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #019 #surah"
+    },
+    {
+      "number": 20,
+      "videoId": "DbeiLxaBtzw",
+      "status": 200,
+      "title": "Surah Ta-Ha (سورة طه) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #020 #surah #ai"
+    },
+    {
+      "number": 21,
+      "videoId": "6wlB_KXUphQ",
+      "status": 200,
+      "title": "Surah Al-Anbiya (سورة الأنبياء) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #021"
+    },
+    {
+      "number": 22,
+      "videoId": "I1hzovZKe-s",
+      "status": 200,
+      "title": "Surah Al-Hajj (سورة الحج) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #022 #surah"
+    },
+    {
+      "number": 23,
+      "videoId": "AfcsiYGvkLw",
+      "status": 200,
+      "title": "Surah Al-Mu'minun (سورة المؤمنون) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #023"
+    },
+    {
+      "number": 24,
+      "videoId": "kDKlUvTlxRs",
+      "status": 200,
+      "title": "Surah An-Nur (سورة النور) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #024 #surah"
+    },
+    {
+      "number": 25,
+      "videoId": "eo4PpE88bIE",
+      "status": 200,
+      "title": "Surah Al-Furqan (سورة الفرقان) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #025"
+    },
+    {
+      "number": 26,
+      "videoId": "6-vWleF-kHk",
+      "status": 200,
+      "title": "Surah Ash-Shu'ara (سورة الشعراء) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #026"
+    },
+    {
+      "number": 27,
+      "videoId": "Buo7H6SxXVk",
+      "status": 200,
+      "title": "Surah An-Naml (سورة النمل) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #027 #surah"
+    },
+    {
+      "number": 28,
+      "videoId": "EPJ0Mn0WuFI",
+      "status": 200,
+      "title": "Surah Al-Qasas (سورة القصص) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #028 #ai"
+    },
+    {
+      "number": 29,
+      "videoId": "526fNay-GpU",
+      "status": 200,
+      "title": "Surah Al-Ankabut (سورة العنكبوت) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #029"
+    },
+    {
+      "number": 30,
+      "videoId": "IKH5QlRc0q4",
+      "status": 200,
+      "title": "Surah Ar-Rum (سورة الروم) — Beautiful Quran Recitation | Full Surah | Islamic Unity App #030 #surah"
+    },
+    {
+      "number": 78,
+      "videoId": "Z_hu89-MaSs",
+      "status": 200,
+      "title": "Surah An-Naba | سورة النبأ | Beautiful Quran Recitation | 078.mp3 #islamicunity #muslim #surah"
+    },
+    {
+      "number": 79,
+      "videoId": "sWRG5ys4eV0",
+      "status": 200,
+      "title": "Surah An-Nazi'at | سورة النازعات | Beautiful Quran Recitation | 079.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 80,
+      "videoId": "-SoI2WvoGBw",
+      "status": 200,
+      "title": "Surah Abasa | سورة عبس | Beautiful Quran Recitation | 080.mp3 #islamicunity #surah #quran #muslim"
+    },
+    {
+      "number": 81,
+      "videoId": "hUeb6-EOJVc",
+      "status": 200,
+      "title": "Surah At-Takwir (The Overthrowing) - Chapter 81 | Beautiful Quran Recitation | 81.mp3 #islamicunity"
+    },
+    {
+      "number": 82,
+      "videoId": "5Jy_HlSbkX8",
+      "status": 200,
+      "title": "Surah Al-Infitar | سورة الإنفطار | Beautiful Quran Recitation | 082.mp3 #islamicunity #surah #082"
+    },
+    {
+      "number": 83,
+      "videoId": "GGEEQf38xY8",
+      "status": 200,
+      "title": "Surah Al-Mutaffifin | سورة المطففين | Beautiful Quran Recitation | 083.mp3 #islamicunity #surah #083"
+    },
+    {
+      "number": 85,
+      "videoId": "jKsetia1sIA",
+      "status": 200,
+      "title": "Surah Al-Buruj | سورة البروج | Beautiful Quran Recitation | 085.mp3 #islamicunity #quran #surah"
+    },
+    {
+      "number": 86,
+      "videoId": "O0StnpROVy4",
+      "status": 200,
+      "title": "Surah At-Tariq | سورة الطارق | Beautiful Quran Recitation | 086.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 87,
+      "videoId": "6cCwEG2Ml9c",
+      "status": 200,
+      "title": "Surah Al-A'la | سورة الأعلى | Beautiful Quran Recitation | 087.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 88,
+      "videoId": "S0apPVDns_o",
+      "status": 200,
+      "title": "Surah Al-Ghashiyah | سورة الغاشية | Beautiful Quran Recitation | 088.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 89,
+      "videoId": "sXgZjBtM8vo",
+      "status": 200,
+      "title": "Surah Al-Fajr | سورة الفجر | Beautiful Quran Recitation | 089.mp3 #islamicunity #surah #quran #allah"
+    },
+    {
+      "number": 90,
+      "videoId": "0u67kdqNO1w",
+      "status": 200,
+      "title": "Surah Al-Balad | سورة البلد | Beautiful Quran Recitation | 090.mp3 #islamicunity #quran #surah"
+    },
+    {
+      "number": 91,
+      "videoId": "zEBH6m_o01I",
+      "status": 200,
+      "title": "Surah Ash-Shams | سورة الشمس | Beautiful Quran Recitation | 091.mp3 #islamicunity #quran #surah"
+    },
+    {
+      "number": 92,
+      "videoId": "QL4f39Mky8k",
+      "status": 200,
+      "title": "Surah Al-Layl | سورة الليل | Beautiful Quran Recitation | 092.mp3 #islamicunity #surah #quran #allah"
+    },
+    {
+      "number": 93,
+      "videoId": "xE8DnfIiDas",
+      "status": 200,
+      "title": "Surah Ad-Duha | سورة الضحى | Beautiful Quran Recitation | 093.mp3 #islamicunity #quran #surah #allah"
+    },
+    {
+      "number": 94,
+      "videoId": "NeK51PJege0",
+      "status": 200,
+      "title": "Surah Ash-Sharh | سورة الشرح | Beautiful Quran Recitation | 094.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 95,
+      "videoId": "vxtjQJnPpqo",
+      "status": 200,
+      "title": "Surah At-Tin | سورة التين | Beautiful Quran Recitation | 095.mp3 #islamicunity #surah #quran #muslim"
+    },
+    {
+      "number": 96,
+      "videoId": "IukSi_4v3H8",
+      "status": 200,
+      "title": "Surah Al-'Alaq | سورة العلق | Beautiful Quran Recitation | 096.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 97,
+      "videoId": "WSInsK7z4nc",
+      "status": 200,
+      "title": "Surah Al-Qadr | سورة القدر | Beautiful Quran Recitation | 097.mp3 #islamicuniversity #surah #quran"
+    },
+    {
+      "number": 98,
+      "videoId": "-nDA_Udd4Tk",
+      "status": 200,
+      "title": "Surah Al-Bayyinah | سورة البينة | Beautiful Quran Recitation | 098.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 99,
+      "videoId": "GQkjtVfooqk",
+      "status": 200,
+      "title": "Surah Az-Zalzalah | سورة الزلزلة | Beautiful Quran Recitation | 099.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 100,
+      "videoId": "DnV1YbO2Hhg",
+      "status": 200,
+      "title": "Surah Al-Adiyat | سورة العاديات | Beautiful Quran Recitation | 100.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 101,
+      "videoId": "cXpGLJ5znjo",
+      "status": 200,
+      "title": "Surah Al-Qari'ah | سورة القارعة | Beautiful Quran Recitation | 101.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 102,
+      "videoId": "DHJFDaOYk2c",
+      "status": 200,
+      "title": "Surah At-Takathur | سورة التكاثر | Beautiful Quran Recitation | 102.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 103,
+      "videoId": "Mta-lMXBlFA",
+      "status": 200,
+      "title": "Surah Al-Asr | سورة العصر | Beautiful Quran Recitation | 103.mp3 #islamicunity #surah #quran #muslim"
+    },
+    {
+      "number": 104,
+      "videoId": "aeI63x5Z8wY",
+      "status": 200,
+      "title": "Surah Al-Humazah | سورة الهمزة | Beautiful Quran Recitation | 104.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 105,
+      "videoId": "0dN0gi3vaQk",
+      "status": 200,
+      "title": "Surah Al-Fil | سورة الفيل | Beautiful Quran Recitation | 105.mp3 #islamicunity #surah #quran #muslim"
+    },
+    {
+      "number": 106,
+      "videoId": "k9OJ4DwaGtw",
+      "status": 200,
+      "title": "Surah Quraysh | سورة قريش | Beautiful Quran Recitation | 106.mp3 #islamicunity #surah #quran #muslim"
+    },
+    {
+      "number": 107,
+      "videoId": "biu7gPUikMU",
+      "status": 200,
+      "title": "Surah Al-Ma'un | سورة الماعون | Beautiful Quran Recitation | 107.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 108,
+      "videoId": "GGff1nF5Wlw",
+      "status": 200,
+      "title": "Surah Al-Kawthar | سورة الكوثر | Beautiful Quran Recitation | 108.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 109,
+      "videoId": "0tpc06U0MFs",
+      "status": 200,
+      "title": "Surah Al-Kafirun | سورة الكافرون | Beautiful Quran Recitation | 109.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 110,
+      "videoId": "o5Ch1CanjCs",
+      "status": 200,
+      "title": "Surah An-Nasr | سورة النصر | Beautiful Quran Recitation | 110.mp3 #islamicunity #surah #quran #allah"
+    },
+    {
+      "number": 111,
+      "videoId": "gaFyssQWGmQ",
+      "status": 200,
+      "title": "Surah Al-Masad | سورة المسد | Beautiful Quran Recitation | 111.mp3 #islamicunity #surah #quran #111"
+    },
+    {
+      "number": 112,
+      "videoId": "79Vc-buUz4c",
+      "status": 200,
+      "title": "Surah Al-Ikhlas | سورة الإخلاص | Beautiful Quran Recitation | 112.mp3 #islamicunity #surah #quran"
+    },
+    {
+      "number": 113,
+      "videoId": "FyQX9LNJ9m0",
+      "status": 200,
+      "title": "Surah Al-Falaq | سورة الفلق | Beautiful Quran Recitation | 113.mp3 #islamicunity #surah #quran #113"
+    },
+    {
+      "number": 114,
+      "videoId": "mx_bdV98htk",
+      "status": 200,
+      "title": "Surah An-Nas | سورة الناس | Beautiful Quran Recitation | 114.mp3 #islamicunity #surah #quran #114"
+    }
+  ]
+}

@@ -113,3 +113,6 @@ To check the static build locally, build with `VITE_BASE_PATH=/islamicunity-web/
 - [Browser speech voices](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices)
 
 The M3H Media call-to-action opens a labelled YouTube search because an official channel URL was not supplied. No messages, subscriptions, or payments are sent by the app.
+## Quran Surah Video Library
+
+Open `index.html#video` to browse the runtime JSON library: 114 Surahs, searchable in English/Arabic/by number, with availability filters and an on-demand YouTube player. Edit `frontend/public/surah-videos.json` to update video records. See [integration, tests and verification](docs/surah-video-library.md).

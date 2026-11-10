@@ -1,0 +1,16 @@
+const en = {
+  title: "Quran Surah Video Library", subtitle: "Watch and explore the Holy Quran, Surah by Surah.",
+  total: "Total Surahs", available: "Available Videos", soon: "Coming Soon", all: "All Surahs",
+  search: "Search Surahs", placeholder: "Search by name, Arabic name, or number…", play: "Play Video",
+  ready: "Video available", close: "Close video player", youtube: "Open on YouTube", select: "Choose another Surah",
+  loading: "Loading Quran videos…", error: "Unable to load the video library. Please check your connection and try again.",
+  retry: "Retry", empty: "No Surahs found", emptyHint: "Try another name or number, or change your filter.",
+  reset: "Clear search and filters", results: "Surahs shown", surah: "Surah", note: "Videos load only when you choose Play. If a video is unavailable here, try opening it on YouTube.",
+};
+const translations = {
+  en,
+  hi: { title: "क़ुरआन सूरह वीडियो लाइब्रेरी", subtitle: "पवित्र क़ुरआन को सूरह दर सूरह देखें और जानें।", total: "कुल सूरह", available: "उपलब्ध वीडियो", soon: "जल्द आ रहा है", all: "सभी सूरह", search: "सूरह खोजें", placeholder: "नाम, अरबी नाम या नंबर से खोजें…", play: "वीडियो चलाएँ", ready: "वीडियो उपलब्ध", close: "वीडियो प्लेयर बंद करें", youtube: "YouTube पर खोलें", select: "दूसरी सूरह चुनें", loading: "क़ुरआन वीडियो लोड हो रहे हैं…", error: "वीडियो लाइब्रेरी लोड नहीं हुई। इंटरनेट जाँचें और फिर प्रयास करें।", retry: "फिर प्रयास करें", empty: "कोई सूरह नहीं मिली", emptyHint: "दूसरा नाम, नंबर या फ़िल्टर आज़माएँ।", reset: "खोज और फ़िल्टर हटाएँ", results: "दिखाई गई सूरह", surah: "सूरह", note: "चलाएँ चुनने पर ही वीडियो लोड होता है। वीडियो न चले तो YouTube पर खोलें।" },
+  ur: { title: "قرآن سورت ویڈیو لائبریری", subtitle: "قرآن پاک کو سورت بہ سورت دیکھیں اور جانیں۔", total: "کل سورتیں", available: "دستیاب ویڈیوز", soon: "جلد آرہا ہے", all: "تمام سورتیں", search: "سورت تلاش کریں", placeholder: "نام، عربی نام یا نمبر سے تلاش کریں…", play: "ویڈیو چلائیں", ready: "ویڈیو دستیاب", close: "ویڈیو پلیئر بند کریں", youtube: "YouTube پر کھولیں", select: "دوسری سورت منتخب کریں", loading: "قرآن ویڈیوز لوڈ ہو رہی ہیں…", error: "ویڈیو لائبریری لوڈ نہیں ہوئی۔ انٹرنیٹ چیک کریں اور دوبارہ کوشش کریں۔", retry: "دوبارہ کوشش کریں", empty: "کوئی سورت نہیں ملی", emptyHint: "دوسرا نام، نمبر یا فلٹر آزمائیں۔", reset: "تلاش اور فلٹر صاف کریں", results: "دکھائی گئی سورتیں", surah: "سورت", note: "ویڈیو صرف چلانے پر لوڈ ہوتی ہے۔ ویڈیو نہ چلے تو YouTube پر کھولیں۔" },
+  ar: { title: "مكتبة فيديو سور القرآن", subtitle: "شاهد واستكشف القرآن الكريم سورة بسورة.", total: "عدد السور", available: "الفيديوهات المتاحة", soon: "قريبًا", all: "جميع السور", search: "ابحث عن سورة", placeholder: "ابحث بالاسم أو رقم السورة…", play: "تشغيل الفيديو", ready: "الفيديو متاح", close: "إغلاق مشغل الفيديو", youtube: "فتح على YouTube", select: "اختر سورة أخرى", loading: "جارٍ تحميل فيديوهات القرآن…", error: "تعذر تحميل مكتبة الفيديو. تحقق من الاتصال وحاول مجددًا.", retry: "إعادة المحاولة", empty: "لم يتم العثور على سور", emptyHint: "جرّب اسمًا أو رقمًا أو مرشحًا آخر.", reset: "مسح البحث والمرشحات", results: "السور المعروضة", surah: "سورة", note: "يتم تحميل الفيديو عند اختيار التشغيل فقط. إذا تعذر تشغيله، افتحه على YouTube." },
+};
+export const videoCopy = language => translations[language] || en;
