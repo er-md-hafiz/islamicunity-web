@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-11-10T18:14:14.477Z",
+  "browser": "Google Chrome headless on Windows",
+  "device": "Desktop and mobile viewport emulation, not an Android device",
+  "test": "Real CDN playback of all ten specifically requested Surahs; metadata, time advance, first-track seek/resume, volume, mute, speed and route disposal; no MP3 files saved",
+  "results": [
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/001.mp3",
+      "duration": 51.931378,
+      "currentTime": 0.062726,
+      "paused": false,
+      "number": 1,
+      "seekVerified": true
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/002.mp3",
+      "duration": 7539.670189,
+      "currentTime": 0.066237,
+      "paused": false,
+      "number": 2
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/010.mp3",
+      "duration": 2690.4555,
+      "currentTime": 0.054486,
+      "paused": false,
+      "number": 10
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/018.mp3",
+      "duration": 1995.728938,
+      "currentTime": 0.060907,
+      "paused": false,
+      "number": 18
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/036.mp3",
+      "duration": 1059.813878,
+      "currentTime": 0.0586,
+      "paused": false,
+      "number": 36
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/055.mp3",
+      "duration": 679.131378,
+      "currentTime": 0.063987,
+      "paused": false,
+      "number": 55
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/067.mp3",
+      "duration": 455.444878,
+      "currentTime": 0.058886,
+      "paused": false,
+      "number": 67
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/112.mp3",
+      "duration": 21.707756,
+      "currentTime": 0.072179,
+      "paused": false,
+      "number": 112
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/113.mp3",
+      "duration": 33.071,
+      "currentTime": 0.077057,
+      "paused": false,
+      "number": 113
+    },
+    {
+      "url": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/114.mp3",
+      "duration": 50.050567,
+      "currentTime": 0.063866,
+      "paused": false,
+      "number": 114
+    }
+  ],
+  "runtimeErrors": [],
+  "mobileViewportPlayback": {
+    "source": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/001.mp3",
+    "duration": 51.931378,
+    "currentTime": 0.106295
+  },
+  "legacyWidgetPlayback": {
+    "source": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/001.mp3",
+    "duration": 51.931378,
+    "currentTime": 0.110799
+  },
+  "additionalCheckAt": "2026-11-10T18:21:17.891Z"
+}

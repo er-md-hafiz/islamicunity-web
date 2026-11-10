@@ -6,6 +6,8 @@ The pre-existing Kotlin/Gradle prototype remains in `backend/src/main/kotlin`, `
 
 ## Public homepage
 
+The existing Quran route now includes a complete **114-Surah HTML5 audio player** with Mishary Rashid Alafasy's recitation. The same player replaces the simulated audio widget in the existing `islamicunity.html` WebView page, preserving its reader. See [Quran audio player delivery](docs/quran-audio-player.md) for all changed files, controls, the 114-track availability/Range report, real-browser playback evidence, attribution, and Android testing limitations. `npm run test:quran` checks the lifecycle; `npm run verify:quran-audio` rechecks the original CDN without saving recordings.
+
 The root URL now presents the emerald-and-gold homepage based on the supplied design research. It includes an original SVG/CSS app illustration, six linked feature cards, a community mission section, Android download links, a support section, contact links, FAQ, and website privacy details. The illustration is labelled as a web-app preview with sample timings; it is not presented as an Android screenshot. The title, description, canonical URL, and social metadata are included in `frontend/index.html`; `frontend/public/social-preview.png` is a 1200 × 630 capture of the implemented homepage.
 
 Use **Open web app**, a feature card, or a direct route such as `#prayer_times`, `#qibla`, `#quran`, or `#tasbih` to reach the interactive tools. `#home`, `#features`, `#about`, `#download`, `#donate`, `#contact`, and `#privacy` are homepage sections. The dashboard includes a link back to the homepage. The homepage and tools share the same persisted language selection, with full English, Hindi, Urdu, and Arabic homepage text and RTL layouts.

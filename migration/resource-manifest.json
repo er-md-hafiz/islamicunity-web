@@ -53,8 +53,8 @@
     {
       "path": "islamicunity.html",
       "sourceSha256": "42c809dbaeec6a2ac3937710bdf8500819c400ba00804841761c8a27f42d2401",
-      "sha256": "9fde742a1190573b73ac77eb357468b2b9816bfb54777904952b6d954e5bd819",
-      "bytes": 130458
+      "sha256": "3b3eac31f74f28e27ec4f7831aefc95fa5081b09c5890b4adab2ca55e2b508dd",
+      "bytes": 125958
     },
     {
       "path": "iu.svg",
@@ -285,7 +285,14 @@
     {
       "path": "donate.html",
       "description": "Constrain the original UPI selection dialog to the viewport with internal scrolling so its close button stays reachable. Payment configuration unchanged."
+    },
+    {
+      "path": "islamicunity.html",
+      "description": "Replace simulated Quran audio controls with the shared on-demand HTML5 recitation player; retain the Surah list, reader modal, Arabic text, translations, and native menu identifiers."
     }
   ],
-  "textLineEndings": "LF"
+  "textLineEndings": "LF",
+  "buildAssets": [
+    "assets/quran-audio.js"
+  ]
 }

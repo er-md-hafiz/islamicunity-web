@@ -14,6 +14,8 @@
     "test:ui": "playwright test",
     "test:pages": "playwright test --config playwright.pages.config.js",
     "test:resources": "node scripts/validate-resources.mjs",
+    "test:quran": "node --test tests/quran-controller.test.mjs",
+    "verify:quran-audio": "node scripts/verify-quran-audio.mjs",
     "preview": "npm run preview -w frontend"
   },
   "devDependencies": {

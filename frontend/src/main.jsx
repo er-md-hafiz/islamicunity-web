@@ -49,6 +49,7 @@ import {
 import { translate, locales } from "./i18n";
 import { api } from "./api";
 import LandingPage from "./LandingPage";
+import QuranAudioPlayer from "./quran/QuranAudioPlayer";
 import "./styles.css";
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -1187,6 +1188,7 @@ function App() {
               <>
                 <PageHeading title={t(page)} subtitle={t("quranSubtitle")} />
                 {VerseCard({ expanded: true })}
+                <QuranAudioPlayer language={language} />
               </>
             ) : page === "tasbih" ? (
               <>

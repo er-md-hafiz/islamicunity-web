@@ -48,6 +48,7 @@ function validateReference(reference, owner) {
   );
   const path = decodeURIComponent(url.pathname.slice(base.pathname.length));
   if (!path || path === "index.html") return;
+  if (manifest.buildAssets?.includes(path)) return;
   assert.ok(
     actualPaths.has(path),
     `${owner}: missing or incorrectly cased resource ${path}`,
