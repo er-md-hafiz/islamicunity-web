@@ -85,6 +85,8 @@ Import the repository with the project root as the root directory. Select Vite, 
 
 The included `.github/workflows/pages.yml` builds and publishes `frontend/dist` on every push to `main`. It sets the Vite base to `/islamicunity-web/` (derived from the repository name), runs the API tests, uploads the production artifact, and deploys it with GitHub Pages.
 
+If GitHub still launches its implicit branch/Jekyll publisher, the workflow waits for that publication to finish before deploying the app. This prevents two simultaneous publishers from replacing the React build with a page generated from README.md. Selecting **GitHub Actions** as the Pages source remains the recommended configuration.
+
 One-time repository setting: **Settings → Pages → Build and deployment → Source → GitHub Actions**. Then push to `main`, or select **Actions → Deploy Islamic Unity to GitHub Pages → Run workflow**. The live app is at https://er-md-hafiz.github.io/islamicunity-web/ and https://er-md-hafiz.github.io/islamicunity-web/index.html. Uploading React source alone does not publish a site; GitHub Pages must be enabled and the build must finish successfully.
 
 Pages cannot run Node/Express. When building for production without `VITE_API_URL`, the app uses static-hosting mode: it fetches the menu, verse, and all 21 section resources from generated `data/*.json` files; calculates Qibla and the current Hijri calendar in the browser using the same shared functions as Express; and fetches live timings directly from Aladhan. Provider failures still display a labelled New Delhi sample schedule with reminders paused. This mode needs no separately hosted API.
