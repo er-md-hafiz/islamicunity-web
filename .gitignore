@@ -1,5 +1,6 @@
 node_modules/
 frontend/dist/
+frontend/public/data/
 .env
 *.log
 test-results/

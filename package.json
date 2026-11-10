@@ -12,6 +12,7 @@
     "start": "npm run start -w backend",
     "test": "npm run test -w backend",
     "test:ui": "playwright test",
+    "test:pages": "playwright test --config playwright.pages.config.js",
     "preview": "npm run preview -w frontend"
   },
   "devDependencies": {

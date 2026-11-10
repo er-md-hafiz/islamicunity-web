@@ -20,6 +20,7 @@ On Windows, `./run-web.ps1` starts the new app (`./run-web.ps1 build` builds it)
 ```sh
 npm test              # API integration tests and calculation checks
 npm run test:ui       # Browser tests (requires installed Google Chrome)
+npm run test:pages    # Test a Pages build without any Express API (Chrome required)
 npm run build         # Production frontend in frontend/dist
 npm run preview       # Local preview; keep the API running separately
 npm start             # Express API only
@@ -82,7 +83,15 @@ Import the repository with the project root as the root directory. Select Vite, 
 
 ## Deploy the frontend on GitHub Pages
 
-Set `VITE_API_URL` to your API origin and `VITE_BASE_PATH=/your-repository/` (use `/` for a user site). Run `npm ci` and `npm run build`, then publish `frontend/dist` with a Pages artifact workflow or your preferred deployment tool. Allow the Pages origin in the API's `CORS_ORIGIN`. Never place secrets in `VITE_` variables.
+The included `.github/workflows/pages.yml` builds and publishes `frontend/dist` on every push to `main`. It sets the Vite base to `/islamicunity-web/` (derived from the repository name), runs the API tests, uploads the production artifact, and deploys it with GitHub Pages.
+
+One-time repository setting: **Settings → Pages → Build and deployment → Source → GitHub Actions**. Then push to `main`, or select **Actions → Deploy Islamic Unity to GitHub Pages → Run workflow**. The live app is at https://er-md-hafiz.github.io/islamicunity-web/ and https://er-md-hafiz.github.io/islamicunity-web/index.html. Uploading React source alone does not publish a site; GitHub Pages must be enabled and the build must finish successfully.
+
+Pages cannot run Node/Express. When building for production without `VITE_API_URL`, the app uses static-hosting mode: it fetches the menu, verse, and all 21 section resources from generated `data/*.json` files; calculates Qibla and the current Hijri calendar in the browser using the same shared functions as Express; and fetches live timings directly from Aladhan. Provider failures still display a labelled New Delhi sample schedule with reminders paused. This mode needs no separately hosted API.
+
+To use the full REST backend instead, deploy it on Render and create a repository Actions variable `VITE_API_URL` with its origin. Allow the Pages origin in `CORS_ORIGIN`. The workflow passes this variable into the frontend build. Never place secrets in `VITE_` variables.
+
+To check the static build locally, build with `VITE_BASE_PATH=/islamicunity-web/`, then run `npm run test:pages`. These tests serve only the built files beneath the repository subdirectory, with no `/api` proxy, and check every menu page, prayer data, calendar, Qibla, and provider fallback. Generated `frontend/public/data/` files are ignored and regenerated before every build.
 
 ## References
 

@@ -47,16 +47,8 @@ import {
   LoaderCircle,
 } from "lucide-react";
 import { translate, locales } from "./i18n";
+import { api } from "./api";
 import "./styles.css";
-
-const API = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
-async function api(path) {
-  const r = await fetch(`${API}/api/${path}`, {
-    signal: AbortSignal.timeout(12000),
-  });
-  if (!r.ok) throw new Error(`Request failed (${r.status})`);
-  return r.json();
-}
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
     try {
