@@ -1,0 +1,421 @@
+{
+  "version": 2,
+
+  "home": {
+    "enabled": true,
+    "columns": 2,
+
+    "items": [
+      {
+        "id": "prayer_times",
+        "title": "Prayer Times",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/time.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "prayerTimesFragment",
+        "span": 2,
+        "analytics": "prayer_times"
+      },
+      {
+        "id": "qibla",
+        "title": "Qibla Finder",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/kaaba.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "qiblaFragment",
+        "span": 1,
+        "analytics": "qibla"
+      },
+      {
+        "id": "audio",
+        "title": "Audio",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/audio.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "audioFragment",
+        "span": 1,
+        "analytics": "audio"
+      },
+      {
+        "id": "books",
+        "title": "Books",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/books.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "bookFragment",
+        "span": 1,
+        "analytics": "books"
+      },
+      {
+        "id": "allah_names",
+        "title": "99 Names of Allah",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/allah.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "ninetyNineNamesFragment",
+        "span": 1,
+        "analytics": "99_names_allah"
+      },
+      {
+        "id": "tasbih",
+        "title": "Tasbih",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/tasbih.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "tasbihFragment",
+        "span": 1,
+        "analytics": "tasbih"
+      },
+      {
+        "id": "calendar",
+        "title": "Calendar",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/calender.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "calenderFragment",
+        "span": 1,
+        "analytics": "calendar"
+      },
+      {
+        "id": "hajj",
+        "title": "Hajj",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/hajj.png",
+        "enabled": true,
+        "visible": true,
+        "type": "webview",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/Hajj.html",
+        "span": 1,
+        "analytics": "hajj"
+      },
+      {
+        "id": "umrah",
+        "title": "Umrah",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/umrah.png",
+        "enabled": true,
+        "visible": true,
+        "type": "webview",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/Umrah.html",
+        "span": 1,
+        "analytics": "umrah"
+      },
+      {
+        "id": "halal",
+        "title": "Halal",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/halal.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "halalFragment",
+        "span": 1,
+        "analytics": "halal"
+      },
+      {
+        "id": "news",
+        "title": "News",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/news.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "newsFragment",
+        "span": 1,
+        "analytics": "news"
+      },
+      {
+        "id": "quiz",
+        "title": "Quiz",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/quiz.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/quiz.json",
+        "destination": "quizFragment",
+        "span": 1,
+        "analytics": "quiz"
+      },
+      {
+        "id": "photo",
+        "title": "Photo",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/gallery.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "photoFragment",
+        "span": 1,
+        "analytics": "photo"
+      },
+      {
+        "id": "video",
+        "title": "Video",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/video.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "videoFragment",
+        "span": 1,
+        "analytics": "video"
+      },
+      {
+        "id": "donate",
+        "title": "Donate Now",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/donate.png",
+        "enabled": true,
+        "visible": true,
+        "type": "webview",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/donate.html",
+        "span": 1,
+        "analytics": "donate"
+      },
+      {
+        "id": "dua",
+        "title": "Dua",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/palms.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/duas.json",
+        "destination": "duaFragment",
+        "span": 1,
+        "analytics": "dua"
+      },
+      {
+        "id": "prayer_guide",
+        "title": "Prayer Guide",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/prayer_guide.png",
+        "enabled": true,
+        "visible": true,
+        "type": "webview",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/PrayerGuide.html",
+        "span": 1,
+        "analytics": "prayer_guide"
+      },
+      {
+        "id": "mosque",
+        "title": "Mosque",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/mosque.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "destination": "mosqueFragment",
+        "span": 1,
+        "analytics": "mosque"
+      },
+      {
+        "id": "zakat",
+        "title": "Zakat Calculator",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/calculator.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/ZakatCalculator.html",
+        "destination": "zakatFragment",
+        "span": 1,
+        "analytics": "zakat"
+      },
+      {
+        "id": "currency",
+        "title": "Currency Converter",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/currency.png",
+        "enabled": true,
+        "visible": true,
+        "type": "fragment",
+        "url": "https://cdn.moneyconvert.net/api/latest.json",
+        "destination": "currencyFragment",
+        "span": 1,
+        "analytics": "currency"
+      },
+      {
+        "id": "games_and_puzzles",
+        "title": "Games & Puzzles",
+        "icon": "https://er-md-hafiz.github.io/IslamicUnity/menu_icons/games_and_puzzles.png",
+        "enabled": true,
+        "visible": true,
+        "type": "webview",
+        "url": "https://er-md-hafiz.github.io/IslamicUnity/GamesAndPuzzles.html",
+        "span": 1,
+        "analytics": "games_and_puzzles"
+      }
+    ]
+  },
+
+  "settings": {
+    "enabled": true,
+
+    "sections": [
+      {
+        "id": "app_settings",
+        "title": "App Settings",
+        "enabled": true,
+        "items": [
+          {
+            "id": "notification",
+            "title": "Notification On/Off",
+            "description": "Manage prayer time alerts",
+            "icon": "ic_notification",
+            "enabled": true,
+            "visible": true,
+            "type": "notification",
+            "analytics": "manage_notifications"
+          },
+          {
+            "id": "language",
+            "title": "Language Setting",
+            "description": "Change application language",
+            "icon": "ic_language",
+            "enabled": true,
+            "visible": true,
+            "type": "dialog",
+            "action": "language",
+            "analytics": "manage_language"
+          },
+          {
+            "id": "theme",
+            "title": "Night Mode",
+            "description": "Change application theme",
+            "icon": "ic_contrast_mode",
+            "enabled": true,
+            "visible": true,
+            "type": "dialog",
+            "action": "theme",
+            "analytics": "display_mode"
+          },
+          {
+            "id": "font_style",
+            "title": "Font Style",
+            "description": "Change font style",
+            "icon": "ic_font_style",
+            "enabled": true,
+            "visible": true,
+            "type": "dialog",
+            "action": "font_style",
+            "analytics": "font_style"
+          },
+          {
+            "id": "font_size",
+            "title": "Font Size",
+            "description": "Adjust text size",
+            "icon": "ic_font_size",
+            "enabled": true,
+            "visible": true,
+            "type": "dialog",
+            "action": "font_size",
+            "analytics": "font_size"
+          },
+          { 
+            "id": "bookmarks",
+            "title": "Bookmarks",
+            "description": "View your saved bookmarks",
+            "icon": "ic_bookmark",
+            "enabled": true,
+            "visible": true,
+            "type": "native",
+            "action": "bookmarks",
+            "analytics": "bookmarks" 
+          }
+        ]
+      },
+
+      {
+        "id": "support",
+        "title": "Support",
+        "enabled": true,
+        "items": [
+          {
+            "id": "feedback",
+            "title": "Send Feedback",
+            "description": "Send us your feedback",
+            "icon": "ic_bug",
+            "enabled": true,
+            "visible": true,
+            "type": "dialog",
+            "action": "feedback",
+            "analytics": "feedback"
+          },
+          {
+            "id": "help",
+            "title": "Help and Support",
+            "description": "Get help and support",
+            "icon": "ic_help",
+            "enabled": true,
+            "visible": true,
+            "type": "dialog",
+            "action": "help",
+            "analytics": "help"
+          },
+          {
+            "id": "privacy",
+            "title": "Privacy Policy",
+            "description": "Read our privacy policy",
+            "icon": "ic_privacy_policy",
+            "enabled": true,
+            "visible": true,
+            "type": "webview",
+            "url": "https://er-md-hafiz.github.io/IslamicUnity/PrivacyPolicy.html",
+            "analytics": "privacy_policy"
+          },
+          {
+            "id": "terms",
+            "title": "Terms & Conditions",
+            "description": "Read our terms and conditions",
+            "icon": "ic_terms_and_conditions",
+            "enabled": true,
+            "visible": true,
+            "type": "webview",
+            "url": "https://er-md-hafiz.github.io/IslamicUnity/terms_and_conditions.html",
+            "analytics": "terms_conditions"
+          },
+          {
+            "id": "about",
+            "title": "About Us",
+            "description": "Learn more about us",
+            "icon": "ic_about",
+            "enabled": true,
+            "visible": true,
+            "type": "webview",
+            "url": "https://er-md-hafiz.github.io/IslamicUnity/SupportOurCommunity.html",
+            "analytics": "about"
+          },
+          {
+            "id": "rate",
+            "title": "Rate Us",
+            "description": "Rate our app",
+            "icon": "ic_rate",
+            "enabled": true,
+            "visible": true,
+            "type": "native",
+            "action": "rate",
+            "analytics": "rate_us"
+          },
+          {
+            "id": "share",
+            "title": "Share App",
+            "description": "Share our app with friends",
+            "icon": "ic_share",
+            "enabled": true,
+            "visible": true,
+            "type": "native",
+            "action": "share",
+            "analytics": "share"
+          },
+          {
+            "id": "version",
+            "title": "App Version",
+            "description": "Check app version",
+            "icon": "ic_app_version",
+            "enabled": true,
+            "visible": true,
+            "type": "native",
+            "action": "version",
+            "analytics": "app_version"
+          }
+        ]
+      }
+    ]
+  }
+}

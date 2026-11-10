@@ -1,0 +1,3481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Unity - Complete Islamic Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --primary-color: #0a8d65;
+            --primary-dark: #076e4e;
+            --primary-light: #e8f5f0;
+            --secondary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --light-bg: #f8f9fa;
+            --dark-bg: #1a1a2e;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #e0e0e0;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #0da86e;
+            --primary-dark: #0a8d65;
+            --primary-light: #1a3a2f;
+            --secondary-color: #34495e;
+            --light-bg: #121212;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1e1e1e;
+            --text-color: #f0f0f0;
+            --light-text: #aaa;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .logo-text span {
+            font-size: 12px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-item {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-color);
+            background-color: var(--primary-light);
+        }
+
+        .nav-item .badge {
+            position: absolute;
+            top: -5px;
+            right: 0;
+            background-color: var(--danger-color);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle, .mobile-menu-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            border: none;
+            color: var(--primary-color);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover, .mobile-menu-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Main Content */
+        main {
+            padding: 30px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 25px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title i {
+            font-size: 20px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            border: none;
+            color: var(--primary-color);
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .btn-icon:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Prayer Times Widget */
+        .prayer-widget {
+            grid-column: span 4;
+        }
+
+        .location-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+        }
+
+        .location-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .location-details span {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        .prayer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .prayer-item {
+            text-align: center;
+            padding: 20px 10px;
+            border-radius: var(--radius-sm);
+            background-color: var(--primary-light);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .prayer-item:hover {
+            background-color: var(--primary-color);
+        }
+
+        .prayer-item:hover .prayer-name,
+        .prayer-item:hover .prayer-time {
+            color: white;
+        }
+
+        .prayer-item.current {
+            background-color: var(--primary-color);
+        }
+
+        .prayer-item.current .prayer-name,
+        .prayer-item.current .prayer-time {
+            color: white;
+        }
+
+        .prayer-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .prayer-time {
+            font-size: 20px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .prayer-item .next-indicator {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .azan-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+        }
+
+        .azan-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        /* Quran Widget */
+        .quran-widget {
+            grid-column: span 4;
+        }
+
+        .quran-player {
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .player-info {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .surah-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .reciter-name {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            width: 30%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .player-time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--light-text);
+        }
+
+        .surah-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .surah-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .surah-item:hover {
+            background-color: var(--primary-light);
+        }
+
+        .surah-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .surah-number {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .surah-item.active .surah-number {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .surah-details {
+            flex-grow: 1;
+        }
+
+        .surah-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .surah-meta {
+            font-size: 12px;
+            color: var(--light-text);
+        }
+
+        .surah-item.active .surah-meta {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .surah-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        /* Duas Widget */
+        .duas-widget {
+            grid-column: span 4;
+        }
+
+        .dua-categories {
+            display: flex;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .dua-categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .dua-category {
+            padding: 8px 20px;
+            background-color: var(--primary-light);
+            border: none;
+            border-radius: 20px;
+            margin-right: 10px;
+            white-space: nowrap;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .dua-category:hover, .dua-category.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .dua-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .dua-item {
+            padding: 20px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 15px;
+            background-color: var(--primary-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dua-item:hover {
+            background-color: var(--primary-color);
+        }
+
+        .dua-item:hover .dua-arabic,
+        .dua-item:hover .dua-translation {
+            color: white;
+        }
+
+        .dua-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 22px;
+            text-align: right;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .dua-translation {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        .dua-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        /* Calendar Widget */
+        .calendar-widget {
+            grid-column: span 3;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .current-date {
+            text-align: center;
+        }
+
+        .hijri-date {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .gregorian-date {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+        }
+
+        .day-header {
+            font-weight: 600;
+            padding: 10px 0;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .calendar-day {
+            padding: 12px 0;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .calendar-day:hover {
+            background-color: var(--primary-light);
+        }
+
+        .calendar-day.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .calendar-day.today {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .calendar-day.event::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: var(--danger-color);
+            border-radius: 50%;
+        }
+
+        .ramadan-highlight {
+            background-color: rgba(255, 193, 7, 0.2);
+            border: 1px solid var(--warning-color);
+        }
+
+        /* Tasbih Widget */
+        .tasbih-widget {
+            grid-column: span 3;
+        }
+
+        .tasbih-counter {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .tasbih-count {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .tasbih-target {
+            font-size: 24px;
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+
+        .count-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(10, 141, 101, 0.3);
+        }
+
+        .count-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(10, 141, 101, 0.4);
+        }
+
+        .count-btn:active {
+            transform: scale(0.95);
+        }
+
+        .tasbih-presets {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .preset-item {
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .preset-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .preset-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .preset-count {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .tasbih-history {
+            max-height: 150px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        /* Qibla Widget */
+        .qibla-widget {
+            grid-column: span 3;
+        }
+
+        .compass-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+        }
+
+        .compass-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .compass-needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 90px;
+            background-color: var(--danger-color);
+            transform-origin: bottom center;
+            transform: translate(-50%, -100%);
+            border-radius: 2px;
+            transition: transform 1s ease;
+        }
+
+        .compass-needle:after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -6px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--danger-color);
+            border-radius: 50%;
+        }
+
+        .compass-direction {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .qibla-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .qibla-stat {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+        }
+
+        .qibla-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .qibla-label {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* Mosque Finder Widget */
+        .mosque-widget {
+            grid-column: span 3;
+        }
+
+        .map-container {
+            height: 200px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: var(--border-color);
+        }
+
+        .mosque-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .mosque-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 10px;
+            background-color: var(--primary-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mosque-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .mosque-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .mosque-details {
+            flex-grow: 1;
+        }
+
+        .mosque-name {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .mosque-distance {
+            font-size: 12px;
+            color: var(--light-text);
+        }
+
+        /* AI Assistant Widget */
+        .ai-widget {
+            grid-column: span 6;
+        }
+
+        .ai-chat {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 10px;
+        }
+
+        .ai-message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .ai-message.user {
+            justify-content: flex-end;
+        }
+
+        .ai-message.bot {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .ai-message.user .message-content {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .ai-message.bot .message-content {
+            background-color: var(--primary-light);
+            color: var(--text-color);
+            border-bottom-left-radius: 5px;
+        }
+
+        .ai-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ai-input input {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-size: 14px;
+        }
+
+        .ai-input input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .ai-input button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .ai-input button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Learning Widget */
+        .learning-widget {
+            grid-column: span 6;
+        }
+
+        .learning-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .learning-category {
+            padding: 20px;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .learning-category:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .learning-category i {
+            font-size: 30px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Advanced Features Widget */
+        .advanced-widget {
+            grid-column: span 12;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 15px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover .feature-icon {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .feature-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .feature-desc {
+            font-size: 12px;
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover .feature-desc {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--danger-color);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .dashboard {
+                gap: 20px;
+            }
+            
+            .prayer-widget,
+            .quran-widget,
+            .duas-widget {
+                grid-column: span 6;
+            }
+            
+            .calendar-widget,
+            .tasbih-widget,
+            .qibla-widget,
+            .mosque-widget {
+                grid-column: span 4;
+            }
+            
+            .ai-widget,
+            .learning-widget {
+                grid-column: span 12;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .prayer-widget,
+            .quran-widget,
+            .duas-widget,
+            .calendar-widget,
+            .tasbih-widget,
+            .qibla-widget,
+            .mosque-widget {
+                grid-column: span 12;
+            }
+            
+            .learning-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .prayer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .learning-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .logo {
+                order: 1;
+            }
+            
+            .header-actions {
+                order: 2;
+                margin-left: auto;
+            }
+            
+            .mobile-menu-btn {
+                order: 3;
+            }
+            
+            .nav-menu {
+                order: 4;
+                width: 100%;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .hijri-date {
+                font-size: 18px;
+            }
+            
+            .tasbih-count {
+                font-size: 60px;
+            }
+            
+            .count-btn {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        /* Utility Classes */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 141, 101, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a252f;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-10 { margin-top: 10px; }
+        .mt-20 { margin-top: 20px; }
+        .mt-30 { margin-top: 30px; }
+        .mb-10 { margin-bottom: 10px; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-30 { margin-bottom: 30px; }
+
+        .d-flex { display: flex; }
+        .align-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .flex-column { flex-direction: column; }
+
+        .w-100 { width: 100%; }
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 22px;
+            line-height: 1.8;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--danger-color);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Islamic Unity</h1>
+                        <span>Your Complete Islamic Companion</span>
+                    </div>
+                </a>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-item active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="#quran" class="nav-item">
+                        <i class="fas fa-book-quran"></i> Quran
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="#prayer" class="nav-item">
+                        <i class="fas fa-clock"></i> Prayer
+                    </a>
+                    <a href="#duas" class="nav-item">
+                        <i class="fas fa-pray"></i> Duas
+                    </a>
+                    <a href="#calendar" class="nav-item">
+                        <i class="fas fa-calendar-alt"></i> Calendar
+                    </a>
+                    <a href="#learning" class="nav-item">
+                        <i class="fas fa-graduation-cap"></i> Learning
+                    </a>
+                    <a href="#community" class="nav-item">
+                        <i class="fas fa-users"></i> Community
+                    </a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="dashboard">
+                <!-- Prayer Times Widget -->
+                <div class="card prayer-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-clock"></i> Prayer Times
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" title="Refresh">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="btn-icon" title="Settings">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="location-info">
+                        <div class="location-details">
+                            <h3 id="currentLocation">Noida, Meerut Division</h3>
+                            <span id="currentDate">16 Sha'ban 1447 | 04 February 2026</span>
+                        </div>
+                        <button class="btn-icon" title="Change Location">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="prayer-grid" id="prayerTimes">
+                        <!-- Prayer times loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="azan-controls">
+                        <div class="azan-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="azanToggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <span>Azan Notification</span>
+                        </div>
+                        <div class="azan-settings">
+                            <button class="btn-icon" title="Azan Settings">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <div class="d-flex justify-between align-center mb-10">
+                            <span>Prayer Tracker</span>
+                            <span id="prayerProgress">5/5 prayers today</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quran Widget -->
+                <div class="card quran-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-book-quran"></i> Quran
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" title="Bookmarks">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                            <button class="btn-icon" title="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="quran-player">
+                        <div class="player-controls">
+                            <button class="btn-icon" title="Previous">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="btn-icon" id="playPauseBtn" title="Play/Pause">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="btn-icon" title="Next">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="player-info">
+                            <div class="surah-name" id="currentSurah">Surah Al-Fatihah</div>
+                            <div class="reciter-name" id="currentReciter">Mishary Rashid Alafasy</div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" id="audioProgress"></div>
+                        </div>
+                        
+                        <div class="player-time">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">4:32</span>
+                        </div>
+                    </div>
+                    
+                    <div class="surah-list" id="surahList">
+                        <!-- Surah list loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="text-center mt-20">
+                        <button class="btn btn-outline" id="viewFullQuran">
+                            <i class="fas fa-book-open"></i> View Full Quran
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Duas Widget -->
+                <div class="card duas-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-pray"></i> Duas & Adhkar
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" title="Favorites">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="btn-icon" title="Share">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="dua-categories" id="duaCategories">
+                        <!-- Dua categories loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="dua-list" id="duaList">
+                        <!-- Duas loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="text-center mt-20">
+                        <button class="btn btn-outline" id="viewAllDuas">
+                            <i class="fas fa-list"></i> View All Duas
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calendar Widget -->
+                <div class="card calendar-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-calendar-alt"></i> Islamic Calendar
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="prevMonth">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn-icon" id="nextMonth">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-header">
+                        <div class="current-date">
+                            <div class="hijri-date" id="hijriDateDisplay">16 Sha'bān 1447</div>
+                            <div class="gregorian-date" id="gregorianDateDisplay">February 2026</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="mt-20">
+                        <div class="d-flex justify-between align-center mb-10">
+                            <span>Upcoming Events</span>
+                            <button class="btn-icon" id="viewAllEvents">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div id="upcomingEvents">
+                            <!-- Events loaded via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasbih Widget -->
+                <div class="card tasbih-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-hashtag"></i> Tasbih Counter
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="resetTasbih" title="Reset">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                            <button class="btn-icon" id="saveTasbih" title="Save">
+                                <i class="fas fa-save"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="tasbih-counter">
+                        <div class="tasbih-count" id="tasbihCount">0</div>
+                        <div class="tasbih-target">/ <span id="tasbihTarget">33</span></div>
+                        <button class="count-btn pulse" id="countBtn">
+                            <i class="fas fa-hand-pointer"></i>
+                        </button>
+                        
+                        <div class="tasbih-presets">
+                            <div class="preset-item" data-preset="33">
+                                <div class="preset-name">Subhanallah</div>
+                                <div class="preset-count">33</div>
+                            </div>
+                            <div class="preset-item" data-preset="100">
+                                <div class="preset-name">Astaghfirullah</div>
+                                <div class="preset-count">100</div>
+                            </div>
+                            <div class="preset-item" data-preset="99">
+                                <div class="preset-name">Allah's Names</div>
+                                <div class="preset-count">99</div>
+                            </div>
+                            <div class="preset-item" data-preset="11">
+                                <div class="preset-name">Salawat</div>
+                                <div class="preset-count">11</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tasbih-history">
+                        <div class="d-flex justify-between align-center mb-10">
+                            <span>Today's History</span>
+                            <span id="totalTasbihToday">0 tasbih</span>
+                        </div>
+                        <div id="tasbihHistory">
+                            <!-- History loaded via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Qibla Widget -->
+                <div class="card qibla-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-compass"></i> Qibla Direction
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="calibrateCompass" title="Calibrate">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="compass-container">
+                        <div class="compass-circle"></div>
+                        <div class="compass-needle" id="compassNeedle"></div>
+                        <div class="compass-direction" id="compassDirection">Qibla</div>
+                    </div>
+                    
+                    <div class="qibla-info">
+                        <div class="qibla-stat">
+                            <div class="qibla-value" id="distanceToKaaba">3,849 km</div>
+                            <div class="qibla-label">Distance to Kaaba</div>
+                        </div>
+                        <div class="qibla-stat">
+                            <div class="qibla-value" id="qiblaAngle">266°</div>
+                            <div class="qibla-label">Qibla Angle</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <button class="btn w-100" id="findNearbyMosques">
+                            <i class="fas fa-map-marker-alt"></i> Find Nearby Mosques
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mosque Finder Widget -->
+                <div class="card mosque-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-mosque"></i> Mosque Finder
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="refreshMosques" title="Refresh">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container" id="mosqueMap">
+                        <!-- Map will be initialized here -->
+                        <div class="text-center" style="padding-top: 80px; color: var(--light-text);">
+                            <i class="fas fa-map" style="font-size: 40px; margin-bottom: 10px;"></i>
+                            <p>Mosque Map Loading...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mosque-list" id="mosqueList">
+                        <!-- Mosque list loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="text-center mt-20">
+                        <button class="btn btn-outline w-100" id="viewAllMosques">
+                            <i class="fas fa-search"></i> Search More Mosques
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Assistant Widget -->
+                <div class="card ai-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-robot"></i> AI Islamic Assistant
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="clearChat" title="Clear Chat">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-chat">
+                        <div class="ai-messages" id="aiMessages">
+                            <div class="ai-message bot">
+                                <div class="message-content">
+                                    السلام عليكم ورحمة الله وبركاته<br>
+                                    I'm your AI Islamic Assistant. How can I help you today? You can ask me about Quran, Hadith, Islamic rulings, or any other Islamic questions.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-input">
+                            <input type="text" id="aiInput" placeholder="Ask me anything about Islam...">
+                            <button id="aiSendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Widget -->
+                <div class="card learning-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-graduation-cap"></i> Islamic Learning
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="refreshLearning" title="Refresh">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="learning-categories">
+                        <div class="learning-category" data-category="articles">
+                            <i class="fas fa-newspaper"></i>
+                            <div class="category-name">Articles</div>
+                        </div>
+                        <div class="learning-category" data-category="videos">
+                            <i class="fas fa-video"></i>
+                            <div class="category-name">Videos</div>
+                        </div>
+                        <div class="learning-category" data-category="quizzes">
+                            <i class="fas fa-question-circle"></i>
+                            <div class="category-name">Quizzes</div>
+                        </div>
+                        <div class="learning-category" data-category="kids">
+                            <i class="fas fa-child"></i>
+                            <div class="category-name">Kids Learning</div>
+                        </div>
+                        <div class="learning-category" data-category="hadith">
+                            <i class="fas fa-book"></i>
+                            <div class="category-name">Hadith Library</div>
+                        </div>
+                        <div class="learning-category" data-category="fiqh">
+                            <i class="fas fa-balance-scale"></i>
+                            <div class="category-name">Fiqh & Rulings</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-20">
+                        <div class="d-flex justify-between align-center mb-10">
+                            <span>Daily Lesson</span>
+                            <span id="lessonProgress">Day 15 of 30</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                        <div class="text-center mt-10">
+                            <button class="btn" id="startLesson">
+                                <i class="fas fa-play-circle"></i> Start Today's Lesson
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Features Widget -->
+                <div class="card advanced-widget">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-star"></i> Advanced Features
+                        </h2>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="viewAllFeatures" title="View All">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item" data-feature="zakat">
+                            <div class="feature-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="feature-name">Zakat Calculator</div>
+                            <div class="feature-desc">Calculate your Zakat accurately</div>
+                        </div>
+                        <div class="feature-item" data-feature="hajj">
+                            <div class="feature-icon">
+                                <i class="fas fa-kaaba"></i>
+                            </div>
+                            <div class="feature-name">Hajj & Umrah Guide</div>
+                            <div class="feature-desc">Complete guide for pilgrims</div>
+                        </div>
+                        <div class="feature-item" data-feature="memorization">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-name">Quran Memorization</div>
+                            <div class="feature-desc">Track your memorization progress</div>
+                        </div>
+                        <div class="feature-item" data-feature="charity">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div class="feature-name">Charity & Donation</div>
+                            <div class="feature-desc">Support Islamic causes</div>
+                        </div>
+                        <div class="feature-item" data-feature="halal">
+                            <div class="feature-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="feature-name">Halal Finder</div>
+                            <div class="feature-desc">Find halal restaurants & products</div>
+                        </div>
+                        <div class="feature-item" data-feature="matrimonial">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-name">Nikah Matrimonial</div>
+                            <div class="feature-desc">Islamic marriage platform</div>
+                        </div>
+                        <div class="feature-item" data-feature="widgets">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="feature-name">Islamic Widgets</div>
+                            <div class="feature-desc">Home screen widgets</div>
+                        </div>
+                        <div class="feature-item" data-feature="podcasts">
+                            <div class="feature-icon">
+                                <i class="fas fa-podcast"></i>
+                            </div>
+                            <div class="feature-name">Islamic Podcasts</div>
+                            <div class="feature-desc">Listen to Islamic talks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Islamic Unity</h3>
+                    <p>Your complete Islamic companion for prayer, Quran, learning, and community. Providing accurate Islamic tools and resources for Muslims worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://m3hcoding.github.io/IslamicUnity/PrivacyPolicy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://m3hcoding.github.io/IslamicUnity/terms_and_conditions.html" target="_blank">Terms & Conditions</a></li>
+                        <li><a href="https://m3hcoding.github.io/IslamicUnity/SupportOurCommunity.html" target="_blank">About Us</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en" target="_blank">Download App</a></li>
+                        <li><a href="https://m3hcoding.github.io/IslamicUnity/donate.html" target="_blank">Donate & Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Islamic Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://m3hcoding.github.io/IslamicUnity/Hajj.html" target="_blank">Hajj Information</a></li>
+                        <li><a href="https://m3hcoding.github.io/IslamicUnity/Umrah.html" target="_blank">Umrah Information</a></li>
+                        <li><a href="#">Islamic Articles</a></li>
+                        <li><a href="#">Fatwa & Rulings</a></li>
+                        <li><a href="#">Islamic Calendar 2026</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:islamic.unity.app@gmail.com">islamic.unity.app@gmail.com</a></li>
+                        <li><a href="#">Send Feedback</a></li>
+                        <li><a href="#">Help & Support</a></li>
+                        <li><a href="#">Report an Issue</a></li>
+                        <li><a href="#">Request a Feature</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Islamic Unity. All rights reserved. | Using Islamic Unity Android Utility Package v2.1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quran Modal -->
+    <div class="modal" id="quranModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Complete Quran</h2>
+                <button class="modal-close" id="closeQuranModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="quranModalContent">
+                    <!-- Quran content loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dua Modal -->
+    <div class="modal" id="duaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Dua Collection</h2>
+                <button class="modal-close" id="closeDuaModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="duaModalContent">
+                    <!-- Dua content loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Modal -->
+    <div class="modal" id="featureModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="featureModalTitle">Feature Details</h2>
+                <button class="modal-close" id="closeFeatureModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="featureModalContent">
+                    <!-- Feature content loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // API Endpoints from the provided package
+        const API_ENDPOINTS = {
+            GEO_URL: "https://get.geojs.io/v1/ip/geo.json",
+            IP_ADDRESS_URL: "https://api.ipify.org/?format=json",
+            COMMON_URL_LIVE: "https://api.aladhan.com/",
+            PLAY_STORE_URL: "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en",
+            DONATE_URL: "https://m3hcoding.github.io/IslamicUnity/donate.html",
+            PRIVACY_POLICY_URL: "https://m3hcoding.github.io/IslamicUnity/PrivacyPolicy.html",
+            TERMS_AND_CONDITIONS_URL: "https://m3hcoding.github.io/IslamicUnity/terms_and_conditions.html",
+            ABOUT_US_URL: "https://m3hcoding.github.io/IslamicUnity/SupportOurCommunity.html",
+            HAJJ_INFORMATION_URL: "https://m3hcoding.github.io/IslamicUnity/Hajj.html",
+            UMRAH_INFORMATION_URL: "https://m3hcoding.github.io/IslamicUnity/Umrah.html",
+            HOME: "https://api3.islamhouse.com/v3/paV29H2gm56kvLPy/main/home/json",
+            AZAAN_TIMES_URI: "v1/timingsByAddress/{date}?address={location}&method=8&tune=2,3,4,5,2,3,4,5,-3",
+            QIBLA_API_URI: "v1/qibla/{lat}/{lng}",
+            CALENDAR_API_URI: "v1/calendar/{year}/{month}",
+            EDITION_URL: "http://api.alquran.cloud/v1/edition",
+            EDITION_LANGUAGE_URL: "http://api.alquran.cloud/v1/edition/language",
+            EDITION_LANGUAGE_STRING_URL: "http://api.alquran.cloud/v1/edition/language/{{language}}",
+            EDITION_TYPE_URL: "http://api.alquran.cloud/v1/edition/type",
+            EDITION_TYPE_STRING_URL: "http://api.alquran.cloud/v1/edition/type/{{type}}",
+            EDITION_FORMAT_URL: "http://api.alquran.cloud/v1/edition/format",
+            EDITION_FORMAT_STRING_URL: "http://api.alquran.cloud/v1/edition/format/{{format}}",
+            AUDIO_SURAH_URL: "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{number}.mp3",
+            SURAH_URL: "https://api.alquran.cloud/v1/surah",
+            SURAH_EDITION_URL: "http://api.alquran.cloud/v1/surah/{surah}/{edition}",
+            QURAN_VIEW_URL: "https://api.alquran.cloud/v1/quran/quran-uthmani",
+            JUZ_EN_ASAD_URL: "https://api.alquran.cloud/v1/juz/30/en.asad",
+            JUZ_QURAN_UTHMANI_URL: "https://api.alquran.cloud/v1/juz/30/quran-uthmani",
+            JUZ_PAGING_URL: "https://api.alquran.cloud/v1/juz/1/quran-uthmani?offset=3&limit=10",
+            SAJDA_URL: "https://api.alquran.cloud/v1/sajda/{edition}",
+            META_URL: "https://api.alquran.cloud/v1/meta",
+            PIXABAY_API_KEY: "43864415-b43a79c6c0f029af9a032f06d",
+            SEARCH_IMAGES_PIXABAY_BASE_URL: "https://pixabay.com/api/",
+            SEARCH_VIDEOS_PIXABAY_BASE_URL: "https://pixabay.com/api/videos/"
+        };
+
+        // Application State
+        const appState = {
+            currentLocation: { city: "Noida", region: "Meerut Division", country: "India", lat: 28.5355, lng: 77.3910 },
+            prayerTimes: [],
+            currentPrayerIndex: 2, // Dhuhr as example
+            qiblaAngle: 266,
+            tasbihCount: 0,
+            tasbihTarget: 33,
+            tasbihHistory: [],
+            theme: 'light',
+            currentSurah: 1,
+            isPlaying: false,
+            aiMessages: [],
+            duaCategories: ['All', 'Morning', 'Evening', 'Sleep', 'Eating', 'Travel', 'Masjid', 'Family'],
+            currentDuaCategory: 'All'
+        };
+
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const themeToggle = document.getElementById('themeToggle');
+        const prayerTimesContainer = document.getElementById('prayerTimes');
+        const tasbihCountEl = document.getElementById('tasbihCount');
+        const tasbihTargetEl = document.getElementById('tasbihTarget');
+        const countBtn = document.getElementById('countBtn');
+        const resetTasbihBtn = document.getElementById('resetTasbih');
+        const compassNeedle = document.getElementById('compassNeedle');
+        const qiblaAngleEl = document.getElementById('qiblaAngle');
+        const distanceToKaabaEl = document.getElementById('distanceToKaaba');
+        const compassDirectionEl = document.getElementById('compassDirection');
+        const calibrateCompassBtn = document.getElementById('calibrateCompass');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const audioProgress = document.getElementById('audioProgress');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const surahListContainer = document.getElementById('surahList');
+        const viewFullQuranBtn = document.getElementById('viewFullQuran');
+        const duaCategoriesContainer = document.getElementById('duaCategories');
+        const duaListContainer = document.getElementById('duaList');
+        const viewAllDuasBtn = document.getElementById('viewAllDuas');
+        const calendarGrid = document.getElementById('calendarGrid');
+        const hijriDateDisplay = document.getElementById('hijriDateDisplay');
+        const gregorianDateDisplay = document.getElementById('gregorianDateDisplay');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const aiMessagesContainer = document.getElementById('aiMessages');
+        const aiInput = document.getElementById('aiInput');
+        const aiSendBtn = document.getElementById('aiSendBtn');
+        const clearChatBtn = document.getElementById('clearChat');
+        const quranModal = document.getElementById('quranModal');
+        const closeQuranModal = document.getElementById('closeQuranModal');
+        const duaModal = document.getElementById('duaModal');
+        const closeDuaModal = document.getElementById('closeDuaModal');
+        const featureModal = document.getElementById('featureModal');
+        const closeFeatureModal = document.getElementById('closeFeatureModal');
+        const featureModalTitle = document.getElementById('featureModalTitle');
+        const featureModalContent = document.getElementById('featureModalContent');
+        const azanToggle = document.getElementById('azanToggle');
+        const currentLocationEl = document.getElementById('currentLocation');
+        const currentDateEl = document.getElementById('currentDate');
+        const mosqueMap = document.getElementById('mosqueMap');
+        const mosqueListContainer = document.getElementById('mosqueList');
+        const learningCategories = document.querySelectorAll('.learning-category');
+        const featureItems = document.querySelectorAll('.feature-item');
+        const tasbihPresets = document.querySelectorAll('.preset-item');
+        const tasbihHistoryContainer = document.getElementById('tasbihHistory');
+
+        // Sample data for the application
+        const sampleData = {
+            prayerTimes: [
+                { name: "Fajr", time: "05:45", icon: "fas fa-moon" },
+                { name: "Sunrise", time: "07:07", icon: "fas fa-sun" },
+                { name: "Dhuhr", time: "12:47", icon: "fas fa-sun" },
+                { name: "Asr", time: "15:39", icon: "fas fa-sun" },
+                { name: "Maghrib", time: "18:02", icon: "fas fa-sun" },
+                { name: "Isha", time: "19:09", icon: "fas fa-moon" }
+            ],
+            surahs: [
+                { number: 1, name: "Al-Fatihah", arabicName: "الفاتحة", verses: 7, revelation: "Makkah" },
+                { number: 2, name: "Al-Baqarah", arabicName: "البقرة", verses: 286, revelation: "Madinah" },
+                { number: 36, name: "Ya-Sin", arabicName: "يس", verses: 83, revelation: "Makkah" },
+                { number: 55, name: "Ar-Rahman", arabicName: "الرحمن", verses: 78, revelation: "Makkah" },
+                { number: 67, name: "Al-Mulk", arabicName: "الملك", verses: 30, revelation: "Makkah" },
+                { number: 112, name: "Al-Ikhlas", arabicName: "الإخلاص", verses: 4, revelation: "Makkah" }
+            ],
+            duas: [
+                { 
+                    id: 1, 
+                    category: "Morning", 
+                    arabic: "اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ", 
+                    translation: "O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the Final Return.",
+                    reference: "At-Tirmidhi"
+                },
+                { 
+                    id: 2, 
+                    category: "Morning", 
+                    arabic: "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ", 
+                    translation: "We have reached the morning and at this very time all sovereignty belongs to Allah, and all praise is for Allah. None has the right to be worshipped except Allah, alone, without any partner.",
+                    reference: "Muslim"
+                },
+                { 
+                    id: 3, 
+                    category: "Evening", 
+                    arabic: "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ", 
+                    translation: "O Allah, by You we enter the evening and by You we enter the morning, by You we live and by You we die, and to You is our return.",
+                    reference: "At-Tirmidhi"
+                },
+                { 
+                    id: 4, 
+                    category: "Sleep", 
+                    arabic: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا", 
+                    translation: "In Your name, O Allah, I die and I live.",
+                    reference: "Al-Bukhari"
+                },
+                { 
+                    id: 5, 
+                    category: "Eating", 
+                    arabic: "بِسْمِ اللَّهِ", 
+                    translation: "In the name of Allah.",
+                    reference: "Abu Dawud"
+                }
+            ],
+            mosques: [
+                { name: "Jama Masjid", distance: "2.3 km", address: "Old Delhi, Delhi", prayer: "Jumu'ah 1:15 PM" },
+                { name: "Islamic Center Masjid", distance: "3.1 km", address: "Noida Sector 62", prayer: "Jumu'ah 1:30 PM" },
+                { name: "Al-Falah Masjid", distance: "4.5 km", address: "Noida Sector 18", prayer: "Jumu'ah 1:20 PM" },
+                { name: "Markazi Masjid", distance: "5.2 km", address: "Noida Sector 12", prayer: "Jumu'ah 1:25 PM" }
+            ],
+            aiResponses: [
+                "The Quran is the holy book of Islam, revealed to Prophet Muhammad (PBUH) over 23 years. It contains 114 chapters (Surahs) and is the literal word of Allah.",
+                "The five pillars of Islam are: Shahadah (faith), Salah (prayer), Zakat (charity), Sawm (fasting in Ramadan), and Hajj (pilgrimage to Mecca).",
+                "Wudu (ablution) is required before prayer. It involves washing the hands, mouth, nose, face, arms, head, and feet with clean water.",
+                "Zakat is obligatory for every Muslim who possesses wealth above a certain threshold (Nisab). It is typically 2.5% of savings and wealth.",
+                "The month of Ramadan is the 9th month of the Islamic calendar, during which Muslims fast from dawn to sunset."
+            ]
+        };
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initApp();
+        });
+
+        // Main initialization function
+        function initApp() {
+            // Initialize mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+
+            // Initialize theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('islamic-unity-theme');
+            if (savedTheme) {
+                appState.theme = savedTheme;
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon();
+            }
+
+            // Initialize prayer times
+            loadPrayerTimes();
+
+            // Initialize tasbih counter
+            initTasbihCounter();
+
+            // Initialize qibla compass
+            initQiblaCompass();
+
+            // Initialize Quran player
+            initQuranPlayer();
+
+            // Initialize Duas
+            initDuas();
+
+            // Initialize Calendar
+            initCalendar();
+
+            // Initialize AI Assistant
+            initAIAssistant();
+
+            // Initialize Mosque Finder
+            initMosqueFinder();
+
+            // Initialize Learning Categories
+            initLearningCategories();
+
+            // Initialize Advanced Features
+            initAdvancedFeatures();
+
+            // Initialize modals
+            initModals();
+
+            // Update time every minute
+            updateCurrentTime();
+            setInterval(updateCurrentTime, 60000);
+
+            // Update date every day
+            updateCurrentDate();
+            
+            // Simulate compass movement
+            simulateCompassMovement();
+            
+            // Load saved tasbih history
+            loadTasbihHistory();
+        }
+
+        // Function to load prayer times
+        function loadPrayerTimes() {
+            prayerTimesContainer.innerHTML = '';
+            
+            sampleData.prayerTimes.forEach((prayer, index) => {
+                const prayerItem = document.createElement('div');
+                prayerItem.className = `prayer-item ${index === appState.currentPrayerIndex ? 'current' : ''}`;
+                
+                if (index === appState.currentPrayerIndex + 1) {
+                    prayerItem.innerHTML = `
+                        <div class="next-indicator">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="prayer-name">${prayer.name}</div>
+                        <div class="prayer-time">${prayer.time}</div>
+                    `;
+                } else {
+                    prayerItem.innerHTML = `
+                        <div class="prayer-name">${prayer.name}</div>
+                        <div class="prayer-time">${prayer.time}</div>
+                    `;
+                }
+                
+                prayerItem.addEventListener('click', function() {
+                    showPrayerDetails(prayer);
+                });
+                
+                prayerTimesContainer.appendChild(prayerItem);
+            });
+            
+            // Update location display
+            currentLocationEl.textContent = `${appState.currentLocation.city}, ${appState.currentLocation.region}`;
+        }
+
+        // Function to show prayer details
+        function showPrayerDetails(prayer) {
+            alert(`Next ${prayer.name} prayer at ${prayer.time}\n\nYou can set a reminder for this prayer in settings.`);
+        }
+
+        // Function to initialize tasbih counter
+        function initTasbihCounter() {
+            // Load saved count
+            const savedCount = localStorage.getItem('tasbih-count');
+            if (savedCount) {
+                appState.tasbihCount = parseInt(savedCount);
+                tasbihCountEl.textContent = appState.tasbihCount;
+            }
+            
+            // Count button click event
+            countBtn.addEventListener('click', function() {
+                appState.tasbihCount++;
+                tasbihCountEl.textContent = appState.tasbihCount;
+                
+                // Save count
+                localStorage.setItem('tasbih-count', appState.tasbihCount);
+                
+                // Add to history
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                appState.tasbihHistory.unshift({
+                    count: 1,
+                    total: appState.tasbihCount,
+                    time: timeString,
+                    date: now.toLocaleDateString()
+                });
+                
+                // Update history display
+                updateTasbihHistory();
+                
+                // Check if target reached
+                if (appState.tasbihCount >= appState.tasbihTarget) {
+                    // Reset count
+                    appState.tasbihCount = 0;
+                    tasbihCountEl.textContent = appState.tasbihCount;
+                    
+                    // Show completion message
+                    showNotification(`Completed ${appState.tasbihTarget} Tasbih! May Allah accept it.`);
+                    
+                    // Save reset count
+                    localStorage.setItem('tasbih-count', appState.tasbihCount);
+                }
+            });
+            
+            // Reset button
+            resetTasbihBtn.addEventListener('click', function() {
+                if (confirm("Reset tasbih counter to zero?")) {
+                    appState.tasbihCount = 0;
+                    tasbihCountEl.textContent = appState.tasbihCount;
+                    localStorage.setItem('tasbih-count', appState.tasbihCount);
+                    showNotification("Tasbih counter reset to zero.");
+                }
+            });
+            
+            // Preset buttons
+            tasbihPresets.forEach(preset => {
+                preset.addEventListener('click', function() {
+                    const target = parseInt(this.dataset.preset);
+                    appState.tasbihTarget = target;
+                    tasbihTargetEl.textContent = target;
+                    
+                    // Update active preset
+                    tasbihPresets.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    showNotification(`Tasbih target set to ${target}`);
+                });
+            });
+        }
+
+        // Function to update tasbih history
+        function updateTasbihHistory() {
+            tasbihHistoryContainer.innerHTML = '';
+            
+            // Keep only last 5 items
+            const recentHistory = appState.tasbihHistory.slice(0, 5);
+            
+            recentHistory.forEach(item => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                historyItem.innerHTML = `
+                    <span>${item.time}</span>
+                    <span>${item.count} tasbih (Total: ${item.total})</span>
+                `;
+                tasbihHistoryContainer.appendChild(historyItem);
+            });
+            
+            // Update total today
+            const today = new Date().toLocaleDateString();
+            const todayCount = appState.tasbihHistory
+                .filter(item => item.date === today)
+                .reduce((sum, item) => sum + item.count, 0);
+            
+            document.getElementById('totalTasbihToday').textContent = `${todayCount} tasbih today`;
+        }
+
+        // Function to load tasbih history
+        function loadTasbihHistory() {
+            const savedHistory = localStorage.getItem('tasbih-history');
+            if (savedHistory) {
+                appState.tasbihHistory = JSON.parse(savedHistory);
+                updateTasbihHistory();
+            }
+        }
+
+        // Function to initialize qibla compass
+        function initQiblaCompass() {
+            // Set initial angle
+            compassNeedle.style.transform = `translate(-50%, -100%) rotate(${appState.qiblaAngle}deg)`;
+            qiblaAngleEl.textContent = `${appState.qiblaAngle}°`;
+            
+            // Calibrate button
+            calibrateCompassBtn.addEventListener('click', function() {
+                showNotification("Calibrating compass... Please hold device flat and rotate it slowly.");
+                
+                // Simulate calibration
+                setTimeout(() => {
+                    const newAngle = Math.floor(Math.random() * 360);
+                    appState.qiblaAngle = newAngle;
+                    compassNeedle.style.transform = `translate(-50%, -100%) rotate(${newAngle}deg)`;
+                    qiblaAngleEl.textContent = `${newAngle}°`;
+                    showNotification("Compass calibrated successfully!");
+                }, 2000);
+            });
+        }
+
+        // Function to simulate compass movement
+        function simulateCompassMovement() {
+            setInterval(() => {
+                const variation = Math.random() * 4 - 2; // Random variation between -2 and 2
+                const newAngle = appState.qiblaAngle + variation;
+                compassNeedle.style.transform = `translate(-50%, -100%) rotate(${newAngle}deg)`;
+                
+                // Update direction text
+                const direction = getDirectionFromAngle(newAngle);
+                compassDirectionEl.textContent = direction;
+            }, 3000);
+        }
+
+        // Function to get direction from angle
+        function getDirectionFromAngle(angle) {
+            if (angle >= 337.5 || angle < 22.5) return "North";
+            if (angle >= 22.5 && angle < 67.5) return "Northeast";
+            if (angle >= 67.5 && angle < 112.5) return "East";
+            if (angle >= 112.5 && angle < 157.5) return "Southeast";
+            if (angle >= 157.5 && angle < 202.5) return "South";
+            if (angle >= 202.5 && angle < 247.5) return "Southwest";
+            if (angle >= 247.5 && angle < 292.5) return "West";
+            if (angle >= 292.5 && angle < 337.5) return "Northwest";
+            return "Unknown";
+        }
+
+        // Function to initialize Quran player
+        function initQuranPlayer() {
+            // Load surah list
+            surahListContainer.innerHTML = '';
+            
+            sampleData.surahs.forEach(surah => {
+                const surahItem = document.createElement('div');
+                surahItem.className = `surah-item ${surah.number === appState.currentSurah ? 'active' : ''}`;
+                surahItem.dataset.surah = surah.number;
+                
+                surahItem.innerHTML = `
+                    <div class="surah-number">${surah.number}</div>
+                    <div class="surah-details">
+                        <div class="surah-title">${surah.name}</div>
+                        <div class="arabic-text">${surah.arabicName}</div>
+                        <div class="surah-meta">${surah.verses} verses • ${surah.revelation}</div>
+                    </div>
+                    <div class="surah-actions">
+                        <button class="btn-icon" data-action="play" title="Play">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="btn-icon" data-action="bookmark" title="Bookmark">
+                            <i class="fas fa-bookmark"></i>
+                        </button>
+                    </div>
+                `;
+                
+                surahItem.addEventListener('click', function(e) {
+                    if (!e.target.closest('.btn-icon')) {
+                        showSurahDetails(surah);
+                    }
+                });
+                
+                // Play button
+                const playBtn = surahItem.querySelector('[data-action="play"]');
+                playBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    playSurah(surah);
+                });
+                
+                // Bookmark button
+                const bookmarkBtn = surahItem.querySelector('[data-action="bookmark"]');
+                bookmarkBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleBookmark(surah);
+                });
+                
+                surahListContainer.appendChild(surahItem);
+            });
+            
+            // Play/Pause button
+            playPauseBtn.addEventListener('click', function() {
+                appState.isPlaying = !appState.isPlaying;
+                updatePlayButton();
+                
+                if (appState.isPlaying) {
+                    // Simulate audio progress
+                    simulateAudioProgress();
+                }
+            });
+            
+            // View Full Quran button
+            viewFullQuranBtn.addEventListener('click', function() {
+                showFullQuran();
+            });
+        }
+
+        // Function to play a surah
+        function playSurah(surah) {
+            appState.currentSurah = surah.number;
+            
+            // Update active surah
+            document.querySelectorAll('.surah-item').forEach(item => {
+                item.classList.remove('active');
+                if (parseInt(item.dataset.surah) === surah.number) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Update player info
+            document.getElementById('currentSurah').textContent = `Surah ${surah.name}`;
+            document.getElementById('currentReciter').textContent = "Mishary Rashid Alafasy";
+            
+            // Start playing
+            appState.isPlaying = true;
+            updatePlayButton();
+            
+            // Show notification
+            showNotification(`Now playing: Surah ${surah.name}`);
+            
+            // Simulate audio progress
+            simulateAudioProgress();
+        }
+
+        // Function to simulate audio progress
+        function simulateAudioProgress() {
+            if (!appState.isPlaying) return;
+            
+            let progress = 0;
+            const duration = 272; // 4:32 in seconds
+            
+            const interval = setInterval(() => {
+                if (!appState.isPlaying) {
+                    clearInterval(interval);
+                    return;
+                }
+                
+                progress += 1;
+                const percent = (progress / duration) * 100;
+                
+                audioProgress.style.width = `${percent}%`;
+                
+                // Update time display
+                const currentTime = formatTime(progress);
+                const totalTime = formatTime(duration);
+                
+                currentTimeEl.textContent = currentTime;
+                durationEl.textContent = totalTime;
+                
+                if (progress >= duration) {
+                    clearInterval(interval);
+                    appState.isPlaying = false;
+                    updatePlayButton();
+                    audioProgress.style.width = '0%';
+                    currentTimeEl.textContent = '0:00';
+                    
+                    // Auto-play next surah
+                    const nextSurah = sampleData.surahs.find(s => s.number === appState.currentSurah + 1);
+                    if (nextSurah) {
+                        setTimeout(() => playSurah(nextSurah), 1000);
+                    }
+                }
+            }, 1000);
+        }
+
+        // Function to format time
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Function to update play button
+        function updatePlayButton() {
+            const icon = playPauseBtn.querySelector('i');
+            if (appState.isPlaying) {
+                icon.className = 'fas fa-pause';
+                playPauseBtn.title = "Pause";
+            } else {
+                icon.className = 'fas fa-play';
+                playPauseBtn.title = "Play";
+            }
+        }
+
+        // Function to show surah details
+        function showSurahDetails(surah) {
+            // In a real app, this would fetch surah details from API
+            alert(`Surah ${surah.name} (${surah.arabicName})\n\nVerses: ${surah.verses}\nRevelation: ${surah.revelation}\n\nClick "Play" to listen to recitation.`);
+        }
+
+        // Function to toggle bookmark
+        function toggleBookmark(surah) {
+            // In a real app, this would save to localStorage or backend
+            showNotification(`Surah ${surah.name} bookmarked!`);
+        }
+
+        // Function to show full Quran
+        function showFullQuran() {
+            // In a real app, this would load the complete Quran
+            quranModal.classList.add('active');
+            
+            // Simulate loading content
+            document.getElementById('quranModalContent').innerHTML = `
+                <div class="text-center" style="padding: 40px 20px;">
+                    <i class="fas fa-book-quran" style="font-size: 60px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Complete Quran</h3>
+                    <p style="color: var(--light-text); margin-bottom: 30px;">Loading Quran text with translation...</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                document.getElementById('quranModalContent').innerHTML = `
+                    <div style="max-height: 500px; overflow-y: auto;">
+                        <h3 style="margin-bottom: 20px;">Surah Al-Fatihah (The Opening)</h3>
+                        <div class="arabic-text" style="font-size: 26px; margin-bottom: 20px; line-height: 2;">
+                            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p><strong>Translation:</strong> In the name of Allah, the Entirely Merciful, the Especially Merciful.</p>
+                            <p><strong>Tafsir:</strong> This is the opening verse of the Quran, recited before every Surah except Surah At-Tawbah.</p>
+                        </div>
+                        <div class="text-center mt-30">
+                            <button class="btn" onclick="playSurah({number: 1, name: 'Al-Fatihah'})">
+                                <i class="fas fa-play"></i> Listen to Recitation
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        // Function to initialize Duas
+        function initDuas() {
+            // Load dua categories
+            duaCategoriesContainer.innerHTML = '';
+            
+            appState.duaCategories.forEach(category => {
+                const categoryBtn = document.createElement('button');
+                categoryBtn.className = `dua-category ${category === appState.currentDuaCategory ? 'active' : ''}`;
+                categoryBtn.textContent = category;
+                categoryBtn.dataset.category = category;
+                
+                categoryBtn.addEventListener('click', function() {
+                    appState.currentDuaCategory = category;
+                    
+                    // Update active category
+                    document.querySelectorAll('.dua-category').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Filter duas
+                    loadDuasByCategory(category);
+                });
+                
+                duaCategoriesContainer.appendChild(categoryBtn);
+            });
+            
+            // Load initial duas
+            loadDuasByCategory(appState.currentDuaCategory);
+            
+            // View All Duas button
+            viewAllDuasBtn.addEventListener('click', showAllDuas);
+        }
+
+        // Function to load duas by category
+        function loadDuasByCategory(category) {
+            duaListContainer.innerHTML = '';
+            
+            let filteredDuas = sampleData.duas;
+            if (category !== 'All') {
+                filteredDuas = sampleData.duas.filter(dua => dua.category === category);
+            }
+            
+            filteredDuas.forEach(dua => {
+                const duaItem = document.createElement('div');
+                duaItem.className = 'dua-item';
+                
+                duaItem.innerHTML = `
+                    <div class="dua-arabic">${dua.arabic}</div>
+                    <div class="dua-translation">${dua.translation}</div>
+                    <div class="dua-actions">
+                        <button class="btn-icon" data-action="copy" title="Copy">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="btn-icon" data-action="favorite" title="Favorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="btn-icon" data-action="share" title="Share">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                `;
+                
+                // Copy button
+                const copyBtn = duaItem.querySelector('[data-action="copy"]');
+                copyBtn.addEventListener('click', function() {
+                    copyToClipboard(dua.arabic + '\n\n' + dua.translation);
+                    showNotification("Dua copied to clipboard!");
+                });
+                
+                // Favorite button
+                const favoriteBtn = duaItem.querySelector('[data-action="favorite"]');
+                favoriteBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    if (this.classList.contains('active')) {
+                        this.innerHTML = '<i class="fas fa-heart" style="color: #dc3545;"></i>';
+                        showNotification("Dua added to favorites!");
+                    } else {
+                        this.innerHTML = '<i class="fas fa-heart"></i>';
+                        showNotification("Dua removed from favorites!");
+                    }
+                });
+                
+                // Share button
+                const shareBtn = duaItem.querySelector('[data-action="share"]');
+                shareBtn.addEventListener('click', function() {
+                    shareDua(dua);
+                });
+                
+                duaListContainer.appendChild(duaItem);
+            });
+        }
+
+        // Function to copy to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+
+        // Function to share a dua
+        function shareDua(dua) {
+            if (navigator.share) {
+                navigator.share({
+                    title: `Islamic Dua - ${dua.category}`,
+                    text: `${dua.arabic}\n\n${dua.translation}\n\nReference: ${dua.reference}`,
+                    url: window.location.href
+                }).then(() => {
+                    showNotification("Dua shared successfully!");
+                }).catch(err => {
+                    console.error("Share failed:", err);
+                });
+            } else {
+                // Fallback: copy to clipboard
+                copyToClipboard(`${dua.arabic}\n\n${dua.translation}\n\nReference: ${dua.reference}`);
+                showNotification("Dua copied to clipboard! You can now share it manually.");
+            }
+        }
+
+        // Function to show all duas
+        function showAllDuas() {
+            duaModal.classList.add('active');
+            
+            // Load all duas
+            document.getElementById('duaModalContent').innerHTML = `
+                <div style="max-height: 500px; overflow-y: auto;">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">Complete Dua Collection</h3>
+                    ${sampleData.duas.map(dua => `
+                        <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="color: var(--primary-color);">${dua.category} Dua</h4>
+                                <span style="font-size: 12px; color: var(--light-text);">${dua.reference}</span>
+                            </div>
+                            <div class="arabic-text" style="font-size: 20px; margin-bottom: 10px;">${dua.arabic}</div>
+                            <p>${dua.translation}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Function to initialize calendar
+        function initCalendar() {
+            // Set current date
+            const now = new Date();
+            const hijriDate = "16 Sha'bān 1447";
+            const gregorianDate = "February 2026";
+            
+            hijriDateDisplay.textContent = hijriDate;
+            gregorianDateDisplay.textContent = gregorianDate;
+            
+            // Generate calendar
+            generateCalendar(now);
+            
+            // Navigation buttons
+            prevMonthBtn.addEventListener('click', function() {
+                const currentMonth = now.getMonth();
+                now.setMonth(currentMonth - 1);
+                generateCalendar(now);
+                updateDateDisplay(now);
+            });
+            
+            nextMonthBtn.addEventListener('click', function() {
+                const currentMonth = now.getMonth();
+                now.setMonth(currentMonth + 1);
+                generateCalendar(now);
+                updateDateDisplay(now);
+            });
+        }
+
+        // Function to generate calendar
+        function generateCalendar(date) {
+            calendarGrid.innerHTML = '';
+            
+            // Day headers
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            days.forEach(day => {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'day-header';
+                dayElement.textContent = day;
+                calendarGrid.appendChild(dayElement);
+            });
+            
+            // Get first day of month
+            const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+            
+            // Get days in month
+            const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+            
+            // Add empty cells for days before first day
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement('div');
+                emptyCell.className = 'calendar-day';
+                calendarGrid.appendChild(emptyCell);
+            }
+            
+            // Add days of the month
+            const today = new Date();
+            const currentDay = today.getDate();
+            const currentMonth = today.getMonth();
+            const currentYear = today.getFullYear();
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+                
+                // Check if today
+                if (day === currentDay && date.getMonth() === currentMonth && date.getFullYear() === currentYear) {
+                    dayElement.classList.add('today');
+                }
+                
+                // Check if special day (example: 15th of month)
+                if (day === 15) {
+                    dayElement.classList.add('event');
+                    dayElement.title = "Middle of Sha'ban - Laylat al-Bara'ah";
+                }
+                
+                // Check if Ramadan (example: days 10-20)
+                if (date.getMonth() === 2 && day >= 10 && day <= 20) {
+                    dayElement.classList.add('ramadan-highlight');
+                    dayElement.title = "Ramadan - Month of Fasting";
+                }
+                
+                dayElement.addEventListener('click', function() {
+                    showDayDetails(date.getFullYear(), date.getMonth(), day);
+                });
+                
+                calendarGrid.appendChild(dayElement);
+            }
+        }
+
+        // Function to update date display
+        function updateDateDisplay(date) {
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            const month = monthNames[date.getMonth()];
+            const year = date.getFullYear();
+            
+            gregorianDateDisplay.textContent = `${month} ${year}`;
+            
+            // In a real app, this would convert to Hijri
+            const hijriMonths = ["Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani", 
+                "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Sha'ban", "Ramadan", 
+                "Shawwal", "Dhu al-Qidah", "Dhu al-Hijjah"];
+            
+            // Simulate Hijri date (in real app, use conversion algorithm)
+            const hijriMonth = hijriMonths[(date.getMonth() + 8) % 12]; // Just for example
+            const hijriYear = 1447 + Math.floor(date.getMonth() / 12);
+            const hijriDay = 1 + Math.floor(date.getDate() / 2); // Just for example
+            
+            hijriDateDisplay.textContent = `${hijriDay} ${hijriMonth} ${hijriYear}`;
+        }
+
+        // Function to show day details
+        function showDayDetails(year, month, day) {
+            const date = new Date(year, month, day);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = date.toLocaleDateString('en-US', options);
+            
+            alert(`Date: ${dateString}\n\nIslamic Date: ${hijriDateDisplay.textContent}\n\nEvents: ${getEventsForDay(day, month)}\n\nPrayer Times: As per schedule`);
+        }
+
+        // Function to get events for a day
+        function getEventsForDay(day, month) {
+            if (day === 15 && month === 1) {
+                return "Laylat al-Bara'ah (Night of Forgiveness)";
+            } else if (month === 2 && day >= 10 && day <= 20) {
+                return "Ramadan - Fasting Day";
+            } else if (day === 1 && month === 0) {
+                return "Islamic New Year";
+            } else if (day === 10 && month === 11) {
+                return "Eid al-Adha";
+            } else {
+                return "No major events today";
+            }
+        }
+
+        // Function to initialize AI Assistant
+        function initAIAssistant() {
+            // Send button
+            aiSendBtn.addEventListener('click', sendAIMessage);
+            
+            // Enter key in input
+            aiInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendAIMessage();
+                }
+            });
+            
+            // Clear chat button
+            clearChatBtn.addEventListener('click', function() {
+                if (confirm("Clear all chat messages?")) {
+                    appState.aiMessages = [];
+                    aiMessagesContainer.innerHTML = `
+                        <div class="ai-message bot">
+                            <div class="message-content">
+                                السلام عليكم ورحمة الله وبركاته<br>
+                                I'm your AI Islamic Assistant. How can I help you today? You can ask me about Quran, Hadith, Islamic rulings, or any other Islamic questions.
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        // Function to send AI message
+        function sendAIMessage() {
+            const message = aiInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            addAIMessage(message, 'user');
+            aiInput.value = '';
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Simulate AI response
+            setTimeout(() => {
+                // Remove typing indicator
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+                
+                // Get AI response
+                const response = getAIResponse(message);
+                
+                // Add AI response
+                addAIMessage(response, 'bot');
+                
+                // Scroll to bottom
+                aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+            }, 1500);
+        }
+
+        // Function to add AI message
+        function addAIMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `ai-message ${sender}`;
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">${message}</div>
+            `;
+            
+            aiMessagesContainer.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+            
+            // Save to state
+            appState.aiMessages.push({ sender, message, timestamp: new Date() });
+        }
+
+        // Function to show typing indicator
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'ai-message bot';
+            typingDiv.id = 'typingIndicator';
+            
+            typingDiv.innerHTML = `
+                <div class="message-content">
+                    <i class="fas fa-ellipsis-h"></i> Typing...
+                </div>
+            `;
+            
+            aiMessagesContainer.appendChild(typingDiv);
+            aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+        }
+
+        // Function to get AI response
+        function getAIResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            // Check for keywords and return appropriate response
+            if (lowerMessage.includes('quran') || lowerMessage.includes('surah')) {
+                return sampleData.aiResponses[0];
+            } else if (lowerMessage.includes('pillar') || lowerMessage.includes('islam')) {
+                return sampleData.aiResponses[1];
+            } else if (lowerMessage.includes('wudu') || lowerMessage.includes('ablution') || lowerMessage.includes('prayer')) {
+                return sampleData.aiResponses[2];
+            } else if (lowerMessage.includes('zakat') || lowerMessage.includes('charity')) {
+                return sampleData.aiResponses[3];
+            } else if (lowerMessage.includes('ramadan') || lowerMessage.includes('fasting')) {
+                return sampleData.aiResponses[4];
+            } else {
+                // Return a random response for other questions
+                const randomIndex = Math.floor(Math.random() * sampleData.aiResponses.length);
+                return sampleData.aiResponses[randomIndex];
+            }
+        }
+
+        // Function to initialize mosque finder
+        function initMosqueFinder() {
+            // Initialize map
+            setTimeout(() => {
+                try {
+                    // This is a simulation - in a real app, you would use Leaflet or Google Maps API
+                    mosqueMap.innerHTML = `
+                        <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
+                            <i class="fas fa-map-marked-alt" style="font-size: 50px; margin-bottom: 15px;"></i>
+                            <h3 style="margin-bottom: 10px;">Mosque Finder</h3>
+                            <p>Click "Find Nearby Mosques" to locate mosques in your area</p>
+                        </div>
+                    `;
+                } catch (error) {
+                    console.error("Map initialization error:", error);
+                }
+            }, 1000);
+            
+            // Load mosque list
+            mosqueListContainer.innerHTML = '';
+            
+            sampleData.mosques.forEach(mosque => {
+                const mosqueItem = document.createElement('div');
+                mosqueItem.className = 'mosque-item';
+                
+                mosqueItem.innerHTML = `
+                    <div class="mosque-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="mosque-details">
+                        <div class="mosque-name">${mosque.name}</div>
+                        <div class="mosque-distance">${mosque.distance} • ${mosque.address}</div>
+                        <div class="mosque-prayer" style="font-size: 12px; color: var(--primary-color); margin-top: 5px;">
+                            <i class="fas fa-clock"></i> Jumu'ah: ${mosque.prayer}
+                        </div>
+                    </div>
+                `;
+                
+                mosqueItem.addEventListener('click', function() {
+                    showMosqueDetails(mosque);
+                });
+                
+                mosqueListContainer.appendChild(mosqueItem);
+            });
+        }
+
+        // Function to show mosque details
+        function showMosqueDetails(mosque) {
+            alert(`${mosque.name}\n\nDistance: ${mosque.distance}\nAddress: ${mosque.address}\nJumu'ah Prayer: ${mosque.prayer}\n\nFeatures: Prayer Hall, Wudu Area, Parking, Library`);
+        }
+
+        // Function to initialize learning categories
+        function initLearningCategories() {
+            learningCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const categoryName = this.dataset.category;
+                    showLearningCategory(categoryName);
+                });
+            });
+        }
+
+        // Function to show learning category
+        function showLearningCategory(category) {
+            const categoryNames = {
+                articles: "Islamic Articles",
+                videos: "Islamic Videos",
+                quizzes: "Islamic Quizzes",
+                kids: "Kids Islamic Learning",
+                hadith: "Hadith Library",
+                fiqh: "Fiqh & Rulings"
+            };
+            
+            alert(`Opening ${categoryNames[category]} section...\n\nIn the full application, this would show a curated collection of ${category} content.`);
+        }
+
+        // Function to initialize advanced features
+        function initAdvancedFeatures() {
+            featureItems.forEach(feature => {
+                feature.addEventListener('click', function() {
+                    const featureName = this.dataset.feature;
+                    showFeatureDetails(featureName);
+                });
+            });
+        }
+
+        // Function to show feature details
+        function showFeatureDetails(feature) {
+            const featureData = {
+                zakat: {
+                    title: "Zakat Calculator",
+                    description: "Calculate your Zakat obligation accurately based on your assets, savings, and liabilities.",
+                    icon: "fas fa-calculator",
+                    color: "#28a745"
+                },
+                hajj: {
+                    title: "Hajj & Umrah Guide",
+                    description: "Complete step-by-step guide for pilgrims with rituals, duas, maps, and essential information.",
+                    icon: "fas fa-kaaba",
+                    color: "#e67e22"
+                },
+                memorization: {
+                    title: "Quran Memorization Tracker",
+                    description: "Track your Quran memorization progress with revision schedules and testing tools.",
+                    icon: "fas fa-brain",
+                    color: "#9b59b6"
+                },
+                charity: {
+                    title: "Charity & Donation",
+                    description: "Support authentic Islamic causes and charities with secure donation options.",
+                    icon: "fas fa-hand-holding-heart",
+                    color: "#e74c3c"
+                },
+                halal: {
+                    title: "Halal Finder",
+                    description: "Find halal restaurants, grocery stores, and products in your area with user reviews.",
+                    icon: "fas fa-utensils",
+                    color: "#3498db"
+                },
+                matrimonial: {
+                    title: "Nikah Matrimonial",
+                    description: "Islamic marriage platform with verified profiles and Islamic guidelines.",
+                    icon: "fas fa-heart",
+                    color: "#e84393"
+                },
+                widgets: {
+                    title: "Islamic Widgets",
+                    description: "Beautiful home screen widgets with prayer times, Quran verses, and Islamic calendar.",
+                    icon: "fas fa-palette",
+                    color: "#00cec9"
+                },
+                podcasts: {
+                    title: "Islamic Podcasts",
+                    description: "Listen to Islamic talks, lectures, and discussions from renowned scholars.",
+                    icon: "fas fa-podcast",
+                    color: "#fd79a8"
+                }
+            };
+            
+            const data = featureData[feature];
+            if (!data) return;
+            
+            featureModalTitle.textContent = data.title;
+            featureModalContent.innerHTML = `
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 80px; height: 80px; background-color: ${data.color}; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 20px;">
+                        <i class="${data.icon}"></i>
+                    </div>
+                    <h3 style="color: ${data.color}; margin-bottom: 15px;">${data.title}</h3>
+                    <p style="color: var(--light-text); margin-bottom: 25px;">${data.description}</p>
+                </div>
+                
+                <div style="background-color: var(--primary-light); padding: 20px; border-radius: 8px; margin-bottom: 25px;">
+                    <h4 style="margin-bottom: 15px; color: var(--primary-color);">How it works:</h4>
+                    <ul style="padding-left: 20px; margin-bottom: 0;">
+                        <li style="margin-bottom: 8px;">Enter your information in the required fields</li>
+                        <li style="margin-bottom: 8px;">The system will calculate based on Islamic principles</li>
+                        <li style="margin-bottom: 8px;">Get accurate results with detailed breakdown</li>
+                        <li>Save or export your calculation for future reference</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn" style="background-color: ${data.color}; border-color: ${data.color};" onclick="openFeature('${feature}')">
+                        <i class="${data.icon}"></i> Open ${data.title}
+                    </button>
+                </div>
+            `;
+            
+            featureModal.classList.add('active');
+        }
+
+        // Function to open a feature (simulated)
+        window.openFeature = function(feature) {
+            showNotification(`Opening ${feature} feature...\n\nIn the full application, this would open the complete feature with full functionality.`);
+            featureModal.classList.remove('active');
+        };
+
+        // Function to initialize modals
+        function initModals() {
+            // Close modals when clicking close button
+            closeQuranModal.addEventListener('click', function() {
+                quranModal.classList.remove('active');
+            });
+            
+            closeDuaModal.addEventListener('click', function() {
+                duaModal.classList.remove('active');
+            });
+            
+            closeFeatureModal.addEventListener('click', function() {
+                featureModal.classList.remove('active');
+            });
+            
+            // Close modals when clicking outside
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.classList.remove('active');
+                }
+            });
+            
+            // Close modals with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    document.querySelectorAll('.modal').forEach(modal => {
+                        modal.classList.remove('active');
+                    });
+                }
+            });
+        }
+
+        // Function to toggle theme
+        function toggleTheme() {
+            appState.theme = appState.theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', appState.theme);
+            localStorage.setItem('islamic-unity-theme', appState.theme);
+            updateThemeIcon();
+        }
+
+        // Function to update theme icon
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            if (appState.theme === 'dark') {
+                icon.className = 'fas fa-sun';
+                themeToggle.title = "Switch to Light Mode";
+            } else {
+                icon.className = 'fas fa-moon';
+                themeToggle.title = "Switch to Dark Mode";
+            }
+        }
+
+        // Function to update current time
+        function updateCurrentTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            
+            // Update any time displays if needed
+            const timeElements = document.querySelectorAll('.time-display');
+            timeElements.forEach(el => {
+                el.textContent = `${hours}:${minutes}`;
+            });
+        }
+
+        // Function to update current date
+        function updateCurrentDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', options);
+            
+            // Update date display
+            currentDateEl.textContent = `${dateString} | 16 Sha'ban 1447`;
+        }
+
+        // Function to show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div style="position: fixed; bottom: 20px; right: 20px; background-color: var(--primary-color); color: white; padding: 15px 20px; border-radius: 8px; box-shadow: var(--shadow-lg); z-index: 1000; max-width: 300px; animation: fadeIn 0.3s ease;">
+                    <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+                    ${message}
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Simulate azan toggle
+        azanToggle.addEventListener('change', function() {
+            if (this.checked) {
+                showNotification("Azan notifications enabled. You will receive prayer time alerts.");
+            } else {
+                showNotification("Azan notifications disabled. You will not receive prayer time alerts.");
+            }
+        });
+    </script>
+</body>
+</html>

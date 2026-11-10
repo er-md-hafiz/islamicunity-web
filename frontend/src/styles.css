@@ -1,0 +1,2621 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap");
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #253c33;
+  background: #f8f9f5;
+  font-synthesis: none;
+  --bg: #f8f9f5;
+  --card: #fff;
+  --text: #253c33;
+  --muted: #89918a;
+  --line: #e8ece5;
+  --green: #27624f;
+  --pale: #edf3eb;
+  --gold: #d7ba78;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: inherit;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #b39b62;
+  outline-offset: 4px;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Manrope", sans-serif;
+}
+button {
+  border: 0;
+  background: none;
+}
+button svg,
+a svg {
+  flex-shrink: 0;
+}
+p {
+  line-height: 1.7;
+}
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 24px 0;
+}
+.app-shell {
+  min-height: 100vh;
+}
+.sidebar {
+  width: 235px;
+  background: var(--card);
+  border-inline-end: 1px solid var(--line);
+  position: fixed;
+  inset-block: 0;
+  inset-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 30;
+  padding: 34px 20px 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 9px 34px;
+  font-family: Manrope, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.16;
+}
+.brand-mark {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: #1d5340;
+  color: #e5cd94;
+  width: 42px;
+  height: 45px;
+  border-radius: 12px;
+}
+.brand-mark > svg:first-child {
+  transform: rotate(-23deg);
+}
+.brand-mark > svg:last-child {
+  position: absolute;
+  right: 6px;
+  top: 7px;
+}
+.brand-unity {
+  color: #4c8061;
+  font-weight: 500;
+}
+.brand small {
+  font-family: "DM Sans", sans-serif;
+  display: block;
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  color: #92998e;
+}
+.sidebar-nav {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e2e7df transparent;
+  flex: 1;
+  margin-inline-end: -10px;
+  padding-inline-end: 10px;
+}
+.nav-label {
+  font-size: 9px;
+  letter-spacing: 1.65px;
+  color: #9a9e93;
+  font-weight: 700;
+  padding: 13px 13px 10px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 43px;
+  width: 100%;
+  text-align: start;
+  border-radius: 7px;
+  padding: 11px 13px;
+  color: #7d867e;
+  font-size: 11.5px;
+  margin-bottom: 3px;
+  position: relative;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.nav-item span {
+  flex: 1;
+}
+.nav-item small {
+  font-size: 8px;
+  font-weight: 400;
+  display: none;
+  margin-top: 2px;
+}
+.nav-item.active {
+  background: #eaf1e9;
+  color: #2b634d;
+  font-weight: 700;
+}
+.nav-item.active:before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -20px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 2px;
+  background: #497a51;
+}
+.nav-item:hover {
+  background: var(--pale);
+  color: var(--green);
+}
+.active-dot {
+  max-width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3d775b;
+}
+.sidebar-bottom {
+  padding-top: 12px;
+}
+.faith-note {
+  position: relative;
+  background: #f6f6ee;
+  border: 1px solid #ecede1;
+  border-radius: 9px;
+  padding: 15px;
+  margin-bottom: 12px;
+}
+.faith-note > span {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 21px;
+  color: #5e6e4d;
+}
+.faith-note p {
+  font-size: 10px;
+  color: #9b9e8e;
+  margin-top: 4px;
+  line-height: 1.7;
+}
+.faith-note > svg {
+  position: absolute;
+  right: 14px;
+  top: 17px;
+  color: #beb28d;
+}
+.powered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  color: #a8ada4;
+  margin-top: 10px;
+}
+.main-shell {
+  margin-inline-start: 235px;
+}
+.topbar {
+  height: 79px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 43px;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+.topbar-title > span {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  font-size: 11px;
+  color: #92998f;
+}
+.topbar-title b {
+  font-weight: 500;
+  color: #4e5d50;
+}
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.live-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #879080;
+}
+.language-select {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: 22px;
+  color: #5f6c5e;
+}
+.language-select select {
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  color: inherit;
+  max-width: 85px;
+  cursor: pointer;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: #8a9586;
+  border-radius: 4px;
+}
+.icon-button:hover {
+  color: var(--green);
+  background: var(--pale);
+}
+.notification-button {
+  position: relative;
+}
+.notification-button i {
+  width: 4px;
+  height: 4px;
+  background: #baaa78;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  right: 4px;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  background: #e9eee2;
+  color: #65805b;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 35px 43px 0;
+}
+.welcome-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.small-overline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  letter-spacing: 1.7px;
+  color: #929d89;
+  font-weight: 600;
+}
+.small-overline > span {
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background: #8ba97b;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  margin: 8px 0 6px;
+}
+.greeting-dot {
+  color: #9ba975;
+}
+.greeting-arabic {
+  display: inline-block;
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 25px;
+  color: #a7ad95;
+  margin-inline-start: 18px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.welcome-heading > div > p {
+  font-size: 11px;
+  color: #91958a;
+}
+.location-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px 13px;
+  min-width: 167px;
+  text-align: start;
+  color: #60805e;
+}
+.location-button > span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #566650;
+  flex: 1;
+}
+.location-button small {
+  display: block;
+  font-size: 8px;
+  color: #a0a594;
+  margin-top: 4px;
+  font-weight: 400;
+}
+.page-content {
+  animation: fade-in 0.45s ease;
+}
+.prayer-hero {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #214e3e;
+  min-height: 260px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 27px 32px 25px;
+  box-shadow: 0 8px 18px #1b4e3c0a;
+}
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      30deg,
+      #d9c88a06 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #d9c88a06 87.5%
+    ),
+    linear-gradient(
+      150deg,
+      #d9c88a06 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #d9c88a06 87.5%
+    ),
+    linear-gradient(
+      30deg,
+      #d9c88a06 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #d9c88a06 87.5%
+    ),
+    linear-gradient(
+      150deg,
+      #d9c88a06 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #d9c88a06 87.5%
+    ),
+    linear-gradient(
+      60deg,
+      #d9c88a05 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #d9c88a05 75%
+    );
+  background-size: 64px 112px;
+  background-position:
+    0 0,
+    0 0,
+    32px 56px,
+    32px 56px,
+    0 0;
+  mask-image: linear-gradient(90deg, transparent, #000);
+  animation: pattern-drift 45s linear infinite;
+}
+.hero-main {
+  position: relative;
+  z-index: 1;
+}
+.hero-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #c2cdb5;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+.date-dot {
+  width: 5px;
+  height: 5px;
+  background: #d7c994;
+  border-radius: 50%;
+}
+.next-label {
+  font-size: 8px;
+  letter-spacing: 2.1px;
+  color: #b1c3aa;
+  margin-top: 24px;
+}
+.next-prayer {
+  display: flex;
+  align-items: baseline;
+  gap: 21px;
+  margin-top: 2px;
+}
+.next-prayer h2 {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+}
+.next-prayer > span {
+  font-size: 19px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: #dfdfbd;
+  letter-spacing: 0.2px;
+}
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: #a7bba6;
+  font-size: 10px;
+}
+.countdown svg {
+  opacity: 0.7;
+  width: 13px;
+}
+.countdown strong {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #e0dec2;
+  font-weight: 500;
+  margin-inline-start: 7px;
+  font-variant-numeric: tabular-nums;
+}
+.hero-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff0e;
+  border: 1px solid #ccd9af35;
+  border-radius: 6px;
+  padding: 9px 13px;
+  color: #d2ddc2;
+  font-size: 9px;
+  margin-top: 24px;
+}
+.hero-button:hover {
+  background: #ffffff20;
+}
+.hero-art {
+  position: absolute;
+  width: 410px;
+  right: 10px;
+  bottom: 10px;
+  height: 100%;
+  pointer-events: none;
+}
+.hero-art > p {
+  position: absolute;
+  top: 21px;
+  left: 122px;
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 26px;
+  color: #d3c799;
+}
+.mosque-art {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 27px;
+  filter: drop-shadow(0 8px 12px #183b2b20);
+}
+.hero-art > span {
+  position: absolute;
+  bottom: 7px;
+  left: 131px;
+  font-size: 8px;
+  letter-spacing: 0.7px;
+  color: #a5b99a;
+}
+.schedule {
+  margin-top: 27px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 17px;
+}
+.section-heading h2 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.section-heading p {
+  color: #98a08f;
+  font-size: 9px;
+  margin-top: 6px;
+}
+.dot-separator {
+  margin: 0 7px;
+  color: #b7bbaa;
+}
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #658355;
+  padding: 2px 0;
+  font-weight: 500;
+}
+.text-button:hover {
+  color: #254e3b;
+}
+.prayer-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.prayer-tile {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+  padding: 16px 16px 0;
+}
+.prayer-tile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #a9ac85;
+  min-height: 27px;
+}
+.prayer-tile-top > span {
+  font-size: 6px;
+  letter-spacing: 0.9px;
+  background: #dce8d0;
+  color: #527249;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+.prayer-tile.upcoming {
+  background: #edf3e7;
+  border-color: #a5bc8f;
+  box-shadow: 0 3px 8px #8ca17708;
+}
+.prayer-tile.upcoming .prayer-tile-top {
+  color: #51754a;
+}
+.prayer-name {
+  font-size: 10px;
+  color: #828c79;
+  margin-top: 12px;
+}
+.prayer-time {
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+.prayer-time small {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0;
+  color: #8e9786;
+  font-weight: 400;
+  margin-inline-start: 4px;
+}
+.prayer-tile-bottom {
+  border-top: 1px solid var(--line);
+  margin-top: 13px;
+  display: flex;
+  align-items: center;
+  height: 34px;
+}
+.prayer-tile-bottom button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  font-size: 8px;
+  color: #a1a792;
+}
+.prayer-tile-bottom button.bell-enabled {
+  color: #448066;
+}
+.muted {
+  font-size: 8px;
+  color: #a1a792;
+}
+.schedule-note {
+  font-size: 8px;
+  color: #a5ac99;
+  margin: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.daily-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1.07fr 1fr;
+  gap: 17px;
+}
+.card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+}
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  color: #66765d;
+}
+.eyebrow svg {
+  color: #8c9a76;
+}
+.verse-card {
+  background: #fbfbf5;
+}
+.verse-arabic {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 26px;
+  line-height: 1.8;
+  margin-top: 21px;
+  text-align: center;
+  color: #385639;
+  white-space: normal;
+}
+.verse-arabic span {
+  font-size: 20px;
+  margin-inline-start: 7px;
+  color: #acb08b;
+}
+.verse-translation {
+  text-align: center;
+  font-size: 10px;
+  color: #818b71;
+  margin: 7px 0 20px;
+}
+.verse-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #9da389;
+  font-size: 8px;
+  border-top: 1px solid #eaece1;
+  padding-top: 13px;
+}
+.round-play {
+  border: 1px solid #dfe5d2;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c9a72;
+}
+.round-play:hover {
+  background: #e6eddb;
+}
+.tiny-badge {
+  font-size: 6px;
+  letter-spacing: 0.8px;
+  color: #a0a98e;
+  border: 1px solid #e6e9dc;
+  border-radius: 4px;
+  padding: 4px 5px;
+}
+.qibla-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 29px;
+}
+.qibla-content > div:last-child {
+  flex: 1;
+}
+.bearing {
+  font-size: 27px;
+  letter-spacing: -0.7px;
+  font-weight: 500;
+  font-family: Manrope, sans-serif;
+  color: #3e5942;
+}
+.bearing > span {
+  font-size: 21px;
+  color: #97a185;
+}
+.qibla-content p {
+  font-size: 8px;
+  color: #a1a98f;
+  margin: 4px 0 11px;
+}
+.qibla-content .text-button {
+  font-size: 8px;
+}
+.compass {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  background: repeating-conic-gradient(
+    from 0deg,
+    #b8c5a3 0deg 1deg,
+    transparent 1deg 10deg
+  );
+  border: 1px solid #dce2d0;
+  box-shadow: 0 4px 8px #4c653908;
+  transform: perspective(500px) rotateX(6deg);
+}
+.compass:before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid #e6ebdb;
+}
+.compass-inner {
+  position: absolute;
+  inset: 34px;
+  border: 1px dashed #e2e7d7;
+  border-radius: 50%;
+  z-index: 1;
+}
+.compass > span {
+  position: absolute;
+  font-size: 10px;
+  color: #a5ae97;
+  z-index: 3;
+}
+.compass .north {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12px;
+  color: #4f7457;
+}
+.compass .south {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+}
+.compass .east {
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.compass .west {
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.compass-needle {
+  position: absolute;
+  inset: 28px;
+  transition: transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  z-index: 2;
+}
+.needle-top,
+.needle-bottom {
+  position: absolute;
+  left: calc(50% - 10px);
+  width: 20px;
+  height: 50%;
+  clip-path: polygon(50% 0, 100% 100%, 50% 82%, 0 100%);
+}
+.needle-top {
+  top: 0;
+  background: #588360;
+}
+.needle-bottom {
+  bottom: 0;
+  background: #dedfc7;
+  transform: rotate(180deg);
+}
+.compass-dot {
+  position: absolute;
+  inset: calc(50% - 4px);
+  background: #fff;
+  border: 2px solid #6a8c64;
+  border-radius: 50%;
+  z-index: 4;
+}
+.compass.small {
+  width: 117px;
+  height: 117px;
+}
+.small.compass > span {
+  font-size: 7px;
+}
+.small.compass .north {
+  top: 8px;
+}
+.small.compass .south {
+  bottom: 8px;
+}
+.small.compass .east {
+  right: 8px;
+}
+.small.compass .west {
+  left: 8px;
+}
+.small .compass-inner {
+  inset: 25px;
+}
+.small .compass-needle {
+  inset: 24px;
+}
+.small .needle-top,
+.small .needle-bottom {
+  width: 13px;
+  left: calc(50% - 6.5px);
+}
+.tasbih-card {
+  text-align: center;
+}
+.phrase-select {
+  background: none;
+  border: 0;
+  color: #768966;
+  font-size: 11px;
+  text-align: center;
+  display: block;
+  margin: 14px auto 12px;
+  max-width: 100%;
+  cursor: pointer;
+}
+.counter-button {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(#789763 var(--progress), #e5ebdc 0);
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  transition: transform 0.15s;
+}
+.counter-button:active {
+  transform: scale(0.93);
+}
+.counter-button > span {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--card);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding-top: 17px;
+  font-family: Manrope, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.counter-button small {
+  font-size: 10px;
+  letter-spacing: 0;
+  color: #b4bba5;
+  margin-inline-start: 4px;
+}
+.tap-hint {
+  font-size: 8px;
+  color: #a6ad98;
+  margin-top: 11px;
+}
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.63fr 1fr;
+  gap: 23px;
+  margin-top: 27px;
+}
+.explore-section .section-heading {
+  margin-bottom: 17px;
+}
+.section-flower {
+  font-size: 27px;
+  color: #b9c3a5;
+  margin-inline-end: 4px;
+}
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+}
+.explore-card {
+  text-align: start;
+  padding: 15px 13px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  position: relative;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  min-height: 140px;
+}
+.explore-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px #5064480b;
+}
+.explore-icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f0f3e9;
+  color: #8da373;
+  margin-bottom: 17px;
+}
+.explore-arrow {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  color: #c1c8b7;
+}
+.color-1 .explore-icon {
+  color: #b4a076;
+  background: #f8f4e9;
+}
+.color-2 .explore-icon {
+  color: #8f9eae;
+  background: #eff2f5;
+}
+.color-3 .explore-icon {
+  color: #ac91ab;
+  background: #f5eff4;
+}
+.explore-card h3 {
+  font-size: 10px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+}
+.explore-card p {
+  font-size: 8px;
+  color: #a7ad9b;
+  margin-top: 7px;
+  line-height: 1.6;
+}
+.calendar-card {
+  padding: 19px 20px;
+}
+.event {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  padding-top: 17px;
+}
+.event-date {
+  width: 34px;
+  border: 1px solid #e9ebdf;
+  border-radius: 5px;
+  text-align: center;
+  padding: 4px;
+  flex-shrink: 0;
+  background: #fcfcf7;
+}
+.event-date > span {
+  display: block;
+  font-size: 6px;
+  text-transform: uppercase;
+  color: #9caa8d;
+  letter-spacing: 0.5px;
+}
+.event-date strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #75866b;
+}
+.event h4 {
+  font-size: 10px;
+  font-weight: 600;
+}
+.event p {
+  font-size: 8px;
+  color: #a2ab94;
+  margin-top: 3px;
+}
+.event-away {
+  font-size: 8px;
+  color: #acb69d;
+  margin-inline-start: auto;
+}
+.helper {
+  color: #99a18d;
+  font-size: 9px;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+.calendar-card .helper {
+  font-size: 7px;
+}
+.calendar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding: 12px 0 0;
+  margin-top: 13px;
+  font-size: 8px;
+  color: #82936f;
+  width: 100%;
+}
+.subscribe-banner {
+  margin-top: 27px;
+  padding: 18px 23px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e9e8d9;
+  border-radius: 9px;
+  background: #f5f4e9;
+}
+.subscribe-icon {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e5e1c9;
+  background: #faf8ee;
+  color: #b0a476;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.subscribe-banner h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #687455;
+}
+.subscribe-banner p {
+  font-size: 9px;
+  color: #a6aa8d;
+  margin-top: 4px;
+}
+.subscribe-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 9px;
+  border: 1px solid #dfdfc9;
+  border-radius: 6px;
+  background: #fcfbf3;
+  color: #818663;
+  padding: 10px 13px;
+  margin-inline-start: auto;
+  transition: transform 0.2s;
+}
+.subscribe-button:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+.subscribe-button > svg:first-child {
+  color: #a39a74;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 0;
+  color: #afb5a5;
+  font-size: 8px;
+}
+footer > span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mobile-menu,
+.mobile-close {
+  display: none;
+}
+.page-heading {
+  margin: 25px 0;
+}
+.page-heading h2 {
+  font-size: 28px;
+  letter-spacing: -0.7px;
+}
+.page-heading p {
+  color: #909c83;
+  font-size: 12px;
+  margin-top: 9px;
+}
+.expanded {
+  max-width: 740px;
+  padding: 34px;
+  margin: 20px auto 40px;
+}
+.expanded.qibla-card {
+  max-width: 650px;
+}
+.expanded .qibla-content {
+  justify-content: center;
+  gap: 55px;
+  margin: 35px auto;
+  max-width: 400px;
+}
+.expanded .bearing {
+  font-size: 48px;
+}
+.expanded .qibla-content p {
+  font-size: 11px;
+}
+.expanded .text-button {
+  font-size: 12px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #295f49;
+  color: #fff;
+  padding: 12px 17px;
+  font-size: 11px;
+  border-radius: 7px;
+  border: 1px solid #295f49;
+}
+.button.secondary {
+  background: var(--pale);
+  color: var(--green);
+  border-color: var(--line);
+}
+.expanded .verse-arabic {
+  font-size: 42px;
+  margin-top: 35px;
+}
+.expanded .verse-translation {
+  font-size: 17px;
+}
+.transliteration {
+  text-align: center;
+  color: #869576;
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+.expanded .verse-footer {
+  font-size: 11px;
+}
+.expanded.verse-card
+  > p:not(.verse-arabic):not(.verse-translation):not(.transliteration):not(
+    .helper
+  ) {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.expanded.tasbih-card {
+  max-width: 550px;
+}
+.expanded .counter-button {
+  width: 200px;
+  height: 200px;
+  margin: 25px auto;
+}
+.expanded .counter-button > span {
+  width: 190px;
+  height: 190px;
+  padding-top: 53px;
+  font-size: 60px;
+}
+.expanded .counter-button small {
+  font-size: 19px;
+}
+.expanded .phrase-select {
+  font-size: 22px;
+  margin-top: 30px;
+}
+.expanded .tap-hint {
+  font-size: 13px;
+}
+.target-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #78876b;
+  font-size: 12px;
+  margin-top: 30px;
+}
+.target-label select {
+  padding: 6px 15px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: inherit;
+}
+.reminders-card {
+  max-width: 800px;
+  margin: 20px auto 40px;
+}
+.reminder-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 5px;
+  border-bottom: 1px solid var(--line);
+}
+.reminder-row h3 {
+  font-size: 15px;
+}
+.reminder-row p {
+  font-size: 11px;
+  color: #91a086;
+  margin-top: 4px;
+}
+.reminder-icon {
+  background: var(--pale);
+  padding: 12px;
+  border-radius: 9px;
+  color: #7a9666;
+  display: flex;
+}
+.toggle {
+  margin-inline-start: auto;
+  width: 39px;
+  height: 23px;
+  border-radius: 20px;
+  background: #dce2d5;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+.toggle > span {
+  display: block;
+  border-radius: 50%;
+  background: white;
+  width: 17px;
+  height: 17px;
+  box-shadow: 0 1px 3px #0002;
+  transition: transform 0.2s;
+}
+.toggle.on {
+  background: #558360;
+}
+.toggle.on > span {
+  transform: translateX(16px);
+}
+.reminders-card > .button {
+  margin-top: 20px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 8px;
+  margin: 25px 0;
+}
+.calendar-grid span,
+.calendar-grid b {
+  padding: 12px 5px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+.calendar-grid b {
+  font-size: 10px;
+  color: #81946e;
+}
+.calendar-today {
+  background: #285c46 !important;
+  color: white;
+}
+.calendar-event {
+  background: #f3edda;
+  box-shadow: inset 0 -3px #d5b86e;
+}
+.month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+}
+.expanded.calendar-card .event h4 {
+  font-size: 13px;
+}
+.expanded.calendar-card .event p,
+.expanded.calendar-card .event-away {
+  font-size: 10px;
+}
+.expanded.calendar-card .event-date {
+  width: 45px;
+}
+.expanded.calendar-card .helper {
+  font-size: 10px;
+}
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  min-height: 300px;
+}
+.resource-card {
+  padding: 30px;
+}
+.resource-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--pale);
+  color: #729369;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  margin-bottom: 25px;
+}
+.resource-card h2 {
+  font-size: 19px;
+}
+.resource-card p {
+  font-size: 13px;
+  color: #8c9a80;
+  margin: 15px 0 25px;
+}
+.resource-card .text-button {
+  font-size: 12px;
+}
+.tool-card {
+  max-width: 700px;
+  margin: 30px auto 50px;
+  padding: 35px;
+}
+.tool-card h2 {
+  font-size: 23px;
+  margin: 20px 0;
+}
+.tool-card > p {
+  font-size: 12px;
+  color: #8c9a80;
+}
+.tool-card label,
+.settings-modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  color: #7b8c6e;
+  margin: 24px 0;
+}
+.tool-card input,
+.tool-card select,
+.settings-modal select {
+  border: 1px solid var(--line);
+  padding: 13px;
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+}
+.calculation-result {
+  padding: 25px;
+  background: var(--pale);
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.calculation-result > span {
+  font-size: 12px;
+  color: #8a9b7a;
+}
+.calculation-result strong {
+  font-size: 30px;
+  color: var(--green);
+}
+.currency-selects {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.currency-selects label {
+  flex: 1;
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 25px 0;
+}
+.quiz-option {
+  padding: 17px 20px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.quiz-option.correct {
+  background: #edf5e6;
+  border-color: #a2bf84;
+  color: #416733;
+  opacity: 1;
+}
+.quiz-option.incorrect {
+  background: #fcf0eb;
+  border-color: #deaa94;
+  opacity: 1;
+}
+.tool-card > .button {
+  margin-top: 20px;
+}
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #244e3e;
+  color: #fff;
+  padding: 16px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: min(90vw, 580px);
+  width: max-content;
+  z-index: 100;
+  border-radius: 9px;
+  box-shadow: 0 6px 40px #143d392b;
+  animation: fade-in 0.3s;
+}
+.toast > span {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.toast > svg {
+  flex-shrink: 0;
+  color: #c3d1a3;
+}
+.toast button {
+  color: #b9c9af;
+  display: flex;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #14382c70;
+  backdrop-filter: blur(4px);
+  padding: 20px;
+}
+.settings-modal {
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  box-shadow: 0 20px 50px #0002;
+}
+.settings-modal h2 {
+  font-size: 22px;
+}
+.settings-modal .reminder-row {
+  margin-top: 25px;
+  font-size: 13px;
+}
+.loading {
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #8da07f;
+  font-size: 12px;
+}
+.error-box {
+  padding: 24px;
+  border: 1px solid #e0ccb3;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #9a7753;
+}
+.error-box button {
+  margin-top: 15px;
+}
+.spin {
+  animation: spin 1.5s linear infinite;
+}
+.sidebar-overlay {
+  display: none;
+}
+[dir="rtl"] .hero-art {
+  right: auto;
+  left: 10px;
+}
+[dir="rtl"] .hero-main {
+  max-width: 58%;
+}
+[dir="rtl"] .greeting-arabic {
+  display: none;
+}
+[dir="rtl"] .toggle.on > span {
+  transform: translateX(-16px);
+}
+[data-theme="dark"] {
+  --bg: #17231d;
+  --card: #202e25;
+  --text: #d7e1cf;
+  --muted: #9ba68e;
+  --line: #344336;
+  --green: #a3c28b;
+  --pale: #2b3f2c;
+}
+[data-theme="dark"] .topbar-title b,
+[data-theme="dark"] .bearing,
+[data-theme="dark"] .verse-arabic {
+  color: #c9d7b5;
+}
+[data-theme="dark"] .faith-note,
+[data-theme="dark"] .verse-card,
+[data-theme="dark"] .subscribe-banner,
+[data-theme="dark"] .prayer-tile.upcoming {
+  background: #283629;
+  border-color: #42513a;
+}
+[data-theme="dark"] .event-date,
+[data-theme="dark"] .subscribe-button {
+  background: #33412e;
+  border-color: #4c593e;
+}
+[data-theme="dark"] .nav-item.active {
+  background: #334a34;
+  color: #bad1a1;
+}
+[data-theme="dark"] .explore-icon {
+  background: #34412f;
+}
+[data-theme="dark"] .location-button > span {
+  color: #a5b692;
+}
+[data-theme="dark"] .compass:before {
+  background: var(--card);
+  border-color: var(--line);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pattern-drift {
+  to {
+    background-position:
+      64px 112px,
+      64px 112px,
+      96px 168px,
+      96px 168px,
+      64px 112px;
+  }
+}
+@media (min-width: 1500px) {
+  main {
+    padding-top: 42px;
+  }
+  .welcome-heading {
+    margin-bottom: 35px;
+  }
+  .prayer-hero {
+    min-height: 290px;
+    padding: 33px 38px;
+  }
+  .hero-art {
+    width: 460px;
+  }
+  .hero-art > p {
+    left: 145px;
+  }
+  .next-prayer h2 {
+    font-size: 47px;
+  }
+  .hero-art > span {
+    left: 155px;
+  }
+  .prayer-grid {
+    gap: 16px;
+  }
+  .prayer-tile {
+    padding: 20px 20px 0;
+  }
+  .prayer-tile-bottom {
+    height: 40px;
+  }
+  .prayer-time {
+    font-size: 25px;
+  }
+  .daily-grid {
+    margin-top: 24px;
+  }
+  .card {
+    padding: 23px;
+  }
+  .verse-arabic {
+    font-size: 29px;
+  }
+  .qibla-content {
+    margin-top: 35px;
+  }
+  .bottom-grid {
+    margin-top: 32px;
+  }
+  .explore-card {
+    min-height: 157px;
+  }
+  .subscribe-banner {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 210px;
+    padding-inline: 15px;
+  }
+  .main-shell {
+    margin-inline-start: 210px;
+  }
+  .topbar {
+    padding-inline: 28px;
+  }
+  main {
+    padding-inline: 28px;
+  }
+  .prayer-tile {
+    padding-inline: 11px;
+  }
+  .prayer-time {
+    font-size: 19px;
+  }
+  .prayer-grid {
+    gap: 8px;
+  }
+  .hero-art {
+    width: 355px;
+    right: 0;
+  }
+  .hero-art > p {
+    left: 100px;
+  }
+  .hero-art > span {
+    left: 98px;
+    bottom: 16px;
+  }
+  .next-prayer {
+    gap: 12px;
+  }
+  .next-prayer h2 {
+    font-size: 36px;
+  }
+  .next-prayer > span {
+    font-size: 17px;
+  }
+  .hero-main {
+    max-width: 58%;
+  }
+  .daily-grid {
+    gap: 12px;
+    grid-template-columns: 1.3fr 1.1fr 1fr;
+  }
+  .card {
+    padding: 15px;
+  }
+  .eyebrow {
+    font-size: 9px;
+    gap: 6px;
+  }
+  .tiny-badge {
+    display: none;
+  }
+  .compass.small {
+    width: 95px;
+    height: 95px;
+  }
+  .qibla-content {
+    gap: 8px;
+  }
+  .bearing {
+    font-size: 24px;
+  }
+  .verse-arabic {
+    font-size: 23px;
+  }
+  .verse-translation {
+    font-size: 9px;
+  }
+  .bottom-grid {
+    gap: 15px;
+  }
+  .explore-grid {
+    gap: 8px;
+  }
+  .explore-card {
+    padding: 13px 10px;
+  }
+  .explore-card h3 {
+    font-size: 9px;
+  }
+  .explore-card p {
+    font-size: 7px;
+  }
+  .topbar-actions {
+    gap: 17px;
+  }
+}
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 185px;
+    padding-inline: 12px;
+  }
+  .brand {
+    font-size: 19px;
+    gap: 7px;
+    padding-inline: 5px;
+  }
+  .brand-mark {
+    width: 36px;
+    height: 39px;
+  }
+  .nav-item {
+    font-size: 10px;
+    gap: 9px;
+    padding-inline: 10px;
+  }
+  .nav-item svg {
+    width: 17px;
+  }
+  .nav-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .main-shell {
+    margin-inline-start: 185px;
+  }
+  main {
+    padding-inline: 23px;
+  }
+  .topbar {
+    padding-inline: 23px;
+  }
+  .greeting-arabic {
+    display: none;
+  }
+  .hero-art {
+    width: 300px;
+    right: -25px;
+  }
+  .hero-art > p {
+    left: 85px;
+    top: 40px;
+    font-size: 23px;
+  }
+  .hero-art > span {
+    display: none;
+  }
+  .prayer-hero {
+    padding: 25px;
+  }
+  .next-prayer {
+    display: block;
+  }
+  .next-prayer h2 {
+    font-size: 35px;
+    display: inline-block;
+    margin-inline-end: 10px;
+  }
+  .next-prayer > span {
+    font-size: 15px;
+  }
+  .hero-date {
+    font-size: 8px;
+  }
+  .live-date {
+    display: none;
+  }
+  .daily-grid {
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .tasbih-card:not(.expanded) {
+    grid-column: auto;
+  }
+  .daily-grid .qibla-card {
+    grid-row: span 2;
+  }
+  .daily-grid .qibla-content {
+    flex-direction: column;
+    margin-top: 35px;
+    text-align: center;
+  }
+  .daily-grid .qibla-content .compass {
+    width: 150px;
+    height: 150px;
+  }
+  .daily-grid .qibla-content > div:last-child {
+    margin-top: 25px;
+  }
+  .daily-grid .bearing {
+    font-size: 35px;
+  }
+  .daily-grid .qibla-content p {
+    font-size: 10px;
+  }
+  .daily-grid .qibla-content .text-button {
+    font-size: 11px;
+  }
+  .daily-grid .tasbih-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .daily-grid .tasbih-card .card-heading {
+    grid-column: 1/-1;
+  }
+  .daily-grid .tasbih-card .phrase-select {
+    grid-row: 2;
+    align-self: center;
+  }
+  .daily-grid .tasbih-card .counter-button {
+    grid-column: 2;
+    grid-row: 2/4;
+    margin-top: 13px;
+  }
+  .daily-grid .tasbih-card .tap-hint {
+    grid-row: 3;
+    grid-column: 1;
+    margin-top: 0;
+  }
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  .explore-card {
+    min-height: 140px;
+    padding: 18px;
+  }
+  .explore-card h3 {
+    font-size: 11px;
+  }
+  .explore-card p {
+    font-size: 9px;
+  }
+  .bottom-grid .calendar-card .event {
+    display: inline-flex;
+    width: 48%;
+    vertical-align: top;
+  }
+  .calendar-card .tiny-badge {
+    display: inline;
+  }
+  .prayer-tile {
+    padding-inline: 9px;
+  }
+  .prayer-time {
+    font-size: 17px;
+  }
+  .prayer-time small {
+    font-size: 6px;
+  }
+  .prayer-tile-bottom button {
+    font-size: 7px;
+  }
+  .prayer-tile-top > span {
+    display: none;
+  }
+  .subscribe-banner {
+    padding-inline: 16px;
+    gap: 10px;
+  }
+  .subscribe-banner h3 {
+    font-size: 11px;
+  }
+  .subscribe-banner p {
+    font-size: 8px;
+  }
+  .subscribe-icon {
+    display: none;
+  }
+  .subscribe-button {
+    padding: 9px;
+    font-size: 8px;
+  }
+  .welcome-heading h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 760px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s;
+    width: 245px;
+    padding: 28px 20px 15px;
+  }
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+  [dir="rtl"] .sidebar {
+    transform: translateX(100%);
+  }
+  [dir="rtl"] .sidebar.is-open {
+    transform: translateX(0);
+  }
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #183f2c55;
+    backdrop-filter: blur(2px);
+    z-index: 29;
+  }
+  .mobile-close {
+    display: flex;
+    position: absolute;
+    right: 14px;
+    top: 35px;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+  .main-shell {
+    margin-inline-start: 0;
+  }
+  .topbar {
+    height: 65px;
+    padding: 0 20px;
+  }
+  .topbar-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .topbar-title > span {
+    font-size: 10px;
+    gap: 9px;
+  }
+  .topbar-title > span > b {
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .topbar-actions {
+    gap: 13px;
+  }
+  .language-select {
+    border: 0;
+    padding: 0;
+    gap: 4px;
+  }
+  .language-select select {
+    font-size: 10px;
+    max-width: 70px;
+  }
+  .notification-button {
+    display: none;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+  }
+  main {
+    padding: 26px 20px 0;
+  }
+  .welcome-heading {
+    margin-bottom: 23px;
+    gap: 15px;
+  }
+  .small-overline {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-size: 27px !important;
+  }
+  .welcome-heading > div > p {
+    font-size: 10px;
+  }
+  .location-button {
+    min-width: 0;
+    padding: 10px;
+    gap: 6px;
+  }
+  .location-button > span {
+    font-size: 9px;
+  }
+  .location-button > svg:last-child {
+    display: none;
+  }
+  .location-button small {
+    font-size: 7px;
+  }
+  .hero-art {
+    right: 0;
+    width: 320px;
+  }
+  .hero-art > p {
+    top: 33px;
+    left: 90px;
+  }
+  .prayer-hero {
+    min-height: 255px;
+  }
+  .hero-main {
+    max-width: 60%;
+  }
+  .hero-date {
+    font-size: 8px;
+  }
+  .next-label {
+    font-size: 7px;
+  }
+  .next-prayer h2 {
+    font-size: 38px;
+  }
+  .prayer-grid {
+    gap: 9px;
+  }
+  .prayer-tile {
+    padding: 13px 12px 0;
+  }
+  .prayer-time {
+    font-size: 20px;
+  }
+  .prayer-name {
+    font-size: 10px;
+  }
+  .prayer-time small {
+    font-size: 7px;
+  }
+  .prayer-tile-bottom button {
+    font-size: 8px;
+  }
+  .schedule-note {
+    font-size: 7px;
+  }
+  .nav-item {
+    font-size: 12px;
+    min-height: 44px;
+  }
+  .nav-item svg {
+    width: 20px;
+  }
+  .nav-label {
+    font-size: 9px;
+  }
+  .brand {
+    font-size: 22px;
+    padding-bottom: 30px;
+  }
+  .brand-mark {
+    width: 42px;
+    height: 45px;
+  }
+  .nav-item small {
+    display: block;
+  }
+  .faith-note {
+    display: none;
+  }
+  .sidebar-bottom {
+    border-top: 1px solid var(--line);
+  }
+  .section-heading h2 {
+    font-size: 15px;
+  }
+  .verse-card {
+    padding: 20px;
+  }
+  .card-heading .eyebrow {
+    font-size: 10px;
+  }
+  .daily-grid .tasbih-card {
+    padding: 20px;
+  }
+  .verse-arabic {
+    font-size: 25px;
+  }
+  .verse-translation {
+    font-size: 10px;
+  }
+  .subscribe-banner {
+    margin-top: 25px;
+  }
+  .subscribe-banner h3 {
+    font-size: 12px;
+  }
+  .subscribe-banner p {
+    font-size: 8px;
+  }
+  footer {
+    font-size: 7px;
+  }
+  .expanded {
+    padding: 24px;
+  }
+  .expanded .qibla-content {
+    gap: 30px;
+  }
+  .expanded.qibla-card {
+    padding: 30px;
+  }
+  .resource-card {
+    padding: 25px;
+  }
+  .resource-card h2 {
+    font-size: 17px;
+  }
+  .resource-card p {
+    font-size: 12px;
+  }
+  .settings-modal {
+    padding: 25px;
+  }
+}
+@media (max-width: 560px) {
+  main {
+    padding: 22px 16px 0;
+  }
+  .topbar {
+    padding-inline: 16px;
+  }
+  .topbar-title > span {
+    display: none;
+  }
+  .topbar-actions {
+    gap: 15px;
+  }
+  .welcome-heading {
+    display: block;
+  }
+  .welcome-heading h1 {
+    font-size: 29px !important;
+    margin-top: 9px;
+  }
+  .welcome-heading > div > p {
+    font-size: 11px;
+  }
+  .location-button {
+    margin-top: 17px;
+    display: inline-flex;
+    padding: 7px 10px;
+    gap: 6px;
+  }
+  .location-button > span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+  }
+  .location-button small {
+    margin: 0;
+    font-size: 8px;
+    padding-inline-start: 9px;
+    border-inline-start: 1px solid var(--line);
+  }
+  .location-button > svg {
+    width: 13px;
+  }
+  .prayer-hero {
+    min-height: 256px;
+    padding: 23px 22px;
+  }
+  .hero-main {
+    max-width: 100%;
+  }
+  .hero-art {
+    width: 260px;
+    right: -70px;
+    bottom: 2px;
+    opacity: 0.6;
+  }
+  .hero-art > p {
+    top: 41px;
+    left: 90px;
+    font-size: 20px;
+  }
+  .hero-date {
+    font-size: 8px;
+  }
+  .next-label {
+    margin-top: 24px;
+  }
+  .next-prayer {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .next-prayer h2 {
+    font-size: 38px;
+  }
+  .next-prayer > span {
+    font-size: 16px;
+  }
+  .countdown {
+    font-size: 9px;
+    margin-top: 8px;
+  }
+  .countdown strong {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .hero-button {
+    margin-top: 21px;
+    font-size: 8px;
+  }
+  .section-heading {
+    gap: 10px;
+  }
+  .section-heading h2 {
+    font-size: 14px;
+  }
+  .section-heading p {
+    font-size: 8px;
+  }
+  .section-heading .text-button {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+  .prayer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .prayer-tile {
+    padding: 14px 14px 0;
+  }
+  .prayer-tile-top > span {
+    display: inline;
+  }
+  .prayer-time {
+    font-size: 23px;
+  }
+  .prayer-time small {
+    font-size: 8px;
+  }
+  .prayer-name {
+    font-size: 11px;
+    margin-top: 8px;
+  }
+  .prayer-tile-bottom {
+    height: 32px;
+  }
+  .prayer-tile-bottom button {
+    font-size: 8px;
+  }
+  .schedule-note {
+    align-items: flex-start;
+    font-size: 7px;
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+  .schedule-note svg {
+    flex-shrink: 0;
+  }
+  .daily-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .daily-grid .verse-card {
+    grid-column: 1/-1;
+    padding: 19px 23px;
+  }
+  .verse-arabic {
+    font-size: 30px;
+    margin-top: 18px;
+  }
+  .verse-translation {
+    font-size: 12px;
+  }
+  .verse-footer {
+    font-size: 9px;
+  }
+  .daily-grid .qibla-card {
+    grid-row: auto;
+    padding: 17px;
+  }
+  .daily-grid .qibla-content {
+    margin-top: 24px;
+  }
+  .daily-grid .qibla-content .compass {
+    width: 100px;
+    height: 100px;
+  }
+  .daily-grid .qibla-content > div:last-child {
+    margin-top: 9px;
+  }
+  .daily-grid .bearing {
+    font-size: 26px;
+  }
+  .daily-grid .qibla-content p {
+    font-size: 8px;
+    margin-bottom: 8px;
+  }
+  .daily-grid .qibla-content .text-button {
+    font-size: 9px;
+  }
+  .daily-grid .tasbih-card {
+    display: block;
+    padding: 17px;
+  }
+  .daily-grid .tasbih-card .card-heading {
+    gap: 4px;
+  }
+  .daily-grid .tasbih-card .eyebrow {
+    font-size: 9px;
+    gap: 5px;
+    white-space: nowrap;
+  }
+  .daily-grid .tasbih-card .eyebrow svg {
+    width: 14px;
+  }
+  .daily-grid .tasbih-card .phrase-select {
+    font-size: 12px;
+    margin: 25px auto 20px;
+  }
+  .daily-grid .tasbih-card .counter-button {
+    width: 96px;
+    height: 96px;
+  }
+  .daily-grid .tasbih-card .counter-button > span {
+    width: 88px;
+    height: 88px;
+    padding-top: 23px;
+  }
+  .daily-grid .tasbih-card .tap-hint {
+    margin-top: 16px;
+    font-size: 9px;
+  }
+  .bottom-grid {
+    margin-top: 25px;
+  }
+  .explore-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .explore-card {
+    padding: 19px;
+    min-height: 145px;
+  }
+  .explore-card h3 {
+    font-size: 12px;
+  }
+  .explore-card p {
+    font-size: 9px;
+  }
+  .explore-icon {
+    margin-bottom: 16px;
+  }
+  .calendar-card {
+    padding: 20px;
+  }
+  .bottom-grid .calendar-card .event {
+    display: flex;
+    width: 100%;
+    padding-top: 20px;
+  }
+  .event h4 {
+    font-size: 12px;
+  }
+  .event p {
+    font-size: 10px;
+  }
+  .event-date {
+    width: 39px;
+  }
+  .event-date span {
+    font-size: 7px;
+  }
+  .event-date strong {
+    font-size: 18px;
+  }
+  .calendar-card .helper {
+    font-size: 8px;
+  }
+  .calendar-link {
+    font-size: 10px;
+  }
+  .subscribe-banner {
+    padding: 20px;
+    display: block;
+    position: relative;
+  }
+  .subscribe-banner h3 {
+    font-size: 14px;
+  }
+  .subscribe-banner p {
+    font-size: 10px;
+    margin-top: 6px;
+    max-width: 85%;
+  }
+  .subscribe-button {
+    margin-top: 15px;
+    font-size: 10px;
+    padding: 10px;
+    width: max-content;
+  }
+  .subscribe-icon {
+    display: grid;
+    position: absolute;
+    right: 18px;
+    top: 20px;
+    width: 29px;
+    height: 29px;
+  }
+  .subscribe-icon svg {
+    width: 17px;
+  }
+  footer {
+    padding: 22px 0;
+    display: block;
+    font-size: 8px;
+  }
+  footer > span:last-child {
+    margin-top: 8px;
+  }
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  .resource-card {
+    padding: 25px;
+  }
+  .tool-card {
+    padding: 22px;
+  }
+  .page-heading {
+    margin-top: 28px;
+  }
+  .page-heading h2 {
+    font-size: 25px;
+  }
+  .page-heading p {
+    font-size: 11px;
+  }
+  .expanded {
+    padding: 22px;
+    margin-top: 15px;
+  }
+  .expanded .verse-arabic {
+    font-size: 30px;
+  }
+  .expanded .verse-translation {
+    font-size: 15px;
+  }
+  .expanded.qibla-card {
+    padding: 22px;
+  }
+  .expanded .qibla-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  .expanded .qibla-content p {
+    font-size: 11px;
+  }
+  .expanded .qibla-content > div:last-child {
+    flex: auto;
+  }
+  .expanded .compass {
+    width: 220px;
+    height: 220px;
+  }
+  .expanded.calendar-card h2 {
+    font-size: 19px;
+  }
+  .calendar-grid {
+    gap: 4px;
+  }
+  .calendar-grid span {
+    padding: 11px 3px;
+    font-size: 11px;
+  }
+  .toast {
+    bottom: 15px;
+    padding: 13px;
+    gap: 9px;
+  }
+  .toast > span {
+    font-size: 11px;
+  }
+  .settings-modal .button {
+    font-size: 10px;
+  }
+  [dir="rtl"] .hero-art {
+    left: -70px;
+    right: auto;
+  }
+  [dir="rtl"] .hero-main {
+    max-width: 100%;
+  }
+  .currency-selects {
+    gap: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

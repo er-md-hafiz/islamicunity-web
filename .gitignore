@@ -1,0 +1,16 @@
+node_modules/
+frontend/dist/
+.env
+*.log
+test-results/
+playwright-report/
+.tools/
+.gradle/
+.idea/
+**/build/
+local.properties
+kotlin-js-store/
+.env.*
+!.env.example
+*.jks
+*.keystore
