@@ -4,6 +4,13 @@ import { verse, content } from "../../backend/content.js";
 const menu = JSON.parse(
   await readFile(new URL("../../backend/menu.json", import.meta.url), "utf8"),
 );
+const androidMenu = JSON.parse(
+  await readFile(new URL("../public/menu.json", import.meta.url), "utf8"),
+);
+if (JSON.stringify(androidMenu) !== JSON.stringify(menu))
+  throw new Error(
+    "Android root menu and REST menu differ. Update both together.",
+  );
 const directory = new URL("../public/data/", import.meta.url);
 await mkdir(new URL("features/", directory), { recursive: true });
 const write = (path, data) =>

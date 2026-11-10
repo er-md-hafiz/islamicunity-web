@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Umrah Guide — Your Sacred Journey</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;700&family=Noto+Sans+Devanagari:wght@300;400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ----- CSS Variables (Light) ----- */
+        :root {
+            --bg: #F8F5F0;
+            --surface: #FFFFFF;
+            --surface-2: #F0EBE3;
+            --primary: #0F6B4F;
+            --primary-dark: #084C3A;
+            --primary-light: #E8F5F0;
+            --gold: #C9A227;
+            --gold-soft: rgba(201, 162, 39, 0.12);
+            --gold-light: rgba(201, 162, 39, 0.06);
+            --navy: #102A43;
+            --text: #1A2420;
+            --text-light: #5A6B63;
+            --muted: #7A8A82;
+            --border: #E0D8CC;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.08);
+            --radius: 20px;
+            --radius-sm: 12px;
+            --font-en: 'Poppins', sans-serif;
+            --font-hi: 'Noto Sans Devanagari', sans-serif;
+            --font-ur: 'Noto Nastaliq Urdu', serif;
+            --font-ar: 'Noto Naskh Arabic', serif;
+            --transition: 0.3s cubic-bezier(0.2, 0, 0, 1);
+        }
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --bg: #0A1612;
+            --surface: #132621;
+            --surface-2: #1D332C;
+            --primary: #3DAF84;
+            --primary-dark: #1A7A5A;
+            --primary-light: #1A2F28;
+            --gold: #D6B548;
+            --gold-soft: rgba(214, 181, 72, 0.12);
+            --gold-light: rgba(214, 181, 72, 0.06);
+            --navy: #DDEAE4;
+            --text: #EDF2EF;
+            --text-light: #B8C9C1;
+            --muted: #95A89F;
+            --border: #2D443A;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+        /* ----- reset & base ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-en);
+            line-height: 1.7;
+            transition: background var(--transition), color var(--transition);
+            padding: 16px;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            padding: 28px 24px;
+            box-shadow: 0 20px 40px -12px rgba(0, 40, 20, 0.2);
+            border: 1px solid rgba(46, 125, 90, 0.15);
+            transition: background var(--transition), border var(--transition);
+        }
+        [data-theme="dark"] .container {
+            background: #162A24;
+            border-color: #2D4B3E;
+            box-shadow: 0 20px 30px -8px #0B1A14;
+        }
+        /* ----- top bar ----- */
+        .top-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            gap: 15px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo-icon {
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            box-shadow: 0 6px 16px rgba(15, 107, 79, 0.3);
+            transition: 0.3s;
+        }
+        .logo-icon:hover {
+            transform: scale(1.05) rotate(-3deg);
+        }
+        .logo-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        [data-theme="dark"] .logo-text h1 {
+            color: #7FDFB5;
+        }
+        .logo-text p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .controls {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .lang-selector {
+            background: var(--surface);
+            border-radius: 40px;
+            padding: 8px 20px;
+            border: 1px solid var(--border);
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text);
+            box-shadow: var(--shadow);
+            transition: background var(--transition), color var(--transition);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        .lang-selector:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .theme-toggle {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gold);
+            box-shadow: var(--shadow);
+            transition: background var(--transition), color var(--transition);
+        }
+        .theme-toggle:hover {
+            transform: scale(0.95);
+        }
+        /* ----- hero ----- */
+        .hero {
+            background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+            border-radius: 28px;
+            padding: 48px 32px;
+            text-align: center;
+            color: white;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(201, 162, 39, 0.10) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero * {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-icon {
+            font-size: 4.5rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .hero .arabic-hero {
+            font-family: var(--font-ar);
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 6px 0;
+            direction: rtl;
+        }
+        .hero p {
+            opacity: 0.9;
+            max-width: 620px;
+            margin: 12px auto 0;
+            font-size: 1.1rem;
+        }
+        /* ----- section titles ----- */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 44px 0 22px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+            color: var(--text);
+            letter-spacing: -0.3px;
+        }
+        .section-title i {
+            color: var(--gold);
+            margin-right: 12px;
+        }
+        /* ----- cards ----- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin: 20px 0;
+        }
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: background var(--transition), box-shadow var(--transition), transform 0.2s;
+            color: var(--text);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .card h3 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        /* step cards */
+        .step-card {
+            border-left: 6px solid var(--gold);
+            padding-left: 20px;
+        }
+        [data-theme="dark"] .step-card {
+            border-left-color: var(--gold);
+        }
+        html[dir="rtl"] .step-card {
+            border-left: none;
+            border-right: 6px solid var(--gold);
+            padding-left: 0;
+            padding-right: 20px;
+        }
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold);
+            color: #0B1714;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            min-width: 32px;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 8px 0 0;
+        }
+        .step-card ul li {
+            padding: 3px 0;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        .step-card ul li::before {
+            content: "• ";
+            color: var(--gold);
+            font-weight: 700;
+        }
+        /* arabic text */
+        .arabic {
+            font-family: var(--font-ar);
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+            text-align: right;
+            direction: rtl;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        [data-theme="dark"] .arabic {
+            color: var(--gold);
+        }
+        .transliteration {
+            font-style: italic;
+            color: var(--muted);
+            margin: 4px 0 8px;
+            font-size: 0.95rem;
+        }
+        /* Talbiyah special */
+        .talbiyah-box {
+            background: var(--gold-light);
+            border: 1px solid var(--gold-soft);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin: 16px 0;
+            text-align: center;
+        }
+        .talbiyah-box .arabic {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        /* checklist */
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 18px;
+            background: var(--surface);
+            border-radius: 40px;
+            margin-bottom: 10px;
+            box-shadow: var(--shadow);
+            transition: 0.15s;
+            border: 1px solid transparent;
+        }
+        .checklist-item:hover {
+            border-color: var(--gold-soft);
+        }
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--gold);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .checklist-item label {
+            flex: 1;
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+        .checklist-item.done label {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        /* progress */
+        .progress-bar {
+            background: var(--border);
+            border-radius: 40px;
+            height: 6px;
+            width: 100%;
+            margin: 6px 0 10px;
+            overflow: hidden;
+        }
+        .progress-bar .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--gold), var(--primary));
+            border-radius: 40px;
+            transition: width 0.4s ease;
+        }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        /* search */
+        .search-wrap {
+            margin: 18px 0 12px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 14px 22px;
+            border-radius: 60px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.95rem;
+            box-shadow: var(--shadow);
+            transition: 0.2s;
+        }
+        .search-input::placeholder {
+            color: var(--muted);
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px var(--gold-soft);
+        }
+        /* pill navigation */
+        .pill-nav {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 16px 0 14px;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+        .pill-nav::-webkit-scrollbar {
+            height: 3px;
+            background: transparent;
+        }
+        .pill-nav::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+        .pill {
+            flex: 0 0 auto;
+            padding: 8px 20px;
+            border-radius: 40px;
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.82rem;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            scroll-snap-align: start;
+            white-space: nowrap;
+        }
+        .pill:hover {
+            transform: scale(0.96);
+            background: var(--surface-2);
+        }
+        .pill.active {
+            background: var(--gold);
+            color: #0B1714;
+            border-color: var(--gold);
+        }
+        /* timeline */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 20px 0 10px;
+        }
+        .timeline-item {
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+            padding: 18px 14px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            box-shadow: var(--shadow);
+        }
+        .timeline-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+        .timeline-item .num {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .timeline-item .label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        .timeline-item .sub {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        /* dua cards */
+        .dua-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 22px 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+        .dua-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+        .dua-card .arabic {
+            font-size: 1.6rem;
+            margin-bottom: 4px;
+        }
+        .action-btn {
+            background: transparent;
+            border: 1px solid var(--gold-soft);
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            color: var(--text);
+            transition: background 0.15s, color 0.15s;
+        }
+        .action-btn:hover {
+            background: var(--gold-soft);
+        }
+        /* FAQ */
+        .faq-item {
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            transition: border 0.2s;
+            cursor: pointer;
+        }
+        .faq-item:hover {
+            border-color: var(--gold);
+        }
+        .faq-item .q {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item .q i {
+            color: var(--gold);
+            transition: transform 0.3s;
+        }
+        .faq-item .a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            color: var(--text-light);
+            padding-top: 0;
+        }
+        .faq-item.open .a {
+            max-height: 200px;
+            padding-top: 12px;
+        }
+        .faq-item.open .q i {
+            transform: rotate(180deg);
+        }
+        /* footer */
+        .footer-note {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        /* reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        /* responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 16px 14px;
+            }
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            .hero {
+                padding: 32px 18px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .hero .arabic-hero {
+                font-size: 1.3rem;
+            }
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 400px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+            .controls {
+                gap: 10px;
+            }
+            .lang-selector {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
+            .theme-toggle {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+        }
+        /* utility */
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .gap-8 {
+            gap: 8px;
+        }
+        .gap-12 {
+            gap: 12px;
+        }
+        .wrap {
+            flex-wrap: wrap;
+        }
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
+        }
+        .icon-gold {
+            color: var(--gold);
+        }
+        .text-muted {
+            color: var(--muted);
+        }
+        .text-primary {
+            color: var(--primary);
+        }
+        /* restriction list */
+        .restriction-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .restriction-item {
+            background: var(--surface-2);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        .restriction-item i {
+            color: var(--gold);
+            width: 20px;
+            text-align: center;
+        }
+        /* round counter */
+        .round-counter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            margin: 10px 0;
+        }
+        .round-item {
+            background: var(--surface);
+            border-radius: var(--radius-sm);
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            transition: border 0.2s;
+        }
+        .round-item .r-num {
+            font-weight: 800;
+            color: var(--gold);
+            font-size: 1.2rem;
+            display: block;
+        }
+        .round-item .r-label {
+            color: var(--text-light);
+            font-size: 0.7rem;
+        }
+        .highlight-box {
+            background: var(--gold-light);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            border-left: 4px solid var(--gold);
+            margin: 12px 0;
+        }
+        html[dir="rtl"] .highlight-box {
+            border-left: none;
+            border-right: 4px solid var(--gold);
+        }
+        /* dua grid inside cards */
+        .dua-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+        @media (min-width: 768px) {
+            .dua-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        /* copy/share toast */
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 999;
+        }
+        .toast-msg.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fas fa-kaaba"></i></div>
+                <div class="logo-text">
+                    <h1 id="appTitle">Umrah Guide</h1>
+                    <p id="appSub">Your Sacred Journey</p>
+                </div>
+            </div>
+            <div class="controls">
+                <select id="languageSwitcher" class="lang-selector" aria-label="Switch language">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="hi">🇮🇳 हिन्दी</option>
+                    <option value="ur">🇵🇰 اُردو</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+                <button class="theme-toggle" id="darkmodeToggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <span class="hero-icon"><i class="fas fa-kaaba"></i></span>
+            <h1 id="heroTitle">Umrah Guide</h1>
+            <div class="arabic-hero" id="heroSub">دليل العمرة</div>
+            <p id="heroDesc">"Indeed, the first House established for mankind was that at Makkah – blessed and a guidance for the worlds."</p>
+        </section>
+
+        <!-- WHAT IS UMRAH -->
+        <section class="reveal">
+            <h2 class="section-title" id="whatTitle"><i class="fas fa-info-circle"></i> What is Umrah?</h2>
+            <div class="card" style="background:var(--surface-2);border:1px solid var(--gold-soft);">
+                <p id="whatText" style="font-size:1.05rem;color:var(--text);">Umrah is a voluntary act of worship performed in Makkah that includes entering the state of Ihram, performing Tawaf around the Kaaba, performing Sa'i between Safa and Marwah, and completing the pilgrimage by trimming or shaving the hair. Unlike Hajj, Umrah can generally be performed throughout the year (subject to local regulations and restrictions).</p>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="reveal">
+            <h2 class="section-title" id="timelineTitle"><i class="fas fa-clock"></i> Your Umrah Journey Timeline</h2>
+            <div class="timeline-grid" id="timelineGrid"></div>
+        </section>
+
+        <!-- SEARCH -->
+        <div class="search-wrap reveal">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search Umrah guide... (Ihram, Tawaf, Sa'i, Dua...)" aria-label="Search Umrah guide" />
+        </div>
+
+        <!-- PILL NAV -->
+        <nav class="pill-nav" aria-label="Quick navigation" id="pillNav">
+            <span class="pill active" data-target="step1">Preparation</span>
+            <span class="pill" data-target="step2">Miqat &amp; Ihram</span>
+            <span class="pill" data-target="step3">Arrival</span>
+            <span class="pill" data-target="step4">Tawaf</span>
+            <span class="pill" data-target="step5">Sa'i</span>
+            <span class="pill" data-target="step6">Hair Cutting</span>
+            <span class="pill" data-target="duas-section">Du'as</span>
+            <span class="pill" data-target="tips-section">Tips</span>
+            <span class="pill" data-target="faq-section">FAQ</span>
+            <span class="pill" data-target="checklist-section">Checklist</span>
+        </nav>
+
+        <!-- PROGRESS -->
+        <div class="reveal" style="margin:12px 0 8px;">
+            <div class="progress-label"><span id="progressLabel">Your Progress</span> <span id="progressText">0%</span></div>
+            <div class="progress-bar"><div class="fill" id="progressFill" style="width:0%;"></div></div>
+        </div>
+
+        <!-- STEP 1: PREPARATION -->
+        <section id="step1" class="reveal">
+            <h2 class="section-title" id="step1Title"><i class="fas fa-suitcase"></i> Step 1 — Prepare Before You Leave</h2>
+            <div class="card step-card">
+                <p style="font-weight:600;color:var(--gold);margin-bottom:10px;" id="step1Sub">A peaceful Umrah begins with good preparation.</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px;">
+                    <div>
+                        <h4 style="color:var(--primary);"><i class="fas fa-heart icon-gold"></i> Spiritual Preparation</h4>
+                        <ul id="spiritualList">
+                            <li>Renew your intention solely for Allah.</li>
+                            <li>Seek forgiveness before leaving.</li>
+                            <li>Make peace with family and friends.</li>
+                            <li>Learn the basic rulings of Umrah.</li>
+                            <li>Memorize important duas and Talbiyah.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--primary);"><i class="fas fa-passport icon-gold"></i> Travel Documents</h4>
+                        <ul id="docList">
+                            <li>Passport</li>
+                            <li>Visa</li>
+                            <li>Flight tickets</li>
+                            <li>Hotel booking</li>
+                            <li>Identification copies</li>
+                            <li>Emergency contacts</li>
+                            <li>Travel insurance (if applicable)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top:16px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-archive icon-gold"></i> Essential Items</h4>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;" id="essentialItems">
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Ihram garments</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Comfortable sandals</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Small prayer mat</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Water bottle</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Unscented toiletries</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Medication</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Power bank</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle"></i> Light backpack</span>
+                    </div>
+                </div>
+                <div style="margin-top:16px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-heartbeat icon-gold"></i> Health Tips</h4>
+                    <ul id="healthTips">
+                        <li>Stay hydrated.</li>
+                        <li>Wear comfortable footwear.</li>
+                        <li>Carry prescribed medicines.</li>
+                        <li>Avoid unnecessary physical exhaustion before Umrah.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2: MIQAT & IHRAM -->
+        <section id="step2" class="reveal">
+            <h2 class="section-title" id="step2Title"><i class="fas fa-flag"></i> Step 2 — Miqat &amp; Entering Ihram</h2>
+            <div class="card step-card">
+                <div class="highlight-box">
+                    <p><strong id="miqatLabel">What is Miqat?</strong> <span id="miqatDesc">Miqat is the designated boundary where pilgrims intending Umrah enter the sacred state of Ihram. Different travel routes have different Miqat locations.</span></p>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px;">
+                    <div>
+                        <h4 style="color:var(--primary);"><i class="fas fa-male icon-gold"></i> Men's Ihram</h4>
+                        <ul>
+                            <li>Two white unstitched cloths.</li>
+                            <li>One wrapped around the waist.</li>
+                            <li>One covering the upper body.</li>
+                            <li>Sandals that leave ankles exposed.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--primary);"><i class="fas fa-female icon-gold"></i> Women's Ihram</h4>
+                        <ul>
+                            <li>Modest Islamic clothing.</li>
+                            <li>Face and hands generally remain uncovered.</li>
+                            <li>Loose and comfortable clothing.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top:16px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-hand-paper icon-gold"></i> Before Crossing Miqat</h4>
+                    <ul>
+                        <li>Perform Ghusl (if possible).</li>
+                        <li>Trim nails beforehand.</li>
+                        <li>Wear Ihram garments.</li>
+                        <li>Pray if appropriate.</li>
+                        <li>Make the intention for Umrah.</li>
+                    </ul>
+                </div>
+                <div style="margin-top:16px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-pray icon-gold"></i> Make Your Intention</h4>
+                    <p style="font-style:italic;color:var(--text-light);">"O Allah, I intend to perform Umrah. Make it easy for me and accept it from me."</p>
+                    <p style="margin-top:6px;color:var(--text-light);">Then begin reciting the Talbiyah.</p>
+                </div>
+                <!-- Talbiyah -->
+                <div class="talbiyah-box">
+                    <div class="arabic">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</div>
+                    <div class="arabic" style="font-size:1.6rem;">لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ</div>
+                    <div class="transliteration" id="talbiyahTranslit">Labbayk Allahumma Labbayk, Labbayka La Sharika Laka Labbayk, Innal Hamda Wan Ni'mata Laka Wal Mulk, La Sharika Lak.</div>
+                    <div id="talbiyahMeaning" style="color:var(--text-light);font-size:0.95rem;">Here I am, O Allah, here I am. Here I am, You have no partner. Surely all praise, blessings, and dominion belong to You.</div>
+                    <button class="action-btn copy-btn" data-text="لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ" style="margin-top:12px;"><i class="far fa-copy"></i> Copy Talbiyah</button>
+                </div>
+                <div style="margin-top:12px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-ban icon-gold"></i> Ihram Restrictions</h4>
+                    <div class="restriction-list">
+                        <span class="restriction-item"><i class="fas fa-times"></i> Avoid applying perfume</span>
+                        <span class="restriction-item"><i class="fas fa-times"></i> Avoid cutting hair</span>
+                        <span class="restriction-item"><i class="fas fa-times"></i> Avoid cutting nails</span>
+                        <span class="restriction-item"><i class="fas fa-times"></i> Avoid hunting</span>
+                        <span class="restriction-item"><i class="fas fa-times"></i> Avoid arguments</span>
+                        <span class="restriction-item"><i class="fas fa-check-circle" style="color:var(--gold);"></i> Maintain patience &amp; good character</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: ARRIVAL -->
+        <section id="step3" class="reveal">
+            <h2 class="section-title" id="step3Title"><i class="fas fa-mosque"></i> Step 3 — Arriving at Masjid al-Haram</h2>
+            <div class="card step-card">
+                <p id="step3Desc">Entering Masjid al-Haram is an emotional moment. Many pilgrims pause when seeing the Kaaba for the first time and make heartfelt supplications. Take a moment to appreciate the sacred surroundings before beginning Tawaf.</p>
+                <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
+                    <span class="restriction-item"><i class="fas fa-kaaba" style="color:var(--gold);"></i> First sight of Kaaba — make dua</span>
+                    <span class="restriction-item"><i class="fas fa-heart" style="color:var(--gold);"></i> Pause and reflect</span>
+                    <span class="restriction-item"><i class="fas fa-hands-praying" style="color:var(--gold);"></i> Enter with humility</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 4: TAWAF -->
+        <section id="step4" class="reveal">
+            <h2 class="section-title" id="step4Title"><i class="fas fa-circle-notch"></i> Step 4 — Tawaf Around the Kaaba</h2>
+            <div class="card step-card">
+                <p style="font-weight:600;color:var(--gold);">7 complete circuits around the Kaaba</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0;">
+                    <div>
+                        <p><strong style="color:var(--primary);">Starting Point:</strong> Begin near the Black Stone (Hajar al-Aswad).</p>
+                        <p><strong style="color:var(--primary);">Direction:</strong> Walk counterclockwise around the Kaaba.</p>
+                    </div>
+                    <div>
+                        <p><strong style="color:var(--primary);">After Tawaf:</strong></p>
+                        <p style="font-size:0.9rem;">Pray 2 Rak'ahs behind Maqam Ibrahim (if possible). Drink Zamzam water and make dua.</p>
+                    </div>
+                </div>
+                <div class="round-counter" id="tawafRounds">
+                    <div class="round-item"><span class="r-num">1</span><span class="r-label">Begin near Hajar al-Aswad</span></div>
+                    <div class="round-item"><span class="r-num">2</span><span class="r-label">Continue calmly</span></div>
+                    <div class="round-item"><span class="r-num">3</span><span class="r-label">Remember Allah often</span></div>
+                    <div class="round-item"><span class="r-num">4</span><span class="r-label">Maintain steady pace</span></div>
+                    <div class="round-item"><span class="r-num">5</span><span class="r-label">Keep your focus</span></div>
+                    <div class="round-item"><span class="r-num">6</span><span class="r-label">Continue your supplications</span></div>
+                    <div class="round-item"><span class="r-num">7</span><span class="r-label">Complete near the Black Stone</span></div>
+                </div>
+                <div style="margin-top:12px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-hand-sparkles icon-gold"></i> During Tawaf</h4>
+                    <ul>
+                        <li>Glorify Allah.</li>
+                        <li>Recite Quran.</li>
+                        <li>Make personal duas.</li>
+                        <li>Seek forgiveness.</li>
+                        <li>Maintain calmness and avoid pushing others.</li>
+                    </ul>
+                </div>
+                <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
+                    <span class="restriction-item"><i class="fas fa-water" style="color:var(--gold);"></i> Drink Zamzam water after Tawaf</span>
+                    <span class="restriction-item"><i class="fas fa-pray" style="color:var(--gold);"></i> Pray 2 Rak'ahs at Maqam Ibrahim</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 5: SA'I -->
+        <section id="step5" class="reveal">
+            <h2 class="section-title" id="step5Title"><i class="fas fa-arrows-left-right"></i> Step 5 — Sa'i Between Safa and Marwah</h2>
+            <div class="card step-card">
+                <p style="font-weight:600;color:var(--gold);">7 passages between Safa and Marwah</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0;">
+                    <div>
+                        <p><strong style="color:var(--primary);">Beginning:</strong> Start from Safa. Make dua and remember Allah.</p>
+                    </div>
+                    <div>
+                        <p><strong style="color:var(--primary);">Green Marker Area:</strong> In the designated green-lit area, some pilgrims follow guidance regarding pace. Prioritize safety and avoid disturbing others.</p>
+                    </div>
+                </div>
+                <div class="round-counter" id="saiRounds">
+                    <div class="round-item"><span class="r-num">1</span><span class="r-label">Safa → Marwah</span></div>
+                    <div class="round-item"><span class="r-num">2</span><span class="r-label">Marwah → Safa</span></div>
+                    <div class="round-item"><span class="r-num">3</span><span class="r-label">Safa → Marwah</span></div>
+                    <div class="round-item"><span class="r-num">4</span><span class="r-label">Marwah → Safa</span></div>
+                    <div class="round-item"><span class="r-num">5</span><span class="r-label">Safa → Marwah</span></div>
+                    <div class="round-item"><span class="r-num">6</span><span class="r-label">Marwah → Safa</span></div>
+                    <div class="round-item"><span class="r-num">7</span><span class="r-label">Safa → Marwah <span style="color:var(--gold);">✓</span></span></div>
+                </div>
+                <div style="margin-top:12px;">
+                    <h4 style="color:var(--primary);"><i class="fas fa-praying-hands icon-gold"></i> During Sa'i</h4>
+                    <ul>
+                        <li>Make dua and remember Allah.</li>
+                        <li>Walk with humility and patience.</li>
+                        <li>Keep your intention pure.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 6: HAIR CUTTING -->
+        <section id="step6" class="reveal">
+            <h2 class="section-title" id="step6Title"><i class="fas fa-cut"></i> Step 6 — Hair Cutting</h2>
+            <div class="card step-card">
+                <p style="font-weight:600;color:var(--gold);">This marks the completion of Umrah.</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:14px 0;">
+                    <div>
+                        <h4 style="color:var(--primary);"><i class="fas fa-male icon-gold"></i> Men</h4>
+                        <ul>
+                            <li>Shaving the head is highly rewarded.</li>
+                            <li>Trimming is also permitted according to the relevant guidance.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--primary);"><i class="fas fa-female icon-gold"></i> Women</h4>
+                        <ul>
+                            <li>Trim a small portion of the hair as instructed according to the guidance followed.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <p style="font-weight:600;color:var(--primary);"><i class="fas fa-check-circle icon-gold"></i> After completing this step, you exit the state of Ihram.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DUAS SECTION -->
+        <section id="duas-section" class="reveal">
+            <h2 class="section-title" id="duasTitle"><i class="fas fa-hands-praying"></i> Essential Duas During Umrah</h2>
+            <div class="dua-grid" id="duasContainer"></div>
+        </section>
+
+        <!-- TIPS SECTION -->
+        <section id="tips-section" class="reveal">
+            <h2 class="section-title" id="tipsTitle"><i class="fas fa-lightbulb"></i> Practical Tips</h2>
+            <div class="card-grid" id="tipsContainer"></div>
+        </section>
+
+        <!-- COMMON MISTAKES -->
+        <section class="reveal">
+            <h2 class="section-title" id="mistakesTitle"><i class="fas fa-exclamation-triangle" style="color:var(--gold);"></i> Common Mistakes to Avoid</h2>
+            <div class="card" style="background:var(--surface-2);">
+                <ul id="mistakesList" style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;list-style:none;padding:0;">
+                    <li style="padding:4px 0;">• Crossing Miqat without entering Ihram</li>
+                    <li style="padding:4px 0;">• Forgetting the intention</li>
+                    <li style="padding:4px 0;">• Becoming impatient in crowds</li>
+                    <li style="padding:4px 0;">• Neglecting hydration</li>
+                    <li style="padding:4px 0;">• Losing contact with your group</li>
+                    <li style="padding:4px 0;">• Overexerting yourself</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq-section" class="reveal">
+            <h2 class="section-title" id="faqTitle"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <div id="faqContainer"></div>
+        </section>
+
+        <!-- CHECKLIST -->
+        <section id="checklist-section" class="reveal">
+            <h2 class="section-title" id="checklistTitle"><i class="fas fa-check-double"></i> Your Umrah Preparation Checklist</h2>
+            <div id="checklistContainer"></div>
+        </section>
+
+        <!-- REMINDER -->
+        <section class="reveal" style="margin-top:30px;">
+            <div class="card" style="background:var(--gold-light);border:2px solid var(--gold);text-align:center;padding:28px 20px;">
+                <p style="font-size:1.2rem;font-weight:600;color:var(--primary);" id="reminderText">"The journey of Umrah is not only a journey of the body—it is a journey of the heart. Walk with humility, patience, gratitude, and remembrance of Allah."</p>
+                <p style="margin-top:10px;color:var(--text-light);" id="reminderDua">May Allah accept your Umrah, forgive your sins, and bless your journey with peace and mercy. Ameen.</p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <div class="footer-note">
+            <span id="footerText">🕋 May your Umrah be accepted, your sins forgiven.</span>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-msg" id="toast"></div>
+
+    <script>
+        (function() {
+            // ----- TRANSLATIONS -----
+            const translations = {
+                en: {
+                    appTitle: "Umrah Guide",
+                    appSub: "Your Sacred Journey",
+                    heroTitle: "Umrah Guide",
+                    heroSub: "دليل العمرة",
+                    heroDesc: "\"Indeed, the first House established for mankind was that at Makkah – blessed and a guidance for the worlds.\"",
+                    whatTitle: "What is Umrah?",
+                    whatText: "Umrah is a voluntary act of worship performed in Makkah that includes entering the state of Ihram, performing Tawaf around the Kaaba, performing Sa'i between Safa and Marwah, and completing the pilgrimage by trimming or shaving the hair. Unlike Hajj, Umrah can generally be performed throughout the year (subject to local regulations and restrictions).",
+                    timelineTitle: "Your Umrah Journey Timeline",
+                    timeline: [
+                        { label: "Preparation", sub: "Documents, intention, essentials" },
+                        { label: "Miqat & Ihram", sub: "Enter the sacred state" },
+                        { label: "Arrival in Makkah", sub: "Reach Masjid al-Haram" },
+                        { label: "Tawaf", sub: "Seven circuits around the Kaaba" },
+                        { label: "Sa'i", sub: "Seven passages" },
+                        { label: "Hair Cutting", sub: "Complete Umrah" }
+                    ],
+                    step1Title: "Step 1 — Prepare Before You Leave",
+                    step1Sub: "A peaceful Umrah begins with good preparation.",
+                    step2Title: "Step 2 — Miqat & Entering Ihram",
+                    miqatLabel: "What is Miqat?",
+                    miqatDesc: "Miqat is the designated boundary where pilgrims intending Umrah enter the sacred state of Ihram. Different travel routes have different Miqat locations.",
+                    talbiyahTranslit: "Labbayk Allahumma Labbayk, Labbayka La Sharika Laka Labbayk, Innal Hamda Wan Ni'mata Laka Wal Mulk, La Sharika Lak.",
+                    talbiyahMeaning: "Here I am, O Allah, here I am. Here I am, You have no partner. Surely all praise, blessings, and dominion belong to You.",
+                    step3Title: "Step 3 — Arriving at Masjid al-Haram",
+                    step3Desc: "Entering Masjid al-Haram is an emotional moment. Many pilgrims pause when seeing the Kaaba for the first time and make heartfelt supplications. Take a moment to appreciate the sacred surroundings before beginning Tawaf.",
+                    step4Title: "Step 4 — Tawaf Around the Kaaba",
+                    step5Title: "Step 5 — Sa'i Between Safa and Marwah",
+                    step6Title: "Step 6 — Hair Cutting",
+                    duasTitle: "Essential Duas During Umrah",
+                    tipsTitle: "Practical Tips",
+                    mistakesTitle: "Common Mistakes to Avoid",
+                    faqTitle: "Frequently Asked Questions",
+                    checklistTitle: "Your Umrah Preparation Checklist",
+                    progressLabel: "Your Progress",
+                    footerText: "🕋 May your Umrah be accepted, your sins forgiven.",
+                    reminderText: "\"The journey of Umrah is not only a journey of the body—it is a journey of the heart. Walk with humility, patience, gratitude, and remembrance of Allah.\"",
+                    reminderDua: "May Allah accept your Umrah, forgive your sins, and bless your journey with peace and mercy. Ameen.",
+                    tips: [
+                        { icon: "fa-users", title: "Inside Masjid al-Haram",
+                        desc: "Follow crowd flow. Stay with your group. Keep belongings secure. Drink water regularly. Take breaks if needed." },
+                        { icon: "fa-water", title: "Using Zamzam", desc: "Drink calmly. Make dua while drinking. Stay hydrated throughout your visit." },
+                        { icon: "fa-mobile-alt", title: "Phone Tips",
+                        desc: "Carry a power bank. Save hotel location. Keep emergency contacts accessible. Use offline maps if needed." },
+                        { icon: "fa-shield-alt", title: "Safety Reminders",
+                        desc: "Follow official guidance. Respect other pilgrims. Avoid rushing. Be patient. Keep children close. Stay aware in crowded areas." }
+                    ],
+                    faqs: [
+                        { q: "How long does Umrah take?", a: "The core rituals can often be completed in a few hours depending on crowd conditions." },
+                        { q: "Can I perform Umrah more than once?",
+                        a: "Many pilgrims perform Umrah multiple times according to the relevant guidance they follow." },
+                        { q: "Is Zamzam water available?", a: "Yes, Zamzam water is widely available within Masjid al-Haram." }
+                    ],
+                    checklist: [
+                        "Passport & Visa",
+                        "Flight & Hotel",
+                        "Ihram",
+                        "Medicines",
+                        "Prayer Essentials",
+                        "Emergency Contacts",
+                        "Power Bank",
+                        "Water Bottle"
+                    ],
+                    spiritual: [
+                        "Renew your intention solely for Allah.",
+                        "Seek forgiveness before leaving.",
+                        "Make peace with family and friends.",
+                        "Learn the basic rulings of Umrah.",
+                        "Memorize important duas and Talbiyah."
+                    ],
+                    documents: [
+                        "Passport", "Visa", "Flight tickets",
+                        "Hotel booking", "Identification copies",
+                        "Emergency contacts", "Travel insurance (if applicable)"
+                    ],
+                    health: [
+                        "Stay hydrated.",
+                        "Wear comfortable footwear.",
+                        "Carry prescribed medicines.",
+                        "Avoid unnecessary physical exhaustion before Umrah."
+                    ],
+                    duas: [
+                        { arabic: "دُعَاءُ السَّفَرِ", translit: "Du'aa as-Safar",
+                            translation: "Recite the authentic travel supplication according to the guidance you follow." },
+                        { arabic: "التَّلْبِيَةُ", translit: "At-Talbiyah",
+                            translation: "Recite Talbiyah frequently with presence of heart until beginning Tawaf." },
+                        { arabic: "ذِكْرٌ وَدُعَاءٌ", translit: "Dhikr wa Du'aa",
+                            translation: "Make personal supplications, seek forgiveness, and remember Allah often." }
+                    ]
+                },
+                hi: {
+                    appTitle: "उमराह गाइड",
+                    appSub: "आपकी पवित्र यात्रा",
+                    heroTitle: "उमराह गाइड",
+                    heroSub: "دليل العمرة",
+                    heroDesc: "\"निस्संदेह, मनुष्यों के लिए सबसे पहला घर वही है जो मक्का में स्थापित किया गया था – बरकत वाला और संसारों के लिए मार्गदर्शन।\"",
+                    whatTitle: "उमराह क्या है?",
+                    whatText: "उमराह एक स्वैच्छिक इबादत है जो मक्का में की जाती है जिसमें इहराम की स्थिति में प्रवेश करना, काबा के चारों ओर तवाफ करना, सफा और मरवा के बीच सई करना, और बाल काटकर या मुंडवाकर उमराह पूरा करना शामिल है। हज के विपरीत, उमराह आम तौर पर पूरे वर्ष किया जा सकता है।",
+                    timelineTitle: "आपकी उमराह यात्रा की समयरेखा",
+                    timeline: [
+                        { label: "तैयारी", sub: "दस्तावेज़, नियत, आवश्यक सामान" },
+                        { label: "मीक़ात और इहराम", sub: "पवित्र अवस्था में प्रवेश" },
+                        { label: "मक्का में आगमन", sub: "मस्जिद अल-हरम पहुँचें" },
+                        { label: "तवाफ", sub: "काबा के 7 चक्कर" },
+                        { label: "सई", sub: "7 चक्कर" },
+                        { label: "बाल कटाई", sub: "उमराह पूर्ण" }
+                    ],
+                    step1Title: "चरण 1 — जाने से पहले तैयारी करें",
+                    step1Sub: "एक शांतिपूर्ण उमराह अच्छी तैयारी से शुरू होती है।",
+                    step2Title: "चरण 2 — मीक़ात और इहराम में प्रवेश",
+                    miqatLabel: "मीक़ात क्या है?",
+                    miqatDesc: "मीक़ात वह निर्धारित सीमा है जहाँ उमराह का इरादा रखने वाले तीर्थयात्री इहराम की पवित्र अवस्था में प्रवेश करते हैं।",
+                    talbiyahTranslit: "लब्बैक अल्लाहुम्मा लब्बैक, लब्बैका ला शरीका लका लब्बैक, इन्नल हम्दा वन्निमता लका वल मुल्क, ला शरीका लक।",
+                    talbiyahMeaning: "मैं हाज़िर हूँ, ऐ अल्लाह, मैं हाज़िर हूँ। मैं हाज़िर हूँ, आपका कोई साझी नहीं। निस्संदेह सारी प्रशंसा, अनुग्रह और राज्य आपके लिए है।",
+                    step3Title: "चरण 3 — मस्जिद अल-हरम में आगमन",
+                    step3Desc: "मस्जिद अल-हरम में प्रवेश एक भावनात्मक क्षण है। कई तीर्थयात्री काबा को पहली बार देखकर रुकते हैं और दिल से दुआ करते हैं।",
+                    step4Title: "चरण 4 — काबा के चारों ओर तवाफ",
+                    step5Title: "चरण 5 — सफा और मरवा के बीच सई",
+                    step6Title: "चरण 6 — बाल कटाई",
+                    duasTitle: "उमराह के दौरान आवश्यक दुआएँ",
+                    tipsTitle: "व्यावहारिक सुझाव",
+                    mistakesTitle: "बचने योग्य सामान्य गलतियाँ",
+                    faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+                    checklistTitle: "आपकी उमराह तैयारी चेकलिस्ट",
+                    progressLabel: "आपकी प्रगति",
+                    footerText: "🕋 आपका उमराह मकबूल हो, गुनाह माफ हों।",
+                    reminderText: "\"उमराह की यात्रा केवल शरीर की यात्रा नहीं है—यह हृदय की यात्रा है। नम्रता, धैर्य, कृतज्ञता और अल्लाह की याद के साथ चलें।\"",
+                    reminderDua: "अल्लाह आपका उमराह स्वीकार करे, आपके पापों को क्षमा करे, और आपकी यात्रा को शांति और दया से आशीर्वाद दे। आमीन।",
+                    tips: [
+                        { icon: "fa-users", title: "मस्जिद अल-हरम के अंदर",
+                            desc: "भीड़ के प्रवाह का पालन करें। अपने समूह के साथ रहें। सामान सुरक्षित रखें। नियमित रूप से पानी पियें।" },
+                        { icon: "fa-water", title: "ज़मज़म का उपयोग", desc: "शांति से पियें। पीते समय दुआ करें।" },
+                        { icon: "fa-mobile-alt", title: "फोन टिप्स",
+                            desc: "पावर बैंक रखें। होटल का स्थान सहेजें। आपातकालीन संपर्क रखें।" },
+                        { icon: "fa-shield-alt", title: "सुरक्षा अनुस्मारक",
+                            desc: "आधिकारिक निर्देशों का पालन करें। अन्य तीर्थयात्रियों का सम्मान करें। धैर्य रखें।" }
+                    ],
+                    faqs: [
+                        { q: "उमराह में कितना समय लगता है?", a: "मुख्य रस्में भीड़ के आधार पर कुछ घंटों में पूरी हो सकती हैं।" },
+                        { q: "क्या मैं एक से अधिक बार उमराह कर सकता हूँ?",
+                        a: "कई तीर्थयात्री संबंधित मार्गदर्शन के अनुसार कई बार उमराह करते हैं।" },
+                        { q: "क्या ज़मज़म पानी उपलब्ध है?", a: "हाँ, ज़मज़म पानी मस्जिद अल-हरम के अंदर व्यापक रूप से उपलब्ध है।" }
+                    ],
+                    checklist: [
+                        "पासपोर्ट और वीज़ा", "उड़ान और होटल", "इहराम", "दवाइयाँ",
+                        "नमाज़ की आवश्यक सामग्री", "आपातकालीन संपर्क", "पावर बैंक", "पानी की बोतल"
+                    ],
+                    spiritual: [
+                        "अपनी नियत को केवल अल्लाह के लिए नवीनीकृत करें।",
+                        "जाने से पहले क्षमा माँगें।",
+                        "परिवार और दोस्तों के साथ मेल-मिलाप करें।",
+                        "उमराह के बुनियादी नियम सीखें।",
+                        "महत्वपूर्ण दुआएँ और तलबिया याद करें।"
+                    ],
+                    documents: [
+                        "पासपोर्ट", "वीज़ा", "उड़ान टिकट", "होटल बुकिंग",
+                        "पहचान पत्र की प्रतियाँ", "आपातकालीन संपर्क", "यात्रा बीमा"
+                    ],
+                    health: [
+                        "पानी पीते रहें।", "आरामदायक जूते पहनें।",
+                        "निर्धारित दवाइयाँ रखें।", "उमराह से पहले अत्यधिक थकावट से बचें।"
+                    ],
+                    duas: [
+                        { arabic: "دُعَاءُ السَّفَرِ", translit: "दुआ अस-सफर",
+                            translation: "यात्रा की प्रामाणिक दुआ पढ़ें।" },
+                        { arabic: "التَّلْبِيَةُ", translit: "अत-तलबिया",
+                            translation: "तवाफ शुरू करने तक हृदय की उपस्थिति के साथ तलबिया पढ़ें।" },
+                        { arabic: "ذِكْرٌ وَدُعَاءٌ", translit: "ज़िक्र व दुआ",
+                            translation: "व्यक्तिगत दुआएँ करें, क्षमा माँगें और अल्लाह को याद करें।" }
+                    ]
+                },
+                ur: {
+                    appTitle: "عمرہ گائیڈ",
+                    appSub: "آپ کا مقدس سفر",
+                    heroTitle: "عمرہ گائیڈ",
+                    heroSub: "دليل العمرة",
+                    heroDesc: "\"بے شک انسانوں کے لیے پہلا گھر وہی ہے جو مکہ میں قائم کیا گیا – بابرکت اور جہانوں کے لیے ہدایت۔\"",
+                    whatTitle: "عمرہ کیا ہے؟",
+                    whatText: "عمرہ ایک رضاکارانہ عبادت ہے جو مکہ میں کی جاتی ہے جس میں احرام کی حالت میں داخل ہونا، کعبہ کے گرد طواف کرنا، صفا اور مروہ کے درمیان سعی کرنا، اور بال کاٹ کر یا منڈوا کر عمرہ مکمل کرنا شامل ہے۔ حج کے برعکس، عمرہ عام طور پر پورے سال کیا جا سکتا ہے۔",
+                    timelineTitle: "آپ کے عمرہ سفر کا ٹائم لائن",
+                    timeline: [
+                        { label: "تیاری", sub: "دستاویزات، نیت، ضروری چیزیں" },
+                        { label: "میقات اور احرام", sub: "مقدس حالت میں داخل ہوں" },
+                        { label: "مکہ میں آمد", sub: "مسجد الحرام پہنچیں" },
+                        { label: "طواف", sub: "کعبہ کے 7 چکر" },
+                        { label: "سعی", sub: "7 چکر" },
+                        { label: "بال کٹائی", sub: "عمرہ مکمل" }
+                    ],
+                    step1Title: "مرحلہ 1 — جانے سے پہلے تیاری کریں",
+                    step1Sub: "ایک پرامن عمرہ اچھی تیاری سے شروع ہوتا ہے۔",
+                    step2Title: "مرحلہ 2 — میقات اور احرام میں داخل ہوں",
+                    miqatLabel: "میقات کیا ہے؟",
+                    miqatDesc: "میقات وہ مقررہ حد ہے جہاں عمرہ کا ارادہ رکھنے والے حاجی احرام کی مقدس حالت میں داخل ہوتے ہیں۔",
+                    talbiyahTranslit: "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ",
+                    talbiyahMeaning: "میں حاضر ہوں، اے اللہ، میں حاضر ہوں۔ میں حاضر ہوں، آپ کا کوئی شریک نہیں۔ یقیناً تمام تعریفیں، نعمتیں اور بادشاہی آپ کے لیے ہیں۔",
+                    step3Title: "مرحلہ 3 — مسجد الحرام میں آمد",
+                    step3Desc: "مسجد الحرام میں داخل ہونا ایک جذباتی لمحہ ہے۔ بہت سے حاجی کعبہ کو پہلی بار دیکھ کر رک جاتے ہیں اور دلی دعائیں کرتے ہیں۔",
+                    step4Title: "مرحلہ 4 — کعبہ کے گرد طواف",
+                    step5Title: "مرحلہ 5 — صفا اور مروہ کے درمیان سعی",
+                    step6Title: "مرحلہ 6 — بال کٹائی",
+                    duasTitle: "عمرہ کے دوران ضروری دعائیں",
+                    tipsTitle: "عملی نکات",
+                    mistakesTitle: "عام غلطیاں جن سے بچنا چاہیے",
+                    faqTitle: "اکثر پوچھے گئے سوالات",
+                    checklistTitle: "آپ کی عمرہ تیاری کی چیک لسٹ",
+                    progressLabel: "آپ کی پیشرفت",
+                    footerText: "🕋 آپ کا عمرہ مقبول ہو، گناہ معاف ہوں۔",
+                    reminderText: "\"عمرہ کا سفر صرف جسم کا سفر نہیں ہے—یہ دل کا سفر ہے۔ عاجزی، صبر، شکرگزاری اور اللہ کی یاد کے ساتھ چلیں۔\"",
+                    reminderDua: "اللہ آپ کا عمرہ قبول کرے، آپ کے گناہوں کو معاف کرے، اور آپ کے سفر کو امن اور رحمت سے نوازے۔ آمین۔",
+                    tips: [
+                        { icon: "fa-users", title: "مسجد الحرام کے اندر",
+                            desc: "ہجوم کے بہاؤ کی پیروی کریں۔ اپنے گروپ کے ساتھ رہیں۔ سامان محفوظ رکھیں۔ پانی پیتے رہیں۔" },
+                        { icon: "fa-water", title: "زمزم کا استعمال", desc: "پرسکون ہو کر پئیں۔ پیتے ہوئے دعا کریں۔" },
+                        { icon: "fa-mobile-alt", title: "فون کے نکات",
+                            desc: "پاور بینک رکھیں۔ ہوٹل کا مقام محفوظ کریں۔ ہنگامی رابطے رکھیں۔" },
+                        { icon: "fa-shield-alt", title: "حفاظتی یاددہانی",
+                            desc: "سرکاری ہدایات پر عمل کریں۔ دوسرے حاجیوں کا احترام کریں۔ صبر کریں۔" }
+                    ],
+                    faqs: [
+                        { q: "عمرہ میں کتنا وقت لگتا ہے؟", a: "بنیادی رسومات ہجوم کے لحاظ سے چند گھنٹوں میں مکمل ہو سکتی ہیں۔" },
+                        { q: "کیا میں ایک سے زیادہ بار عمرہ کر سکتا ہوں؟",
+                        a: "بہت سے حاجی متعلقہ رہنمائی کے مطابق کئی بار عمرہ کرتے ہیں۔" },
+                        { q: "کیا زمزم پانی دستیاب ہے؟", a: "جی ہاں، زمزم پانی مسجد الحرام کے اندر وسیع پیمانے پر دستیاب ہے۔" }
+                    ],
+                    checklist: [
+                        "پاسپورٹ اور ویزا", "پرواز اور ہوٹل", "احرام", "دوائیاں",
+                        "نماز کی ضروری چیزیں", "ہنگامی رابطے", "پاور بینک", "پانی کی بوتل"
+                    ],
+                    spiritual: [
+                        "اپنی نیت کو صرف اللہ کے لیے تجدید کریں۔",
+                        "جانے سے پہلے معافی مانگیں۔",
+                        "خاندان اور دوستوں کے ساتھ صلح کریں۔",
+                        "عمرہ کے بنیادی احکام سیکھیں۔",
+                        "اہم دعائیں اور تلبیہ یاد کریں۔"
+                    ],
+                    documents: [
+                        "پاسپورٹ", "ویزا", "پرواز کے ٹکٹ", "ہوٹل بکنگ",
+                        "شناختی کاپیاں", "ہنگامی رابطے", "ٹریول انشورنس"
+                    ],
+                    health: [
+                        "پانی پیتے رہیں۔", "آرام دہ جوتے پہنیں۔",
+                        "تجویز کردہ دوائیں رکھیں۔", "عمرہ سے پہلے ضروری مشقت سے بچیں۔"
+                    ],
+                    duas: [
+                        { arabic: "دُعَاءُ السَّفَرِ", translit: "دعاء السفر",
+                            translation: "سفر کی مستند دعا پڑھیں۔" },
+                        { arabic: "التَّلْبِيَةُ", translit: "التلبیة",
+                            translation: "طواف شروع کرنے تک دل کی موجودگی کے ساتھ تلبیہ پڑھیں۔" },
+                        { arabic: "ذِكْرٌ وَدُعَاءٌ", translit: "ذکر و دعاء",
+                            translation: "ذاتی دعائیں کریں، معافی مانگیں اور اللہ کو یاد کریں۔" }
+                    ]
+                },
+                ar: {
+                    appTitle: "دليل العمرة",
+                    appSub: "رحلتك المقدسة",
+                    heroTitle: "دليل العمرة",
+                    heroSub: "دليل العمرة",
+                    heroDesc: "\"إِنَّ أَوَّلَ بَيْتٍ وُضِعَ لِلنَّاسِ لَلَّذِي بِبَكَّةَ مُبَارَكًا وَهُدًى لِّلْعَالَمِينَ.\"",
+                    whatTitle: "ما هي العمرة؟",
+                    whatText: "العمرة هي عبادة تطوعية تؤدى في مكة المكرمة تشمل الدخول في حالة الإحرام، والطواف حول الكعبة، والسعي بين الصفا والمروة، وإكمال العمرة بتقصير أو حلق الشعر. على عكس الحج، يمكن أداء العمرة بشكل عام طوال العام.",
+                    timelineTitle: "الجدول الزمني لرحلة العمرة",
+                    timeline: [
+                        { label: "الاستعداد", sub: "الوثائق، النية، الأساسيات" },
+                        { label: "الميقات والإحرام", sub: "الدخول في الحالة المقدسة" },
+                        { label: "الوصول إلى مكة", sub: "الوصول إلى المسجد الحرام" },
+                        { label: "الطواف", sub: "سبعة أشواط حول الكعبة" },
+                        { label: "السعي", sub: "سبعة أشواط" },
+                        { label: "الحلق", sub: "إكمال العمرة" }
+                    ],
+                    step1Title: "الخطوة 1 — الاستعداد قبل المغادرة",
+                    step1Sub: "العمرة المباركة تبدأ بالتحضير الجيد.",
+                    step2Title: "الخطوة 2 — الميقات والدخول في الإحرام",
+                    miqatLabel: "ما هو الميقات؟",
+                    miqatDesc: "الميقات هو الحد المحدد حيث يدخل الحجاج القاصدون للعمرة في حالة الإحرام المقدسة.",
+                    talbiyahTranslit: "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ",
+                    talbiyahMeaning: "لبيك اللهم لبيك، لبيك لا شريك لك لبيك، إن الحمد والنعمة لك والملك، لا شريك لك.",
+                    step3Title: "الخطوة 3 — الوصول إلى المسجد الحرام",
+                    step3Desc: "الدخول إلى المسجد الحرام لحظة مؤثرة. يتوقف العديد من الحجاج عند رؤية الكعبة لأول مرة ويدعون من القلب.",
+                    step4Title: "الخطوة 4 — الطواف حول الكعبة",
+                    step5Title: "الخطوة 5 — السعي بين الصفا والمروة",
+                    step6Title: "الخطوة 6 — الحلق أو التقصير",
+                    duasTitle: "أدعية هامة أثناء العمرة",
+                    tipsTitle: "نصائح عملية",
+                    mistakesTitle: "أخطاء شائعة يجب تجنبها",
+                    faqTitle: "الأسئلة الشائعة",
+                    checklistTitle: "قائمة تحضير العمرة",
+                    progressLabel: "تقدمك",
+                    footerText: "🕋 تقبل الله عمرتك وغفر ذنوبك.",
+                    reminderText: "\"رحلة العمرة ليست رحلة الجسد فقط—بل هي رحلة القلب. امشِ بتواضع وصبر وشكر وذكر الله.\"",
+                    reminderDua: "اللهم تقبل عمرتك، واغفر ذنوبك، وبارك في رحلتك بالسلام والرحمة. آمين.",
+                    tips: [
+                        { icon: "fa-users", title: "داخل المسجد الحرام",
+                            desc: "اتبع تدفق الحشود. ابق مع مجموعتك. حافظ على أمتعتك. اشرب الماء بانتظام." },
+                        { icon: "fa-water", title: "استخدام زمزم", desc: "اشرب بهدوء. ادعُ أثناء الشرب." },
+                        { icon: "fa-mobile-alt", title: "نصائح الهاتف",
+                            desc: "احمل باور بانك. احفظ موقع الفندق. احتفظ بجهات الاتصال الطارئة." },
+                        { icon: "fa-shield-alt", title: "تذكيرات السلامة",
+                            desc: "اتبع التوجيهات الرسمية. احترم الحجاج الآخرين. تحلى بالصبر." }
+                    ],
+                    faqs: [
+                        { q: "كم يستغرق أداء العمرة؟", a: "يمكن إكمال المناسك الأساسية في غضون ساعات قليلة حسب ازدحام الحشود." },
+                        { q: "هل يمكنني أداء العمرة أكثر من مرة؟",
+                        a: "يؤدي العديد من الحجاج العمرة عدة مرات وفقاً للتوجيهات المتبعة." },
+                        { q: "هل ماء زمزم متوفر؟", a: "نعم، ماء زمزم متوفر على نطاق واسع داخل المسجد الحرام." }
+                    ],
+                    checklist: [
+                        "جواز السفر والتأشيرة", "الرحلة والفندق", "الإحرام", "الأدوية",
+                        "مستلزمات الصلاة", "جهات الاتصال الطارئة", "باور بانك", "قنينة ماء"
+                    ],
+                    spiritual: [
+                        "جدد نيتك لله وحده.",
+                        "استغفر قبل المغادرة.",
+                        "تصالح مع العائلة والأصدقاء.",
+                        "تعلم أحكام العمرة الأساسية.",
+                        "احفظ الأدعية المهمة والتلبية."
+                    ],
+                    documents: [
+                        "جواز السفر", "التأشيرة", "تذاكر الطيران",
+                        "حجز الفندق", "نسخ الهوية", "جهات الاتصال الطارئة", "تأمين السفر"
+                    ],
+                    health: [
+                        "اشرب الماء بانتظام.",
+                        "ارتدِ أحذية مريحة.",
+                        "احمل الأدوية الموصوفة.",
+                        "تجنب الإرهاق البدني قبل العمرة."
+                    ],
+                    duas: [
+                        { arabic: "دُعَاءُ السَّفَرِ", translit: "دعاء السفر",
+                            translation: "اقرأ دعاء السفر الصحيح." },
+                        { arabic: "التَّلْبِيَةُ", translit: "التلبية",
+                            translation: "أكثر من التلبية بحضور قلب حتى تبدأ الطواف." },
+                        { arabic: "ذِكْرٌ وَدُعَاءٌ", translit: "ذكر ودعاء",
+                            translation: "ادعُ شخصياً، واستغفر، واذكر الله كثيراً." }
+                    ]
+                }
+            };
+
+            // ----- STATE -----
+            let currentLang = localStorage.getItem('umrahGuide.lang') || 'en';
+            let currentTheme = localStorage.getItem('umrahGuide.theme') || 'system';
+            let checklistState = JSON.parse(localStorage.getItem('umrahGuide.checklist') || '{}');
+
+            // ----- DOM refs -----
+            const $ = (s) => document.querySelector(s);
+            const $$ = (s) => document.querySelectorAll(s);
+
+            // ----- helper -----
+            function t(key) {
+                return translations[currentLang]?.[key] || translations.en[key];
+            }
+
+            // ----- toast -----
+            function showToast(msg) {
+                const el = document.getElementById('toast');
+                el.textContent = msg;
+                el.classList.add('show');
+                clearTimeout(el._timer);
+                el._timer = setTimeout(() => el.classList.remove('show'), 2200);
+            }
+
+            // ----- render functions -----
+            function renderTimeline() {
+                const container = document.getElementById('timelineGrid');
+                const items = t('timeline');
+                container.innerHTML = items.map((item, i) => `
+              <div class="timeline-item">
+                <span class="num">${i+1}</span>
+                <div class="label">${item.label}</div>
+                <div class="sub">${item.sub}</div>
+              </div>
+            `).join('');
+            }
+
+            function renderDuas() {
+                const container = document.getElementById('duasContainer');
+                const duas = t('duas');
+                container.innerHTML = duas.map(d => `
+              <div class="dua-card">
+                <div class="arabic">${d.arabic}</div>
+                <div class="transliteration">${d.translit}</div>
+                <div style="color:var(--text-light);">${d.translation}</div>
+                <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
+                  <button class="action-btn copy-btn" data-text="${d.arabic}"><i class="far fa-copy"></i> Copy</button>
+                  <button class="action-btn share-btn" data-text="${d.arabic} - ${d.translation}"><i class="fas fa-share-alt"></i> Share</button>
+                </div>
+              </div>
+            `).join('');
+                container.querySelectorAll('.copy-btn').forEach(b => b.addEventListener('click', function() {
+                    const text = this.dataset.text || '';
+                    navigator.clipboard?.writeText(text).then(() => {
+                        showToast('📋 Copied!');
+                    }).catch(() => showToast('Copy: ' + text));
+                }));
+                container.querySelectorAll('.share-btn').forEach(b => b.addEventListener('click', function() {
+                    const text = this.dataset.text || '';
+                    if (navigator.share) navigator.share({ title: 'Umrah Dua', text });
+                    else navigator.clipboard?.writeText(text).then(() => showToast('📋 Copied!'));
+                }));
+            }
+
+            function renderTips() {
+                const container = document.getElementById('tipsContainer');
+                const tips = t('tips');
+                container.innerHTML = tips.map(tip => `
+              <div class="card">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+                  <i class="fas ${tip.icon}" style="font-size:1.8rem;color:var(--gold);"></i>
+                  <h3 style="color:var(--primary);">${tip.title}</h3>
+                </div>
+                <p>${tip.desc}</p>
+              </div>
+            `).join('');
+            }
+
+            function renderFAQ() {
+                const container = document.getElementById('faqContainer');
+                const faqs = t('faqs');
+                container.innerHTML = faqs.map((faq, i) => `
+              <div class="faq-item" data-idx="${i}">
+                <div class="q">
+                  <span>${faq.q}</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="a">${faq.a}</div>
+              </div>
+            `).join('');
+                container.querySelectorAll('.faq-item').forEach(el => {
+                    el.addEventListener('click', function() {
+                        this.classList.toggle('open');
+                    });
+                });
+            }
+
+            function renderChecklist() {
+                const container = document.getElementById('checklistContainer');
+                const items = t('checklist');
+                container.innerHTML = '';
+                items.forEach((label, idx) => {
+                    const key = 'uc' + idx;
+                    const checked = checklistState[key] || false;
+                    const div = document.createElement('div');
+                    div.className = 'checklist-item' + (checked ? ' done' : '');
+                    div.innerHTML = `
+                <input type="checkbox" id="${key}" ${checked ? 'checked' : ''}>
+                <label for="${key}">${label}</label>
+              `;
+                    container.appendChild(div);
+                    const cb = div.querySelector('input');
+                    cb.addEventListener('change', function() {
+                        const parent = this.closest('.checklist-item');
+                        if (this.checked) parent.classList.add('done');
+                        else parent.classList.remove('done');
+                        checklistState[key] = this.checked;
+                        localStorage.setItem('umrahGuide.checklist', JSON.stringify(checklistState));
+                        updateProgress();
+                    });
+                });
+                updateProgress();
+            }
+
+            function updateProgress() {
+                const items = t('checklist');
+                const total = items.length;
+                let checked = 0;
+                for (let i = 0; i < total; i++) {
+                    if (checklistState['uc' + i]) checked++;
+                }
+                const pct = total ? Math.round((checked / total) * 100) : 0;
+                document.getElementById('progressFill').style.width = pct + '%';
+                document.getElementById('progressText').textContent = pct + '%';
+            }
+
+            // ----- apply language -----
+            function applyLanguage(lang) {
+                currentLang = lang;
+                const langData = translations[lang] || translations.en;
+
+                // textContent updates
+                document.getElementById('appTitle').textContent = t('appTitle');
+                document.getElementById('appSub').textContent = t('appSub');
+                document.getElementById('heroTitle').textContent = t('heroTitle');
+                document.getElementById('heroSub').textContent = t('heroSub');
+                document.getElementById('heroDesc').textContent = t('heroDesc');
+                document.getElementById('whatTitle').innerHTML = '<i class="fas fa-info-circle"></i> ' + t('whatTitle');
+                document.getElementById('whatText').textContent = t('whatText');
+                document.getElementById('timelineTitle').innerHTML = '<i class="fas fa-clock"></i> ' + t('timelineTitle');
+                document.getElementById('step1Title').innerHTML = '<i class="fas fa-suitcase"></i> ' + t('step1Title');
+                document.getElementById('step1Sub').textContent = t('step1Sub');
+                document.getElementById('step2Title').innerHTML = '<i class="fas fa-flag"></i> ' + t('step2Title');
+                document.getElementById('miqatLabel').textContent = t('miqatLabel');
+                document.getElementById('miqatDesc').textContent = t('miqatDesc');
+                document.getElementById('talbiyahTranslit').textContent = t('talbiyahTranslit');
+                document.getElementById('talbiyahMeaning').textContent = t('talbiyahMeaning');
+                document.getElementById('step3Title').innerHTML = '<i class="fas fa-mosque"></i> ' + t('step3Title');
+                document.getElementById('step3Desc').textContent = t('step3Desc');
+                document.getElementById('step4Title').innerHTML = '<i class="fas fa-circle-notch"></i> ' + t('step4Title');
+                document.getElementById('step5Title').innerHTML = '<i class="fas fa-arrows-left-right"></i> ' + t(
+                'step5Title');
+                document.getElementById('step6Title').innerHTML = '<i class="fas fa-cut"></i> ' + t('step6Title');
+                document.getElementById('duasTitle').innerHTML = '<i class="fas fa-hands-praying"></i> ' + t('duasTitle');
+                document.getElementById('tipsTitle').innerHTML = '<i class="fas fa-lightbulb"></i> ' + t('tipsTitle');
+                document.getElementById('mistakesTitle').innerHTML = '<i class="fas fa-exclamation-triangle" style="color:var(--gold);"></i> ' +
+                    t('mistakesTitle');
+                document.getElementById('faqTitle').innerHTML = '<i class="fas fa-question-circle"></i> ' + t('faqTitle');
+                document.getElementById('checklistTitle').innerHTML = '<i class="fas fa-check-double"></i> ' + t(
+                    'checklistTitle');
+                document.getElementById('progressLabel').textContent = t('progressLabel');
+                document.getElementById('footerText').textContent = t('footerText');
+                document.getElementById('reminderText').textContent = t('reminderText');
+                document.getElementById('reminderDua').textContent = t('reminderDua');
+
+                // spiritual list
+                const spiritual = t('spiritual');
+                const spiritualList = document.getElementById('spiritualList');
+                spiritualList.innerHTML = spiritual.map(s => `<li>${s}</li>`).join('');
+
+                // documents
+                const docs = t('documents');
+                document.getElementById('docList').innerHTML = docs.map(d => `<li>${d}</li>`).join('');
+
+                // health
+                const health = t('health');
+                document.getElementById('healthTips').innerHTML = health.map(h => `<li>${h}</li>`).join('');
+
+                // mistakes
+                const mistakes = t('mistakesList') || [
+                    'Crossing Miqat without entering Ihram',
+                    'Forgetting the intention',
+                    'Becoming impatient in crowds',
+                    'Neglecting hydration',
+                    'Losing contact with your group',
+                    'Overexerting yourself'
+                ];
+                document.getElementById('mistakesList').innerHTML = mistakes.map(m =>
+                    `<li style="padding:4px 0;">• ${m}</li>`
+                ).join('');
+
+                // re-render dynamic
+                renderTimeline();
+                renderDuas();
+                renderTips();
+                renderFAQ();
+                renderChecklist();
+
+                // pill labels
+                const pillMap = {
+                    'step1': t('step1Title').replace(/^Step 1 — /, 'Preparation'),
+                    'step2': t('step2Title').replace(/^Step 2 — /, 'Miqat & Ihram'),
+                    'step3': t('step3Title').replace(/^Step 3 — /, 'Arrival'),
+                    'step4': t('step4Title').replace(/^Step 4 — /, 'Tawaf'),
+                    'step5': t('step5Title').replace(/^Step 5 — /, "Sa'i"),
+                    'step6': t('step6Title').replace(/^Step 6 — /, 'Hair Cutting'),
+                    'duas-section': t('duasTitle'),
+                    'tips-section': t('tipsTitle'),
+                    'faq-section': t('faqTitle'),
+                    'checklist-section': t('checklistTitle')
+                };
+                $$('.pill').forEach(p => {
+                    const key = p.dataset.target;
+                    if (pillMap[key]) p.textContent = pillMap[key];
+                });
+
+                // direction
+                document.documentElement.dir = (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr';
+                document.documentElement.lang = lang;
+                localStorage.setItem('umrahGuide.lang', lang);
+            }
+
+            // ----- apply theme -----
+            function applyTheme(theme) {
+                const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches);
+                document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+                const icon = document.getElementById('darkmodeToggle').querySelector('i');
+                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                localStorage.setItem('umrahGuide.theme', theme);
+                currentTheme = theme;
+            }
+
+            // ----- init -----
+            function init() {
+                applyLanguage(currentLang);
+                applyTheme(currentTheme);
+
+                // theme toggle
+                document.getElementById('darkmodeToggle').addEventListener('click', function() {
+                    const next = currentTheme === 'dark' ? 'light' : currentTheme === 'light' ? 'system' : 'dark';
+                    applyTheme(next);
+                });
+
+                // language switcher
+                const switcher = document.getElementById('languageSwitcher');
+                switcher.value = currentLang;
+                switcher.addEventListener('change', function() {
+                    applyLanguage(this.value);
+                });
+
+                // search
+                const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', function() {
+                    const q = this.value.toLowerCase().trim();
+                    const cards = document.querySelectorAll('.step-card, .card');
+                    cards.forEach(card => {
+                        const text = card.textContent.toLowerCase();
+                        card.style.display = (!q || text.includes(q)) ? '' : 'none';
+                    });
+                    // also show/hide sections
+                    document.querySelectorAll('#step1, #step2, #step3, #step4, #step5, #step6').forEach(section => {
+                        const hasVisible = section.querySelector('.step-card[style*="display: none"]') === null;
+                        // if search is empty, show all
+                        if (!q) { section.style.display = ''; return; }
+                        const cardsInSection = section.querySelectorAll('.step-card');
+                        let anyVisible = false;
+                        cardsInSection.forEach(c => { if (c.style.display !== 'none') anyVisible = true; });
+                        section.style.display = anyVisible ? '' : 'none';
+                    });
+                });
+
+                // pill nav
+                $$('.pill').forEach(pill => {
+                    pill.addEventListener('click', function() {
+                        const target = this.dataset.target;
+                        const el = document.getElementById(target);
+                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        $$('.pill').forEach(p => p.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+
+                // reveal
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) entry.target.classList.add('visible');
+                        });
+                    }, { threshold: 0.08 });
+                    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                } else {
+                    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+                }
+
+                // copy talbiyah
+                document.querySelector('.copy-btn')?.addEventListener('click', function() {
+                    const text = this.dataset.text || '';
+                    navigator.clipboard?.writeText(text).then(() => showToast('📋 Talbiyah copied!'));
+                });
+
+                updateProgress();
+            }
+
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+            else init();
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+                if (currentTheme === 'system') applyTheme('system');
+            });
+        })();
+    </script>
+</body>
+</html>

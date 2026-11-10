@@ -1,0 +1,912 @@
+[
+  {
+    "id": 1,
+    "title": "Awakening",
+    "arabic": "اَلْحَمْدُ لِلّٰهِ الَّذِيْ أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُوْرُ",
+    "translation": "Praise is to Allah who gave us life after death and to Him is the return.",
+    "category": "Morning"
+  },
+  {
+    "id": 2,
+    "title": "Morning Dhikr",
+    "arabic": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلّٰهِ وَالْحَمْدُ لِلّٰهِ",
+    "translation": "We have entered the morning and all dominion belongs to Allah, and all praise is to Allah.",
+    "category": "Morning"
+  },
+  {
+    "id": 3,
+    "title": "Dua for Guidance",
+    "arabic": "اللَّهُمَّ اهْدِنِي وَسَدِّدْنِي",
+    "translation": "O Allah, guide me and keep me steadfast.",
+    "category": "Morning"
+  },
+  {
+    "id": 4,
+    "title": "Before Sleeping",
+    "arabic": "بِاسْمِكَ اللّٰهُمَّ أَمُوْتُ وَأَحْيَا",
+    "translation": "In Your name, O Allah, I die and I live.",
+    "category": "Evening"
+  },
+  {
+    "id": 5,
+    "title": "Evening Protection",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ",
+    "translation": "O Allah, I seek refuge in You from worry and grief.",
+    "category": "Evening"
+  },
+  {
+    "id": 6,
+    "title": "Entering Mosque",
+    "arabic": "اللّٰهُمَّ افْتَحْ لِيْ أَبْوَابَ رَحْمَتِكَ",
+    "translation": "O Allah, open for me the gates of Your mercy.",
+    "category": "Masjid"
+  },
+  {
+    "id": 7,
+    "title": "Leaving Mosque",
+    "arabic": "اللّٰهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+    "translation": "O Allah, I ask You from Your bounty.",
+    "category": "Masjid"
+  },
+  {
+    "id": 8,
+    "title": "Before Eating",
+    "arabic": "بِسْمِ اللّٰهِ",
+    "translation": "In the name of Allah.",
+    "category": "Daily"
+  },
+  {
+    "id": 9,
+    "title": "After Eating",
+    "arabic": "اَلْحَمْدُ لِلّٰهِ الَّذِي أَطْعَمَنَا وَسَقَانَا",
+    "translation": "All praise is for Allah who fed us and gave us drink.",
+    "category": "Daily"
+  },
+  {
+    "id": 10,
+    "title": "Before Travel",
+    "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+    "translation": "Glory to Him who provided this transport for us.",
+    "category": "Travel"
+  },
+  {
+    "id": 11,
+    "title": "Dua for Forgiveness",
+    "arabic": "رَبِّ اغْفِرْ لِي",
+    "translation": "My Lord, forgive me.",
+    "category": "Forgiveness"
+  },
+  {
+    "id": 12,
+    "title": "Protection from Evil Eye",
+    "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ",
+    "translation": "I seek refuge in Allah's perfect words.",
+    "category": "Protection"
+  },
+  {
+    "id": 13,
+    "title": "Dua for Parents",
+    "arabic": "رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+    "translation": "My Lord, have mercy upon them as they raised me when small.",
+    "category": "Family"
+  },
+  {
+    "id": 14,
+    "title": "Dua for Rizq",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ رِزْقًا طَيِّبًا",
+    "translation": "O Allah, I ask You for pure sustenance.",
+    "category": "Rizq"
+  },
+  {
+    "id": 15,
+    "title": "Dua After Salah",
+    "arabic": "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ",
+    "translation": "O Allah, You are Peace and from You comes peace.",
+    "category": "Salah"
+  },
+  {
+    "id": 16,
+    "title": "When in Distress",
+    "arabic": "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+    "translation": "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.",
+    "category": "Difficulty"
+  },
+  {
+    "id": 17,
+    "title": "Entering Home",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ",
+    "translation": "O Allah, I ask You for the best of entry and the best of exit.",
+    "category": "Home"
+  },
+  {
+    "id": 18,
+    "title": "Leaving Home",
+    "arabic": "بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ",
+    "translation": "In the name of Allah, I place my trust in Allah.",
+    "category": "Home"
+  },
+  {
+    "id": 19,
+    "title": "Before Wudu",
+    "arabic": "بِسْمِ اللَّهِ",
+    "translation": "In the name of Allah.",
+    "category": "Purification"
+  },
+  {
+    "id": 20,
+    "title": "After Wudu",
+    "arabic": "أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+    "translation": "I bear witness that none has the right to be worshipped but Allah alone, and I bear witness that Muhammad is His slave and Messenger.",
+    "category": "Purification"
+  },
+  {
+    "id": 21,
+    "title": "Dua for Knowledge",
+    "arabic": "رَّبِّ زِدْنِي عِلْمًا",
+    "translation": "My Lord, increase me in knowledge.",
+    "category": "Knowledge"
+  },
+  {
+    "id": 22,
+    "title": "Dua for Patience",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ",
+    "translation": "O Allah, I seek refuge in You from incapacity and laziness.",
+    "category": "Character"
+  },
+  {
+    "id": 23,
+    "title": "Dua for Health",
+    "arabic": "اللَّهُمَّ عَافِنِي فِي بَدَنِي",
+    "translation": "O Allah, grant me health in my body.",
+    "category": "Health"
+  },
+  {
+    "id": 24,
+    "title": "Dua for Wealth",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى",
+    "translation": "O Allah, I ask You for guidance, piety, chastity, and self-sufficiency.",
+    "category": "Rizq"
+  },
+  {
+    "id": 25,
+    "title": "Dua for Marriage",
+    "arabic": "رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ",
+    "translation": "My Lord, grant me [a child] from among the righteous.",
+    "category": "Family"
+  },
+  {
+    "id": 26,
+    "title": "Dua for Children",
+    "arabic": "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي",
+    "translation": "My Lord, make me an establisher of prayer, and [many] from my descendants.",
+    "category": "Family"
+  },
+  {
+    "id": 27,
+    "title": "Dua for Anxiety",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَالْعَجْزِ وَالْكَسَلِ",
+    "translation": "O Allah, I seek refuge in You from worry, grief, incapacity, and laziness.",
+    "category": "Difficulty"
+  },
+  {
+    "id": 28,
+    "title": "Dua for Depression",
+    "arabic": "اللَّهُمَّ إِنِّي عَبْدُكَ وَابْنُ عَبْدِكَ",
+    "translation": "O Allah, I am Your slave, son of Your slave.",
+    "category": "Difficulty"
+  },
+  {
+    "id": 29,
+    "title": "Dua for Death",
+    "arabic": "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي",
+    "translation": "O Allah, forgive me and have mercy on me.",
+    "category": "Death"
+  },
+  {
+    "id": 30,
+    "title": "Dua for Rain",
+    "arabic": "اللَّهُمَّ اسْقِنَا غَيْثًا مُغِيثًا",
+    "translation": "O Allah, give us saving rain.",
+    "category": "Nature"
+  },
+  {
+    "id": 31,
+    "title": "Dua for Wind",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا",
+    "translation": "O Allah, I ask You for its good.",
+    "category": "Nature"
+  },
+  {
+    "id": 32,
+    "title": "Dua for Thunder",
+    "arabic": "سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ",
+    "translation": "Glorified is He Whom thunder and angels praise.",
+    "category": "Nature"
+  },
+  {
+    "id": 33,
+    "title": "Dua for New Moon",
+    "arabic": "اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ",
+    "translation": "O Allah, let this moon appear on us with security and faith.",
+    "category": "Nature"
+  },
+  {
+    "id": 34,
+    "title": "Dua for Travel Safety",
+    "arabic": "اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا",
+    "translation": "O Allah, make this journey easy for us.",
+    "category": "Travel"
+  },
+  {
+    "id": 35,
+    "title": "Dua When Boarding Vehicle",
+    "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ",
+    "translation": "Glory to Him Who has subjected this to us, and we could never have it (by our efforts).",
+    "category": "Travel"
+  },
+  {
+    "id": 36,
+    "title": "Dua for Sick Person",
+    "arabic": "أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ",
+    "translation": "I ask Allah the Almighty, Lord of the Magnificent Throne, to heal you.",
+    "category": "Health"
+  },
+  {
+    "id": 37,
+    "title": "Dua When Visiting Sick",
+    "arabic": "لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ",
+    "translation": "Do not worry, it is a purification (for you) if Allah wills.",
+    "category": "Health"
+  },
+  {
+    "id": 38,
+    "title": "Dua for Fear",
+    "arabic": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ",
+    "translation": "Allah is sufficient for us, and He is the best Disposer of affairs.",
+    "category": "Fear"
+  },
+  {
+    "id": 39,
+    "title": "Dua for Gratitude",
+    "arabic": "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ",
+    "translation": "O Allah, help me to remember You, thank You, and worship You properly.",
+    "category": "Gratitude"
+  },
+  {
+    "id": 40,
+    "title": "Dua for Repentance",
+    "arabic": "رَبِّ إِنِّي ظَلَمْتُ نَفْسِي فَاغْفِرْ لِي",
+    "translation": "My Lord, indeed I have wronged myself, so forgive me.",
+    "category": "Forgiveness"
+  },
+  {
+    "id": 41,
+    "title": "Dua for Good Ending",
+    "arabic": "اللَّهُمَّ اجْعَلْ خَيْرَ عُمُرِي آخِرَهُ",
+    "translation": "O Allah, make the best of my life the last of it.",
+    "category": "Death"
+  },
+  {
+    "id": 42,
+    "title": "Dua for Protection from Hell",
+    "arabic": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+    "translation": "O Allah, protect me from the Hellfire.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 43,
+    "title": "Dua for Paradise",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ",
+    "translation": "O Allah, I ask You for Paradise.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 44,
+    "title": "Dua During Ramadan",
+    "arabic": "اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ",
+    "translation": "O Allah, for You I have fasted, and with Your provision I break my fast.",
+    "category": "Ramadan"
+  },
+  {
+    "id": 45,
+    "title": "Dua for Laylatul Qadr",
+    "arabic": "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+    "translation": "O Allah, indeed You are Pardoning, You love pardon, so pardon me.",
+    "category": "Ramadan"
+  },
+  {
+    "id": 46,
+    "title": "Dua for Eid",
+    "arabic": "تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ",
+    "translation": "May Allah accept (good deeds) from us and from you.",
+    "category": "Eid"
+  },
+  {
+    "id": 47,
+    "title": "Dua for Hajj Talbiyah",
+    "arabic": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ",
+    "translation": "Here I am, O Allah, here I am.",
+    "category": "Hajj"
+  },
+  {
+    "id": 48,
+    "title": "Dua at Arafat",
+    "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
+    "translation": "There is no deity but Allah alone, with no partner.",
+    "category": "Hajj"
+  },
+  {
+    "id": 49,
+    "title": "Dua for Friday",
+    "arabic": "اللَّهُمَّ اغْفِرْ لِي مَا قَدَّمْتُ وَمَا أَخَّرْتُ",
+    "translation": "O Allah, forgive me my past and future sins.",
+    "category": "Friday"
+  },
+  {
+    "id": 50,
+    "title": "Dua for Sleep",
+    "arabic": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي",
+    "translation": "In Your name, my Lord, I lie down.",
+    "category": "Evening"
+  },
+  {
+    "id": 51,
+    "title": "Dua for Morning",
+    "arabic": "أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ",
+    "translation": "We have awakened upon the natural disposition of Islam.",
+    "category": "Morning"
+  },
+  {
+    "id": 52,
+    "title": "Dua for Evening",
+    "arabic": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ",
+    "translation": "We have entered the evening and all dominion belongs to Allah.",
+    "category": "Evening"
+  },
+    {
+      "id": 53,
+      "title": "Dua Before Knowledge",
+      "arabic": "اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي",
+      "translation": "O Allah, benefit me with what You have taught me.",
+      "category": "Knowledge"
+    },
+    {
+      "id": 54,
+      "title": "Dua for Increase in Rizq",
+      "arabic": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ",
+      "translation": "O Allah, suffice me with what is lawful instead of what is unlawful.",
+      "category": "Rizq"
+    },
+    {
+      "id": 55,
+      "title": "Dua When Sneezing",
+      "arabic": "الْحَمْدُ لِلَّهِ",
+      "translation": "All praise is for Allah.",
+      "category": "Daily"
+    },
+    {
+      "id": 56,
+      "title": "Reply to Sneezing",
+      "arabic": "يَرْحَمُكَ اللَّهُ",
+      "translation": "May Allah have mercy on you.",
+      "category": "Daily"
+    },
+    {
+      "id": 57,
+      "title": "Dua After Replying Sneezing",
+      "arabic": "يَهْدِيكُمُ اللَّهُ وَيُصْلِحُ بَالَكُمْ",
+      "translation": "May Allah guide you and set your affairs right.",
+      "category": "Daily"
+    },
+    {
+      "id": 58,
+      "title": "Dua for Entering Toilet",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
+      "translation": "O Allah, I seek refuge in You from evil and evil-doers.",
+      "category": "Purification"
+    },
+    {
+      "id": 59,
+      "title": "Dua for Leaving Toilet",
+      "arabic": "غُفْرَانَكَ",
+      "translation": "I seek Your forgiveness.",
+      "category": "Purification"
+    },
+    {
+      "id": 60,
+      "title": "Dua Before Studying",
+      "arabic": "رَبِّ اشْرَحْ لِي صَدْرِي",
+      "translation": "My Lord, expand for me my chest.",
+      "category": "Knowledge"
+    },
+    {
+      "id": 61,
+      "title": "Dua for Ease",
+      "arabic": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا",
+      "translation": "O Allah, nothing is easy except what You make easy.",
+      "category": "Difficulty"
+    },
+    {
+      "id": 62,
+      "title": "Dua When Angry",
+      "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+      "translation": "I seek refuge in Allah from Shaytan, the accursed.",
+      "category": "Character"
+    },
+    {
+      "id": 63,
+      "title": "Dua for Good Character",
+      "arabic": "اللَّهُمَّ حَسِّنْ خُلُقِي",
+      "translation": "O Allah, beautify my character.",
+      "category": "Character"
+    },
+    {
+      "id": 64,
+      "title": "Dua for Success",
+      "arabic": "رَبِّ وَفِّقْنِي لِمَا تُحِبُّ وَتَرْضَى",
+      "translation": "My Lord, grant me success in what You love and are pleased with.",
+      "category": "Success"
+    },
+    {
+      "id": 65,
+      "title": "Dua Before Exam",
+      "arabic": "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا",
+      "translation": "O Allah, nothing is easy except what You make easy.",
+      "category": "Success"
+    },
+    {
+      "id": 66,
+      "title": "Dua After Exam",
+      "arabic": "الْحَمْدُ لِلَّهِ عَلَى كُلِّ حَالٍ",
+      "translation": "All praise is for Allah in every situation.",
+      "category": "Gratitude"
+    },
+    {
+      "id": 67,
+      "title": "Dua When Afraid",
+      "arabic": "اللَّهُمَّ اكْفِنِيهِمْ بِمَا شِئْتَ",
+      "translation": "O Allah, protect me from them however You will.",
+      "category": "Fear"
+    },
+    {
+      "id": 68,
+      "title": "Dua for Strong Iman",
+      "arabic": "اللَّهُمَّ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
+      "translation": "O Allah, keep my heart firm upon Your religion.",
+      "category": "Faith"
+    },
+    {
+      "id": 69,
+      "title": "Dua for Protection of Children",
+      "arabic": "أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ",
+      "translation": "I seek protection for you in Allah’s perfect words.",
+      "category": "Family"
+    },
+    {
+      "id": 70,
+      "title": "Dua When Wearing Clothes",
+      "arabic": "الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا",
+      "translation": "Praise is to Allah who clothed me with this.",
+      "category": "Daily"
+    },
+    {
+      "id": 71,
+      "title": "Dua for New Clothes",
+      "arabic": "اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ",
+      "translation": "O Allah, praise is Yours, You have clothed me with it.",
+      "category": "Daily"
+    },
+    {
+      "id": 72,
+      "title": "Dua When Looking in Mirror",
+      "arabic": "اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",
+      "translation": "O Allah, just as You made my appearance good, make my character good.",
+      "category": "Daily"
+    },
+    {
+      "id": 73,
+      "title": "Dua for Entering Market",
+      "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ",
+      "translation": "There is no deity but Allah alone.",
+      "category": "Daily"
+    },
+    {
+      "id": 74,
+      "title": "Dua When Hearing Good News",
+      "arabic": "الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ",
+      "translation": "Praise be to Allah by whose favor good deeds are completed.",
+      "category": "Gratitude"
+    },
+    {
+      "id": 75,
+      "title": "Dua When Hearing Bad News",
+      "arabic": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+      "translation": "Indeed we belong to Allah and to Him we return.",
+      "category": "Difficulty"
+    },
+    {
+      "id": 76,
+      "title": "Dua for Rain Stopping",
+      "arabic": "اللَّهُمَّ حَوَالَيْنَا وَلَا عَلَيْنَا",
+      "translation": "O Allah, around us and not upon us.",
+      "category": "Nature"
+    },
+    {
+      "id": 77,
+      "title": "Dua for Blessing in Time",
+      "arabic": "اللَّهُمَّ بَارِكْ لِي فِي وَقْتِي",
+      "translation": "O Allah, bless my time.",
+      "category": "Daily"
+    },
+    {
+      "id": 78,
+      "title": "Dua for Protection at Night",
+      "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+      "translation": "I seek refuge in Allah’s perfect words from the evil of what He created.",
+      "category": "Protection"
+    },
+    {
+      "id": 79,
+      "title": "Dua for Relief from Debt",
+      "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْمَأْثَمِ وَالْمَغْرَمِ",
+      "translation": "O Allah, I seek refuge in You from sin and debt.",
+      "category": "Rizq"
+    },
+    {
+      "id": 80,
+      "title": "Dua for Forgiveness Morning and Evening",
+      "arabic": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ",
+      "translation": "O Allah, You are my Lord, none has the right to be worshipped except You.",
+      "category": "Forgiveness"
+    },
+  {
+    "id": 81,
+    "title": "Dua for Entering Prayer",
+    "arabic": "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ",
+    "translation": "O Allah, distance me from my sins as You have distanced the East from the West.",
+    "category": "Salah"
+  },
+  {
+    "id": 82,
+    "title": "Opening Supplication in Salah",
+    "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ",
+    "translation": "Glory and praise are Yours, O Allah.",
+    "category": "Salah"
+  },
+  {
+    "id": 83,
+    "title": "Dua in Ruku",
+    "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+    "translation": "Glory is to my Lord, the Most Great.",
+    "category": "Salah"
+  },
+  {
+    "id": 84,
+    "title": "Dua in Sujood",
+    "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+    "translation": "Glory is to my Lord, the Most High.",
+    "category": "Salah"
+  },
+  {
+    "id": 85,
+    "title": "Dua Between Sujood",
+    "arabic": "رَبِّ اغْفِرْ لِي وَارْحَمْنِي",
+    "translation": "My Lord, forgive me and have mercy on me.",
+    "category": "Salah"
+  },
+  {
+    "id": 86,
+    "title": "Tashahhud",
+    "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ",
+    "translation": "All greetings, prayers, and good deeds are for Allah.",
+    "category": "Salah"
+  },
+  {
+    "id": 87,
+    "title": "Salawat on Prophet",
+    "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ",
+    "translation": "O Allah, send blessings upon Muhammad and the family of Muhammad.",
+    "category": "Salah"
+  },
+  {
+    "id": 88,
+    "title": "Dua After Tashahhud",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ",
+    "translation": "O Allah, I seek refuge in You from the punishment of Hell.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 89,
+    "title": "Dua for Parents Forgiveness",
+    "arabic": "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ",
+    "translation": "My Lord, forgive me and my parents.",
+    "category": "Family"
+  },
+  {
+    "id": 90,
+    "title": "Dua for Mercy",
+    "arabic": "رَبِّ ارْحَمْنِي رَحْمَةً وَاسِعَةً",
+    "translation": "My Lord, have mercy on me with vast mercy.",
+    "category": "Mercy"
+  },
+  {
+    "id": 91,
+    "title": "Dua for Barakah in Wealth",
+    "arabic": "اللَّهُمَّ بَارِكْ لِي فِي رِزْقِي",
+    "translation": "O Allah, bless my provision.",
+    "category": "Rizq"
+  },
+  {
+    "id": 92,
+    "title": "Dua for Halal Earnings",
+    "arabic": "اللَّهُمَّ اجْعَلْ رِزْقِي حَلَالًا طَيِّبًا",
+    "translation": "O Allah, make my sustenance lawful and pure.",
+    "category": "Rizq"
+  },
+  {
+    "id": 93,
+    "title": "Dua for Protection from Shirk",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أُشْرِكَ بِكَ",
+    "translation": "O Allah, I seek refuge in You from associating partners with You.",
+    "category": "Faith"
+  },
+  {
+    "id": 94,
+    "title": "Dua for Protection from Hypocrisy",
+    "arabic": "اللَّهُمَّ طَهِّرْ قَلْبِي مِنَ النِّفَاقِ",
+    "translation": "O Allah, purify my heart from hypocrisy.",
+    "category": "Faith"
+  },
+  {
+    "id": 95,
+    "title": "Dua for Contentment",
+    "arabic": "اللَّهُمَّ اجْعَلْنِي مِنَ الْقَانِعِينَ",
+    "translation": "O Allah, make me among those who are content.",
+    "category": "Character"
+  },
+  {
+    "id": 96,
+    "title": "Dua for Good Company",
+    "arabic": "اللَّهُمَّ ارْزُقْنِي صُحْبَةَ الصَّالِحِينَ",
+    "translation": "O Allah, grant me the companionship of the righteous.",
+    "category": "Character"
+  },
+  {
+    "id": 97,
+    "title": "Dua for Protection from Bad Friends",
+    "arabic": "اللَّهُمَّ أَبْعِدْ عَنِّي أَصْحَابَ السُّوءِ",
+    "translation": "O Allah, keep bad companions away from me.",
+    "category": "Protection"
+  },
+  {
+    "id": 98,
+    "title": "Dua for Strength",
+    "arabic": "اللَّهُمَّ قَوِّنِي عَلَى طَاعَتِكَ",
+    "translation": "O Allah, strengthen me in obeying You.",
+    "category": "Faith"
+  },
+  {
+    "id": 99,
+    "title": "Dua for Sincerity",
+    "arabic": "اللَّهُمَّ اجْعَلْ عَمَلِي خَالِصًا لِوَجْهِكَ",
+    "translation": "O Allah, make my deeds sincere for Your sake.",
+    "category": "Faith"
+  },
+  {
+    "id": 100,
+    "title": "Dua for Protection from Pride",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكِبْرِ",
+    "translation": "O Allah, I seek refuge in You from arrogance.",
+    "category": "Character"
+  },
+  {
+    "id": 101,
+    "title": "Dua for Humility",
+    "arabic": "اللَّهُمَّ اجْعَلْنِي مِنَ الْمُتَوَاضِعِينَ",
+    "translation": "O Allah, make me among the humble.",
+    "category": "Character"
+  },
+  {
+    "id": 102,
+    "title": "Dua for Protection from Sin",
+    "arabic": "اللَّهُمَّ احْفَظْنِي مِنَ الْمَعَاصِي",
+    "translation": "O Allah, protect me from sins.",
+    "category": "Protection"
+  },
+  {
+    "id": 103,
+    "title": "Dua for Strong Memory",
+    "arabic": "اللَّهُمَّ قَوِّ ذَاكِرَتِي",
+    "translation": "O Allah, strengthen my memory.",
+    "category": "Knowledge"
+  },
+  {
+    "id": 104,
+    "title": "Dua for Understanding",
+    "arabic": "اللَّهُمَّ فَقِّهْنِي فِي الدِّينِ",
+    "translation": "O Allah, grant me understanding in religion.",
+    "category": "Knowledge"
+  },
+  {
+    "id": 105,
+    "title": "Dua for Wisdom",
+    "arabic": "اللَّهُمَّ ارْزُقْنِي الْحِكْمَةَ",
+    "translation": "O Allah, grant me wisdom.",
+    "category": "Knowledge"
+  },
+  {
+    "id": 106,
+    "title": "Dua for Peace of Heart",
+    "arabic": "اللَّهُمَّ اجْعَلْ فِي قَلْبِي سَكِينَةً",
+    "translation": "O Allah, place tranquility in my heart.",
+    "category": "Peace"
+  },
+  {
+    "id": 107,
+    "title": "Dua for Protection from Anxiety",
+    "arabic": "اللَّهُمَّ أَذْهِبْ عَنِّي الْهَمَّ",
+    "translation": "O Allah, remove my worries.",
+    "category": "Difficulty"
+  },
+  {
+    "id": 108,
+    "title": "Dua for Healing Heart",
+    "arabic": "اللَّهُمَّ اشْفِ صَدْرِي",
+    "translation": "O Allah, heal my chest (heart).",
+    "category": "Health"
+  },
+  {
+    "id": 109,
+    "title": "Dua for Protection from Harm",
+    "arabic": "اللَّهُمَّ احْفَظْنِي مِنْ كُلِّ شَرٍّ",
+    "translation": "O Allah, protect me from every evil.",
+    "category": "Protection"
+  },
+  {
+    "id": 110,
+    "title": "Dua for Safe Journey",
+    "arabic": "اللَّهُمَّ احْفَظْنَا فِي سَفَرِنَا",
+    "translation": "O Allah, protect us in our journey.",
+    "category": "Travel"
+  },
+  {
+    "id": 111,
+    "title": "Dua for Returning Home",
+    "arabic": "آيِبُونَ تَائِبُونَ عَابِدُونَ",
+    "translation": "We return, repent, and worship our Lord.",
+    "category": "Travel"
+  },
+  {
+    "id": 112,
+    "title": "Dua for Blessing in Home",
+    "arabic": "اللَّهُمَّ بَارِكْ لَنَا فِي بُيُوتِنَا",
+    "translation": "O Allah, bless our homes.",
+    "category": "Home"
+  },
+  {
+    "id": 113,
+    "title": "Dua for Safety of Family",
+    "arabic": "اللَّهُمَّ احْفَظْ أَهْلِي",
+    "translation": "O Allah, protect my family.",
+    "category": "Family"
+  },
+  {
+    "id": 114,
+    "title": "Dua for Good Children",
+    "arabic": "اللَّهُمَّ اجْعَلْ أَوْلَادِي صَالِحِينَ",
+    "translation": "O Allah, make my children righteous.",
+    "category": "Family"
+  },
+  {
+    "id": 115,
+    "title": "Dua for Love Between Spouses",
+    "arabic": "اللَّهُمَّ أَلِّفْ بَيْنَ قُلُوبِنَا",
+    "translation": "O Allah, unite our hearts in love.",
+    "category": "Family"
+  },
+  {
+    "id": 116,
+    "title": "Dua for Removing Hardship",
+    "arabic": "اللَّهُمَّ اكْشِفْ عَنِّي الضُّرَّ",
+    "translation": "O Allah, remove hardship from me.",
+    "category": "Difficulty"
+  },
+  {
+    "id": 117,
+    "title": "Dua for Protection from Disease",
+    "arabic": "اللَّهُمَّ عَافِنِي مِنَ الْأَمْرَاضِ",
+    "translation": "O Allah, protect me from diseases.",
+    "category": "Health"
+  },
+  {
+    "id": 118,
+    "title": "Dua for Long Life in Obedience",
+    "arabic": "اللَّهُمَّ اجْعَلْ حَيَاتِي خَيْرًا",
+    "translation": "O Allah, make my life full of goodness.",
+    "category": "Life"
+  },
+  {
+    "id": 119,
+    "title": "Dua for Good Deeds",
+    "arabic": "اللَّهُمَّ وَفِّقْنِي لِلْأَعْمَالِ الصَّالِحَةِ",
+    "translation": "O Allah, grant me success in righteous deeds.",
+    "category": "Faith"
+  },
+  {
+    "id": 120,
+    "title": "Dua for Acceptance of Deeds",
+    "arabic": "اللَّهُمَّ تَقَبَّلْ مِنِّي",
+    "translation": "O Allah, accept from me.",
+    "category": "Faith"
+  },
+  {
+    "id": 121,
+    "title": "Dua for Protection from Fire",
+    "arabic": "اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ",
+    "translation": "O Allah, save me from the Fire.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 122,
+    "title": "Dua for Jannah",
+    "arabic": "اللَّهُمَّ أَدْخِلْنِي الْجَنَّةَ",
+    "translation": "O Allah, admit me into Paradise.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 123,
+    "title": "Dua for Protection from Punishment",
+    "arabic": "اللَّهُمَّ قِنِي عَذَابَكَ",
+    "translation": "O Allah, protect me from Your punishment.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 124,
+    "title": "Dua for Light in Grave",
+    "arabic": "اللَّهُمَّ نَوِّرْ قَبْرِي",
+    "translation": "O Allah, illuminate my grave.",
+    "category": "Death"
+  },
+  {
+    "id": 125,
+    "title": "Dua for Easy Death",
+    "arabic": "اللَّهُمَّ هَوِّنْ عَلَيَّ سَكَرَاتِ الْمَوْتِ",
+    "translation": "O Allah, ease for me the pains of death.",
+    "category": "Death"
+  },
+  {
+    "id": 126,
+    "title": "Dua for Good Judgment Day",
+    "arabic": "اللَّهُمَّ يَسِّرْ حِسَابِي",
+    "translation": "O Allah, make my reckoning easy.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 127,
+    "title": "Dua for Shade on Day of Judgment",
+    "arabic": "اللَّهُمَّ ظَلِّلْنِي فِي ظِلِّكَ",
+    "translation": "O Allah, shade me under Your shade.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 128,
+    "title": "Dua for Meeting Allah",
+    "arabic": "اللَّهُمَّ اجْعَلْ لِقَاءَكَ خَيْرًا لِي",
+    "translation": "O Allah, make meeting You good for me.",
+    "category": "Hereafter"
+  },
+  {
+    "id": 129,
+    "title": "Dua for Forgiveness of All Sins",
+    "arabic": "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي كُلَّهُ",
+    "translation": "O Allah, forgive me all of my sins.",
+    "category": "Forgiveness"
+  },
+  {
+    "id": 130,
+    "title": "Dua for Mercy on Judgment Day",
+    "arabic": "اللَّهُمَّ ارْحَمْنِي يَوْمَ الْقِيَامَةِ",
+    "translation": "O Allah, have mercy on me on the Day of Resurrection.",
+    "category": "Hereafter"
+  }
+]

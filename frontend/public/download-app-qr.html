@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Islamic Unity QR Code</title>
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+        }
+
+        #qrcode {
+            width: 300px;
+            height: 300px;
+        }
+
+        #qrcode img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- QR CODE ONLY -->
+    <div id="qrcode"></div>
+
+    <script>
+        const playStoreUrl =
+            "https://play.google.com/store/apps/details?id=com.islamicunity.android";
+
+        new QRCode(document.getElementById("qrcode"), {
+            text: playStoreUrl,
+            width: 300,
+            height: 300,
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+</body>
+</html>

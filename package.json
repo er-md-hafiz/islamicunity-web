@@ -13,6 +13,7 @@
     "test": "npm run test -w backend",
     "test:ui": "playwright test",
     "test:pages": "playwright test --config playwright.pages.config.js",
+    "test:resources": "node scripts/validate-resources.mjs",
     "preview": "npm run preview -w frontend"
   },
   "devDependencies": {

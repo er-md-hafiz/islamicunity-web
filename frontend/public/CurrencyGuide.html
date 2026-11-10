@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Unity · Global Currency & Capitals</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Poppins + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      transition: background-color 0.3s ease, color 0.2s ease, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    /* Light mode */
+    body {
+      --bg-primary: #f4f7fb;
+      --bg-card: #ffffff;
+      --text-primary: #0f2a44;
+      --text-secondary: #2d3e5f;
+      --accent: #0d9488;        /* teal – Islamic theme */
+      --accent-light: #d5f5f2;
+      --border: #dde7f0;
+      --shadow: 0 20px 30px -10px rgba(0,50,30,0.08), 0 8px 20px rgba(0,30,20,0.04);
+      --navbar-bg: #ffffffdd;
+      --search-bg: #ffffff;
+      --card-hover: #f9ffff;
+      --flag-border: #cbd5e1;
+    }
+
+    /* Dark mode */
+    body.dark {
+      --bg-primary: #0b1a2a;
+      --bg-card: #132b3c;
+      --text-primary: #eef2f6;
+      --text-secondary: #cbd5e1;
+      --accent: #2aa79b;
+      --accent-light: #1e4a4a;
+      --border: #2d4b5e;
+      --shadow: 0 20px 30px -10px #00000066, 0 8px 15px #00000050;
+      --navbar-bg: #0b1a2ae0;
+      --search-bg: #1c3f4f;
+      --card-hover: #1d3f4e;
+      --flag-border: #3f5e70;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      padding: 0 0 40px 0;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 25px;
+    }
+
+    /* glassmorphism navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navbar-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      margin-bottom: 30px;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #0d9488, #0f766e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: block;
+      line-height: 1.2;
+      -webkit-text-fill-color: var(--text-secondary);
+      background: none;
+    }
+
+    .controls {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .lang-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card);
+      padding: 6px 12px;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .lang-selector i {
+      color: var(--accent);
+    }
+    select {
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 4px 0;
+    }
+    select option {
+      background: var(--bg-card);
+    }
+
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      font-weight: 500;
+    }
+    .theme-toggle i {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* search section */
+    .search-section {
+      margin: 25px 0 30px;
+      display: flex;
+      justify-content: center;
+    }
+    .search-wrapper {
+      background: var(--search-bg);
+      border-radius: 60px;
+      padding: 5px 5px 5px 25px;
+      display: flex;
+      align-items: center;
+      width: min(100%, 600px);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .search-wrapper i {
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
+    .search-wrapper input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 16px 15px;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      outline: none;
+    }
+    .search-wrapper input::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+    .search-wrapper button {
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .search-wrapper button:hover {
+      filter: brightness(1.05);
+      transform: scale(1.02);
+    }
+
+    /* feature highlights */
+    .feature-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin: 30px 0 40px;
+    }
+    .badge-item {
+      background: var(--bg-card);
+      padding: 14px 28px;
+      border-radius: 60px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+    .badge-item i {
+      color: var(--accent);
+      font-size: 1.6rem;
+    }
+
+    /* country grid */
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+    .country-card {
+      background: var(--bg-card);
+      border-radius: 28px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .country-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -10px var(--accent);
+      background: var(--card-hover);
+    }
+
+    .flag-img {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid var(--flag-border);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .country-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .capital {
+      font-size: 1rem;
+      background: var(--accent-light);
+      padding: 4px 14px;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 5px 0 10px;
+      font-weight: 500;
+    }
+    .currency-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .currency-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent-light);
+      padding: 10px 15px;
+      border-radius: 50px;
+    }
+    .currency-icon {
+      background: var(--accent);
+      width: 42px;
+      height: 42px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 6px 12px var(--accent);
+    }
+    .currency-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .currency-code {
+      font-family: monospace;
+      background: var(--bg-card);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    .fact-badge {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      background: var(--bg-primary);
+      padding: 8px 12px;
+      border-radius: 20px;
+      border-left: 5px solid var(--accent);
+      font-style: italic;
+    }
+
+    /* load more / stats */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background: var(--bg-card);
+      padding: 16px 22px;
+      border-radius: 60px;
+      margin: 20px 0;
+      border: 1px solid var(--border);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* footer & cta */
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 50px 0 30px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 18px 42px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 15px 25px -8px var(--accent);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      filter: brightness(1.08);
+    }
+
+    hr {
+      border: 1px solid var(--border);
+      margin: 30px 0;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    /* rtl support */
+    body[dir="rtl"] .country-card .card-header {
+      flex-direction: row-reverse;
+    }
+    body[dir="rtl"] .currency-row {
+      flex-direction: row-reverse;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <h1>🌍 ISLAMIC UNITY</h1>
+        <span data-i18n="app_sub">currencies · capitals · insights</span>
+      </div>
+      <div class="controls">
+        <div class="lang-selector">
+          <i class="fas fa-globe"></i>
+          <select id="langSwitcher" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ur">اردو</option>
+            <option value="ar">العربية</option>
+          </select>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+          <i class="fas fa-sun" id="themeIcon"></i>
+          <span data-i18n="theme_btn">Day / Night</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- page heading -->
+    <div style="text-align: center; margin: 20px 0 10px;">
+      <h2 data-i18n="page_title" style="font-size: 2.4rem; font-weight: 700;">🌐 World Currencies & Capitals</h2>
+      <p data-i18n="page_sub" style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 10px auto;">Explore every nation's currency, capital, and hidden Islamic finance gems – all in one place.</p>
+    </div>
+
+    <!-- feature badges (attractive highlights) -->
+    <div class="feature-badge">
+      <div class="badge-item"><i class="fas fa-coins"></i> <span data-i18n="badge1">195+ Currencies</span></div>
+      <div class="badge-item"><i class="fas fa-landmark"></i> <span data-i18n="badge2">Capitals & Flags</span></div>
+      <div class="badge-item"><i class="fas fa-mosque"></i> <span data-i18n="badge3">Zakat‑ready data</span></div>
+      <div class="badge-item"><i class="fas fa-chart-line"></i> <span data-i18n="badge4">Islamic insights</span></div>
+    </div>
+
+    <!-- search bar -->
+    <div class="search-section">
+      <div class="search-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="🔍 Search by country, capital or currency..." data-i18n="search_placeholder" value="">
+        <button id="searchBtn" data-i18n="search_btn">Search</button>
+      </div>
+    </div>
+
+    <!-- dynamic counter & reset -->
+    <div class="stats">
+      <span id="countryCounter">Showing <strong>40</strong> countries</span>
+      <button class="btn-outline" id="resetSearch"><i class="fas fa-undo-alt"></i> <span data-i18n="reset">Reset</span></button>
+    </div>
+
+    <!-- country grid injected via js -->
+    <div id="countryGrid" class="country-grid"></div>
+
+    <!-- deeper details / feature section -->
+    <div style="background: var(--bg-card); border-radius: 40px; padding: 30px; margin: 40px 0; border: 1px solid var(--border);">
+      <h3 style="font-size: 2rem; display: flex; gap: 10px; align-items: center;"><i class="fas fa-star" style="color: gold;"></i> <span data-i18n="deep_title">Why currencies matter in Islam</span></h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 25px;">
+        <div><i class="fas fa-calculator" style="color: var(--accent); font-size: 2rem;"></i> <strong data-i18n="zakat_link">Zakat on wealth:</strong> <span data-i18n="zakat_text">Knowing currency value is essential to calculate Nisab (gold/silver threshold).</span></div>
+        <div><i class="fas fa-hand-holding-heart" style="color: var(--accent);"></i> <strong data-i18n="sadaqah_link">Sadaqah & conversion:</strong> <span data-i18n="sadaqah_text">Donations across borders require accurate exchange rates – our app helps.</span></div>
+        <div><i class="fas fa-book-open" style="color: var(--accent);"></i> <strong data-i18n="riba_link">Riba‑free awareness:</strong> <span data-i18n="riba_text">Islamic finance avoids interest; some currencies are historically gold/silver based.</span></div>
+      </div>
+    </div>
+
+    <!-- call to action buttons -->
+    <div class="cta-buttons">
+      <a href="https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en_IN" target="_blank" class="btn-primary"><i class="fab fa-google-play"></i> <span data-i18n="app_download">Islamic Unity App</span></a>
+      <a href="ZakatCalculator.html" target="_blank" class="btn-primary" style="background: transparent; color: var(--accent); border: 2px solid var(--accent); box-shadow: none;"><i class="fas fa-calculator"></i> <span data-i18n="zakat_calc">Zakat Calculator</span></a>
+    </div>
+
+    <hr>
+    <footer>
+      <p data-i18n="footer">🕋 Islamic Unity – bridging world currencies & Islamic finance. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    (function() {
+      // ---------- 🌍 comprehensive country dataset (name, capital, currency, code, symbol, flag code, fun fact) ----------
+      const countries = [
+        { name: "Saudi Arabia", capital: "Riyadh", currency: "Saudi Riyal", code: "SAR", symbol: "﷼", flag: "sa", fact: "Riyal is pegged to USD; used for Hajj expenses & Zakat." },
+        { name: "United Arab Emirates", capital: "Abu Dhabi", currency: "UAE Dirham", code: "AED", symbol: "د.إ", flag: "ae", fact: "Dirham is also accepted in some GCC countries." },
+        { name: "Pakistan", capital: "Islamabad", currency: "Pakistani Rupee", code: "PKR", symbol: "₨", flag: "pk", fact: "Rupee means 'silver' in Sanskrit; widely used in South Asia." },
+        { name: "India", capital: "New Delhi", currency: "Indian Rupee", code: "INR", symbol: "₹", flag: "in", fact: "₹ symbol was designed in 2010; India has high Zakat potential." },
+        { name: "Egypt", capital: "Cairo", currency: "Egyptian Pound", code: "EGP", symbol: "£", flag: "eg", fact: "One of oldest currencies; still called 'geneih' locally." },
+        { name: "Turkey", capital: "Ankara", currency: "Turkish Lira", code: "TRY", symbol: "₺", flag: "tr", fact: "Lira lost zeros in 2005; Islamic banking growing." },
+        { name: "Indonesia", capital: "Jakarta", currency: "Indonesian Rupiah", code: "IDR", symbol: "Rp", flag: "id", fact: "Largest Muslim population; Rupiah means 'silver'." },
+        { name: "Malaysia", capital: "Kuala Lumpur", currency: "Malaysian Ringgit", code: "MYR", symbol: "RM", flag: "my", fact: "Ringgit means 'jagged' in Malay; gold dinar also used." },
+        { name: "Bangladesh", capital: "Dhaka", currency: "Bangladeshi Taka", code: "BDT", symbol: "৳", flag: "bd", fact: "Taka derived from Sanskrit 'tanka' (coin)." },
+        { name: "Nigeria", capital: "Abuja", currency: "Nigerian Naira", code: "NGN", symbol: "₦", flag: "ng", fact: "Naira introduced 1973; West African economy." },
+        { name: "Morocco", capital: "Rabat", currency: "Moroccan Dirham", code: "MAD", symbol: "د.م.", flag: "ma", fact: "Dirham history goes back to Islamic caliphate." },
+        { name: "Jordan", capital: "Amman", currency: "Jordanian Dinar", code: "JOD", symbol: "د.ا", flag: "jo", fact: "Strongly pegged to USD; used in West Bank too." },
+        { name: "Qatar", capital: "Doha", currency: "Qatari Riyal", code: "QAR", symbol: "ر.ق", flag: "qa", fact: "Pegged at 3.64 to USD; hosts Islamic banks." },
+        { name: "Kuwait", capital: "Kuwait City", currency: "Kuwaiti Dinar", code: "KWD", symbol: "د.ك", flag: "kw", fact: "Highest valued currency in the world." },
+        { name: "United States", capital: "Washington, D.C.", currency: "US Dollar", code: "USD", symbol: "$", flag: "us", fact: "World reserve currency; used in many Islamic countries." },
+        { name: "United Kingdom", capital: "London", currency: "Pound Sterling", code: "GBP", symbol: "£", flag: "gb", fact: "Oldest currency still in use; originated 800 years ago." },
+        { name: "European Union", capital: "Brussels", currency: "Euro", code: "EUR", symbol: "€", flag: "eu", fact: "Official in 20 EU countries; used in Kosovo." },
+        { name: "Japan", capital: "Tokyo", currency: "Japanese Yen", code: "JPY", symbol: "¥", flag: "jp", fact: "Third most traded currency; yen means 'circle'." },
+        { name: "China", capital: "Beijing", currency: "Renminbi (Yuan)", code: "CNY", symbol: "¥", flag: "cn", fact: "Digital yuan being tested; Islamic trade increasing." },
+        { name: "Russia", capital: "Moscow", currency: "Russian Ruble", code: "RUB", symbol: "₽", flag: "ru", fact: "Ruble 'to cut' – from silver pieces." },
+        { name: "South Africa", capital: "Pretoria", currency: "South African Rand", code: "ZAR", symbol: "R", flag: "za", fact: "Named after Witwatersrand (ridge of white water)." },
+        { name: "Brazil", capital: "Brasília", currency: "Brazilian Real", code: "BRL", symbol: "R$", flag: "br", fact: "Real means 'royal' in Portuguese." },
+        { name: "Australia", capital: "Canberra", currency: "Australian Dollar", code: "AUD", symbol: "$", flag: "au", fact: "First polymer banknotes; used in Pacific islands." },
+        { name: "Canada", capital: "Ottawa", currency: "Canadian Dollar", code: "CAD", symbol: "$", flag: "ca", fact: "Symbol 'C$' distinguishes from other dollars." },
+        { name: "Switzerland", capital: "Bern", currency: "Swiss Franc", code: "CHF", symbol: "Fr", flag: "ch", fact: "One of few currencies still backed by gold." },
+        { name: "Afghanistan", capital: "Kabul", currency: "Afghan Afghani", code: "AFN", symbol: "؋", flag: "af", fact: "Name means 'Afghani' from 1925." },
+        { name: "Iran", capital: "Tehran", currency: "Iranian Rial", code: "IRR", symbol: "﷼", flag: "ir", fact: "Due to sanctions, rial fluctuates; many use Toman." },
+        { name: "Iraq", capital: "Baghdad", currency: "Iraqi Dinar", code: "IQD", symbol: "د.ع", flag: "iq", fact: "Dinar from Roman 'denarius'." },
+        { name: "Syria", capital: "Damascus", currency: "Syrian Pound", code: "SYP", symbol: "£", flag: "sy", fact: "One of oldest continuously inhabited capitals." },
+        { name: "Lebanon", capital: "Beirut", currency: "Lebanese Pound", code: "LBP", symbol: "ل.ل", flag: "lb", fact: "Pegged to dollar for decades." },
+        { name: "Palestine", capital: "East Jerusalem", currency: "Israeli Shekel", code: "ILS", symbol: "₪", flag: "ps", fact: "Palestinians use shekel, dinar, and dollar." },
+        { name: "Yemen", capital: "Sana'a", currency: "Yemeni Rial", code: "YER", symbol: "﷼", flag: "ye", fact: "Ancient Himyarite coins found here." },
+        { name: "Oman", capital: "Muscat", currency: "Omani Rial", code: "OMR", symbol: "ر.ع.", flag: "om", fact: "One of highest valued currencies." },
+        { name: "Bahrain", capital: "Manama", currency: "Bahraini Dinar", code: "BHD", symbol: "د.ب", flag: "bh", fact: "Pegged to USD at 0.376." },
+        { name: "Tunisia", capital: "Tunis", currency: "Tunisian Dinar", code: "TND", symbol: "د.ت", flag: "tn", fact: "Dinar used since 1960." },
+        { name: "Algeria", capital: "Algiers", currency: "Algerian Dinar", code: "DZD", symbol: "د.ج", flag: "dz", fact: "Oil & gas influence currency." },
+        { name: "Sudan", capital: "Khartoum", currency: "Sudanese Pound", code: "SDG", symbol: "ج.س", flag: "sd", fact: "New pound after South Sudan split." },
+        { name: "Somalia", capital: "Mogadishu", currency: "Somali Shilling", code: "SOS", symbol: "Sh", flag: "so", fact: "Lacks central bank; US dollar widely used." },
+        { name: "Mauritania", capital: "Nouakchott", currency: "Mauritanian Ouguiya", code: "MRU", symbol: "UM", flag: "mr", fact: "One of few currencies not based on decimal." },
+        { name: "Comoros", capital: "Moroni", currency: "Comorian Franc", code: "KMF", symbol: "CF", flag: "km", fact: "Pegged to Euro." }
+      ];
+
+      // UI elements
+      const gridEl = document.getElementById('countryGrid');
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const resetBtn = document.getElementById('resetSearch');
+      const counterSpan = document.getElementById('countryCounter');
+
+      // render cards based on filter
+      function renderCountries(filter = '') {
+        const term = filter.trim().toLowerCase();
+        const filtered = countries.filter(c => 
+          c.name.toLowerCase().includes(term) || 
+          c.capital.toLowerCase().includes(term) || 
+          c.currency.toLowerCase().includes(term) ||
+          c.code.toLowerCase().includes(term)
+        );
+
+        counterSpan.innerHTML = `Showing <strong>${filtered.length}</strong> countries`;
+
+        if (filtered.length === 0) {
+          gridEl.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px; background:var(--bg-card); border-radius:60px;"><i class="fas fa-search" style="font-size:3rem; opacity:0.4;"></i><h3 data-i18n="no_results">No countries match</h3></div>`;
+          return;
+        }
+
+        let html = '';
+        filtered.forEach(c => {
+          html += `
+            <div class="country-card">
+              <div class="card-header">
+                <img src="https://flagcdn.com/w80/${c.flag}.png" alt="${c.name} flag" class="flag-img" onerror="this.src='https://flagcdn.com/w80/xx.png'">
+                <span class="country-name">${c.name}</span>
+              </div>
+              <div class="capital"><i class="fas fa-city"></i> ${c.capital}</div>
+              <div class="currency-details">
+                <div class="currency-row">
+                  <div class="currency-icon"><i class="fas fa-coins"></i></div>
+                  <div>
+                    <span class="currency-name">${c.currency}</span> <span class="currency-code">${c.code}</span>
+                    <div style="font-size:1.5rem; font-weight:600; color:var(--accent);">${c.symbol}</div>
+                  </div>
+                </div>
+                <div class="fact-badge"><i class="fas fa-lightbulb"></i> ${c.fact}</div>
+              </div>
+            </div>
+          `;
+        });
+        gridEl.innerHTML = html;
+      }
+
+      // initial render
+      renderCountries();
+
+      // search handler
+      function handleSearch() {
+        renderCountries(searchInput.value);
+      }
+      searchBtn.addEventListener('click', handleSearch);
+      searchInput.addEventListener('keyup', (e) => { if (e.key === 'Enter') handleSearch(); });
+      resetBtn.addEventListener('click', () => { searchInput.value = ''; renderCountries(); });
+
+      // ---------- 🌓 Day/night & i18n (similar to previous, minimal) ----------
+      const translations = {
+        en: {
+          app_sub: "currencies · capitals · insights",
+          theme_btn: "Day / Night",
+          page_title: "🌐 World Currencies & Capitals",
+          page_sub: "Explore every nation's currency, capital, and hidden Islamic finance gems – all in one place.",
+          badge1: "195+ Currencies", badge2: "Capitals & Flags", badge3: "Zakat‑ready data", badge4: "Islamic insights",
+          search_placeholder: "🔍 Search by country, capital or currency...",
+          search_btn: "Search",
+          reset: "Reset",
+          deep_title: "Why currencies matter in Islam",
+          zakat_link: "Zakat on wealth:",
+          zakat_text: "Knowing currency value is essential to calculate Nisab (gold/silver threshold).",
+          sadaqah_link: "Sadaqah & conversion:",
+          sadaqah_text: "Donations across borders require accurate exchange rates – our app helps.",
+          riba_link: "Riba‑free awareness:",
+          riba_text: "Islamic finance avoids interest; some currencies are historically gold/silver based.",
+          app_download: "Islamic Unity App",
+          zakat_calc: "Zakat Calculator",
+          footer: "🕋 Islamic Unity – bridging world currencies & Islamic finance. All rights reserved.",
+          no_results: "No countries match"
+        },
+        hi: { app_sub: "मुद्राएँ · राजधानियाँ · अंतर्दृष्टि", theme_btn: "दिन / रात", page_title: "🌐 विश्व मुद्राएँ और राजधानियाँ", page_sub: "हर देश की मुद्रा, राजधानी और इस्लामी वित्त छिपे रत्न – एक ही स्थान पर।", badge1: "195+ मुद्राएँ", badge2: "राजधानियाँ और झंडे", badge3: "ज़कात-तैयार डेटा", badge4: "इस्लामी अंतर्दृष्टि", search_placeholder: "🔍 देश, राजधानी या मुद्रा द्वारा खोजें...", search_btn: "खोज", reset: "रीसेट", deep_title: "इस्लाम में मुद्राएँ क्यों मायने रखती हैं", zakat_link: "ज़कात:", zakat_text: "निसाब की गणना के लिए मुद्रा मूल्य आवश्यक।", sadaqah_link: "सदक़ा और रूपांतरण:", sadaqah_text: "सीमा पार दान के लिए सटीक विनिमय दर – हमारा ऐप मदद करता है।", riba_link: "रिबा-मुक्त जागरूकता:", riba_text: "इस्लामिक वित्त ब्याज से बचता है; कुछ मुद्राएँ ऐतिहासिक रूप से सोने/चांदी आधारित हैं।", app_download: "इस्लामिक यूनिटी ऐप", zakat_calc: "ज़कात कैलकुलेटर", footer: "🕋 इस्लामिक यूनिटी – विश्व मुद्राओं और इस्लामी वित्त को जोड़ना।", no_results: "कोई देश मेल नहीं खाता" },
+        ur: { app_sub: "کرنسیاں · دارالحکومت · بصیرت", theme_btn: "دن / رات", page_title: "🌐 عالمی کرنسیاں اور دارالحکومت", page_sub: "ہر ملک کی کرنسی، دارالحکومت اور اسلامی مالیات کے چھپے خزانے – ایک ہی جگہ۔", badge1: "195+ کرنسیاں", badge2: "دارالحکومت اور جھنڈے", badge3: "زکات کے لیے تیار ڈیٹا", badge4: "اسلامی بصیرت", search_placeholder: "🔍 ملک، دارالحکومت یا کرنسی سے تلاش کریں...", search_btn: "تلاش", reset: "ری سیٹ", deep_title: "اسلام میں کرنسیوں کی اہمیت", zakat_link: "زکات:", zakat_text: "نصاب کا حساب کرنے کے لیے کرنسی کی قدر ضروری ہے۔", sadaqah_link: "صدقہ اور تبادلہ:", sadaqah_text: "بین الاقوامی عطیات کے لیے درست شرح مبادلہ – ہمارا ایپ مدد کرتا ہے۔", riba_link: "ربا سے پاک آگاہی:", riba_text: "اسلامی مالیات سود سے بچتی ہے؛ کچھ کرنسیاں تاریخی طور پر سونے/چاندی پر مبنی ہیں۔", app_download: "اسلامک یونٹی ایپ", zakat_calc: "زکات کیلکولیٹر", footer: "🕋 اسلامی یونٹی – عالمی کرنسیوں اور اسلامی مالیات کو جوڑنا۔", no_results: "کوئی ملک نہیں ملا" },
+        ar: { app_sub: "عملات · عواصم · رؤى", theme_btn: "نهار / ليل", page_title: "🌐 عملات وعواصم العالم", page_sub: "استكشف عملات وعواصم كل دولة وجواهر التمويل الإسلامي المخفية – كل في مكان واحد.", badge1: "١٩٥+ عملة", badge2: "عواصم وأعلام", badge3: "بيانات جاهزة للزكاة", badge4: "رؤى إسلامية", search_placeholder: "🔍 ابحث بالدولة أو العاصمة أو العملة...", search_btn: "بحث", reset: "إعادة ضبط", deep_title: "لماذا العملات مهمة في الإسلام", zakat_link: "زكاة:", zakat_text: "معرفة قيمة العملة ضرورية لحساب النصاب.", sadaqah_link: "صدقة وتحويل:", sadaqah_text: "التبرعات عبر الحدود تتطلب أسعار صرف دقيقة – تطبيقنا يساعد.", riba_link: "الوعي الخالي من الربا:", riba_text: "التمويل الإسلامي يتجنب الفائدة؛ بعض العملات تاريخياً تعتمد على الذهب/الفضة.", app_download: "تطبيق Islamic Unity", zakat_calc: "حاسبة الزكاة", footer: "🕋 الوحدة الإسلامية – ربط عملات العالم بالتمويل الإسلامي.", no_results: "لا توجد دول تطابق" }
+      };
+
+      const i18nElements = document.querySelectorAll('[data-i18n]');
+      const langSwitcher = document.getElementById('langSwitcher');
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const body = document.body;
+
+      function setLanguage(lang) {
+        if (!translations[lang]) return;
+        i18nElements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            if (el.tagName === 'INPUT' && el.placeholder) {
+              el.placeholder = translations[lang][key];
+            } else {
+              el.textContent = translations[lang][key];
+            }
+          }
+        });
+        if (lang === 'ar') body.setAttribute('dir', 'rtl');
+        else body.setAttribute('dir', 'ltr');
+        localStorage.setItem('islamicUnityLang', lang);
+      }
+
+      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
+      const savedLang = localStorage.getItem('islamicUnityLang') || 'en';
+      langSwitcher.value = savedLang;
+      setLanguage(savedLang);
+
+      // theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        themeIcon.className = 'fas fa-moon';
+      }
+      themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark')) {
+          body.classList.remove('dark');
+          themeIcon.className = 'fas fa-sun';
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.classList.add('dark');
+          themeIcon.className = 'fas fa-moon';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -36,6 +36,7 @@ const PLAY =
   "https://play.google.com/store/apps/details?id=com.islamicunity.android";
 const EMAIL = "m3hmedia@gmail.com";
 const REPO = "https://github.com/er-md-hafiz/islamicunity-web";
+const RESOURCES = import.meta.env.BASE_URL;
 const featureIcons = {
   prayer_times: Clock3,
   qibla: Compass,
@@ -315,14 +316,12 @@ export default function LandingPage({ section }) {
       return;
     }
     const id = requestAnimationFrame(() =>
-      document
-        .getElementById(section)
-        ?.scrollIntoView({
-          behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-            ? "instant"
-            : "smooth",
-          block: "start",
-        }),
+      document.getElementById(section)?.scrollIntoView({
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+        block: "start",
+      }),
     );
     return () => cancelAnimationFrame(id);
   }, [section]);
@@ -646,7 +645,7 @@ export default function LandingPage({ section }) {
             <p>{t("donateBody")}</p>
             <a
               className="lp-button lp-button-gold"
-              href={`mailto:${EMAIL}?subject=Supporting%20Islamic%20Unity`}
+              href={`${RESOURCES}donate.html`}
             >
               <HandHeart size={20} />
               {t("support")}
@@ -739,6 +738,8 @@ export default function LandingPage({ section }) {
             <p>{t("footerLine")}</p>
           </div>
           <div className="lp-footer-links">
+            <a href={`${RESOURCES}PrivacyPolicy.html`}>{t("appPrivacy")}</a>
+            <a href={`${RESOURCES}terms_and_conditions.html`}>{t("terms")}</a>
             {["features", "about", "contact", "privacy"].map((id) => (
               <a href={`#${id}`} key={id}>
                 {t(id)}

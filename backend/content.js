@@ -125,7 +125,7 @@ export const content = {
       {
         title: "Islamic Unity media",
         body: "Open the original Islamic Unity website to explore available media.",
-        url: "https://er-md-hafiz.github.io/IslamicUnity/",
+        url: "https://er-md-hafiz.github.io/islamicunity-web/",
       },
     ],
   },

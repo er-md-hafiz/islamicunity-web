@@ -95,7 +95,7 @@ test("four language layouts fit mobile, tablet and desktop", async ({
       .evaluate((e) => parseFloat(getComputedStyle(e).fontSize)),
   ).toBeGreaterThanOrEqual(40);
 });
-test("support is an honest email flow and privacy details are accessible", async ({
+test("support opens the migrated donation page and privacy details remain accessible", async ({
   page,
 }) => {
   const requests = [];
@@ -105,10 +105,10 @@ test("support is an honest email flow and privacy details are accessible", async
   await page.goto("/#donate");
   await expect(page.locator(".lp-donate .lp-button")).toHaveAttribute(
     "href",
-    "mailto:m3hmedia@gmail.com?subject=Supporting%20Islamic%20Unity",
+    "/donate.html",
   );
   await expect(page.locator(".lp-support-note")).toContainText(
-    "No payment is collected",
+    "Opens our donation page",
   );
   await page.locator('.lp-footer-links a[href="#privacy"]').click();
   await expect(page.locator("#privacy")).toHaveAttribute("open", "");

@@ -1,0 +1,7 @@
+# Keep migrated resource hashes identical on Windows and the Linux Pages runner.
+frontend/public/*.html text eol=lf whitespace=-blank-at-eol
+frontend/public/*.json text eol=lf whitespace=-blank-at-eol
+frontend/public/*.svg text eol=lf
+frontend/public/*.png binary
+frontend/public/*.jpeg binary
+frontend/public/menu_icons/*.png binary

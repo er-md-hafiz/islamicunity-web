@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="Islamic Unity – complete Muslim companion: accurate prayer times, Qibla compass, Hijri calendar, Tasbih, Duas & more. Zero data tracking.">
+  <meta property="og:title" content="Islamic Unity • App Keys">
+  <meta property="og:description" content="Swipe through the app. Islamic, Prayer, Qibla, Muslim, Quran, Athan – all in one private app.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://play-lh.googleusercontent.com/.../og-image.jpg"> <!-- placeholder, use real one if available -->
+  <meta name="theme-color" content="#0B4F1F">
+  <title>Islamic Unity – swipe · download · earn hasanah</title>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Swiper.js for smooth video‑like swiping -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(165deg, #f5faf3 0%, #e8f2e6 100%);
+      color: #0a2e1a;
+      padding: 16px 16px 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1280px;
+      width: 100%;
+    }
+
+    /* --- header & app keys (animated pills) --- */
+    .app-identity {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 16px 24px;
+      border-radius: 80px;
+      border: 1px solid rgba(46,125,50,0.2);
+      box-shadow: 0 8px 20px -6px rgba(0,30,0,0.08);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .islamic-star {
+      background: #1e4a2c;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffd966;
+      font-size: 30px;
+      box-shadow: 0 6px 12px rgba(27,94,32,0.2);
+    }
+
+    .app-name-big {
+      font-weight: 800;
+      font-size: 1.7rem;
+      color: #0b4f1f;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .app-name-big span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2e6b3e;
+      display: block;
+    }
+
+    /* key badges – animated pulse */
+    .key-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+    .key-pill {
+      background: white;
+      border: 1.5px solid #2e7d32;
+      color: #1e4a2c;
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 8px rgba(0,40,0,0.04);
+      animation: softGlow 3s infinite ease-in-out;
+      transition: 0.2s;
+    }
+    .key-pill i {
+      color: #c49a1c;
+    }
+    .key-pill:hover {
+      background: #2e7d32;
+      color: white;
+      border-color: #ffd966;
+    }
+    .key-pill:hover i {
+      color: white;
+    }
+
+    @keyframes softGlow {
+      0% { box-shadow: 0 4px 8px rgba(46,125,50,0.1); }
+      50% { box-shadow: 0 8px 18px rgba(255,193,7,0.3); }
+      100% { box-shadow: 0 4px 8px rgba(46,125,50,0.1); }
+    }
+
+    /* --- swiper section (video‑style swiping) --- */
+    .swiper-section {
+      margin: 16px 0 32px;
+      position: relative;
+      padding: 10px 0 30px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .section-title h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #0a3b1a;
+      letter-spacing: -0.02em;
+    }
+    .swipe-indicator {
+      background: #d9eeda;
+      padding: 6px 18px;
+      border-radius: 40px;
+      color: #1a4d2a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .swipe-indicator i {
+      animation: swipeHint 1.8s infinite;
+    }
+    @keyframes swipeHint {
+      0% { transform: translateX(0); opacity: 0.7; }
+      50% { transform: translateX(6px); opacity: 1; }
+      100% { transform: translateX(0); opacity: 0.7; }
+    }
+
+    /* phone mockup frame */
+    .phone-mockup {
+      background: #0b1e10; /* dark frame */
+      border-radius: 48px;
+      padding: 14px 6px;
+      box-shadow: 0 30px 50px -20px rgba(0,0,0,0.4), 0 0 0 2px #3e5a3e;
+      max-width: 320px;
+      margin: 0 auto;
+      transition: transform 0.25s ease;
+    }
+    .phone-screen {
+      background: #fefcf5; /* off-white screen */
+      border-radius: 36px;
+      padding: 18px 14px;
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #b3d9b0;
+      box-shadow: inset 0 0 0 1px rgba(255,255,240,0.6);
+      background: linear-gradient(145deg, #ffffff, #f9fff9);
+    }
+
+    /* screenshot inner content – recreated from your assets */
+    .screenshot-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* typography for mockups */
+    .dua-arabic {
+      font-family: 'Noto Nastaliq Urdu', 'Traditional Arabic', 'Scheherazade', serif;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #0f4520;
+      background: #eafbea;
+      padding: 12px;
+      border-radius: 24px;
+      margin: 8px 0;
+      text-align: right;
+    }
+    .prayer-time-row {
+      display: flex;
+      justify-content: space-between;
+      background: #e2f0df;
+      padding: 12px 16px;
+      border-radius: 28px;
+      margin: 10px 0;
+    }
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+    .calendar-day {
+      background: #f1f9ec;
+      padding: 6px 2px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .highlight {
+      background: #2e7d32;
+      color: white;
+    }
+    .tasbih-circle {
+      background: #1e4a2c;
+      color: white;
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      font-size: 2rem;
+      font-weight: 700;
+      border: 4px solid #ffd966;
+    }
+    .qibla-compass {
+      background: #deedd9;
+      padding: 16px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid #8bb38c;
+    }
+    .feature-icons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+      margin-top: 18px;
+    }
+    .icon-item {
+      background: #ecf7ec;
+      padding: 12px 6px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    .btn-google {
+      background: #1a2c1a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-weight: 600;
+      margin-top: 16px;
+      text-decoration: none;
+    }
+
+    /* Swiper custom */
+    .swiper {
+      width: 100%;
+      padding: 15px 5px 40px;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-pagination-bullet-active {
+      background: #2e7d32 !important;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #2e7d32;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* download mega button */
+    .download-area {
+      background: linear-gradient(105deg, #0e4c1f, #1c6b2b);
+      padding: 32px 24px;
+      border-radius: 80px 80px 40px 40px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      border: 1px solid #ffd966;
+      box-shadow: 0 20px 30px -6px #0a3b1a;
+    }
+    .download-text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .playstore-btn {
+      background: #ffbf1f;
+      color: #0a3b1a;
+      padding: 16px 36px;
+      border-radius: 60px;
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 0 #7f4f00;
+      transition: 0.08s linear;
+      border: 2px solid white;
+    }
+    .playstore-btn:hover {
+      transform: translateY(6px);
+      box-shadow: 0 6px 0 #7f4f00;
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      text-align: center;
+      color: #2a5a2a;
+    }
+
+    @media (max-width: 640px) {
+      .app-identity { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .key-badges { justify-content: flex-start; }
+      .download-area { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header with app identity & animated "App Keys" -->
+  <div class="app-identity">
+    <div class="logo-area">
+      <div class="islamic-star"><i class="fas fa-moon"></i></div>
+      <div class="app-name-big">
+        Islamic Unity
+        <span>privacy · no data collection</span>
+      </div>
+    </div>
+    <div class="key-badges">
+      <div class="key-pill"><i class="fas fa-mosque"></i> Islamic</div>
+      <div class="key-pill"><i class="fas fa-clock"></i> Prayer</div>
+      <div class="key-pill"><i class="fas fa-compass"></i> Qibla</div>
+      <div class="key-pill"><i class="fas fa-user"></i> Muslim</div>
+      <div class="key-pill"><i class="fas fa-book-open"></i> Quran</div>
+      <div class="key-pill"><i class="fas fa-volume-up"></i> Athan</div>
+    </div>
+  </div>
+
+  <!-- Swiper section – video‑style swiping through your app screens -->
+  <div class="swiper-section">
+    <div class="section-title">
+      <h2><i class="fas fa-hands"></i> swipe · explore</h2>
+      <span class="swipe-indicator"><i class="fas fa-arrow-right"></i> video‑like swiping</span>
+    </div>
+
+    <!-- Swiper container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- SLIDE 1 – Daily Islamic Duas (Morning) -->
+        <div class="swiper-slide">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="screenshot-content">
+                <div style="display: flex; justify-content: space-between; color: #1d572d;">
+                  <span style="font-weight: 700;">📿 Daily Islamic Duas</span>
+                  <span>22:13</span>
+                </div>
+                <div style="display: flex; gap: 8px; margin: 12px 0 4px;">
+                  <span style="background: #1e4a2c; color: white; padding: 4px 14px; border-radius: 40px;">All</span>
+                  <span style="background: #e3f2dd; padding: 4px 14px; border-radius: 40px;">Morning</span>
+                  <span style="background: #e3f2dd; padding: 4px 14px; border-radius: 40px;">Evening</span>
+                </div>
+                <div style="font-size: 0.9rem; color: #0f3a1a; margin: 16px 0 8px; font-weight: 600;">MORNING · Awakening</div>
+                <div class="dua-arabic">
+                  الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ
+                </div>
+                <p style="color: #2d4e2d; font-style: italic; margin: 4px 0 8px;">Praise is to Allah who gave us life after death and to Him is the return.</p>
+                <div style="font-size: 0.9rem; color: #0f3a1a; margin-top: 16px; font-weight: 600;">MORNING · Dhikr</div>
+                <div class="dua-arabic" style="font-size: 1.2rem;">
+                  أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ
+                </div>
+                <p style="color: #2d4e2d;">We have entered the morning and all dominion belongs to Allah…</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 – Tasbih Counter -->
+        <div class="swiper-slide">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="screenshot-content">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="font-weight: 700;">📿 Tasbih Counter</span>
+                  <span>22:16</span>
+                </div>
+                <p style="color: #0a4a1a; margin: 8px 0;">Track & count your Tasbih easily</p>
+                <div style="background: #f4fcf0; border-radius: 40px; padding: 18px; text-align: center;">
+                  <div style="color: #7f8c7f;">Session Count</div>
+                  <div style="font-size: 4rem; font-weight: 800; color: #0b4f1f;">0</div>
+                  <div style="font-size: 1.2rem;">/ 33</div>
+                  <div class="tasbih-circle">
+                    <span style="font-size: 2.5rem;">⬤</span>
+                    <span style="font-size: 0.9rem;">Tap to Count</span>
+                  </div>
+                  <div style="display: flex; gap: 12px; justify-content: center; margin-top: 16px;">
+                    <span style="background: #1e4a2c; color: white; padding: 6px 14px; border-radius: 40px;">33</span>
+                    <span style="background: #e0efdb; padding: 6px 14px; border-radius: 40px;">99</span>
+                    <span style="background: #e0efdb; padding: 6px 14px; border-radius: 40px;">100</span>
+                    <span style="background: #e0efdb; padding: 6px 14px; border-radius: 40px;">8</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 – Islamic Calendar + Prayer Times -->
+        <div class="swiper-slide">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="screenshot-content">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="font-weight: 700;">📅 Islamic Calendar</span>
+                  <span>22:13</span>
+                </div>
+                <div style="text-align: center; margin: 12px 0;">
+                  <span style="font-size: 1.4rem; font-weight: 700;">16 Sha'ban 1447</span><br>
+                  <span style="color: #365a36;">04 February 2026</span>
+                </div>
+                <div class="calendar-grid">
+                  <div style="font-weight: 700;">S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+                  <div>01</div><div>02</div><div>03</div><div class="highlight">04</div><div>05</div><div>06</div><div>07</div>
+                  <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
+                  <div>08</div><div>09</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+                  <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                </div>
+                <div style="margin-top: 20px; background: #dff0da; padding: 16px; border-radius: 28px;">
+                  <div style="font-weight: 700;">Religious Occasions</div>
+                  <div style="display: flex; justify-content: space-between; margin-top: 12px;">
+                    <span>Fajr</span><span>06:00 am</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;"><span>Sunrise</span><span>07:07 am</span></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Dhuhur</span><span>12:34 pm</span></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Asr</span><span>03:39 pm</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4 – Qibla Direction Compass -->
+        <div class="swiper-slide">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="screenshot-content">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="font-weight: 700;">🧭 Find Qibla Direction</span>
+                  <span>23:13</span>
+                </div>
+                <p style="color: #1e4a2c; margin-bottom: 18px;">Accurate compass to locate the Qibla</p>
+                <div class="qibla-compass">
+                  <div style="font-size: 3rem; color: #1e4a2c;">🧭</div>
+                  <div style="font-weight: 800; font-size: 1.8rem; color: #0b4f1f;">266°</div>
+                  <div>Qibla Angle</div>
+                  <div style="margin-top: 12px; background: #cfe2cf; width: 100%; padding: 12px; border-radius: 30px;">
+                    <div style="display: flex; justify-content: space-between;">
+                      <span>Distance to Kaaba</span>
+                      <span style="font-weight: 700;">3,849 km</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 6px;">
+                      <span>Current Heading</span>
+                      <span style="font-weight: 700;">248°</span>
+                    </div>
+                  </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-wifi-slash"></i> works offline, no tracking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 5 – All-in-One Dashboard (main screen) -->
+        <div class="swiper-slide">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="screenshot-content">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="font-weight: 700;">🕌 Islamic Unity</span>
+                  <span>22:12</span>
+                </div>
+                <p style="color: #1f5830;">Your essential companion</p>
+                <div style="background: #e4f1df; padding: 14px; border-radius: 30px; margin: 12px 0;">
+                  <div><i class="fas fa-location-dot"></i> Noida, Meerut Div. · 16 Sha'ban</div>
+                  <div style="display: flex; justify-content: space-between; margin-top: 12px;">
+                    <span>Fajr</span><span>06:01</span><span>Dhuhr</span><span>12:47</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>Asr</span><span>15:39</span><span>Maghrib</span><span>18:02</span><span>Isha</span><span>19:09</span>
+                  </div>
+                </div>
+                <div class="feature-icons">
+                  <div class="icon-item"><i class="fas fa-compass"></i> Qibla</div>
+                  <div class="icon-item"><i class="fas fa-headphones"></i> Audio</div>
+                  <div class="icon-item"><i class="fas fa-book"></i> Books</div>
+                  <div class="icon-item"><i class="fas fa-star"></i> 99 Names</div>
+                  <div class="icon-item"><i class="fas fa-tasbih"></i> Tasbih</div>
+                  <div class="icon-item"><i class="fas fa-calendar"></i> Calendar</div>
+                </div>
+                <p style="margin-top: 10px; font-weight: 500;">✦ Zakat Calculator · Hilal · Athan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 6 – Islamic Books (Quran, Hadith) -->
+        <div class="swiper-slide">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="screenshot-content">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="font-weight: 700;">📚 Read Islamic Books</span>
+                  <span>22:12</span>
+                </div>
+                <p style="margin: 8px 0 20px;">Quran, Surah, Hadith and more</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                  <div style="background: #e6f1e6; padding: 16px; border-radius: 24px; text-align: center;"><i class="fas fa-quran fa-2x"></i><br>Quran</div>
+                  <div style="background: #e6f1e6; padding: 16px; border-radius: 24px; text-align: center;"><i class="fas fa-file-pdf fa-2x"></i><br>Quran Pdf</div>
+                  <div style="background: #e6f1e6; padding: 16px; border-radius: 24px; text-align: center;"><i class="fas fa-book-open fa-2x"></i><br>Surah</div>
+                  <div style="background: #e6f1e6; padding: 16px; border-radius: 24px; text-align: center;"><i class="fas fa-mosque fa-2x"></i><br>Hadith</div>
+                </div>
+                <div style="margin-top: 24px; background: #c8e2c3; padding: 12px; border-radius: 30px; text-align: center;">
+                  <i class="fas fa-check-circle"></i> Sajda, Tafsir & more
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- swiper navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- MEGA DOWNLOAD PROMO (direct Play Store) -->
+  <div class="download-area">
+    <div class="download-text">
+      <i class="fas fa-download" style="font-size: 2.4rem;"></i> 
+      <span>Get Islamic Unity<br><span style="font-size: 1rem; font-weight: 400;">Zero data · ad-free</span></span>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en_IN" class="playstore-btn" target="_blank" rel="noopener">
+      <i class="fab fa-google-play"></i> DOWNLOAD
+    </a>
+  </div>
+
+  <!-- SEO Keywords & Trust Badge -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 36px; padding: 18px; background: rgba(255,255,240,0.7); border-radius: 60px;">
+    <span style="background: #0a3b1a; color: white; padding: 8px 24px; border-radius: 40px;"><i class="fas fa-lock"></i> No data collected</span>
+    <span style="background: #0a3b1a; color: white; padding: 8px 24px; border-radius: 40px;"><i class="fas fa-moon"></i> Ramadan 1447</span>
+    <span style="background: #0a3b1a; color: white; padding: 8px 24px; border-radius: 40px;"><i class="fas fa-compass"></i> Offline Qibla</span>
+    <span style="background: #0a3b1a; color: white; padding: 8px 24px; border-radius: 40px;"><i class="fas fa-calculator"></i> Zakat calculator</span>
+  </div>
+
+  <div class="footer-note">
+    <p>✨ Share this page — earn hasanah. Islamic Unity · complete Muslim companion</p>
+    <p style="margin-top: 12px; opacity: 0.8;">📲 Developer: Md Hafiz · m3hmedia@gmail.com · India</p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en_IN" style="color: #1e562e; font-weight: 700;">Islamic Unity on Google Play</a></p>
+  </div>
+</div>
+
+<!-- Swiper initialization (video‑style autoplay + smooth swiping) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper(".mySwiper", {
+      effect: "slide",
+      spaceBetween: 20,
+      centeredSlides: false,
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      speed: 700,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: { slidesPerView: 1.2, spaceBetween: 30 },
+        768: { slidesPerView: 1.5, spaceBetween: 30 },
+        1024: { slidesPerView: 2.2, spaceBetween: 30 },
+      },
+    });
+  });
+</script>
+
+<!-- auto‑adjust for smaller phones -->
+<style>
+  @media (max-width: 480px) {
+    .phone-mockup { max-width: 280px; }
+    .swiper { padding: 10px 0; }
+  }
+</style>
+</body>
+</html>

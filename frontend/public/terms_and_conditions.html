@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Islamic Unity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0d5b26;
+            --secondary: #1a472a;
+            --accent: #d4af37;
+            --light: #f8f6f0;
+            --dark: #1e1e1e;
+            --text: #333333;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f2e9;
+            color: var(--text);
+            line-height: 1.7;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,0 L60,40 L100,50 L60,60 L50,100 L40,60 L0,50 L40,40 Z" fill="%230d5b26" opacity="0.03"/></svg>');
+            background-size: 150px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .logo-container {
+            position: relative;
+            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+        }
+        
+        .logo-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .logo-icon {
+            color: white;
+            font-size: 50px;
+        }
+        
+        .crescent {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            font-size: 35px;
+            color: var(--accent);
+            transform: rotate(-30deg);
+        }
+        
+        header h1 {
+            font-family: 'Amiri', serif;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        header h2 {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+        
+        header h2:before,
+        header h2:after {
+            content: "✽";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        header h2:before {
+            left: -10px;
+        }
+        
+        header h2:after {
+            right: -10px;
+        }
+        
+        .content-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 40px;
+            border: 1px solid #e5e0d3;
+        }
+        
+        .content-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+        }
+        
+        .content-body {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h3 {
+            color: var(--primary);
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .section h3 i {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: #f9f5e9;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .services-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .services-list li {
+            background: #f0f7f0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .services-list li i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .effective-date {
+            text-align: center;
+            font-style: italic;
+            color: var(--secondary);
+            margin: 25px 0;
+            padding: 10px;
+            border-top: 1px dashed #d4d4d4;
+            border-bottom: 1px dashed #d4d4d4;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(13, 91, 38, 0.3);
+        }
+        
+        .contact-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(13, 91, 38, 0.4);
+        }
+        
+        .decoration {
+            text-align: center;
+            margin: 25px 0;
+            color: var(--accent);
+            font-size: 2rem;
+            letter-spacing: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .content-body {
+                padding: 20px;
+            }
+            
+            .section h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-circle">
+                    <i class="fas fa-mosque logo-icon"></i>
+                </div>
+                <i class="fas fa-moon crescent"></i>
+            </div>
+            <h1>Islamic Unity</h1>
+            <h2>Terms & Conditions</h2>
+        </header>
+        
+        <div class="content-box">
+            <div class="content-header">
+                <i class="fas fa-info-circle"></i> Last updated: March 7, 2024
+            </div>
+            
+            <div class="content-body">
+                <div class="section">
+                    <h3><i class="fas fa-file-contract"></i> Introduction</h3>
+                    <p>Welcome to Islamic Unity, the ultimate app for accurate prayer times, Qibla direction, and hilal visibility. By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app.</p>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-ban"></i> Restrictions</h3>
+                    <p>You're not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You're also not allowed to attempt to extract the source code of the app, nor should you try to translate the app into other languages or create derivative versions. The app itself, and all the trademarks, copyright, database rights, and other intellectual property rights related to it, still belong to Vittenssi.</p>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-sync-alt"></i> Changes and Charges</h3>
+                    <p>Vittenssi is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you're paying for.</p>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-shield-alt"></i> Data and Security</h3>
+                    <p>The Islamic Unity app stores and processes personal data that you have provided to us, in order to provide our Service. It's your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, as this could make your phone vulnerable to malware, viruses, or other malicious programs, compromising your phone's security features and potentially causing the Islamic Unity app to not work properly or at all.</p>
+                    
+                    <div class="highlight">
+                        <p>Location for prayer time and other geolocation information will always be stored on your device, and we will never store it. We do not keep your prayer location information or any other geolocation information used by the app's features such as Qibla, Halal Places, or Mosque Finder.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-external-link-alt"></i> Third-Party Services</h3>
+                    <p>The app does use third-party services that declare their own Terms and Conditions. You can find links to the Terms and Conditions of the third-party service providers used by the app below:</p>
+                    
+                    <ul class="services-list">
+                        <li><i class="fab fa-google"></i> Google Play Services</li>
+                        <li><i class="fas fa-ad"></i> AdMob</li>
+                        <li><i class="fas fa-chart-line"></i> Google Analytics for Firebase</li>
+                        <li><i class="fas fa-bug"></i> Firebase Crashlytics</li>
+                        <li><i class="fas fa-image"></i> Bumptech</li>
+                        <li><i class="fab fa-facebook"></i> Facebook</li>
+                        <li><i class="fas fa-film"></i> Lottie</li>
+                        <li><i class="fas fa-code"></i> Barteksc</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Responsibility</h3>
+                    <p>You should be aware that there are certain things that Vittenssi will not take responsibility for. The app requires an active internet connection and geolocation information for certain functions. Vittenssi cannot take responsibility for the app not working at full functionality if you don't have access to Wi-Fi, and you don't have any of your data allowance left.</p>
+                    
+                    <p>If you're using the app outside of an area with Wi-Fi, you should remember that your terms of agreement with your mobile network provider will still apply. You may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third-party charges.</p>
+                    
+                    <p>Vittenssi cannot always take responsibility for the way you use the app. You need to make sure that your device stays charged – if it runs out of battery and you can't turn it on to avail the Service, Vittenssi cannot accept responsibility.</p>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-download"></i> Updates and Termination</h3>
+                    <p>At some point, we may wish to update the app. The app is currently available on Android, and you'll need to download the updates if you want to keep using the app. Vittenssi does not promise that it will always update the app so that it is relevant to you and/or works with the Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you.</p>
+                    
+                    <p>We may also wish to stop providing the app and may terminate use of it at any time without giving notice of termination to you. Upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.</p>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-edit"></i> Changes to Terms and Conditions</h3>
+                    <p>We may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms and Conditions on this page.</p>
+                    
+                    <div class="effective-date">
+                        These terms and conditions are effective as of 2024-03-07.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="decoration">
+            ✽ ✽ ✽
+        </div>
+        
+        <footer>
+            <h3>Contact Us</h3>
+            <p>If you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us.</p>
+            <a href="mailto:m3hmedia@gmail.com" class="contact-btn">
+                <i class="fas fa-envelope"></i> m3hmedia@gmail.com
+            </a>
+            <p style="margin-top: 20px;">&copy; 2024 Vittenssi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

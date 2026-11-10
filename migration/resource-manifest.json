@@ -1,0 +1,291 @@
+{
+  "sourceCommit": "49cbd41f6fc3acc5f9cc001daa833c029ee3de5c",
+  "publishedBase": "https://er-md-hafiz.github.io/islamicunity-web/",
+  "files": [
+    {
+      "path": "CurrencyGuide.html",
+      "sourceSha256": "d0171abac74cdca05a2986bafdf003ef68801b18f8fba2d4bafb373a09f30653",
+      "sha256": "fe5f8012f8141a67527b0b7035391f00097cc989e4d8f673d6a8f14bc3ea58e3",
+      "bytes": 32197
+    },
+    {
+      "path": "donate.html",
+      "sourceSha256": "d615535932dd54bb7f6a410536255c1655bcdd4fcb1d36597b8b01fcad59d8da",
+      "sha256": "94ded9d00626d580b02070b8ee706ca5d98ddbf515074426aa9a61f80cbb515c",
+      "bytes": 39792
+    },
+    {
+      "path": "download-app-qr.html",
+      "sourceSha256": "9cf69c62b701292d7e7de39deb478e2fdc4b7d1a29b30502859ef2f314d0ebe4",
+      "sha256": "ea0fa66b221202bffbbbaefee8defe0515f899848dfab415227e30901423259e",
+      "bytes": 1132
+    },
+    {
+      "path": "duas.json",
+      "sourceSha256": "532eeba8996835c9938fdd2a467575255bcb078222216dbb80bb8c796937d90b",
+      "sha256": "6ec157aeb7fa33c57984db1785729083ac2feeb4896637bc45782dfc4f57b762",
+      "bytes": 33225
+    },
+    {
+      "path": "GamesAndPuzzles.html",
+      "sourceSha256": "31002fabc5caf31358577f2273c225c238d6634630a6716231e958f14a27819a",
+      "sha256": "4eb5c3478e36df27d5cd06551c6479351d4063095ae30fe25dc9b3655fc9a8f1",
+      "bytes": 67953
+    },
+    {
+      "path": "Hajj.html",
+      "sourceSha256": "c11b27ce3bbdfadc307ade4edbb9d4afe7244d4dcdb264946d767cab41a95bbb",
+      "sha256": "787a06d93565893dd7b1f9c2d72451797f69a11594017bbeaa0d9ea61f8f5d5f",
+      "bytes": 64463
+    },
+    {
+      "path": "ic_icon.svg",
+      "sourceSha256": "864101402e1ab18c8a70249479ce12c2b137fa6ebc6dee09918728fb87e4317d",
+      "sha256": "0a024a2c92f23ed526029d0079e2e53ec56d966543cd1888f7b67625217edd24",
+      "bytes": 4665
+    },
+    {
+      "path": "IslamicCharity.html",
+      "sourceSha256": "58a6498fe6a57d01779e00de1307f47d7ea02d7dfef52f0f1d01bfaa8145597b",
+      "sha256": "db99c9888ba41724f17f1a8d026d4fefb88c38ca71265805f1a4f97f9a19cef2",
+      "bytes": 38954
+    },
+    {
+      "path": "islamicunity.html",
+      "sourceSha256": "42c809dbaeec6a2ac3937710bdf8500819c400ba00804841761c8a27f42d2401",
+      "sha256": "9fde742a1190573b73ac77eb357468b2b9816bfb54777904952b6d954e5bd819",
+      "bytes": 130458
+    },
+    {
+      "path": "iu.svg",
+      "sourceSha256": "68945df9bd5fc147102a5982a2ae0ee1e5ecb4a80f9d07d45e49d3f517bf0333",
+      "sha256": "db1dc430a3cac5158adb141a6e413f64821644aad7b6eeadc08e850b09c5c044",
+      "bytes": 2568
+    },
+    {
+      "path": "iu_ads.html",
+      "sourceSha256": "850c9ce63867b81fe216f6095e5894fa133f9fe2b310f284bc771baa663513c9",
+      "sha256": "df3960c21787097de1981789cf9c43dbd06d489cb80e4238cb163f1650b887ab",
+      "bytes": 25075
+    },
+    {
+      "path": "iu_logo.svg",
+      "sourceSha256": "c1239ec60db7baa86a8a534748734bc7ec37a2d660479b0cff1d831938912784",
+      "sha256": "6927e3a1e90483a6a181f36458b546cdc89c90fda0461bcd809abcfccec9aed6",
+      "bytes": 4686
+    },
+    {
+      "path": "menu.json",
+      "sourceSha256": "bf24198bb608f01a999e592b8116ab6c3a3c01130d073512c4644e00a93192d9",
+      "sha256": "9d0819c6118001d000a198e88a47f41062b844e237587e9f5355e41a79c7f722",
+      "bytes": 12707
+    },
+    {
+      "path": "PrayerGuide.html",
+      "sourceSha256": "5aee71c5555ecdb73f4e5367f76466f18f50cee50db03bd05c0c0acb3c407d1f",
+      "sha256": "c9e69f432bb8a44328d4f52f6a0d85fb5594b28acc159e8370ec5863a722fa2b",
+      "bytes": 44883
+    },
+    {
+      "path": "PrivacyPolicy.html",
+      "sourceSha256": "c9cb363699cc1ce7108543d3861f9d4e08a78db767fdf4d3c0684b06f9297464",
+      "sha256": "5b77c0cd1390a3b074d575ca25e77769cba85b457c14b03f9e80a2406be2e0d5",
+      "bytes": 17058
+    },
+    {
+      "path": "qr_code.jpeg",
+      "sourceSha256": "1a91ae994e11c64e963ca048700fd7917f7642d5b4b1a33ef2e5f96ec9659da9",
+      "sha256": "1a91ae994e11c64e963ca048700fd7917f7642d5b4b1a33ef2e5f96ec9659da9",
+      "bytes": 162245
+    },
+    {
+      "path": "qr_code.png",
+      "sourceSha256": "c34a8e3773fe71dde413c5735429793907d21a905074268a8b8fe93f25440e51",
+      "sha256": "c34a8e3773fe71dde413c5735429793907d21a905074268a8b8fe93f25440e51",
+      "bytes": 45084
+    },
+    {
+      "path": "quiz.html",
+      "sourceSha256": "9ecaa185627c8ce984874e1751025d4b87586c0ffc260d5e324e566b4093d807",
+      "sha256": "a925197f4a0f3a9c11edc394ddf6e64ab682904d3682fe6db9d07b09368b6968",
+      "bytes": 76474
+    },
+    {
+      "path": "quiz.json",
+      "sourceSha256": "8eb62db4b7665a7d911084408cc1d354a0d1810df4631d3a88ce851055808d8f",
+      "sha256": "f942e466d0a16b0421600d6c395243baeb3b2e93710ec552efb900fc4ed4500d",
+      "bytes": 104720
+    },
+    {
+      "path": "SupportOurCommunity.html",
+      "sourceSha256": "31d01aad33c3f65b95601e425bca7b4373e672580141578907d3fafa7c02d944",
+      "sha256": "fa4859c4e8c910afaf8a7572a0a972c05f4617f33f2ea02a492b34a28324202a",
+      "bytes": 19290
+    },
+    {
+      "path": "terms_and_conditions.html",
+      "sourceSha256": "b84c23cac7535479fd0d051ed483e09fecca0c552c026abd850e4cc5b307ffe8",
+      "sha256": "8c0ebefec4c9940079e5c87c5e12eda8483973ece397bc4ba8922910f5ab3714",
+      "bytes": 14663
+    },
+    {
+      "path": "Umrah.html",
+      "sourceSha256": "47298a469eb2846af0247f866c692a5d4697988e9f362e5b9bcb65e82b57291b",
+      "sha256": "12b94aac2e62daf449de2bfedd09087161dbe2f0cd2ea00b3e3093aa90682a6f",
+      "bytes": 96805
+    },
+    {
+      "path": "ZakatCalculator.html",
+      "sourceSha256": "c4a3d78fb04c28c73c3316ed424a18e3e11e32319cc306977c40366d37726b93",
+      "sha256": "b420dea1d721c651cf8207b1ad0686499cbb07eb1c11e66fe85054a438a11620",
+      "bytes": 28728
+    },
+    {
+      "path": "menu_icons/allah.png",
+      "sourceSha256": "eab53ff62727c1ed6f7b6b5ea9abc1c7b81f25f388ee8b906933b925946972cc",
+      "sha256": "eab53ff62727c1ed6f7b6b5ea9abc1c7b81f25f388ee8b906933b925946972cc",
+      "bytes": 946
+    },
+    {
+      "path": "menu_icons/audio.png",
+      "sourceSha256": "f672b0013d860329af93412be0d0b4f3e783b914f5d539e32c2f4a82c6a00710",
+      "sha256": "f672b0013d860329af93412be0d0b4f3e783b914f5d539e32c2f4a82c6a00710",
+      "bytes": 1179
+    },
+    {
+      "path": "menu_icons/books.png",
+      "sourceSha256": "de415f660ddc124629cd94e21628a2ff3b57d448caa9288d36605f3927b0fa63",
+      "sha256": "de415f660ddc124629cd94e21628a2ff3b57d448caa9288d36605f3927b0fa63",
+      "bytes": 1708
+    },
+    {
+      "path": "menu_icons/calculator.png",
+      "sourceSha256": "5624d6dba4cd801a1d2aaba29d29e42eec637676092b6e06a9e808b5feb006f6",
+      "sha256": "5624d6dba4cd801a1d2aaba29d29e42eec637676092b6e06a9e808b5feb006f6",
+      "bytes": 1047
+    },
+    {
+      "path": "menu_icons/calendar.png",
+      "sourceSha256": "25cca183fe28b1aaccca5cb35515daa401719fb2a1678bf88651041513960dd8",
+      "sha256": "25cca183fe28b1aaccca5cb35515daa401719fb2a1678bf88651041513960dd8",
+      "bytes": 1448
+    },
+    {
+      "path": "menu_icons/currency.png",
+      "sourceSha256": "8cc2750f59c7a88ae3f4a25bfd95a3f10c51766656b75d015cf090fca9f5cd2e",
+      "sha256": "8cc2750f59c7a88ae3f4a25bfd95a3f10c51766656b75d015cf090fca9f5cd2e",
+      "bytes": 1705
+    },
+    {
+      "path": "menu_icons/donate.png",
+      "sourceSha256": "b8cc0318a4133f8d479488f6785cef266a627ad3ef9a53c3e63be3f2827ae3a3",
+      "sha256": "b8cc0318a4133f8d479488f6785cef266a627ad3ef9a53c3e63be3f2827ae3a3",
+      "bytes": 859
+    },
+    {
+      "path": "menu_icons/gallery.png",
+      "sourceSha256": "0714309ced69682c4273b50b0fd0d57249bbbbd1eb62120b7069f1d8a73b0762",
+      "sha256": "0714309ced69682c4273b50b0fd0d57249bbbbd1eb62120b7069f1d8a73b0762",
+      "bytes": 1274
+    },
+    {
+      "path": "menu_icons/games_and_puzzles.png",
+      "sourceSha256": "daef2e81329fe9c096b71c62ee69926b5fcc589d01cb65fe9ed7813eb3b94cd2",
+      "sha256": "daef2e81329fe9c096b71c62ee69926b5fcc589d01cb65fe9ed7813eb3b94cd2",
+      "bytes": 1182
+    },
+    {
+      "path": "menu_icons/hajj.png",
+      "sourceSha256": "98959747de50a1a27f7166e504f9f75faebace5f7bfb7451ece7b42cd33017a9",
+      "sha256": "98959747de50a1a27f7166e504f9f75faebace5f7bfb7451ece7b42cd33017a9",
+      "bytes": 1662
+    },
+    {
+      "path": "menu_icons/halal.png",
+      "sourceSha256": "8544025d1fe19109f65fb93a8203fd9ef142c6c6ffd0211bfb3d4d52fc0603bb",
+      "sha256": "8544025d1fe19109f65fb93a8203fd9ef142c6c6ffd0211bfb3d4d52fc0603bb",
+      "bytes": 1223
+    },
+    {
+      "path": "menu_icons/kaaba.png",
+      "sourceSha256": "b8b3558c6851fdb7baa1d4c4eb10268d9309a6021628f86b808d6566ff5a5c62",
+      "sha256": "b8b3558c6851fdb7baa1d4c4eb10268d9309a6021628f86b808d6566ff5a5c62",
+      "bytes": 1318
+    },
+    {
+      "path": "menu_icons/mosque.png",
+      "sourceSha256": "625d4a72568837c04479e70d5c1ad5c0736f5e4b869bb94ba941e49122eeab77",
+      "sha256": "625d4a72568837c04479e70d5c1ad5c0736f5e4b869bb94ba941e49122eeab77",
+      "bytes": 1765
+    },
+    {
+      "path": "menu_icons/news.png",
+      "sourceSha256": "8568455a759a3ee961b996ca68c182e55a07642ecf1b4b5ab2b4548f6aa73ebd",
+      "sha256": "8568455a759a3ee961b996ca68c182e55a07642ecf1b4b5ab2b4548f6aa73ebd",
+      "bytes": 1742
+    },
+    {
+      "path": "menu_icons/palms.png",
+      "sourceSha256": "5113d77311e98b186421007e19ef3be19b0c6cfa86bc8defa9e78fef33506b6d",
+      "sha256": "5113d77311e98b186421007e19ef3be19b0c6cfa86bc8defa9e78fef33506b6d",
+      "bytes": 1402
+    },
+    {
+      "path": "menu_icons/prayer_guide.png",
+      "sourceSha256": "09d6594d10b351959052848edfe5f61d5977a2eb7bdce4221cda8d0da47b718a",
+      "sha256": "09d6594d10b351959052848edfe5f61d5977a2eb7bdce4221cda8d0da47b718a",
+      "bytes": 1147
+    },
+    {
+      "path": "menu_icons/quiz.png",
+      "sourceSha256": "2c4fdae61b9f067a28e73e9331673f5c7544795fe3517a34402e8f70a559d735",
+      "sha256": "2c4fdae61b9f067a28e73e9331673f5c7544795fe3517a34402e8f70a559d735",
+      "bytes": 1644
+    },
+    {
+      "path": "menu_icons/quran.png",
+      "sourceSha256": "1ea26fa8bd7e3998e210aa4b8a100e98d9898748a11c6897bbe27477e3418dad",
+      "sha256": "1ea26fa8bd7e3998e210aa4b8a100e98d9898748a11c6897bbe27477e3418dad",
+      "bytes": 2538
+    },
+    {
+      "path": "menu_icons/tasbih.png",
+      "sourceSha256": "9753552fa4374bd2d7426a7f652cd3d641ee51244e4be6b2f19b0f3584cad1ef",
+      "sha256": "9753552fa4374bd2d7426a7f652cd3d641ee51244e4be6b2f19b0f3584cad1ef",
+      "bytes": 1369
+    },
+    {
+      "path": "menu_icons/time.png",
+      "sourceSha256": "14be3c4362a455fd720d43f87c64a7651e0a75015b40ad0eb0079117dca0fc6f",
+      "sha256": "14be3c4362a455fd720d43f87c64a7651e0a75015b40ad0eb0079117dca0fc6f",
+      "bytes": 1127
+    },
+    {
+      "path": "menu_icons/umrah.png",
+      "sourceSha256": "817c07e8e8e7a5417550c51426872e28e620aa990adc882cdd26a660b35e061f",
+      "sha256": "817c07e8e8e7a5417550c51426872e28e620aa990adc882cdd26a660b35e061f",
+      "bytes": 1166
+    },
+    {
+      "path": "menu_icons/video.png",
+      "sourceSha256": "68724defa60f16e5cdeb0f0a6ab1e12b1f5291c2155d83db444de98a6ef6d192",
+      "sha256": "68724defa60f16e5cdeb0f0a6ab1e12b1f5291c2155d83db444de98a6ef6d192",
+      "bytes": 731
+    }
+  ],
+  "aliases": [
+    {
+      "path": "menu_icons/calender.png",
+      "source": "menu_icons/calendar.png",
+      "sha256": "25cca183fe28b1aaccca5cb35515daa401719fb2a1678bf88651041513960dd8"
+    }
+  ],
+  "menuCompatibilitySha256": "8f8b24782a32a813f35910af100145ea240680025eb67673d2d50d5ffcbb5fcb",
+  "adjustments": [
+    {
+      "path": "donate.html",
+      "description": "Constrain the original UPI selection dialog to the viewport with internal scrolling so its close button stays reachable. Payment configuration unchanged."
+    }
+  ],
+  "textLineEndings": "LF"
+}

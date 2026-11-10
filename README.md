@@ -10,7 +10,7 @@ The root URL now presents the emerald-and-gold homepage based on the supplied de
 
 Use **Open web app**, a feature card, or a direct route such as `#prayer_times`, `#qibla`, `#quran`, or `#tasbih` to reach the interactive tools. `#home`, `#features`, `#about`, `#download`, `#donate`, `#contact`, and `#privacy` are homepage sections. The dashboard includes a link back to the homepage. The homepage and tools share the same persisted language selection, with full English, Hindi, Urdu, and Arabic homepage text and RTL layouts.
 
-Download buttons use the verified [Google Play listing](https://play.google.com/store/apps/details?id=com.islamicunity.android). Contact and contribution links open email drafts to the support address published there, `m3hmedia@gmail.com`. The previous donation URL returned 404, so no payment checkout or invented donation destination is used. The site does not collect payments or claim unverified download counts, ratings, testimonials, or donation-allocation percentages. No analytics, custom-domain purchase, or third-party subscription has been added.
+Download buttons use the verified [Google Play listing](https://play.google.com/store/apps/details?id=com.islamicunity.android). Contact links open email drafts to `m3hmedia@gmail.com`. Contribution buttons now open the migrated `donate.html`, preserving the existing QR image, bank details, and UPI options from the source resource repository. No new payment recipient or checkout service was introduced. The app privacy policy and terms are also linked from the footer. No analytics, custom-domain purchase, or third-party subscription has been added.
 
 ## Run locally
 
@@ -29,6 +29,7 @@ On Windows, `./run-web.ps1` starts the new app (`./run-web.ps1 build` builds it)
 npm test              # API integration tests and calculation checks
 npm run test:ui       # Browser tests (requires installed Google Chrome)
 npm run test:pages    # Test a Pages build without any Express API (Chrome required)
+npm run test:resources # Validate migrated assets, local links, and Android menu compatibility
 npm run build         # Production frontend in frontend/dist
 npm run preview       # Local preview; keep the API running separately
 npm start             # Express API only
@@ -66,7 +67,7 @@ Vite variables are embedded at build time. Rebuild after changing them. Start th
 
 Dates and coordinates are validated; unknown endpoints return JSON 404s. Prayer timings use Aladhan method 1 (University of Islamic Sciences, Karachi), with standard Asr. Successful responses are cached by day and rounded location. Aladhan has a six-second timeout. Unavailable or invalid provider responses return an explicit **New Delhi sample schedule**; reminders are paused for sample data. Confirm live timings with your local mosque. Date rollover and countdown use the timing provider's timezone.
 
-The original [menu JSON](https://er-md-hafiz.github.io/IslamicUnity/menu.json) is saved as `backend/menu.json`. The app fetches it from the API at startup. All 21 enabled home entries receive navigation and resources; Quran and reminders are added as first-class sections. Edit the snapshot to change navigation. Hajj, Umrah, prayer guidance, donations, and games link to the original resources. Books, media, photos, and mosque discovery use labelled external resources. News is a sample noticeboard, the names section is a selection, and currency conversion uses illustrative rates. Zakat is a basic estimate and does not determine nisab eligibility.
+The original [menu JSON](https://er-md-hafiz.github.io/islamicunity-web/menu.json) is saved as `backend/menu.json`. The app fetches it from the API at startup. All 21 enabled home entries receive navigation and resources; Quran and reminders are added as first-class sections. Edit the snapshot to change navigation. Hajj, Umrah, prayer guidance, donations, and games link to the original resources. Books, media, photos, and mosque discovery use labelled external resources. News is a sample noticeboard, the names section is a selection, and currency conversion uses illustrative rates. Zakat is a basic estimate and does not determine nisab eligibility.
 
 ## Browser features and limitations
 

@@ -32,6 +32,8 @@ jobs:
         run: npm test
       - name: Test deployment ordering
         run: node --test tests/deployment.test.mjs
+      - name: Validate Android web resources and menu compatibility
+        run: npm run test:resources
       - name: Build the site
         run: npm run build
         env:
