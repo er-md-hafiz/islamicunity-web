@@ -334,7 +334,7 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
+        .legacy-page-note {
             background-color: var(--emerald);
             color: var(--white);
             padding: 40px 0;
@@ -570,7 +570,7 @@
         </section>
     </main>
 
-    <footer>
+    <section class="legacy-page-note">
         <div class="container footer-content">
             <p>"The believer's shade on the Day of Resurrection will be his charity." (Al-Tirmidhi)</p>
             <p class="verse">"And establish prayer and give Zakat, and whatever good you put forward for yourselves - you will find it with Allah." (Quran 2:110)</p>
@@ -579,7 +579,7 @@
                 &copy; <span id="currentYear"></span> Zakat Calculator | Islamic Giving Tool
             </div>
         </div>
-    </footer>
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -770,5 +770,7 @@
             // initializeSampleData();
         });
     </script>
+    <iu-site-footer></iu-site-footer>
+    <script type="module" src="./assets/site-footer.js"></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-10T19:01:04.674Z",
+  "results": [
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/PrivacyPolicy.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/PrivacyPolicy.html"
+    },
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/terms_and_conditions.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/terms_and_conditions.html"
+    },
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/SupportOurCommunity.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/SupportOurCommunity.html"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en",
+      "status": 200,
+      "finalUrl": "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en"
+    },
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/donate.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/donate.html"
+    },
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/Hajj.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/Hajj.html"
+    },
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/Umrah.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/Umrah.html"
+    },
+    {
+      "url": "https://er-md-hafiz.github.io/islamicunity-api/islamicunity.html",
+      "status": 200,
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/islamicunity.html"
+    }
+  ],
+  "socialProfiles": "User requested Islamic Unity website link; no verified social profile URLs configured; four icons intentionally unlinked.",
+  "email": "mailto:islamic.unity.app@gmail.com"
+}

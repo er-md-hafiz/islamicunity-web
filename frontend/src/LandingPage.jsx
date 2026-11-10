@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { locales } from "./i18n";
 import { landingText } from "./landing-copy";
+import SiteFooter from "./footer/SiteFooter";
 import "./landing.css";
 
 const PLAY =
@@ -731,35 +732,7 @@ export default function LandingPage({ section }) {
           </div>
         </section>
       </main>
-      <footer className="lp-footer">
-        <div className="lp-footer-main">
-          <div>
-            <Brand footer />
-            <p>{t("footerLine")}</p>
-          </div>
-          <div className="lp-footer-links">
-            <a href={`${RESOURCES}PrivacyPolicy.html`}>{t("appPrivacy")}</a>
-            <a href={`${RESOURCES}terms_and_conditions.html`}>{t("terms")}</a>
-            {["features", "about", "contact", "privacy"].map((id) => (
-              <a href={`#${id}`} key={id}>
-                {t(id)}
-              </a>
-            ))}
-            <a href={PLAY} target="_blank" rel="noreferrer">
-              Google Play
-              <ArrowUpRight size={13} />
-            </a>
-          </div>
-        </div>
-        <div className="lp-footer-bottom">
-          <span>© {new Date().getFullYear()} Islamic Unity</span>
-          <span>
-            {t("builtBy")}
-            <Heart size={12} />
-          </span>
-          <a href="#home">{t("home")} ↑</a>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

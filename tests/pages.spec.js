@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { resourcePages } from "../shared/resource-navigation.mjs";
 const prefix = "/islamicunity-web/";
 test.beforeEach(async ({ page }) => {
   await page.route("https://fonts.googleapis.com/**", (r) => r.abort());
@@ -55,6 +56,11 @@ test("production index, assets and every menu page work under the repository pat
   const menu = await (await page.request.get(prefix + "data/menu.json")).json();
   for (const item of menu.home.items) {
     await page.goto(prefix + "#" + item.id);
+    if (resourcePages[item.id]) {
+      await expect(page).toHaveURL(new RegExp(resourcePages[item.id] + "$"));
+      await expect(page.locator("iu-site-footer footer")).toBeAttached();
+      continue;
+    }
     if (item.id === "donate") {
       await expect(page.locator(".lp-donate")).toBeVisible();
       continue;

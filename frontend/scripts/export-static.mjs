@@ -24,14 +24,13 @@ for (const item of menu.home.items) {
     title: content[item.id]?.title || item.title,
     description:
       content[item.id]?.description ||
-      "Continue your journey with the original Islamic Unity resource.",
+      item.title,
     items:
       content[item.id]?.items ||
       (item.url
         ? [
             {
               title: item.title,
-              body: "Open the original Islamic Unity resource.",
               url: item.url,
             },
           ]

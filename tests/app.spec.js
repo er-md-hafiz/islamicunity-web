@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { resourcePages } from "../shared/resource-navigation.mjs";
 const timings = {
   Fajr: "05:25",
   Sunrise: "06:38",
@@ -90,6 +91,11 @@ test("menu routes render and counter persists after reload", async ({
   const menu = await (await page.request.get("/api/menu")).json();
   for (const item of menu.home.items) {
     await page.goto("/#" + item.id);
+    if (resourcePages[item.id]) {
+      await expect(page).toHaveURL(new RegExp(resourcePages[item.id] + "$"));
+      await expect(page.locator("iu-site-footer footer")).toBeAttached();
+      continue;
+    }
     if (item.id === "donate") {
       await expect(page.locator(".lp-donate")).toBeVisible();
       continue;

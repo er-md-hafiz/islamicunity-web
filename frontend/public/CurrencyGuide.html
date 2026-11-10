@@ -352,7 +352,7 @@
       color: white;
     }
 
-    /* footer & cta */
+    /* .legacy-page-note & cta */
     .cta-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -385,7 +385,7 @@
       margin: 30px 0;
     }
 
-    footer {
+    .legacy-page-note {
       text-align: center;
       color: var(--text-secondary);
     }
@@ -474,9 +474,9 @@
     </div>
 
     <hr>
-    <footer>
+    <section class="legacy-page-note">
       <p data-i18n="footer">🕋 Islamic Unity – bridging world currencies & Islamic finance. All rights reserved.</p>
-    </footer>
+    </section>
   </main>
 
   <script>
@@ -660,5 +660,7 @@
       });
     })();
   </script>
+    <iu-site-footer></iu-site-footer>
+    <script type="module" src="./assets/site-footer.js"></script>
 </body>
 </html>

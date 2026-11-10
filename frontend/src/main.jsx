@@ -51,6 +51,8 @@ import { api } from "./api";
 import LandingPage from "./LandingPage";
 import QuranAudioPlayer from "./quran/QuranAudioPlayer";
 import SurahVideoLibrary from "./video/SurahVideoLibrary";
+import SiteFooter from "./footer/SiteFooter";
+import { resourceHref } from "../../shared/resource-navigation.mjs";
 import "./styles.css";
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -450,6 +452,8 @@ function App() {
     }
   }, [secondsNow, prayers, reminders]);
   function navigate(id) {
+    const direct = resourceHref(id, import.meta.env.BASE_URL);
+    if (direct) { location.assign(direct); return; }
     location.hash = id;
     setPage(id);
     setSidebar(false);
@@ -563,11 +567,15 @@ function App() {
   const nav = (id) => {
     const item = navItems.find((i) => i.id === id);
     if (!item && !["quran", "reminders"].includes(id)) return null;
+    const href = resourceHref(id, import.meta.env.BASE_URL)
+      || (id === "donate" ? `${import.meta.env.BASE_URL}donate.html` : null);
+    const Tag = href ? "a" : "button";
     return (
-      <button
+      <Tag
         key={id}
         className={`nav-item ${page === id ? "active" : ""}`}
-        onClick={() => navigate(id)}
+        href={href || undefined}
+        onClick={href ? undefined : () => navigate(id)}
         aria-current={page === id ? "page" : undefined}
       >
         <Icon name={id} />
@@ -579,7 +587,7 @@ function App() {
             )}
         </span>
         {page === id && <span className="active-dot" />}
-      </button>
+      </Tag>
     );
   };
   function PrayerSchedule() {
@@ -1298,15 +1306,7 @@ function App() {
               <ArrowUpRight size={15} />
             </a>
           </section>
-          <footer>
-            <span>
-              © {now.getFullYear()} Islamic Unity{" "}
-              <span className="dot-separator">·</span> {t("companion")}
-            </span>
-            <span>
-              {t("intention")} <Heart size={11} />
-            </span>
-          </footer>
+          <SiteFooter />
         </main>
       </div>
       {toast && (
@@ -1554,14 +1554,19 @@ function FeatureContent({ content, page, speak, t }) {
   }
   return (
     <div className="resource-grid">
-      {content.items?.map((item, i) => (
-        <section className="card resource-card" key={i}>
+      {content.items?.map((item, i) => {
+        const linked = item.url && /^https:\/\//.test(item.url);
+        const Card = linked ? "a" : "section";
+        return <Card className="card resource-card" key={i}
+          href={linked ? item.url : undefined}
+          target={linked ? "_blank" : undefined}
+          rel={linked ? "noopener noreferrer" : undefined}>
           <span className="resource-icon">
             <Icon name={page} size={27} />
           </span>
           <h2>{item.title}</h2>
           <p>{item.body}</p>
-          {item.speech && (
+          {item.speech && !linked && (
             <button
               className="button secondary"
               onClick={() => speak(item.speech)}
@@ -1570,19 +1575,9 @@ function FeatureContent({ content, page, speak, t }) {
               {t("listen")}
             </button>
           )}
-          {item.url && /^https:\/\//.test(item.url) && (
-            <a
-              className="text-button"
-              href={item.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("open")}
-              <ExternalLink size={15} />
-            </a>
-          )}
-        </section>
-      ))}
+          {linked && <ExternalLink size={15} aria-hidden="true" />}
+        </Card>;
+      })}
       {!content.items?.length && (
         <section className="card resource-card">
           <p>This section has no resources available yet.</p>
@@ -1590,6 +1585,10 @@ function FeatureContent({ content, page, speak, t }) {
       )}
     </div>
   );
+}
+function DirectResource({ href }) {
+  useEffect(() => { location.replace(href); }, [href]);
+  return null;
 }
 function Site() {
   const [route, setRoute] = useState(location.hash.slice(1));
@@ -1608,6 +1607,7 @@ function Site() {
     "contact",
     "privacy",
   ].includes(route);
-  return isHomepage ? <LandingPage section={route} /> : <App />;
+  const direct = resourceHref(route, import.meta.env.BASE_URL);
+  return isHomepage ? <LandingPage section={route} /> : direct ? <DirectResource href={direct} /> : <App />;
 }
 createRoot(document.getElementById("root")).render(<Site />);

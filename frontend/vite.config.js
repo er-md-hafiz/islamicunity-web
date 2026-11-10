@@ -14,13 +14,16 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: {
           main: fileURLToPath(new URL("./index.html", import.meta.url)),
+          siteFooter: fileURLToPath(new URL("./src/footer/legacy-entry.js", import.meta.url)),
           quranAudio: fileURLToPath(
             new URL("./src/quran/legacy-entry.jsx", import.meta.url),
           ),
         },
         output: {
           entryFileNames: (chunk) =>
-            chunk.name === "quranAudio"
+            chunk.name === "siteFooter"
+              ? "assets/site-footer.js"
+              : chunk.name === "quranAudio"
               ? "assets/quran-audio.js"
               : "assets/[name]-[hash].js",
         },
@@ -32,7 +35,10 @@ export default defineConfig(({ mode }) => {
         name: "legacy-quran-dev-entry",
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
-            if (req.url?.split("?")[0] === "/assets/quran-audio.js") {
+            if (req.url?.split("?")[0] === "/assets/site-footer.js") {
+              res.setHeader("Content-Type", "application/javascript");
+              res.end(`import ${JSON.stringify(server.config.base + "src/footer/legacy-entry.js")};`);
+            } else if (req.url?.split("?")[0] === "/assets/quran-audio.js") {
               const base = server.config.base;
               res.setHeader("Content-Type", "application/javascript");
               res.end(

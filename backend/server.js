@@ -152,7 +152,6 @@ app.get("/api/features/:id", (req, res) => {
         ? [
             {
               title: item.title,
-              body: "Open the original Islamic Unity resource.",
               url: item.url,
             },
           ]

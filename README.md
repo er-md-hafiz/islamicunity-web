@@ -16,6 +16,8 @@ Download buttons use the verified [Google Play listing](https://play.google.com/
 
 ## Run locally
 
+The shared four-column footer is available on every tool and all standalone resource pages. Hajj, Umrah, Prayer Guide and Games sidebar links open their actual pages directly; existing hash links remain compatible. See [global footer and navigation delivery](docs/global-footer-navigation.md) for verified links, social configuration, exact destinations, and regression coverage.
+
 Install Node.js 22.12+ and run from the project root:
 
 ```sh

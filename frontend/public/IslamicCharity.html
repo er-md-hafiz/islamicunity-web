@@ -314,7 +314,7 @@
       flex-direction: row-reverse;
     }
 
-    footer {
+    .legacy-page-note {
       text-align: center;
       margin-top: 60px;
       color: var(--text-secondary);
@@ -468,9 +468,9 @@
       <p style="margin-top: 20px;"><i class="fas fa-link"></i> <span data-i18n="direct_links">Direct links: App • Calculator • Share</span></p>
     </div>
     <hr>
-    <footer>
+    <section class="legacy-page-note">
       <p data-i18n="footer">🕋 Islamic Unity – spreading knowledge of Zakat & Sadaqah.  •  All rights reserved</p>
-    </footer>
+    </section>
   </main>
 
   <script>
@@ -740,5 +740,7 @@
       document.getElementById('shareWhatsapp').href = `https://api.whatsapp.com/send?text=Islamic%20Unity%20Charity%20Guide%20${pageUrl}`;
     })();
   </script>
+    <iu-site-footer></iu-site-footer>
+    <script type="module" src="./assets/site-footer.js"></script>
 </body>
 </html>

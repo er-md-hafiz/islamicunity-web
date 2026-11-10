@@ -110,7 +110,7 @@ test("support opens the migrated donation page and privacy details remain access
   await expect(page.locator(".lp-support-note")).toContainText(
     "Opens our donation page",
   );
-  await page.locator('.lp-footer-links a[href="#privacy"]').click();
+  await page.getByRole("link", { name: "Website privacy", exact: true }).click();
   await expect(page.locator("#privacy")).toHaveAttribute("open", "");
   await expect(page.locator("#privacy p")).toContainText(
     "stored in your browser",
