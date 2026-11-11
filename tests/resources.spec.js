@@ -26,6 +26,9 @@ test("all Android resources are published at their exact case-sensitive paths", 
   expect(questions.questions).toHaveLength(100);
   const duas = await (await request.get(prefix + "duas.json")).json();
   expect(duas).toHaveLength(130);
+  const videoAlias = await request.get(prefix + "surah_video.json");
+  expect(videoAlias.status()).toBe(200);
+  expect(await videoAlias.json()).toEqual(await (await request.get(prefix + "surah-videos.json")).json());
 });
 
 test("every migrated HTML page renders on a phone without local 404s or script errors", async ({

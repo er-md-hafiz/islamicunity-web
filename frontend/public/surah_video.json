@@ -1,0 +1,1034 @@
+{
+  "version": "1.0.0",
+  "title": "Quran Surah Video Library",
+  "totalSurahs": 114,
+  "availableVideos": 66,
+  "surahs": [
+    {
+      "number": 1,
+      "name": "Al-Fatihah",
+      "arabicName": "الفاتحة",
+      "hasVideo": true,
+      "videoId": "gZ0ExPQrxlw",
+      "videoUrl": "https://www.youtube.com/shorts/gZ0ExPQrxlw",
+      "embedUrl": "https://www.youtube.com/embed/gZ0ExPQrxlw"
+    },
+    {
+      "number": 2,
+      "name": "Al-Baqarah",
+      "arabicName": "البقرة",
+      "hasVideo": true,
+      "videoId": "s8ZLsx4N-BM",
+      "videoUrl": "https://youtu.be/s8ZLsx4N-BM",
+      "embedUrl": "https://www.youtube.com/embed/s8ZLsx4N-BM"
+    },
+    {
+      "number": 3,
+      "name": "Aal-E-Imran",
+      "arabicName": "آل عمران",
+      "hasVideo": true,
+      "videoId": "rTzmxBzlcLg",
+      "videoUrl": "https://youtu.be/rTzmxBzlcLg",
+      "embedUrl": "https://www.youtube.com/embed/rTzmxBzlcLg"
+    },
+    {
+      "number": 4,
+      "name": "An-Nisa",
+      "arabicName": "النساء",
+      "hasVideo": true,
+      "videoId": "JMfmHtg6tE4",
+      "videoUrl": "https://youtu.be/JMfmHtg6tE4",
+      "embedUrl": "https://www.youtube.com/embed/JMfmHtg6tE4"
+    },
+    {
+      "number": 5,
+      "name": "Al-Ma'idah",
+      "arabicName": "المائدة",
+      "hasVideo": true,
+      "videoId": "oQpQcSOg-EE",
+      "videoUrl": "https://youtu.be/oQpQcSOg-EE",
+      "embedUrl": "https://www.youtube.com/embed/oQpQcSOg-EE"
+    },
+    {
+      "number": 6,
+      "name": "Al-An'am",
+      "arabicName": "الأنعام",
+      "hasVideo": true,
+      "videoId": "x3uJ3CXJ-OY",
+      "videoUrl": "https://youtu.be/x3uJ3CXJ-OY",
+      "embedUrl": "https://www.youtube.com/embed/x3uJ3CXJ-OY"
+    },
+    {
+      "number": 7,
+      "name": "Al-A'raf",
+      "arabicName": "الأعراف",
+      "hasVideo": true,
+      "videoId": "-2KczMfpaEU",
+      "videoUrl": "https://www.youtube.com/watch?v=-2KczMfpaEU",
+      "embedUrl": "https://www.youtube.com/embed/-2KczMfpaEU"
+    },
+    {
+      "number": 8,
+      "name": "Al-Anfal",
+      "arabicName": "الأنفال",
+      "hasVideo": true,
+      "videoId": "A3zJpMjnRlU",
+      "videoUrl": "https://youtu.be/A3zJpMjnRlU",
+      "embedUrl": "https://www.youtube.com/embed/A3zJpMjnRlU"
+    },
+    {
+      "number": 9,
+      "name": "At-Tawbah",
+      "arabicName": "التوبة",
+      "hasVideo": true,
+      "videoId": "F1AtQzA_owI",
+      "videoUrl": "https://youtu.be/F1AtQzA_owI",
+      "embedUrl": "https://www.youtube.com/embed/F1AtQzA_owI"
+    },
+    {
+      "number": 10,
+      "name": "Yunus",
+      "arabicName": "يونس",
+      "hasVideo": true,
+      "videoId": "90q2EhDV8fo",
+      "videoUrl": "https://youtu.be/90q2EhDV8fo",
+      "embedUrl": "https://www.youtube.com/embed/90q2EhDV8fo"
+    },
+    {
+      "number": 11,
+      "name": "Hud",
+      "arabicName": "هود",
+      "hasVideo": true,
+      "videoId": "ZABRhgzNG4w",
+      "videoUrl": "https://youtu.be/ZABRhgzNG4w",
+      "embedUrl": "https://www.youtube.com/embed/ZABRhgzNG4w"
+    },
+    {
+      "number": 12,
+      "name": "Yusuf",
+      "arabicName": "يوسف",
+      "hasVideo": true,
+      "videoId": "jrsDKy5-1KY",
+      "videoUrl": "https://youtu.be/jrsDKy5-1KY",
+      "embedUrl": "https://www.youtube.com/embed/jrsDKy5-1KY"
+    },
+    {
+      "number": 13,
+      "name": "Ar-Ra'd",
+      "arabicName": "الرعد",
+      "hasVideo": true,
+      "videoId": "g3AAYQcJBTg",
+      "videoUrl": "https://youtu.be/g3AAYQcJBTg",
+      "embedUrl": "https://www.youtube.com/embed/g3AAYQcJBTg"
+    },
+    {
+      "number": 14,
+      "name": "Ibrahim",
+      "arabicName": "إبراهيم",
+      "hasVideo": true,
+      "videoId": "nDCn_8naoSo",
+      "videoUrl": "https://youtu.be/nDCn_8naoSo",
+      "embedUrl": "https://www.youtube.com/embed/nDCn_8naoSo"
+    },
+    {
+      "number": 15,
+      "name": "Al-Hijr",
+      "arabicName": "الحجر",
+      "hasVideo": true,
+      "videoId": "kjHgdZ-xVf4",
+      "videoUrl": "https://youtu.be/kjHgdZ-xVf4",
+      "embedUrl": "https://www.youtube.com/embed/kjHgdZ-xVf4"
+    },
+    {
+      "number": 16,
+      "name": "An-Nahl",
+      "arabicName": "النحل",
+      "hasVideo": true,
+      "videoId": "bk21UJPKrSI",
+      "videoUrl": "https://youtu.be/bk21UJPKrSI",
+      "embedUrl": "https://www.youtube.com/embed/bk21UJPKrSI"
+    },
+    {
+      "number": 17,
+      "name": "Al-Isra",
+      "arabicName": "الإسراء",
+      "hasVideo": true,
+      "videoId": "ClANIaDUKEs",
+      "videoUrl": "https://youtu.be/ClANIaDUKEs",
+      "embedUrl": "https://www.youtube.com/embed/ClANIaDUKEs"
+    },
+    {
+      "number": 18,
+      "name": "Al-Kahf",
+      "arabicName": "الكهف",
+      "hasVideo": true,
+      "videoId": "OhH4aFMgYvI",
+      "videoUrl": "https://youtu.be/OhH4aFMgYvI",
+      "embedUrl": "https://www.youtube.com/embed/OhH4aFMgYvI"
+    },
+    {
+      "number": 19,
+      "name": "Maryam",
+      "arabicName": "مريم",
+      "hasVideo": true,
+      "videoId": "0CY9bKDb304",
+      "videoUrl": "https://youtu.be/0CY9bKDb304",
+      "embedUrl": "https://www.youtube.com/embed/0CY9bKDb304"
+    },
+    {
+      "number": 20,
+      "name": "Ta-Ha",
+      "arabicName": "طه",
+      "hasVideo": true,
+      "videoId": "DbeiLxaBtzw",
+      "videoUrl": "https://youtu.be/DbeiLxaBtzw",
+      "embedUrl": "https://www.youtube.com/embed/DbeiLxaBtzw"
+    },
+    {
+      "number": 21,
+      "name": "Al-Anbiya",
+      "arabicName": "الأنبياء",
+      "hasVideo": true,
+      "videoId": "6wlB_KXUphQ",
+      "videoUrl": "https://youtu.be/6wlB_KXUphQ",
+      "embedUrl": "https://www.youtube.com/embed/6wlB_KXUphQ"
+    },
+    {
+      "number": 22,
+      "name": "Al-Hajj",
+      "arabicName": "الحج",
+      "hasVideo": true,
+      "videoId": "I1hzovZKe-s",
+      "videoUrl": "https://youtu.be/I1hzovZKe-s",
+      "embedUrl": "https://www.youtube.com/embed/I1hzovZKe-s"
+    },
+    {
+      "number": 23,
+      "name": "Al-Mu'minun",
+      "arabicName": "المؤمنون",
+      "hasVideo": true,
+      "videoId": "AfcsiYGvkLw",
+      "videoUrl": "https://youtu.be/AfcsiYGvkLw",
+      "embedUrl": "https://www.youtube.com/embed/AfcsiYGvkLw"
+    },
+    {
+      "number": 24,
+      "name": "An-Nur",
+      "arabicName": "النور",
+      "hasVideo": true,
+      "videoId": "kDKlUvTlxRs",
+      "videoUrl": "https://youtu.be/kDKlUvTlxRs",
+      "embedUrl": "https://www.youtube.com/embed/kDKlUvTlxRs"
+    },
+    {
+      "number": 25,
+      "name": "Al-Furqan",
+      "arabicName": "الفرقان",
+      "hasVideo": true,
+      "videoId": "eo4PpE88bIE",
+      "videoUrl": "https://youtu.be/eo4PpE88bIE",
+      "embedUrl": "https://www.youtube.com/embed/eo4PpE88bIE"
+    },
+    {
+      "number": 26,
+      "name": "Ash-Shu'ara",
+      "arabicName": "الشعراء",
+      "hasVideo": true,
+      "videoId": "6-vWleF-kHk",
+      "videoUrl": "https://youtu.be/6-vWleF-kHk",
+      "embedUrl": "https://www.youtube.com/embed/6-vWleF-kHk"
+    },
+    {
+      "number": 27,
+      "name": "An-Naml",
+      "arabicName": "النمل",
+      "hasVideo": true,
+      "videoId": "Buo7H6SxXVk",
+      "videoUrl": "https://youtu.be/Buo7H6SxXVk",
+      "embedUrl": "https://www.youtube.com/embed/Buo7H6SxXVk"
+    },
+    {
+      "number": 28,
+      "name": "Al-Qasas",
+      "arabicName": "القصص",
+      "hasVideo": true,
+      "videoId": "EPJ0Mn0WuFI",
+      "videoUrl": "https://youtu.be/EPJ0Mn0WuFI",
+      "embedUrl": "https://www.youtube.com/embed/EPJ0Mn0WuFI"
+    },
+    {
+      "number": 29,
+      "name": "Al-Ankabut",
+      "arabicName": "العنكبوت",
+      "hasVideo": true,
+      "videoId": "526fNay-GpU",
+      "videoUrl": "https://youtu.be/526fNay-GpU",
+      "embedUrl": "https://www.youtube.com/embed/526fNay-GpU"
+    },
+    {
+      "number": 30,
+      "name": "Ar-Rum",
+      "arabicName": "الروم",
+      "hasVideo": true,
+      "videoId": "IKH5QlRc0q4",
+      "videoUrl": "https://youtu.be/IKH5QlRc0q4",
+      "embedUrl": "https://www.youtube.com/embed/IKH5QlRc0q4"
+    },
+    {
+      "number": 31,
+      "name": "Luqman",
+      "arabicName": "لقمان",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 32,
+      "name": "As-Sajdah",
+      "arabicName": "السجدة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 33,
+      "name": "Al-Ahzab",
+      "arabicName": "الأحزاب",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 34,
+      "name": "Saba",
+      "arabicName": "سبأ",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 35,
+      "name": "Fatir",
+      "arabicName": "فاطر",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 36,
+      "name": "Ya-Sin",
+      "arabicName": "يس",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 37,
+      "name": "As-Saffat",
+      "arabicName": "الصافات",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 38,
+      "name": "Sad",
+      "arabicName": "ص",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 39,
+      "name": "Az-Zumar",
+      "arabicName": "الزمر",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 40,
+      "name": "Ghafir",
+      "arabicName": "غافر",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 41,
+      "name": "Fussilat",
+      "arabicName": "فصلت",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 42,
+      "name": "Ash-Shura",
+      "arabicName": "الشورى",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 43,
+      "name": "Az-Zukhruf",
+      "arabicName": "الزخرف",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 44,
+      "name": "Ad-Dukhan",
+      "arabicName": "الدخان",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 45,
+      "name": "Al-Jathiyah",
+      "arabicName": "الجاثية",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 46,
+      "name": "Al-Ahqaf",
+      "arabicName": "الأحقاف",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 47,
+      "name": "Muhammad",
+      "arabicName": "محمد",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 48,
+      "name": "Al-Fath",
+      "arabicName": "الفتح",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 49,
+      "name": "Al-Hujurat",
+      "arabicName": "الحجرات",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 50,
+      "name": "Qaf",
+      "arabicName": "ق",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 51,
+      "name": "Adh-Dhariyat",
+      "arabicName": "الذاريات",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 52,
+      "name": "At-Tur",
+      "arabicName": "الطور",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 53,
+      "name": "An-Najm",
+      "arabicName": "النجم",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 54,
+      "name": "Al-Qamar",
+      "arabicName": "القمر",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 55,
+      "name": "Ar-Rahman",
+      "arabicName": "الرحمن",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 56,
+      "name": "Al-Waqi'ah",
+      "arabicName": "الواقعة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 57,
+      "name": "Al-Hadid",
+      "arabicName": "الحديد",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 58,
+      "name": "Al-Mujadilah",
+      "arabicName": "المجادلة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 59,
+      "name": "Al-Hashr",
+      "arabicName": "الحشر",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 60,
+      "name": "Al-Mumtahanah",
+      "arabicName": "الممتحنة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 61,
+      "name": "As-Saff",
+      "arabicName": "الصف",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 62,
+      "name": "Al-Jumu'ah",
+      "arabicName": "الجمعة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 63,
+      "name": "Al-Munafiqun",
+      "arabicName": "المنافقون",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 64,
+      "name": "At-Taghabun",
+      "arabicName": "التغابن",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 65,
+      "name": "At-Talaq",
+      "arabicName": "الطلاق",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 66,
+      "name": "At-Tahrim",
+      "arabicName": "التحريم",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 67,
+      "name": "Al-Mulk",
+      "arabicName": "الملك",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 68,
+      "name": "Al-Qalam",
+      "arabicName": "القلم",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 69,
+      "name": "Al-Haqqah",
+      "arabicName": "الحاقة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 70,
+      "name": "Al-Ma'arij",
+      "arabicName": "المعارج",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 71,
+      "name": "Nuh",
+      "arabicName": "نوح",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 72,
+      "name": "Al-Jinn",
+      "arabicName": "الجن",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 73,
+      "name": "Al-Muzzammil",
+      "arabicName": "المزمل",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 74,
+      "name": "Al-Muddaththir",
+      "arabicName": "المدثر",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 75,
+      "name": "Al-Qiyamah",
+      "arabicName": "القيامة",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 76,
+      "name": "Al-Insan",
+      "arabicName": "الإنسان",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 77,
+      "name": "Al-Mursalat",
+      "arabicName": "المرسلات",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 78,
+      "name": "An-Naba",
+      "arabicName": "النبأ",
+      "hasVideo": true,
+      "videoId": "Z_hu89-MaSs",
+      "videoUrl": "https://youtu.be/Z_hu89-MaSs",
+      "embedUrl": "https://www.youtube.com/embed/Z_hu89-MaSs"
+    },
+    {
+      "number": 79,
+      "name": "An-Nazi'at",
+      "arabicName": "النازعات",
+      "hasVideo": true,
+      "videoId": "sWRG5ys4eV0",
+      "videoUrl": "https://youtu.be/sWRG5ys4eV0",
+      "embedUrl": "https://www.youtube.com/embed/sWRG5ys4eV0"
+    },
+    {
+      "number": 80,
+      "name": "Abasa",
+      "arabicName": "عبس",
+      "hasVideo": true,
+      "videoId": "-SoI2WvoGBw",
+      "videoUrl": "https://youtu.be/-SoI2WvoGBw",
+      "embedUrl": "https://www.youtube.com/embed/-SoI2WvoGBw"
+    },
+    {
+      "number": 81,
+      "name": "At-Takwir",
+      "arabicName": "التكوير",
+      "hasVideo": true,
+      "videoId": "hUeb6-EOJVc",
+      "videoUrl": "https://youtu.be/hUeb6-EOJVc",
+      "embedUrl": "https://www.youtube.com/embed/hUeb6-EOJVc"
+    },
+    {
+      "number": 82,
+      "name": "Al-Infitar",
+      "arabicName": "الانفطار",
+      "hasVideo": true,
+      "videoId": "5Jy_HlSbkX8",
+      "videoUrl": "https://youtu.be/5Jy_HlSbkX8",
+      "embedUrl": "https://www.youtube.com/embed/5Jy_HlSbkX8"
+    },
+    {
+      "number": 83,
+      "name": "Al-Mutaffifin",
+      "arabicName": "المطففين",
+      "hasVideo": true,
+      "videoId": "GGEEQf38xY8",
+      "videoUrl": "https://youtu.be/GGEEQf38xY8",
+      "embedUrl": "https://www.youtube.com/embed/GGEEQf38xY8"
+    },
+    {
+      "number": 84,
+      "name": "Al-Inshiqaq",
+      "arabicName": "الانشقاق",
+      "hasVideo": false,
+      "videoId": null,
+      "videoUrl": null,
+      "embedUrl": null
+    },
+    {
+      "number": 85,
+      "name": "Al-Buruj",
+      "arabicName": "البروج",
+      "hasVideo": true,
+      "videoId": "jKsetia1sIA",
+      "videoUrl": "https://youtu.be/jKsetia1sIA",
+      "embedUrl": "https://www.youtube.com/embed/jKsetia1sIA"
+    },
+    {
+      "number": 86,
+      "name": "At-Tariq",
+      "arabicName": "الطارق",
+      "hasVideo": true,
+      "videoId": "O0StnpROVy4",
+      "videoUrl": "https://youtu.be/O0StnpROVy4",
+      "embedUrl": "https://www.youtube.com/embed/O0StnpROVy4"
+    },
+    {
+      "number": 87,
+      "name": "Al-A'la",
+      "arabicName": "الأعلى",
+      "hasVideo": true,
+      "videoId": "6cCwEG2Ml9c",
+      "videoUrl": "https://youtu.be/6cCwEG2Ml9c",
+      "embedUrl": "https://www.youtube.com/embed/6cCwEG2Ml9c"
+    },
+    {
+      "number": 88,
+      "name": "Al-Ghashiyah",
+      "arabicName": "الغاشية",
+      "hasVideo": true,
+      "videoId": "S0apPVDns_o",
+      "videoUrl": "https://youtu.be/S0apPVDns_o",
+      "embedUrl": "https://www.youtube.com/embed/S0apPVDns_o"
+    },
+    {
+      "number": 89,
+      "name": "Al-Fajr",
+      "arabicName": "الفجر",
+      "hasVideo": true,
+      "videoId": "sXgZjBtM8vo",
+      "videoUrl": "https://youtu.be/sXgZjBtM8vo",
+      "embedUrl": "https://www.youtube.com/embed/sXgZjBtM8vo"
+    },
+    {
+      "number": 90,
+      "name": "Al-Balad",
+      "arabicName": "البلد",
+      "hasVideo": true,
+      "videoId": "0u67kdqNO1w",
+      "videoUrl": "https://youtu.be/0u67kdqNO1w",
+      "embedUrl": "https://www.youtube.com/embed/0u67kdqNO1w"
+    },
+    {
+      "number": 91,
+      "name": "Ash-Shams",
+      "arabicName": "الشمس",
+      "hasVideo": true,
+      "videoId": "zEBH6m_o01I",
+      "videoUrl": "https://youtu.be/zEBH6m_o01I",
+      "embedUrl": "https://www.youtube.com/embed/zEBH6m_o01I"
+    },
+    {
+      "number": 92,
+      "name": "Al-Layl",
+      "arabicName": "الليل",
+      "hasVideo": true,
+      "videoId": "QL4f39Mky8k",
+      "videoUrl": "https://youtu.be/QL4f39Mky8k",
+      "embedUrl": "https://www.youtube.com/embed/QL4f39Mky8k"
+    },
+    {
+      "number": 93,
+      "name": "Ad-Duha",
+      "arabicName": "الضحى",
+      "hasVideo": true,
+      "videoId": "xE8DnfIiDas",
+      "videoUrl": "https://youtu.be/xE8DnfIiDas",
+      "embedUrl": "https://www.youtube.com/embed/xE8DnfIiDas"
+    },
+    {
+      "number": 94,
+      "name": "Ash-Sharh",
+      "arabicName": "الشرح",
+      "hasVideo": true,
+      "videoId": "NeK51PJege0",
+      "videoUrl": "https://youtu.be/NeK51PJege0",
+      "embedUrl": "https://www.youtube.com/embed/NeK51PJege0"
+    },
+    {
+      "number": 95,
+      "name": "At-Tin",
+      "arabicName": "التين",
+      "hasVideo": true,
+      "videoId": "vxtjQJnPpqo",
+      "videoUrl": "https://youtu.be/vxtjQJnPpqo",
+      "embedUrl": "https://www.youtube.com/embed/vxtjQJnPpqo"
+    },
+    {
+      "number": 96,
+      "name": "Al-Alaq",
+      "arabicName": "العلق",
+      "hasVideo": true,
+      "videoId": "IukSi_4v3H8",
+      "videoUrl": "https://youtu.be/IukSi_4v3H8",
+      "embedUrl": "https://www.youtube.com/embed/IukSi_4v3H8"
+    },
+    {
+      "number": 97,
+      "name": "Al-Qadr",
+      "arabicName": "القدر",
+      "hasVideo": true,
+      "videoId": "WSInsK7z4nc",
+      "videoUrl": "https://youtu.be/WSInsK7z4nc",
+      "embedUrl": "https://www.youtube.com/embed/WSInsK7z4nc"
+    },
+    {
+      "number": 98,
+      "name": "Al-Bayyinah",
+      "arabicName": "البينة",
+      "hasVideo": true,
+      "videoId": "-nDA_Udd4Tk",
+      "videoUrl": "https://youtu.be/-nDA_Udd4Tk",
+      "embedUrl": "https://www.youtube.com/embed/-nDA_Udd4Tk"
+    },
+    {
+      "number": 99,
+      "name": "Az-Zalzalah",
+      "arabicName": "الزلزلة",
+      "hasVideo": true,
+      "videoId": "GQkjtVfooqk",
+      "videoUrl": "https://youtu.be/GQkjtVfooqk",
+      "embedUrl": "https://www.youtube.com/embed/GQkjtVfooqk"
+    },
+    {
+      "number": 100,
+      "name": "Al-Adiyat",
+      "arabicName": "العاديات",
+      "hasVideo": true,
+      "videoId": "DnV1YbO2Hhg",
+      "videoUrl": "https://youtu.be/DnV1YbO2Hhg",
+      "embedUrl": "https://www.youtube.com/embed/DnV1YbO2Hhg"
+    },
+    {
+      "number": 101,
+      "name": "Al-Qari'ah",
+      "arabicName": "القارعة",
+      "hasVideo": true,
+      "videoId": "cXpGLJ5znjo",
+      "videoUrl": "https://youtu.be/cXpGLJ5znjo",
+      "embedUrl": "https://www.youtube.com/embed/cXpGLJ5znjo"
+    },
+    {
+      "number": 102,
+      "name": "At-Takathur",
+      "arabicName": "التكاثر",
+      "hasVideo": true,
+      "videoId": "DHJFDaOYk2c",
+      "videoUrl": "https://youtu.be/DHJFDaOYk2c",
+      "embedUrl": "https://www.youtube.com/embed/DHJFDaOYk2c"
+    },
+    {
+      "number": 103,
+      "name": "Al-Asr",
+      "arabicName": "العصر",
+      "hasVideo": true,
+      "videoId": "Mta-lMXBlFA",
+      "videoUrl": "https://youtu.be/Mta-lMXBlFA",
+      "embedUrl": "https://www.youtube.com/embed/Mta-lMXBlFA"
+    },
+    {
+      "number": 104,
+      "name": "Al-Humazah",
+      "arabicName": "الهمزة",
+      "hasVideo": true,
+      "videoId": "aeI63x5Z8wY",
+      "videoUrl": "https://youtu.be/aeI63x5Z8wY",
+      "embedUrl": "https://www.youtube.com/embed/aeI63x5Z8wY"
+    },
+    {
+      "number": 105,
+      "name": "Al-Fil",
+      "arabicName": "الفيل",
+      "hasVideo": true,
+      "videoId": "0dN0gi3vaQk",
+      "videoUrl": "https://youtu.be/0dN0gi3vaQk",
+      "embedUrl": "https://www.youtube.com/embed/0dN0gi3vaQk"
+    },
+    {
+      "number": 106,
+      "name": "Quraysh",
+      "arabicName": "قريش",
+      "hasVideo": true,
+      "videoId": "k9OJ4DwaGtw",
+      "videoUrl": "https://youtu.be/k9OJ4DwaGtw",
+      "embedUrl": "https://www.youtube.com/embed/k9OJ4DwaGtw"
+    },
+    {
+      "number": 107,
+      "name": "Al-Ma'un",
+      "arabicName": "الماعون",
+      "hasVideo": true,
+      "videoId": "biu7gPUikMU",
+      "videoUrl": "https://youtu.be/biu7gPUikMU",
+      "embedUrl": "https://www.youtube.com/embed/biu7gPUikMU"
+    },
+    {
+      "number": 108,
+      "name": "Al-Kawthar",
+      "arabicName": "الكوثر",
+      "hasVideo": true,
+      "videoId": "GGff1nF5Wlw",
+      "videoUrl": "https://youtu.be/GGff1nF5Wlw",
+      "embedUrl": "https://www.youtube.com/embed/GGff1nF5Wlw"
+    },
+    {
+      "number": 109,
+      "name": "Al-Kafirun",
+      "arabicName": "الكافرون",
+      "hasVideo": true,
+      "videoId": "0tpc06U0MFs",
+      "videoUrl": "https://youtu.be/0tpc06U0MFs",
+      "embedUrl": "https://www.youtube.com/embed/0tpc06U0MFs"
+    },
+    {
+      "number": 110,
+      "name": "An-Nasr",
+      "arabicName": "النصر",
+      "hasVideo": true,
+      "videoId": "o5Ch1CanjCs",
+      "videoUrl": "https://youtu.be/o5Ch1CanjCs",
+      "embedUrl": "https://www.youtube.com/embed/o5Ch1CanjCs"
+    },
+    {
+      "number": 111,
+      "name": "Al-Masad",
+      "arabicName": "المسد",
+      "hasVideo": true,
+      "videoId": "gaFyssQWGmQ",
+      "videoUrl": "https://youtu.be/gaFyssQWGmQ",
+      "embedUrl": "https://www.youtube.com/embed/gaFyssQWGmQ"
+    },
+    {
+      "number": 112,
+      "name": "Al-Ikhlas",
+      "arabicName": "الإخلاص",
+      "hasVideo": true,
+      "videoId": "79Vc-buUz4c",
+      "videoUrl": "https://youtu.be/79Vc-buUz4c",
+      "embedUrl": "https://www.youtube.com/embed/79Vc-buUz4c"
+    },
+    {
+      "number": 113,
+      "name": "Al-Falaq",
+      "arabicName": "الفلق",
+      "hasVideo": true,
+      "videoId": "FyQX9LNJ9m0",
+      "videoUrl": "https://youtu.be/FyQX9LNJ9m0",
+      "embedUrl": "https://www.youtube.com/embed/FyQX9LNJ9m0"
+    },
+    {
+      "number": 114,
+      "name": "An-Nas",
+      "arabicName": "الناس",
+      "hasVideo": true,
+      "videoId": "mx_bdV98htk",
+      "videoUrl": "https://youtu.be/mx_bdV98htk",
+      "embedUrl": "https://www.youtube.com/embed/mx_bdV98htk"
+    }
+  ]
+}

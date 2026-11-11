@@ -4,6 +4,7 @@ import { resolve, relative, extname } from "node:path";
 import assert from "node:assert/strict";
 import { SITE_BASE_URL, SITE_PAGES } from "../shared/site-navigation.mjs";
 import { footerColumns } from "../frontend/src/footer/footer-data.mjs";
+import { maskRequestedMenuUrls } from "./menu-url-exceptions.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const retiredHost = "er-md-hafiz.github.io/" + ["islamicunity", "api"].join("-");
@@ -17,7 +18,8 @@ async function scan(directory) {
     const path = resolve(directory, entry.name);
     if (entry.isDirectory()) await scan(path);
     else if (textExtensions.has(extname(entry.name)) || entry.name.startsWith(".env")) {
-      const text = (await readFile(path, "utf8")).replace(/\\\//g, "/").replace(/\\u002f/gi, "/");
+      const content = await readFile(path, "utf8");
+      const text = maskRequestedMenuUrls(content, relative(root, path).replaceAll("\\", "/")).replace(/\\\//g, "/").replace(/\\u002f/gi, "/");
       checked++;
       if (text.toLowerCase().includes(retiredHost)) failures.push(relative(root, path));
     }
@@ -37,4 +39,4 @@ for (const url of internal) {
   assert.ok(publicFiles.has(path) || path === "index.html", `Missing footer destination: ${url}`);
 }
 assert.equal(internal.length, 13, "Every internal footer link must stay on the canonical website");
-console.log(`Audited ${checked} project/build text files: no retired website URLs; all ${Object.keys(SITE_PAGES).length} configured pages and ${internal.length} internal footer links exist.`);
+console.log(`Audited ${checked} project/build text files: no unapproved retired URLs (four exact commonUrls values are explicitly allowed); all ${Object.keys(SITE_PAGES).length} configured pages and ${internal.length} internal footer links exist.`);

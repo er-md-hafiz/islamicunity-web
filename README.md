@@ -16,6 +16,8 @@ Download buttons use the verified [Google Play listing](https://play.google.com/
 
 ## Run locally
 
+The version-2 root menu includes the shared `commonUrls` configuration. Quran video metadata is also published as `surah_video.json`, referenced by `commonUrls.quran.surahVideoUrl`; its contents stay synchronized with `surah-videos.json` during the build. Existing menu items and settings are unchanged.
+
 The homepage uses the daily-faith tagline, and Qibla Finder now requests actual GPS coordinates, separates manual bearing from live compass guidance, and applies offline WMM2025 correction only with a known north reference. The legacy widget shares this implementation instead of simulated movement. See [branding and Qibla verification](docs/qibla-branding-fix.md), including sensor limitations and Android/iOS device-testing status. Run `npm run test:qibla` for math/model checks.
 
 The shared four-column footer is available on every tool and all standalone resource pages. Hajj, Umrah, Prayer Guide and Games sidebar links open their actual pages directly; existing hash links remain compatible. See [global footer and navigation delivery](docs/global-footer-navigation.md) for verified links, social configuration, exact destinations, and regression coverage.

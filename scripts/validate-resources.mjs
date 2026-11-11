@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { resolve, relative } from "node:path";
 import assert from "node:assert/strict";
+import { maskRequestedMenuUrls } from "./menu-url-exceptions.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const publicDirectory = resolve(root, "frontend/public");
@@ -72,7 +73,7 @@ for (const item of [...manifest.files, ...manifest.aliases]) {
   if (/\.(html|json|svg|css|js)$/i.test(item.path)) {
     const text = buffer.toString("utf8");
     assert.ok(
-      !oldOrigin.test(text),
+      !oldOrigin.test(maskRequestedMenuUrls(text, `frontend/public/${item.path}`)),
       `An old resource origin remains in ${item.path}`,
     );
     if (item.path.endsWith(".json")) JSON.parse(text);
@@ -97,7 +98,8 @@ const backendMenu = JSON.parse(
   await readFile(resolve(root, "backend/menu.json"), "utf8"),
 );
 assert.deepEqual(menu, backendMenu, "Android and REST menus must match");
-const shape = JSON.parse(JSON.stringify(menu), (key, value) =>
+const { commonUrls, ...existingMenu } = menu;
+const shape = JSON.parse(JSON.stringify(existingMenu), (key, value) =>
   ["url", "icon"].includes(key) ? undefined : value,
 );
 assert.equal(

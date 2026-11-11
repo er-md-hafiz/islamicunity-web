@@ -77,8 +77,8 @@
     {
       "path": "menu.json",
       "sourceSha256": "bf24198bb608f01a999e592b8116ab6c3a3c01130d073512c4644e00a93192d9",
-      "sha256": "9d0819c6118001d000a198e88a47f41062b844e237587e9f5355e41a79c7f722",
-      "bytes": 12707
+      "sha256": "f565cddd65fdc166554b03b817f620c514fc4cdb84d583e9fc8d475bd1de1e48",
+      "bytes": 13924
     },
     {
       "path": "PrayerGuide.html",
@@ -313,6 +313,10 @@
     {
       "path": "islamicunity.html",
       "description": "Replace the randomized, hardcoded Qibla widget with the same permission-driven GPS, compass and offline WMM2025 implementation used by the web app. Preserve the nearby-mosques control and all other widgets."
+    },
+    {
+      "path": "menu.json",
+      "description": "Add the requested commonUrls block after unchanged version. Preserve all original configuration, including menu IDs, destinations, icons, visibility and analytics. Four supplied legacy URLs are intentionally retained exactly; add the Quran video JSON alias URL."
     }
   ],
   "textLineEndings": "LF",

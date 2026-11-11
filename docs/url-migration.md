@@ -1,6 +1,6 @@
 # Canonical website URL migration
 
-All internal website navigation now uses **https://er-md-hafiz.github.io/islamicunity-web/**. The remaining dependency on the retired repository was the shared footer's base configuration; its 13 internal links now resolve to seven existing pages on the canonical website. The verification report and previous footer documentation have also been refreshed, so no obsolete website URLs remain in project source, configuration, documentation or the generated production artifact.
+All internal website navigation uses **https://er-md-hafiz.github.io/islamicunity-web/**. The shared footer's 13 internal links resolve to seven existing pages on the canonical website. A subsequent explicit configuration request retains four exact legacy content/page endpoints inside `menu.json` → `commonUrls`. These configuration values are narrowly allowlisted; website navigation and footer links continue to use the canonical repository.
 
 ## Destinations and centralized configuration
 
@@ -22,7 +22,7 @@ External Google Play, Instagram/YouTube/social configuration, Aladhan, Quran str
 
 ## Verification and regression prevention
 
-`npm run test:urls` recursively audits project text files, generated static JSON and the production build for the retired hostname/path, including escaped slash variants. It ignores dependency folders, Git history, local tool scratch files and unrelated build caches, none of which are published. It separately checks that every configured page and all 13 internal footer destinations exist with exact filenames. GitHub Pages runs this check **after the production build**, before publication.
+`npm run test:urls` recursively audits project text files, generated static JSON and the production build for unapproved retired hostname/path values, including escaped slash variants. Only the four exact requested `commonUrls` fields in the synchronized menu copies are exempt; using those URLs elsewhere or changing their paths still fails. It ignores dependency folders, Git history, local tool scratch files and unrelated build caches, none of which are published. It separately checks that every configured page and all 13 internal footer destinations exist with exact filenames. GitHub Pages runs this check **after the production build**, before publication.
 
 `npm run test:resources` continues verifying imported HTML hashes, binary assets, local references and native menu compatibility. The migration does not change imported page contents.
 

@@ -13,6 +13,24 @@ test("menu preserves all original home sections and CORS", async () => {
   const r = await fetch(base + "/menu");
   const data = await r.json();
   assert.equal(data.home.items.length, 21);
+  assert.equal(data.version, 2);
+  assert.deepEqual(Object.keys(data).slice(0, 3), ["version", "commonUrls", "home"]);
+  const legacy = "https://er-md-hafiz.github.io/" + ["islamicunity", "api"].join("-") + "/";
+  assert.deepEqual(data.commonUrls, {
+    location: { geoUrl: "https://get.geojs.io/v1/ip/geo.json", ipAddressUrl: "https://api.ipify.org/?format=json" },
+    prayer: { aladhanBaseUrl: "https://api.aladhan.com/" },
+    store: { playStoreUrl: "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en" },
+    content: { quizJsonUrl: legacy + "quiz.json", duasJsonUrl: legacy + "duas.json" },
+    pages: { islamicCharityUrl: legacy + "IslamicCharity.html", currencyGuideUrl: legacy + "CurrencyGuide.html" },
+    quran: {
+      audioSurahUrl: "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{number}.mp3",
+      surahUrl: "https://api.alquran.cloud/v1/surah",
+      quranViewUrl: "https://api.alquran.cloud/v1/quran/quran-uthmani",
+      sajdaUrl: "https://api.alquran.cloud/v1/sajda/{edition}",
+      metaUrl: "https://api.alquran.cloud/v1/meta",
+      surahVideoUrl: "https://er-md-hafiz.github.io/islamicunity-web/surah_video.json",
+    },
+  });
   assert.equal(r.headers.get("access-control-allow-origin"), "*");
 });
 test("prayer schedule clearly identifies sample data and timezone", async () => {

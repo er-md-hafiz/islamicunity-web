@@ -1,5 +1,33 @@
 {
   "version": 2,
+  "commonUrls": {
+    "location": {
+      "geoUrl": "https://get.geojs.io/v1/ip/geo.json",
+      "ipAddressUrl": "https://api.ipify.org/?format=json"
+    },
+    "prayer": {
+      "aladhanBaseUrl": "https://api.aladhan.com/"
+    },
+    "store": {
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en"
+    },
+    "content": {
+      "quizJsonUrl": "https://er-md-hafiz.github.io/islamicunity-api/quiz.json",
+      "duasJsonUrl": "https://er-md-hafiz.github.io/islamicunity-api/duas.json"
+    },
+    "pages": {
+      "islamicCharityUrl": "https://er-md-hafiz.github.io/islamicunity-api/IslamicCharity.html",
+      "currencyGuideUrl": "https://er-md-hafiz.github.io/islamicunity-api/CurrencyGuide.html"
+    },
+    "quran": {
+      "audioSurahUrl": "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{number}.mp3",
+      "surahUrl": "https://api.alquran.cloud/v1/surah",
+      "quranViewUrl": "https://api.alquran.cloud/v1/quran/quran-uthmani",
+      "sajdaUrl": "https://api.alquran.cloud/v1/sajda/{edition}",
+      "metaUrl": "https://api.alquran.cloud/v1/meta",
+      "surahVideoUrl": "https://er-md-hafiz.github.io/islamicunity-web/surah_video.json"
+    }
+  },
 
   "home": {
     "enabled": true,
@@ -417,37 +445,5 @@
         ]
       }
     ]
-  },
-  "commonUrls": {
-    "location": {
-      "geoUrl": "https://get.geojs.io/v1/ip/geo.json",
-      "ipAddressUrl": "https://api.ipify.org/?format=json"
-    },
-
-    "prayer": {
-      "aladhanBaseUrl": "https://api.aladhan.com/"
-    },
-
-    "store": {
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en"
-    },
-
-    "content": {
-      "quizJsonUrl": "https://er-md-hafiz.github.io/islamicunity-api/quiz.json",
-      "duasJsonUrl": "https://er-md-hafiz.github.io/islamicunity-api/duas.json"
-    },
-
-    "pages": {
-      "islamicCharityUrl": "https://er-md-hafiz.github.io/islamicunity-api/IslamicCharity.html",
-      "currencyGuideUrl": "https://er-md-hafiz.github.io/islamicunity-api/CurrencyGuide.html"
-    },
-
-    "quran": {
-      "audioSurahUrl": "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{number}.mp3",
-      "surahUrl": "https://api.alquran.cloud/v1/surah",
-      "quranViewUrl": "https://api.alquran.cloud/v1/quran/quran-uthmani",
-      "sajdaUrl": "https://api.alquran.cloud/v1/sajda/{edition}",
-      "metaUrl": "https://api.alquran.cloud/v1/meta"
-    }
   }
 }
