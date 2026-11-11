@@ -105,6 +105,14 @@ hr {
   letter-spacing: -1px;
   line-height: 1.16;
 }
+.sidebar-brand-name {
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+.sidebar > .brand .brand-mark {
+  flex-shrink: 0;
+}
 .brand-mark {
   display: flex;
   position: relative;

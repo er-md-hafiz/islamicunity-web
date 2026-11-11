@@ -847,6 +847,7 @@ function App() {
             <Moon size={27} fill="currentColor" />
             <Sparkles size={13} />
           </span>
+          <span className="sidebar-brand-name">Islamic Unity</span>
         </a>
         <button
           className="mobile-close icon-button"
