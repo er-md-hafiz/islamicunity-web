@@ -13,9 +13,9 @@ test.beforeEach(async({page})=>{
   });
 });
 const locate=async page=>{await page.locator(".qf-bearing button").click();await expect(page.locator(".qf-location")).toContainText("28.6139");};
-test("branding uses the tagline and one widget title; no location or direction is invented",async({page})=>{
-  await page.goto(base);await expect(page.locator("#homepage-title")).toHaveText(/A little closer to your faith,\s*every day\./);
-  await page.goto(base+"#prayer_times");await expect(page.locator(".welcome-heading h1")).toHaveText("A little closer to your faith, every day.");
+test("shared header omits the removed branding and widgets keep one title; no location is invented",async({page})=>{
+  await page.goto(base);await expect(page.locator(".lp-hero")).toBeVisible();await expect(page.locator(".lp-brand")).toHaveText("");await expect(page.locator("#homepage-title")).toHaveText("Home");
+  await page.goto(base+"#prayer_times");await expect(page.locator(".welcome-heading h1,.welcome-heading .small-overline")).toHaveCount(0);await expect(page.locator(".sidebar > .brand")).toHaveText("");
   await page.goto(base+"#qibla");await expect(page.getByRole("heading",{name:"Qibla Finder",exact:true})).toHaveCount(1);
   await expect(page.locator(".qf-needle")).toHaveCount(0);await expect(page.locator(".bearing")).toContainText("—");expect(await page.evaluate(()=>window.__geoCalls.length)).toBe(0);
   await locate(page);await expect(page.locator(".bearing")).toContainText(bearing(28.6139,77.209).toFixed(1));

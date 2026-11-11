@@ -47,7 +47,7 @@ test("production index, assets and every menu page work under the repository pat
   await expect(page).toHaveTitle(
     "Islamic Unity — Your Complete Islamic Companion",
   );
-  await expect(page.locator("#homepage-title")).toBeVisible();
+  await expect(page.locator(".lp-hero")).toBeVisible();
   await page.locator(".lp-purpose-strip a").click();
   await expect(page.locator(".prayer-grid")).toBeVisible();
   await expect(page.locator(".schedule-note")).toContainText(

@@ -78,10 +78,6 @@ function Brand({ footer = false }) {
         <Moon size={27} fill="currentColor" strokeWidth={1.5} />
         <Sparkles size={13} />
       </span>
-      <span>
-        Islamic<span>Unity</span>
-        <small>FAITH. TOGETHER.</small>
-      </span>
     </a>
   );
 }
@@ -406,11 +402,7 @@ export default function LandingPage({ section }) {
               <span />
               {t("eyebrow")}
             </span>
-            <h1 id="homepage-title">
-              {t("title")}
-              <br />
-              {" "}<em>{t("titleGold")}</em>
-            </h1>
+            <h1 id="homepage-title" className="lp-screen-reader-title">{t("home")}</h1>
             <p className="lp-hero-description">{t("intro")}</p>
             <div className="lp-hero-ctas">
               <a

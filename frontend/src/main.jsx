@@ -852,14 +852,10 @@ function App() {
         />
       )}
       <aside className={`sidebar ${sidebar ? "is-open" : ""}`}>
-        <a className="brand" href="#prayer_times">
+        <a className="brand" href="#prayer_times" aria-label="Home">
           <span className="brand-mark">
             <Moon size={27} fill="currentColor" />
             <Sparkles size={13} />
-          </span>
-          <span>
-            Islamic<span className="brand-unity">Unity</span>
-            <small>FAITH. TOGETHER.</small>
           </span>
         </a>
         <button
@@ -959,12 +955,6 @@ function App() {
         </header>
         <main>
           {page !== "qibla" && <div className="welcome-heading">
-            {page === "prayer_times" && <div>
-              <div className="small-overline">
-                <span /> {t("overline")}
-              </div>
-              <h1>{t("welcome")}</h1>
-            </div>}
             <button
               className="location-button"
               onClick={locate}

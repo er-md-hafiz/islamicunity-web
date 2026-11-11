@@ -27,9 +27,8 @@ test("homepage presents verified download links and preserves tool navigation", 
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
-  await expect(page.locator("#homepage-title")).toContainText(
-    "A little closer to your faith,",
-  );
+  await expect(page.locator(".lp-hero")).toBeVisible();
+  await expect(page.locator(".lp-brand")).toHaveText("");
   await expect(page.locator(".lp-features-grid > a")).toHaveCount(6);
   await expect(page.locator(".lp-hero-ctas a").first()).toHaveAttribute(
     "href",
@@ -40,7 +39,7 @@ test("homepage presents verified download links and preserves tool navigation", 
     page.getByRole("button", { name: /Tap to count,/ }),
   ).toBeVisible();
   await page.getByRole("link", { name: "Islamic Unity homepage" }).click();
-  await expect(page.locator("#homepage-title")).toBeVisible();
+  await expect(page.locator(".lp-hero")).toBeVisible();
   expect(errors).toEqual([]);
 });
 test("mobile menu opens, navigates and closes with Escape", async ({
@@ -88,12 +87,12 @@ test("four language layouts fit mobile, tablet and desktop", async ({
     }
   }
   await page.setViewportSize({ width: 390, height: 844 });
-  await expect(page.locator("#homepage-title")).toBeVisible();
+  await expect(page.locator(".lp-hero-description")).toBeVisible();
   expect(
     await page
-      .locator("#homepage-title")
+      .locator(".lp-hero-description")
       .evaluate((e) => parseFloat(getComputedStyle(e).fontSize)),
-  ).toBeGreaterThanOrEqual(40);
+  ).toBeGreaterThanOrEqual(13);
 });
 test("support opens the migrated donation page and privacy details remain accessible", async ({
   page,

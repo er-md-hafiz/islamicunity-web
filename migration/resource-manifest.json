@@ -5,8 +5,8 @@
     {
       "path": "CurrencyGuide.html",
       "sourceSha256": "d0171abac74cdca05a2986bafdf003ef68801b18f8fba2d4bafb373a09f30653",
-      "sha256": "dbef811b3bf5fcbb6d9b216c0bf0ca5f224ac2091ea743405e6b4e67fe573d2d",
-      "bytes": 32350
+      "sha256": "81c6e245ae61e538b7f073fed28dcdd5baf95ddc756db741c5dbf20bf1f46d38",
+      "bytes": 32337
     },
     {
       "path": "donate.html",
@@ -35,8 +35,8 @@
     {
       "path": "Hajj.html",
       "sourceSha256": "c11b27ce3bbdfadc307ade4edbb9d4afe7244d4dcdb264946d767cab41a95bbb",
-      "sha256": "129b0d5457c89117b06885460f2fd5b28f5a2ec80802684fabc3e9d40e13b6d7",
-      "bytes": 64567
+      "sha256": "45dc0d944e3cb48002d3bca128cf1735227c4400446f3238780c7a901adf04e9",
+      "bytes": 64533
     },
     {
       "path": "ic_icon.svg",
@@ -47,14 +47,14 @@
     {
       "path": "IslamicCharity.html",
       "sourceSha256": "58a6498fe6a57d01779e00de1307f47d7ea02d7dfef52f0f1d01bfaa8145597b",
-      "sha256": "1d315214e0a314e4b7eee7040f05ace3a775ae4da116af25157184acc8a077fc",
-      "bytes": 39096
+      "sha256": "468f239a993614075c9b657f4c61918f1d989cd6f61a39f28f64cd93601d37d7",
+      "bytes": 39083
     },
     {
       "path": "islamicunity.html",
       "sourceSha256": "42c809dbaeec6a2ac3937710bdf8500819c400ba00804841761c8a27f42d2401",
-      "sha256": "fbe1658c2eecfee174280cfdf7592a36ede912d2b88b4cdb436689e50cd3e806",
-      "bytes": 119219
+      "sha256": "03a30590d1882d5ed63b2db7fa85a1222cad85a7002c178d80b3deb94cea5e0e",
+      "bytes": 119172
     },
     {
       "path": "iu.svg",
@@ -65,8 +65,8 @@
     {
       "path": "iu_ads.html",
       "sourceSha256": "850c9ce63867b81fe216f6095e5894fa133f9fe2b310f284bc771baa663513c9",
-      "sha256": "a784761818af2eebcc4e4b09719838c8b9dba7da92b17ab6efb7180549f81baa",
-      "bytes": 25179
+      "sha256": "f712a8574a51581d95539f18fee7b68641cf072426cf0b87e442555a04435d9c",
+      "bytes": 25166
     },
     {
       "path": "iu_logo.svg",
@@ -89,8 +89,8 @@
     {
       "path": "PrivacyPolicy.html",
       "sourceSha256": "c9cb363699cc1ce7108543d3861f9d4e08a78db767fdf4d3c0684b06f9297464",
-      "sha256": "0f568105847e922986ae9178e1204374362fc14a8cec1a1874c3f7fa18557184",
-      "bytes": 17200
+      "sha256": "0673c822bbe84efdace7db13607a674a1d4456a4302b7c2ac06b3302f3a43a89",
+      "bytes": 17165
     },
     {
       "path": "qr_code.jpeg",
@@ -119,14 +119,14 @@
     {
       "path": "SupportOurCommunity.html",
       "sourceSha256": "31d01aad33c3f65b95601e425bca7b4373e672580141578907d3fafa7c02d944",
-      "sha256": "800ed53ff32bba316a91afde2e7e6a486b0783b1b0ac3aa2b6729f99bd97d054",
-      "bytes": 19394
+      "sha256": "2072df163b2b8e4648d04751171e454973530ab006b09774f602dd4419f65954",
+      "bytes": 19359
     },
     {
       "path": "terms_and_conditions.html",
       "sourceSha256": "b84c23cac7535479fd0d051ed483e09fecca0c552c026abd850e4cc5b307ffe8",
-      "sha256": "5ffbaac0b4a1633ee4da0ec5c875236d9d19e64cc9857a8f2f6ab3ccfb5cfcad",
-      "bytes": 14805
+      "sha256": "77e3d70c334fef1e5cecf98f36b906a261cb9ffb1511c4dc8cea9e8acee371eb",
+      "bytes": 14770
     },
     {
       "path": "Umrah.html",
@@ -317,6 +317,19 @@
     {
       "path": "menu.json",
       "description": "Add the requested commonUrls block after unchanged version. Preserve all original configuration, including menu IDs, destinations, icons, visibility and analytics. Four supplied legacy URLs are intentionally retained exactly; add the Quran video JSON alias URL."
+    },
+    {
+      "paths": [
+        "islamicunity.html",
+        "PrivacyPolicy.html",
+        "terms_and_conditions.html",
+        "SupportOurCommunity.html",
+        "CurrencyGuide.html",
+        "IslamicCharity.html",
+        "iu_ads.html",
+        "Hajj.html"
+      ],
+      "description": "Remove the requested visible header wordmarks; retain logo marks, resource-specific titles, page content, metadata and footer."
     }
   ],
   "textLineEndings": "LF",
