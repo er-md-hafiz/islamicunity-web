@@ -51,6 +51,8 @@ import { api } from "./api";
 import LandingPage from "./LandingPage";
 import QuranAudioPlayer from "./quran/QuranAudioPlayer";
 import SurahVideoLibrary from "./video/SurahVideoLibrary";
+import QiblaFinder from "./qibla/QiblaFinder";
+import { useAccurateLocation } from "./qibla/useAccurateLocation";
 import SiteFooter from "./footer/SiteFooter";
 import { resourceHref } from "../../shared/resource-navigation.mjs";
 import { sitePageHref } from "../../shared/site-navigation.mjs";
@@ -199,25 +201,6 @@ function MosqueArt() {
     </svg>
   );
 }
-function CompassGraphic({ bearing = 0, small = false, heading = 0 }) {
-  return (
-    <div className={`compass ${small ? "small" : ""}`}>
-      <div className="compass-inner" />
-      <span className="north">N</span>
-      <span className="east">E</span>
-      <span className="south">S</span>
-      <span className="west">W</span>
-      <div
-        className="compass-needle"
-        style={{ transform: `rotate(${bearing - heading}deg)` }}
-      >
-        <div className="needle-top" />
-        <div className="needle-bottom" />
-      </div>
-      <div className="compass-dot" />
-    </div>
-  );
-}
 function App() {
   const [language, setLanguage] = useStored("iu-language", "en");
   const t = (key) => translate(key, language);
@@ -234,9 +217,11 @@ function App() {
     name: "New Delhi, India",
   });
   const [tomorrowPrayers, setTomorrowPrayers] = useState(null);
-  const sensorCleanup = useRef(() => {});
-  const [qibla, setQibla] = useState(null),
-    [locating, setLocating] = useState(false);
+  const qiblaLocation = useAccurateLocation(position => {
+    setCoords({ ...position, name: "Current location" });
+  });
+  const locating = qiblaLocation.status === "loading";
+  const locate = qiblaLocation.request;
   const [month, setMonth] = useState(
     new Date(new Date().getFullYear(), new Date().getMonth(), 1),
   );
@@ -251,13 +236,11 @@ function App() {
     [voices, setVoices] = useState([]),
     [voiceName, setVoiceName] = useStored("iu-voice", "");
   const [settings, setSettings] = useState(false),
-    [dark, setDark] = useStored("iu-dark", false),
-    [heading, setHeading] = useState(0);
+    [dark, setDark] = useStored("iu-dark", false);
   const [content, setContent] = useState(null),
     [contentError, setContentError] = useState("");
   const [reload, setReload] = useState(0);
   const fired = useRef(new Set());
-  useEffect(() => () => sensorCleanup.current(), []);
   useEffect(() => {
     if (!settings) return;
     const onKey = (e) => {
@@ -318,13 +301,6 @@ function App() {
       })
       .catch((e) => {
         if (active) setPrayerError(e.message);
-      });
-    api(`qibla?lat=${coords.lat}&lon=${coords.lon}`)
-      .then((q) => {
-        if (active) setQibla(q);
-      })
-      .catch(() => {
-        if (active) setQibla(null);
       });
     return () => {
       active = false;
@@ -494,33 +470,6 @@ function App() {
         `आज की नमाज़ के समय। ${prayerList.map((p) => `${translate(p.name, "hi")}: ${formatTime(p.time)}`).join("। ")}।`,
       );
   }
-  function locate() {
-    if (!navigator.geolocation)
-      return setToast(
-        "Geolocation is unavailable. Please use a supported browser.",
-      );
-    setLocating(true);
-    navigator.geolocation.getCurrentPosition(
-      (p) => {
-        setCoords({
-          lat: p.coords.latitude,
-          lon: p.coords.longitude,
-          name: "Current location",
-        });
-        setLocating(false);
-        setToast("Location updated. Prayer times and Qibla recalculated.");
-      },
-      (e) => {
-        setLocating(false);
-        setToast(
-          e.code === 1
-            ? "Location permission denied. Your previous location remains selected."
-            : "Unable to locate you. Please try again.",
-        );
-      },
-      { timeout: 10000, maximumAge: 300000 },
-    );
-  }
   async function toggleReminder(name) {
     if (
       !reminders[name] &&
@@ -533,35 +482,6 @@ function App() {
       setToast(
         "Browser notifications are blocked. In-app reminders will appear while this tab is open.",
       );
-  }
-  async function orient() {
-    try {
-      if (typeof DeviceOrientationEvent === "undefined")
-        return setToast(
-          "Compass sensor unavailable. Align the N marker with true north manually.",
-        );
-      if (
-        typeof DeviceOrientationEvent.requestPermission === "function" &&
-        (await DeviceOrientationEvent.requestPermission()) !== "granted"
-      )
-        return setToast("Compass sensor permission denied.");
-      const listener = (e) => {
-        if (e.webkitCompassHeading != null) setHeading(e.webkitCompassHeading);
-        else if (e.absolute && e.alpha != null) setHeading(360 - e.alpha);
-      };
-      sensorCleanup.current();
-      window.addEventListener("deviceorientationabsolute", listener);
-      window.addEventListener("deviceorientation", listener);
-      sensorCleanup.current = () => {
-        window.removeEventListener("deviceorientationabsolute", listener);
-        window.removeEventListener("deviceorientation", listener);
-      };
-      setToast(
-        "Compass enabled where supported. If the arrow stays still, align N with true north manually.",
-      );
-    } catch {
-      setToast("Compass sensor unavailable. Align N with true north manually.");
-    }
   }
   const navItems =
     menu?.home?.items?.filter((i) => i.enabled && i.visible) || [];
@@ -758,7 +678,7 @@ function App() {
         <div className="card-heading">
           <span className="eyebrow">
             <CircleDot size={16} />
-            {t("tasbih")}
+            {!expanded && t("tasbih")}
           </span>
           <button
             className="icon-button"
@@ -804,52 +724,6 @@ function App() {
               ))}
             </select>
           </label>
-        )}
-      </section>
-    );
-  }
-  function Qibla({ expanded = false }) {
-    return (
-      <section className={`card qibla-card ${expanded ? "expanded" : ""}`}>
-        <div className="card-heading">
-          <span className="eyebrow">
-            <Compass size={16} />
-            {t("qibla")}
-          </span>
-          <span className="tiny-badge">{t("makkah")}</span>
-        </div>
-        <div className="qibla-content">
-          <CompassGraphic
-            bearing={qibla?.bearing || 0}
-            small={!expanded}
-            heading={heading}
-          />
-          <div>
-            <strong className="bearing">
-              {qibla ? Math.round(qibla.bearing) : "—"}
-              <span>°</span>
-            </strong>
-            <p>{t("north")}</p>
-            <button
-              className="text-button"
-              onClick={expanded ? locate : () => navigate("qibla")}
-            >
-              {expanded ? t("locate") : t("qibla")} <ArrowUpRight size={14} />
-            </button>
-          </div>
-        </div>
-        {expanded && (
-          <>
-            <p className="helper">
-              {coords.name} · {coords.lat.toFixed(4)}°, {coords.lon.toFixed(4)}°
-              <br />
-              {t("align")}
-            </p>
-            <button className="button secondary" onClick={orient}>
-              <Compass size={16} /> {t("enableCompass")}
-            </button>
-            <p className="helper">{t("sensorNote")}</p>
-          </>
         )}
       </section>
     );
@@ -1084,14 +958,13 @@ function App() {
           </div>
         </header>
         <main>
-          <div className="welcome-heading">
-            <div>
+          {page !== "qibla" && <div className="welcome-heading">
+            {page === "prayer_times" && <div>
               <div className="small-overline">
                 <span /> {t("overline")}
               </div>
-              <h1>Islamic Unity</h1>
-              <p>{t("welcome")}</p>
-            </div>
+              <h1>{t("welcome")}</h1>
+            </div>}
             <button
               className="location-button"
               onClick={locate}
@@ -1110,7 +983,7 @@ function App() {
               </span>
               <ChevronRight size={14} />
             </button>
-          </div>
+          </div>}
           <div className="page-content" key={page}>
             {page === "prayer_times" ? (
               <>
@@ -1155,7 +1028,7 @@ function App() {
                 {PrayerSchedule()}
                 <div className="daily-grid">
                   {VerseCard({})}
-                  {Qibla({})}
+                  <QiblaFinder location={qiblaLocation} language={language} onOpen={() => navigate("qibla")} />
                   {Tasbih({})}
                 </div>
                 <div className="bottom-grid">
@@ -1190,10 +1063,7 @@ function App() {
                 </div>
               </>
             ) : page === "qibla" ? (
-              <>
-                <PageHeading title={t(page)} subtitle={t("qiblaSubtitle")} />
-                {Qibla({ expanded: true })}
-              </>
+              <QiblaFinder location={qiblaLocation} language={language} expanded />
             ) : page === "quran" ? (
               <>
                 <PageHeading title={t(page)} subtitle={t("quranSubtitle")} />

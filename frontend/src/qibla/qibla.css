@@ -1,0 +1,42 @@
+.qf.qibla-card { padding: 26px; border-radius: 18px; background: var(--card, #fff); color: var(--text, #253c33); border: 1px solid var(--line, #dfe8df); font-family: "DM Sans", system-ui, sans-serif; min-width: 0; box-sizing: border-box; }
+.qf *, .qf *::before, .qf *::after { box-sizing: border-box; }
+.qf-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.qf-heading h1, .qf-heading h2 { display: flex; align-items: center; gap: 9px; font: 700 20px/1.4 "Manrope", system-ui, sans-serif; margin: 0; }
+.qf.expanded .qf-heading h1 { font-size: clamp(23px, 3vw, 32px); }
+.qf-heading p { margin: 8px 0 0; font-size: 13px; line-height: 1.6; }
+.qf-makkah { flex-shrink: 0; font-size: 10px; letter-spacing: 1.5px; padding: 7px 9px; background: #f8f0d8; border-radius: 6px; color: #66501c; }
+.qf-main { display: flex; align-items: center; justify-content: center; gap: 32px; margin-block: 28px 20px; }
+.qf-dial { display: block; width: min(280px, 48%); height: auto; overflow: visible; flex-shrink: 0; }
+.qf-rim { stroke: #a6baab; stroke-width: 2; }
+.qf-inner { stroke: #c8d4c9; stroke-dasharray: 3 5; }
+.qf-tick { stroke: #7b9583; }
+.qf-dial text { text-anchor: middle; fill: var(--text, #253c33); font: 600 13px system-ui, sans-serif; }
+.qf-dial .qf-north { fill: var(--text, #253c33); font-weight: 800; }
+.qf-needle, .qf-north-ring { transform-origin: 120px 120px; transition: transform 160ms linear; }
+.qf-bearing { min-width: 0; flex: 0 1 350px; }
+.qf .bearing { font-size: clamp(30px, 5vw, 44px); font-weight: 700; color: var(--text, #253c33); }
+.qf .bearing span { font-size: 22px; color: inherit; }
+.qf-bearing > p { font-size: 13px; margin: 5px 0 12px; line-height: 1.6; }
+.qf-mode { display: block; font-size: 12px; margin-bottom: 14px; }
+.qf-mode.is-live { color: var(--text, #253c33); font-weight: 700; }
+.qf-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border: 1px solid #064635; border-radius: 9px; padding: 11px 16px; background: #064635; color: #fff; font-family: inherit; font-size: 13px; line-height: 1.4; font-weight: 600; cursor: pointer; }
+.qf-button:disabled { opacity: .5; cursor: default; }
+.qf-secondary { background: var(--card, #fff); color: var(--text, #253c33); border-color: #b8cbbb; }
+.qf-button:focus-visible, .qf select:focus-visible, .qf summary:focus-visible { outline: 3px solid #ebb53f; outline-offset: 3px; }
+.qf-note, .qf-location, .qf-sensor-status, .qf-warning { margin: 14px 0; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; color: var(--text, #253c33); }
+.qf.qibla-card .qf-location { font-size: 13px; line-height: 1.7; color: var(--text, #253c33); }
+.qf-warning { padding: 12px 14px; border-inline-start: 3px solid #b78723; background: #fbf0d8; color: #60491d; border-radius: 5px; }
+.qf-controls { border-top: 1px solid var(--line, #dfe8df); padding-top: 10px; }
+.qf-reference { display: flex; flex-direction: column; gap: 8px; font-size: 13px; margin-top: 12px; }
+.qf-reference select { min-height: 44px; width: 100%; max-width: 440px; padding: 10px; border-radius: 8px; border: 1px solid #b8cbbb; background: var(--card, #fff); color: var(--text, #253c33); font: inherit; }
+.qf-calibration { margin-block: 18px; font-size: 13px; line-height: 1.7; }
+.qf-calibration summary { min-height: 44px; padding-block: 10px; cursor: pointer; font-weight: 600; }
+.qf-calibration p { margin-block: 10px; }
+.qf:not(.expanded) .qf-main { gap: 16px; }
+.qf:not(.expanded) .qf-dial { width: 44%; max-width: 160px; }
+.qf:not(.expanded) .qf-heading { flex-wrap: wrap; }
+.qf:not(.expanded) .qf-heading h2 { font-size: 16px; }
+.qf:not(.expanded) .qf-main .bearing { font-size: 28px; }
+.qf:not(.expanded) .qf-bearing p, .qf:not(.expanded) .qf-mode { font-size: 11px; }
+@media (max-width: 600px) { .qf.qibla-card { padding: 22px; } .qf-main { flex-direction: column; gap: 18px; } .qf-dial { width: min(260px, 100%); } .qf-bearing { flex: initial; text-align: center; } .qf-heading { flex-wrap: wrap; } .qf-button { width: 100%; } .qf:not(.expanded) .qf-dial { width: min(200px, 80%); } }
+@media (prefers-reduced-motion: reduce) { .qf-needle, .qf-north-ring { transition: none; } }

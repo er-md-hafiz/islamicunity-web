@@ -50,8 +50,8 @@ test("geolocation updates prayer and Qibla coordinates", async ({
   await context.grantPermissions(["geolocation"]);
   await context.setGeolocation({ latitude: 19.076, longitude: 72.8777 });
   await page.goto("/#qibla");
-  await page.locator(".location-button").click();
-  await expect(page.locator(".location-button")).toContainText(
+  await page.locator(".qf-bearing button").click();
+  await expect(page.locator(".qf-location")).toContainText(
     "Current location",
   );
   await expect(

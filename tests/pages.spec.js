@@ -77,7 +77,8 @@ test("static mode calculates Qibla and future calendar dates", async ({
   page,
 }) => {
   await page.goto(prefix + "#qibla");
-  await expect(page.locator(".bearing")).toContainText("267");
+  await expect(page.locator(".bearing")).toContainText("—");
+  await expect(page.locator(".qf-needle")).toHaveCount(0);
   await page.goto(prefix + "#calendar");
   await expect(page.locator(".expanded.calendar-card .event")).toHaveCount(4);
   await expect(page.locator(".expanded.calendar-card h2")).not.toBeEmpty();

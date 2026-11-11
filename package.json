@@ -16,6 +16,7 @@
     "test:resources": "node scripts/validate-resources.mjs",
     "test:urls": "node scripts/audit-internal-urls.mjs",
     "test:quran": "node --test tests/quran-controller.test.mjs",
+    "test:qibla": "node --test tests/qibla.test.mjs",
     "test:video": "node --test tests/video-data.test.mjs",
     "verify:quran-audio": "node scripts/verify-quran-audio.mjs",
     "preview": "npm run preview -w frontend"

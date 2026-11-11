@@ -1785,42 +1785,10 @@
                     </div>
                 </div>
 
-                <!-- Qibla Widget -->
-                <div class="card qibla-widget">
-                    <div class="card-header">
-                        <h2 class="card-title">
-                            <i class="fas fa-compass"></i> Qibla Direction
-                        </h2>
-                        <div class="card-actions">
-                            <button class="btn-icon" id="calibrateCompass" title="Calibrate">
-                                <i class="fas fa-sync-alt"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="compass-container">
-                        <div class="compass-circle"></div>
-                        <div class="compass-needle" id="compassNeedle"></div>
-                        <div class="compass-direction" id="compassDirection">Qibla</div>
-                    </div>
-                    
-                    <div class="qibla-info">
-                        <div class="qibla-stat">
-                            <div class="qibla-value" id="distanceToKaaba">3,849 km</div>
-                            <div class="qibla-label">Distance to Kaaba</div>
-                        </div>
-                        <div class="qibla-stat">
-                            <div class="qibla-value" id="qiblaAngle">266°</div>
-                            <div class="qibla-label">Qibla Angle</div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-20">
-                        <button class="btn w-100" id="findNearbyMosques">
+                <!-- Shared Qibla Finder -->
+                <div class="qibla-widget"><div id="qiblaMount"></div><div class="mt-20"><button class="btn w-100" id="findNearbyMosques">
                             <i class="fas fa-map-marker-alt"></i> Find Nearby Mosques
-                        </button>
-                    </div>
-                </div>
+                        </button></div></div>
 
                 <!-- Mosque Finder Widget -->
                 <div class="card mosque-widget">
@@ -2110,7 +2078,6 @@
             currentLocation: { city: "Noida", region: "Meerut Division", country: "India", lat: 28.5355, lng: 77.3910 },
             prayerTimes: [],
             currentPrayerIndex: 2, // Dhuhr as example
-            qiblaAngle: 266,
             tasbihCount: 0,
             tasbihTarget: 33,
             tasbihHistory: [],
@@ -2131,11 +2098,6 @@
         const tasbihTargetEl = document.getElementById('tasbihTarget');
         const countBtn = document.getElementById('countBtn');
         const resetTasbihBtn = document.getElementById('resetTasbih');
-        const compassNeedle = document.getElementById('compassNeedle');
-        const qiblaAngleEl = document.getElementById('qiblaAngle');
-        const distanceToKaabaEl = document.getElementById('distanceToKaaba');
-        const compassDirectionEl = document.getElementById('compassDirection');
-        const calibrateCompassBtn = document.getElementById('calibrateCompass');
         const surahListContainer = document.getElementById('surahList');
         const viewFullQuranBtn = document.getElementById('viewFullQuran');
         const duaCategoriesContainer = document.getElementById('duaCategories');
@@ -2274,8 +2236,6 @@
             // Initialize tasbih counter
             initTasbihCounter();
 
-            // Initialize qibla compass
-            initQiblaCompass();
 
             // Initialize Quran player
             initQuranPlayer();
@@ -2308,8 +2268,6 @@
             // Update date every day
             updateCurrentDate();
             
-            // Simulate compass movement
-            simulateCompassMovement();
             
             // Load saved tasbih history
             loadTasbihHistory();
@@ -2457,40 +2415,6 @@
                 appState.tasbihHistory = JSON.parse(savedHistory);
                 updateTasbihHistory();
             }
-        }
-
-        // Function to initialize qibla compass
-        function initQiblaCompass() {
-            // Set initial angle
-            compassNeedle.style.transform = `translate(-50%, -100%) rotate(${appState.qiblaAngle}deg)`;
-            qiblaAngleEl.textContent = `${appState.qiblaAngle}°`;
-            
-            // Calibrate button
-            calibrateCompassBtn.addEventListener('click', function() {
-                showNotification("Calibrating compass... Please hold device flat and rotate it slowly.");
-                
-                // Simulate calibration
-                setTimeout(() => {
-                    const newAngle = Math.floor(Math.random() * 360);
-                    appState.qiblaAngle = newAngle;
-                    compassNeedle.style.transform = `translate(-50%, -100%) rotate(${newAngle}deg)`;
-                    qiblaAngleEl.textContent = `${newAngle}°`;
-                    showNotification("Compass calibrated successfully!");
-                }, 2000);
-            });
-        }
-
-        // Function to simulate compass movement
-        function simulateCompassMovement() {
-            setInterval(() => {
-                const variation = Math.random() * 4 - 2; // Random variation between -2 and 2
-                const newAngle = appState.qiblaAngle + variation;
-                compassNeedle.style.transform = `translate(-50%, -100%) rotate(${newAngle}deg)`;
-                
-                // Update direction text
-                const direction = getDirectionFromAngle(newAngle);
-                compassDirectionEl.textContent = direction;
-            }, 3000);
         }
 
         // Function to get direction from angle
@@ -3303,5 +3227,6 @@
     <script type="module" src="./assets/quran-audio.js"></script>
     <iu-site-footer></iu-site-footer>
     <script type="module" src="./assets/site-footer.js"></script>
+    <script type="module" src="./assets/qibla-finder.js"></script>
 </body>
 </html>

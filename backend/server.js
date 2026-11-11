@@ -105,9 +105,11 @@ app.get("/api/prayertimes", async (req, res) => {
   });
 });
 app.get("/api/qibla", (req, res) => {
+  if (typeof req.query.lat !== "string" || typeof req.query.lon !== "string" || !req.query.lat.trim() || !req.query.lon.trim())
+    return res.status(400).json({ error: "Qibla requires your latitude and longitude; no default location is assumed." });
   const { lat, lon } = coordinates(req.query);
   res.json({
-    kaaba: { lat: 21.422487, lon: 39.826206 },
+    kaaba: { lat: 21.4225, lon: 39.8262 },
     bearing: bearing(lat, lon),
     from: { lat, lon },
   });

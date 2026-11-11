@@ -22,12 +22,15 @@ export async function api(path) {
   const lon = Number(query.get("lon") ?? 77.209);
   const date = query.get("date") || new Date().toISOString().slice(0, 10);
 
-  if (route === "/qibla")
+  if (route === "/qibla") {
+    if (!query.has("lat") || !query.has("lon") || !query.get("lat").trim() || !query.get("lon").trim())
+      throw new Error("Qibla requires your latitude and longitude; no default location is assumed.");
     return {
-      kaaba: { lat: 21.422487, lon: 39.826206 },
+      kaaba: { lat: 21.4225, lon: 39.8262 },
       bearing: bearing(lat, lon),
       from: { lat, lon },
     };
+  }
   if (route === "/calendar") return calendar(new Date(`${date}T12:00:00Z`));
   if (route === "/prayertimes") {
     const key = `${date}:${lat}:${lon}`;

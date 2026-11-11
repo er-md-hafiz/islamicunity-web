@@ -1,18 +1,4 @@
-export function bearing(lat, lon) {
-  const r = Math.PI / 180,
-    a = lat * r,
-    b = 21.422487 * r,
-    delta = (39.826206 - lon) * r;
-  return (
-    (Math.atan2(
-      Math.sin(delta),
-      Math.cos(a) * Math.tan(b) - Math.sin(a) * Math.cos(delta),
-    ) /
-      r +
-      360) %
-    360
-  );
-}
+export { bearing } from "./qibla.mjs";
 
 export function calendar(date = new Date()) {
   const locale = "en-US-u-ca-islamic-umalqura";

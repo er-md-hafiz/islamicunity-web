@@ -1,0 +1,89 @@
+{
+  "source": "https://www.ncei.noaa.gov/sites/default/files/2025-02/WMM2025_TEST_VALUES.txt",
+  "points": [
+    {
+      "year": 2025,
+      "altitudeKm": 0,
+      "lat": 80,
+      "lon": 0,
+      "declination": 1.28
+    },
+    {
+      "year": 2025,
+      "altitudeKm": 0,
+      "lat": 0,
+      "lon": 120,
+      "declination": -0.16
+    },
+    {
+      "year": 2025,
+      "altitudeKm": 0,
+      "lat": -80,
+      "lon": -120,
+      "declination": 68.78
+    },
+    {
+      "year": 2025,
+      "altitudeKm": 100,
+      "lat": 80,
+      "lon": 0,
+      "declination": 0.85
+    },
+    {
+      "year": 2025,
+      "altitudeKm": 100,
+      "lat": 0,
+      "lon": 120,
+      "declination": -0.15
+    },
+    {
+      "year": 2025,
+      "altitudeKm": 100,
+      "lat": -80,
+      "lon": -120,
+      "declination": 68.21
+    },
+    {
+      "year": 2027.5,
+      "altitudeKm": 0,
+      "lat": 80,
+      "lon": 0,
+      "declination": 2.59
+    },
+    {
+      "year": 2027.5,
+      "altitudeKm": 0,
+      "lat": 0,
+      "lon": 120,
+      "declination": -0.24
+    },
+    {
+      "year": 2027.5,
+      "altitudeKm": 0,
+      "lat": -80,
+      "lon": -120,
+      "declination": 68.49
+    },
+    {
+      "year": 2027.5,
+      "altitudeKm": 100,
+      "lat": 80,
+      "lon": 0,
+      "declination": 2.16
+    },
+    {
+      "year": 2027.5,
+      "altitudeKm": 100,
+      "lat": 0,
+      "lon": 120,
+      "declination": -0.23
+    },
+    {
+      "year": 2027.5,
+      "altitudeKm": 100,
+      "lat": -80,
+      "lon": -120,
+      "declination": 67.93
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-11T05:19:48.159Z",
+  "browser": "Chrome on Windows",
+  "geolocation": "Real browser Geolocation API with controlled Chrome context: Mumbai, accuracy 15m",
+  "coordinates": "Current location: 19.0760°, 72.8777° · Location uncertainty ±15 m\nCaptured 10:49:45 AM. Refresh if you have moved.",
+  "bearing": "280.1°",
+  "mode": "manual",
+  "runtimeErrors": [],
+  "physicalDeviceTested": false
+}

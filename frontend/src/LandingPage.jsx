@@ -409,7 +409,7 @@ export default function LandingPage({ section }) {
             <h1 id="homepage-title">
               {t("title")}
               <br />
-              <em>{t("titleGold")}</em>
+              {" "}<em>{t("titleGold")}</em>
             </h1>
             <p className="lp-hero-description">{t("intro")}</p>
             <div className="lp-hero-ctas">

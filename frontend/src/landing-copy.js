@@ -29,12 +29,12 @@ const text = {
     "ایمان۔ تعلق۔ ہر روز۔",
     "إيمان. تواصل. كل يوم.",
   ],
-  title: ["Your complete", "आपका संपूर्ण", "آپ کا مکمل", "رفيقك الإسلامي"],
+  title: ["A little closer to your faith,", "हर दिन, अपने ईमान के", "ہر روز اپنے ایمان کے", "كل يوم أقرب"],
   titleGold: [
-    "Islamic companion.",
-    "इस्लामी साथी।",
-    "اسلامی ساتھی۔",
-    "المتكامل.",
+    "every day.",
+    "थोड़ा और करीब।",
+    "کچھ اور قریب۔",
+    "إلى إيمانك.",
   ],
   intro: [
     "A little more presence in prayer. A little more peace in your day. Discover the Islamic tools that bring you closer to what matters.",

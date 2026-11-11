@@ -53,8 +53,8 @@
     {
       "path": "islamicunity.html",
       "sourceSha256": "42c809dbaeec6a2ac3937710bdf8500819c400ba00804841761c8a27f42d2401",
-      "sha256": "89b75ccdd8216450c4b5c4cdacdc078b4ba49dc57e1d7de8742de42cf366c6f3",
-      "bytes": 122808
+      "sha256": "fbe1658c2eecfee174280cfdf7592a36ede912d2b88b4cdb436689e50cd3e806",
+      "bytes": 119219
     },
     {
       "path": "iu.svg",
@@ -309,11 +309,16 @@
         "ZakatCalculator.html"
       ],
       "description": "Mount the shared isolated global footer on every standalone HTML page. Preserve page-specific legal/contact/reminder notes as styled sections; replace the duplicate dashboard footer. Stack flex-row donation/QR body layouts so the footer follows content."
+    },
+    {
+      "path": "islamicunity.html",
+      "description": "Replace the randomized, hardcoded Qibla widget with the same permission-driven GPS, compass and offline WMM2025 implementation used by the web app. Preserve the nearby-mosques control and all other widgets."
     }
   ],
   "textLineEndings": "LF",
   "buildAssets": [
     "assets/quran-audio.js",
-    "assets/site-footer.js"
+    "assets/site-footer.js",
+    "assets/qibla-finder.js"
   ]
 }

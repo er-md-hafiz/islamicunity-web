@@ -29,6 +29,9 @@ test("invalid dates and coordinates are rejected", async () => {
     "/prayertimes?lat=bad",
     "/qibla?lon=181",
     "/qibla?lat=",
+    "/qibla",
+    "/qibla?lat=20",
+    "/qibla?lat=%20&lon=0",
     "/prayertimes?date=2026-02-30",
     "/calendar?date=invalid",
   ])

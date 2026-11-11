@@ -28,7 +28,7 @@ test("homepage presents verified download links and preserves tool navigation", 
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await expect(page.locator("#homepage-title")).toContainText(
-    "Islamic companion",
+    "A little closer to your faith,",
   );
   await expect(page.locator(".lp-features-grid > a")).toHaveCount(6);
   await expect(page.locator(".lp-hero-ctas a").first()).toHaveAttribute(
