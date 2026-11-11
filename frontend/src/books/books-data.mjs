@@ -189,10 +189,8 @@ export async function loadPassage(
     options,
   );
 }
-export async function loadCompleteSurah(urls, number, options) {
-  if (!Number.isInteger(number) || number < 1 || number > 114)
-    throw new Error("Invalid Surah number");
-  const response = await cachedReading(
+function loadCompleteQuran(urls, options) {
+  return cachedReading(
     urls.quranViewUrl,
     async () => {
       const data = await apiData(urls.quranViewUrl);
@@ -206,6 +204,11 @@ export async function loadCompleteSurah(urls, number, options) {
     },
     options,
   );
+}
+export async function loadCompleteSurah(urls, number, options) {
+  if (!Number.isInteger(number) || number < 1 || number > 114)
+    throw new Error("Invalid Surah number");
+  const response = await loadCompleteQuran(urls, options);
   return {
     ...response,
     data: response.data.find((s) => s.number === number)?.ayahs || [],
@@ -255,32 +258,22 @@ export async function searchVerses(urls, words, edition, page = 0, options) {
     },
     options,
   );
-  const matches = response.data.slice(page * 20, (page + 1) * 20),
-    rows = new Array(matches.length);
-  let cursor = 0,
-    offline = response.offline;
-  await Promise.all(
-    Array.from({ length: Math.min(4, matches.length) }, async () => {
-      while (cursor < matches.length) {
-        const index = cursor++,
-          match = matches[index];
-        if (edition === ARABIC)
-          rows[index] = validateVerses({ ayahs: [match] })[0];
-        else {
-          const arabic = await loadPassage(
-            urls,
-            "ayah",
-            match.number,
-            ARABIC,
-            options,
-          );
-          offline ||= arabic.offline;
-          rows[index] = { ...arabic.data[0], translation: match.text };
-        }
-      }
-    }),
-  );
-  return { data: rows, total: response.data.length, offline };
+  const matches = response.data.slice(page * 20, (page + 1) * 20);
+  if (edition === ARABIC || !matches.length) return {
+    data: matches.map(match => validateVerses({ ayahs: [match] })[0]),
+    total: response.data.length, offline: response.offline,
+  };
+  // Some individual Ayah responses omit CORS headers at the provider's edge.
+  // One shared, configured Quran response supplies Arabic display text for all
+  // result pages. Keyword matching remains entirely on the Search API.
+  const arabic = await loadCompleteQuran(urls, options);
+  const byNumber = new Map(arabic.data.flatMap(s => s.ayahs).map(a => [a.number, a]));
+  const rows = matches.map(match => {
+    const verse = byNumber.get(match.number);
+    if (!verse || typeof match.text !== "string") throw new Error("Invalid search match");
+    return { ...verse, translation: match.text };
+  });
+  return { data: rows, total: response.data.length, offline: response.offline || arabic.offline };
 }
 export function safeResourceUrl(value) {
   try {

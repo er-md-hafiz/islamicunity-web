@@ -112,6 +112,8 @@ test("keyword, Arabic, Surah and verse-reference searches use configured endpoin
   await page.goBack();
   await expect(page.getByRole("textbox", { name: "Search Quran" })).toHaveValue("mercy");
   await expect(page.locator(".books-pagination")).toContainText("21–40 / 45");
+  expect(requests.filter(url => url.includes("/quran/quran-uthmani"))).toHaveLength(1);
+  expect(requests.filter(url => url.includes("/ayah/"))).toHaveLength(0);
   for (const [term, expected] of [
     ["114", ".books-surah"],
     ["Al-Fatihah", ".books-surah"],

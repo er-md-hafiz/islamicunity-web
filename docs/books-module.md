@@ -24,15 +24,17 @@ The implementation follows the [official Al Quran Cloud reference](https://alqur
 | Group | Configured operation |
 | --- | --- |
 | Surah | `surahUrl`, plus `surah/{number}/{edition}` derived from its configured base |
-| Quran | `quranViewUrl`; the full Quran is fetched only when a complete-Quran reader is opened, then reused across Surahs |
+| Quran | `quranViewUrl`; fetched on demand for a complete-Quran reader or Arabic display text in translated search results, then reused across Surahs and result pages |
 | Sajda | `sajdaUrl`, substituting a validated edition identifier |
 | Meta | `metaUrl` |
 | Edition | `edition?format=text` derived from the configured Surah base |
 | Juz, Page, Ruku, Manzil, HizbQuarter | `juz`, `page`, `ruku`, `manzil`, `hizbQuarter` with documented division bounds and edition parameters |
 | Search | `search/{encoded-keyword}/all/{edition}`; results show 20 matches per page |
-| Ayah | `ayah/{absolute-number-or-surah:ayah}/{edition}` for verse references and Arabic search-result text |
+| Ayah | `ayah/{absolute-number-or-surah:ayah}/{edition}` for direct verse-reference searches |
 
 Arabic Uthmani remains visible alongside the chosen translation/text edition. Search recognizes Arabic and English keywords, Surah names and numbers, references such as `2:255`, and absolute Ayah numbers such as `#262`. English keyword search defaults to an available English text edition discovered from the API. No local replacement search engine indexes verse text.
+
+Translated keyword results reuse the configured full-Quran cache for Arabic display text. This avoids a burst of per-verse requests and inconsistent CORS headers on individual provider responses. The Search API still performs every keyword match; the local cache only supplies the matching Arabic text by absolute Ayah number.
 
 The same renderer supplies adjustable Arabic type, correct RTL text, copy, share, verse bookmarks and deep links. Continue Reading saves the visible verse and reading division. Large passages render 40 verses at a time with an explicit continuation action; direct verse links expose the required chunk before scrolling.
 
