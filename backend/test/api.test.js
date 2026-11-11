@@ -16,7 +16,11 @@ test("menu preserves all original home sections and CORS", async () => {
   assert.equal(data.version, 2);
   assert.deepEqual(Object.keys(data).slice(0, 3), ["version", "commonUrls", "home"]);
   const legacy = "https://er-md-hafiz.github.io/" + ["islamicunity", "api"].join("-") + "/";
-  assert.deepEqual(data.commonUrls, {
+  const { books, ...existingUrls } = data.commonUrls;
+  assert.equal(books.hadithResources.length, 6);
+  assert.equal(books.pdfResources.length, 2);
+  assert.ok(books.pdfResources.every(resource => resource.allowDownload && resource.credit));
+  assert.deepEqual(existingUrls, {
     location: { geoUrl: "https://get.geojs.io/v1/ip/geo.json", ipAddressUrl: "https://api.ipify.org/?format=json" },
     prayer: { aladhanBaseUrl: "https://api.aladhan.com/" },
     store: { playStoreUrl: "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en" },

@@ -1,0 +1,167 @@
+{
+  "checkedAt": "2026-11-11T07:36:06.529Z",
+  "documentation": "https://alquran.cloud/api",
+  "legacyReference": "https://legacy.alquran.cloud/api",
+  "pdfPermissionSource": "https://clearquran.com/download/",
+  "note": "PDF signatures checked with range probes; no PDFs bundled. Hadith reading, chapters and search are provided by the linked source, not an invented Quran API endpoint.",
+  "results": [
+    {
+      "url": "https://api.alquran.cloud/v1/surah",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 114
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/quran/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 114
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/meta",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/sajda/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 15
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/edition?format=text",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 141
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/juz/1/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 148
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/page/1/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 7
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/ruku/1/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 7
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/manzil/1/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 669
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/hizbQuarter/1/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 32
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/search/mercy/all/en.asad",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true,
+      "count": 48
+    },
+    {
+      "url": "https://api.alquran.cloud/v1/ayah/2:255/quran-uthmani",
+      "kind": "api",
+      "status": 200,
+      "contentType": "application/json",
+      "valid": true
+    },
+    {
+      "url": "https://d.clearquran.com/text/clearquran-allah-edition.pdf",
+      "kind": "pdf",
+      "licenseSource": "https://clearquran.com/download/",
+      "status": 206,
+      "contentType": "application/pdf",
+      "valid": true
+    },
+    {
+      "url": "https://d.clearquran.com/quran-arabic-english-clearquran.pdf",
+      "kind": "pdf",
+      "licenseSource": "https://clearquran.com/download/",
+      "status": 206,
+      "contentType": "application/pdf",
+      "valid": true
+    },
+    {
+      "url": "https://sunnah.com/bukhari",
+      "kind": "hadith",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "valid": null,
+      "note": "Automated request blocked; official collection page separately verified through browser research. Opens externally for user browsing."
+    },
+    {
+      "url": "https://sunnah.com/muslim",
+      "kind": "hadith",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "valid": null,
+      "note": "Automated request blocked; official collection page separately verified through browser research. Opens externally for user browsing."
+    },
+    {
+      "url": "https://sunnah.com/abudawud",
+      "kind": "hadith",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "valid": null,
+      "note": "Automated request blocked; official collection page separately verified through browser research. Opens externally for user browsing."
+    },
+    {
+      "url": "https://sunnah.com/tirmidhi",
+      "kind": "hadith",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "valid": null,
+      "note": "Automated request blocked; official collection page separately verified through browser research. Opens externally for user browsing."
+    },
+    {
+      "url": "https://sunnah.com/nasai",
+      "kind": "hadith",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "valid": null,
+      "note": "Automated request blocked; official collection page separately verified through browser research. Opens externally for user browsing."
+    },
+    {
+      "url": "https://sunnah.com/ibnmajah",
+      "kind": "hadith",
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "valid": null,
+      "note": "Automated request blocked; official collection page separately verified through browser research. Opens externally for user browsing."
+    }
+  ]
+}

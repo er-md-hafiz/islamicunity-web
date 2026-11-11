@@ -22,17 +22,8 @@ import { formatAudioTime, getSurahAudioUrl } from "./audio-source.mjs";
 import { playerText } from "./player-copy";
 import "./quran-audio.css";
 
-export function normalizeSurahSearch(value) {
-  return value
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f\u064b-\u065f\u0670]/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/[\u0660-\u0669]/g, (c) => String(c.charCodeAt(0) - 0x0660))
-    .replace(/[\u06f0-\u06f9]/g, (c) => String(c.charCodeAt(0) - 0x06f0))
-    .replace(/[\s\-'’]/g, "")
-    .toLowerCase();
-}
+import { normalizeSurahSearch } from "./search.mjs";
+export { normalizeSurahSearch } from "./search.mjs";
 export default function QuranAudioPlayer(props) {
   const [sources, setSources] = useState(null), [error, setError] = useState(""), [retry, setRetry] = useState(0);
   useEffect(() => {

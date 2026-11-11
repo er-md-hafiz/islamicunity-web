@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
         input: {
           contentData: fileURLToPath(new URL("./src/config/legacy-entry.js", import.meta.url)),
           main: fileURLToPath(new URL("./index.html", import.meta.url)),
+          books: fileURLToPath(new URL("./Books.html", import.meta.url)),
           siteFooter: fileURLToPath(new URL("./src/footer/legacy-entry.js", import.meta.url)),
           siteHeader: fileURLToPath(new URL("./src/header/legacy-entry.jsx", import.meta.url)),
           qiblaFinder: fileURLToPath(new URL("./src/qibla/legacy-entry.jsx", import.meta.url)),

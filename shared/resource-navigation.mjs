@@ -2,6 +2,7 @@ import { SITE_PAGES } from "./site-navigation.mjs";
 // Verified case-sensitive pages already published with this repository.
 // Working inline features (Calendar, Halal, Quran, video, etc.) retain their routes.
 export const resourcePages = Object.freeze({
+  books: SITE_PAGES.books,
   hajj: SITE_PAGES.hajj,
   umrah: SITE_PAGES.umrah,
   prayer_guide: SITE_PAGES.prayerGuide,

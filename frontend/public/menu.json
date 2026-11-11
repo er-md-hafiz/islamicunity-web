@@ -26,6 +26,113 @@
       "sajdaUrl": "https://api.alquran.cloud/v1/sajda/{edition}",
       "metaUrl": "https://api.alquran.cloud/v1/meta",
       "surahVideoUrl": "https://er-md-hafiz.github.io/islamicunity-web/surah_video.json"
+    },
+    "books": {
+      "pdfResources": [
+        {
+          "id": "clearquran-english",
+          "title": {
+            "en": "Quran in English · Allah Edition",
+            "hi": "अंग्रेज़ी में क़ुरआन · अल्लाह संस्करण",
+            "ur": "انگریزی قرآن · اللہ ایڈیشن",
+            "ar": "القرآن بالإنجليزية · نسخة الله"
+          },
+          "url": "https://d.clearquran.com/text/clearquran-allah-edition.pdf",
+          "sourceUrl": "https://clearquran.com/download/",
+          "credit": "Translation by Talal Itani, ClearQuran.com · CC BY-ND 4.0",
+          "allowDownload": true
+        },
+        {
+          "id": "clearquran-bilingual",
+          "title": {
+            "en": "Quran · Arabic & English",
+            "hi": "क़ुरआन · अरबी और अंग्रेज़ी",
+            "ur": "قرآن · عربی اور انگریزی",
+            "ar": "القرآن · العربية والإنجليزية"
+          },
+          "url": "https://d.clearquran.com/quran-arabic-english-clearquran.pdf",
+          "sourceUrl": "https://clearquran.com/download/",
+          "credit": "Translation by Talal Itani, ClearQuran.com · CC BY-ND 4.0",
+          "allowDownload": true
+        }
+      ],
+      "hadithResources": [
+        {
+          "id": "bukhari",
+          "title": {
+            "en": "Sahih al-Bukhari",
+            "ar": "صحيح البخاري"
+          },
+          "url": "https://sunnah.com/bukhari",
+          "sourceUrl": "https://sunnah.com/bukhari",
+          "credit": "Sunnah.com"
+        },
+        {
+          "id": "muslim",
+          "title": {
+            "en": "Sahih Muslim",
+            "ar": "صحيح مسلم"
+          },
+          "url": "https://sunnah.com/muslim",
+          "sourceUrl": "https://sunnah.com/muslim",
+          "credit": "Sunnah.com"
+        },
+        {
+          "id": "abudawud",
+          "title": {
+            "en": "Sunan Abi Dawud",
+            "ar": "سنن أبي داود"
+          },
+          "url": "https://sunnah.com/abudawud",
+          "sourceUrl": "https://sunnah.com/abudawud",
+          "credit": "Sunnah.com"
+        },
+        {
+          "id": "tirmidhi",
+          "title": {
+            "en": "Jamiʿ at-Tirmidhi",
+            "ar": "جامع الترمذي"
+          },
+          "url": "https://sunnah.com/tirmidhi",
+          "sourceUrl": "https://sunnah.com/tirmidhi",
+          "credit": "Sunnah.com"
+        },
+        {
+          "id": "nasai",
+          "title": {
+            "en": "Sunan an-Nasa’i",
+            "ar": "سنن النسائي"
+          },
+          "url": "https://sunnah.com/nasai",
+          "sourceUrl": "https://sunnah.com/nasai",
+          "credit": "Sunnah.com"
+        },
+        {
+          "id": "ibnmajah",
+          "title": {
+            "en": "Sunan Ibn Majah",
+            "ar": "سنن ابن ماجه"
+          },
+          "url": "https://sunnah.com/ibnmajah",
+          "sourceUrl": "https://sunnah.com/ibnmajah",
+          "credit": "Sunnah.com"
+        }
+      ],
+      "hadithSearchUrl": "https://sunnah.com/search?q={query}",
+      "otherResources": [
+        {
+          "id": "quranenc",
+          "title": {
+            "en": "Quran translations encyclopedia",
+            "hi": "क़ुरआन अनुवाद विश्वकोश",
+            "ur": "قرآن کے تراجم کا موسوعہ",
+            "ar": "موسوعة ترجمات القرآن"
+          },
+          "url": "https://quranenc.com/en/home",
+          "sourceUrl": "https://quranenc.com/en/home",
+          "credit": "QuranEnc.com"
+        }
+      ]
     }
   },
 

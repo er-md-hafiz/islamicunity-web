@@ -29,7 +29,7 @@ await scan(root); // Includes the generated frontend/dist artifact when present.
 assert.deepEqual(failures, [], "Retired website URLs remain in project/build files");
 const publicFiles = new Set((await readdir(resolve(root, "frontend/public"))).filter(name => name.endsWith(".html")));
 for (const path of Object.values(SITE_PAGES)) {
-  if (path === "index.html") await access(resolve(root, "frontend/index.html"));
+  if (["index.html", "Books.html"].includes(path)) await access(resolve(root, "frontend", path));
   else assert.ok(publicFiles.has(path), `Missing or incorrectly cased page: ${path}`);
 }
 const internal = footerColumns.flatMap(column => column.links.map(([, url]) => url))

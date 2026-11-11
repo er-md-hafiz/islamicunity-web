@@ -1,0 +1,713 @@
+.books-page {
+  max-width: 1240px;
+  margin-inline: auto;
+  animation: books-appear 0.35s ease;
+}
+.books-page-heading,
+.books-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.books-page-heading h1 {
+  font:
+    800 clamp(28px, 4vw, 38px) / 1.2 Manrope,
+    sans-serif;
+  letter-spacing: -0.8px;
+  margin: 0 0 10px;
+}
+.books-page-heading p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.books-heading-icon {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--green);
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  flex: 0 0 auto;
+}
+.books-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 24px 0;
+}
+.books-breadcrumb button {
+  color: var(--green);
+  background: none;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 0;
+}
+.books-hero {
+  padding: 34px 38px;
+  border-radius: 24px;
+  color: #fff9e8;
+  background:
+    radial-gradient(circle at 90% 20%, #d7ba7820 0, transparent 45%),
+    repeating-linear-gradient(60deg, transparent 0 70px, #ffffff05 71px 72px),
+    #124a39;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  overflow: hidden;
+}
+.books-kicker {
+  color: #dfc994;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.books-hero h2 {
+  font:
+    600 clamp(25px, 3.3vw, 35px) / 1.35 Manrope,
+    sans-serif;
+  max-width: 470px;
+  margin: 18px 0 12px;
+}
+.books-hero p {
+  color: #d3e0d6;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.books-stats {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  color: #d3e0d6;
+  margin-top: 26px;
+}
+.books-stats strong {
+  color: #e9cf94;
+  font-size: 19px;
+  margin-inline-end: 5px;
+}
+.books-art {
+  flex: 0 0 180px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid #ddc17c33;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #e3c88e;
+  position: relative;
+  transform: rotate(-8deg);
+}
+.books-art::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border: 1px solid #ddc17c22;
+  transform: rotate(45deg);
+  border-radius: 24px;
+}
+.books-art span {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 30px;
+}
+.books-saved-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  margin: 22px 0 32px;
+}
+.books-continue,
+.books-bookmarks-link {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: start;
+}
+.books-continue > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.books-continue strong,
+.books-continue small {
+  display: block;
+}
+.books-continue strong {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.books-continue small {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.books-bookmarks-link {
+  font-size: 13px;
+  color: var(--green);
+}
+.books-bookmarks-link span {
+  background: var(--pale);
+  padding: 6px 9px;
+  border-radius: 9px;
+}
+.books-section-title {
+  font-size: 18px;
+  margin: 30px 0 18px;
+}
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.books-resource {
+  position: relative;
+  text-align: start;
+  padding: 24px 20px;
+  min-width: 0;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.books-resource:hover,
+.books-surah:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 22px #2545340b;
+}
+.books-card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--pale);
+  color: var(--green);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.books-resource:nth-child(3n + 2) .books-card-icon {
+  color: #9a732f;
+  background: #d7ba7821;
+}
+.books-card-arrow {
+  position: absolute;
+  inset-inline-end: 17px;
+  top: 24px;
+  color: var(--muted);
+}
+.books-resource h3 {
+  font:
+    700 15px/1.5 Manrope,
+    sans-serif;
+  margin: 20px 0 8px;
+}
+.books-resource p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+.books-small-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.books-small-grid .books-resource {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+}
+.books-small-grid h3 {
+  margin: 0;
+  font-size: 13px;
+}
+.books-small-grid .books-card-arrow {
+  display: none;
+}
+.books-small-grid .books-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+}
+.books-section-heading {
+  margin-bottom: 22px;
+}
+.books-section-heading h2 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+.books-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 4px 15px;
+  color: var(--green);
+  min-width: 0;
+}
+.books-search input {
+  padding: 13px 0;
+  color: var(--text);
+  width: 100%;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline-offset: 2px;
+}
+.books-surahs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+.books-surah {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 16px;
+  text-align: start;
+  min-width: 0;
+  transition: transform 0.2s ease;
+}
+.books-number {
+  background: var(--pale);
+  border-radius: 12px;
+  min-width: 40px;
+  min-height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  font-size: 13px;
+}
+.books-surah > span:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+.books-surah strong {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.books-surah small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 5px;
+  line-height: 1.7;
+}
+.books-surah-arabic {
+  font:
+    24px/1.6 "Noto Naskh Arabic",
+    serif;
+  color: var(--green);
+  max-width: 45%;
+}
+.books-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+.books-controls label {
+  min-width: 0;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.books-controls select {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.books-controls input[type="range"] {
+  accent-color: var(--green);
+  min-height: 38px;
+}
+.books-division {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+.books-division label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.books-division input {
+  max-width: 80px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  background: var(--card);
+  padding: 8px;
+}
+.books-verses {
+  max-width: 860px;
+  margin-inline: auto;
+}
+.books-verse {
+  scroll-margin-top: 120px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 19px;
+  padding: 24px;
+  margin: 18px 0;
+}
+.books-verse header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.books-verse header span[lang="ar"] {
+  font:
+    18px "Noto Naskh Arabic",
+    serif;
+  color: var(--green);
+}
+.books-arabic {
+  font:
+    var(--reading-size, 28px) / 2.3 "Noto Naskh Arabic",
+    serif;
+  color: var(--text);
+  text-align: right;
+  margin: 24px 0;
+  overflow-wrap: break-word;
+}
+.books-arabic small {
+  color: var(--green);
+  font-size: 0.72em;
+}
+.books-translation {
+  font-size: 15px;
+  line-height: 1.9;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.books-translation[lang="ur"] {
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 21px;
+}
+.books-verse-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.books-verse-actions button {
+  border: none;
+  padding: 10px 0;
+  background: none;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  min-height: 44px;
+}
+.books-verse-actions button[aria-pressed="true"] {
+  color: #a67e34;
+}
+.books-query-form {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0;
+}
+.books-query-form .books-search {
+  flex: 1;
+}
+.books-resources,
+.books-editions,
+.books-bookmarks,
+.books-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.books-resources > article,
+.books-editions > button,
+.books-bookmarks > button {
+  padding: 24px;
+  min-width: 0;
+  text-align: start;
+}
+.books-resources h3 {
+  margin: 18px 0 12px;
+  font-size: 17px;
+}
+.books-resources p,
+.books-source-note {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.books-editions button {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.books-editions span {
+  font-size: 20px;
+}
+.books-editions small {
+  color: var(--muted);
+}
+.books-gold {
+  color: #ab8540;
+}
+.books-link-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 4px;
+}
+.books-meta {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.books-meta article {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.books-meta strong {
+  color: var(--green);
+  font-size: 32px;
+}
+.books-meta span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.books-bookmarks p {
+  font:
+    25px/2 "Noto Naskh Arabic",
+    serif;
+}
+.books-state {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  text-align: center;
+  padding: 40px 18px;
+  margin-top: 20px;
+}
+.books-cache {
+  background: var(--pale);
+  color: var(--green);
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+.books-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 24px;
+  font-size: 12px;
+}
+.books-load-more {
+  margin: 20px auto;
+  display: flex;
+}
+.books-action-notice {
+  position: sticky;
+  bottom: 18px;
+  font-size: 13px;
+  color: var(--green);
+  text-align: center;
+  background: var(--card);
+  border-radius: 10px;
+}
+.books-action-notice:not(:empty) {
+  padding: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 3px 15px #0001;
+}
+.books-pdf-dialog {
+  width: min(1000px, 94vw);
+  max-height: 92dvh;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  color: var(--text);
+  background: var(--card);
+}
+.books-pdf-dialog::backdrop {
+  background: #081c15b8;
+  backdrop-filter: blur(4px);
+}
+.books-pdf-dialog header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.books-pdf-dialog h2 {
+  font-size: 20px;
+}
+.books-pdf-dialog p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.books-pdf-dialog iframe {
+  width: 100%;
+  height: 62dvh;
+  border: 1px solid var(--line);
+  margin-top: 20px;
+  border-radius: 10px;
+}
+@keyframes books-appear {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1100px) {
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .books-small-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .books-art {
+    flex-basis: 140px;
+    height: 140px;
+  }
+}
+@media (max-width: 600px) {
+  .books-hero {
+    padding: 27px 23px;
+  }
+  .books-art {
+    display: none;
+  }
+  .books-hero h2 {
+    font-size: 27px;
+  }
+  .books-heading-icon {
+    display: none;
+  }
+  .books-saved-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .books-continue {
+    padding: 16px;
+  }
+  .books-bookmarks-link {
+    padding: 12px 18px;
+  }
+  .books-grid {
+    gap: 12px;
+  }
+  .books-resource {
+    padding: 19px 15px;
+  }
+  .books-resource h3 {
+    font-size: 14px;
+  }
+  .books-small-grid .books-resource {
+    padding: 14px;
+    gap: 10px;
+  }
+  .books-small-grid .books-card-icon {
+    display: none;
+  }
+  .books-surahs {
+    grid-template-columns: 1fr;
+  }
+  .books-resources,
+  .books-editions,
+  .books-bookmarks {
+    grid-template-columns: 1fr;
+  }
+  .books-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .books-verse {
+    padding: 18px;
+  }
+  .books-query-form {
+    flex-direction: column;
+  }
+  .books-controls {
+    padding: 16px;
+    gap: 15px;
+  }
+  .books-section-heading h2 {
+    font-size: 19px;
+  }
+  .books-division {
+    gap: 8px;
+  }
+  .books-division .button {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .books-pdf-dialog {
+    padding: 18px;
+  }
+  .books-pagination {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .books-page {
+    animation: none;
+  }
+  .books-resource,
+  .books-surah {
+    transition: none;
+  }
+  .books-resource:hover,
+  .books-surah:hover {
+    transform: none;
+  }
+}

@@ -60,21 +60,9 @@ import { resourceHref } from "../../shared/resource-navigation.mjs";
 import { sitePageHref } from "../../shared/site-navigation.mjs";
 import HeaderActions from "./header/HeaderActions";
 import "./styles.css";
-function useStored(key, initial) {
-  const [value, setValue] = useState(() => {
-    try {
-      return JSON.parse(localStorage.getItem(key)) ?? initial;
-    } catch {
-      return initial;
-    }
-  });
-  useEffect(() => {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch {}
-  }, [key, value]);
-  return [value, setValue];
-}
+import { useStored } from "./hooks/useStored";
+const BooksPage = React.lazy(() => import("./books/BooksPage"));
+const defaultToolPage = () => location.pathname.endsWith("/Books.html") ? "books" : "prayer_times";
 const icons = {
   prayer_times: Clock3,
   qibla: Compass,
@@ -208,7 +196,7 @@ function MosqueArt() {
 function App() {
   const [language, setLanguage] = useStored("iu-language", "en");
   const t = (key) => translate(key, language);
-  const [page, setPage] = useState(location.hash.slice(1) || "prayer_times");
+  const [page, setPage] = useState(location.hash.slice(1) || defaultToolPage());
   const [menu, setMenu] = useState(null),
     [menuError, setMenuError] = useState("");
   const [prayers, setPrayers] = useState(null),
@@ -253,7 +241,7 @@ function App() {
   }, [settings]);
   useEffect(() => {
     const listener = () => {
-      setPage(location.hash.slice(1) || "prayer_times");
+      setPage(location.hash.slice(1) || defaultToolPage());
       setSidebar(false);
     };
     window.addEventListener("hashchange", listener);
@@ -328,7 +316,7 @@ function App() {
     };
   }, []);
   useEffect(() => {
-    if (core.includes(page) || page === "settings" || page === "video") return;
+    if (core.includes(page) || page === "settings" || page === "video" || page === "books") return;
     let active = true;
     setContent(null);
     setContentError("");
@@ -903,7 +891,7 @@ function App() {
           <div className="topbar-title">
             <a
               className="lp-back-home"
-              href="#home"
+              href={sitePageHref("home", import.meta.env.BASE_URL) + "#home"}
               aria-label="Islamic Unity homepage"
             >
               <ChevronLeft size={13} />
@@ -917,7 +905,7 @@ function App() {
               <Menu size={22} />
             </button>
             <span>
-              {t("home")} <ChevronRight size={13} />
+              {page === "books" ? <a href={sitePageHref("home", import.meta.env.BASE_URL) + "#prayer_times"}>{t("home")}</a> : t("home")} <ChevronRight size={13} />
               <b>{t(page)}</b>
             </span>
           </div>
@@ -1028,6 +1016,8 @@ function App() {
               </>
             ) : page === "qibla" ? (
               <QiblaFinder location={qiblaLocation} language={language} expanded />
+            ) : page === "books" ? (
+              <React.Suspense fallback={<div className="loading">{t("loading")}</div>}><BooksPage language={language} /></React.Suspense>
             ) : page === "quran" || page === "audio" ? (
               <>
                 <PageHeading title={t(page)} subtitle={t("quranSubtitle")} />
@@ -1436,6 +1426,7 @@ function Site() {
     window.addEventListener("hashchange", change);
     return () => window.removeEventListener("hashchange", change);
   }, []);
+  if (location.pathname.endsWith("/Books.html") && (!route || route === "books")) return <App />;
   const isHomepage = [
     "",
     "home",

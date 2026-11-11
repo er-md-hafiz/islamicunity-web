@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { loadQuranSources, loadQuranText } from "../config/common-urls.mjs";
+import VerseList from "./VerseList";
 
 const copy = {
   en: ["Read Quran", "Surah", "Refresh shared data", "Loading Quran…", "Try again", "Sajda", "Ayahs"],
@@ -24,11 +25,7 @@ export default function QuranReader({ language = "en" }) {
       <label>{t[1]} <select aria-label={t[1]} value={number} onChange={e => setNumber(Number(e.target.value))}>
         {data.names.map(s => <option key={s.number} value={s.number}>{s.number}. {s.englishName} — {s.arabicName}</option>)}
       </select></label>
-      <div className="quran-ayahs" dir="rtl" lang="ar">
-        {data.surahs.find(s => s.number === number)?.ayahs.map(a => <p key={a.number}>
-          {a.text} <small>﴿{a.numberInSurah}﴾</small> {data.sajdas.has(a.number) && <span aria-label={t[5]}>۩</span>}
-        </p>)}
-      </div>
+      <VerseList verses={data.surahs.find(s => s.number === number)?.ayahs || []} sajdas={data.sajdas} sajdaLabel={t[5]} />
     </>}
   </section>;
 }

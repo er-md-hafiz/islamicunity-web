@@ -38,6 +38,8 @@ jobs:
         run: npm run test:quran
       - name: Test shared remote content adapters
         run: node --test tests/remote-content.test.mjs
+      - name: Test Books API models, parameters and reading cache
+        run: node --test tests/books-data.test.mjs
       - name: Test Qibla calculations, orientation and magnetic correction
         run: npm run test:qibla
       - name: Test Quran video data and safe media mappings

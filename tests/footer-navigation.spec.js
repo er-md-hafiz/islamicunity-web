@@ -102,7 +102,9 @@ test("known resource links and old hashes open actual full pages with no interme
 });
 test("external resource cards are direct links and legacy feature cards bypass their demo modals", async ({ page }) => {
   await page.goto(prefix + "index.html#books");
-  await expect(page.locator('a.resource-card[href="https://quran.com"]')).toContainText("The Noble Quran");
+  await expect(page).toHaveURL(prefix + "Books.html");
+  await page.locator(".books-resource-other").click();
+  await expect(page.locator('a.button[href="https://quranenc.com/en/home"]').first()).toContainText("Read online");
   await expect(page.getByText("Open resource", { exact: true })).toHaveCount(0);
   for (const [id, destination] of [["hajj", "Hajj.html"], ["zakat", "ZakatCalculator.html"], ["charity", "IslamicCharity.html"], ["halal", "index.html#halal"]]) {
     await page.goto(prefix + "islamicunity.html");

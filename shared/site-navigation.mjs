@@ -3,6 +3,7 @@ export const SITE_BASE_URL = "https://er-md-hafiz.github.io/islamicunity-web/";
 // Actual case-sensitive files in frontend/public, plus Vite's index entry.
 export const SITE_PAGES = Object.freeze({
   home: "index.html",
+  books: "Books.html",
   privacy: "PrivacyPolicy.html",
   terms: "terms_and_conditions.html",
   about: "SupportOurCommunity.html",
