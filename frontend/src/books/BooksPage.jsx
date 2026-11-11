@@ -222,6 +222,7 @@ export default function BooksPage({ language = "en" }) {
     history.pushState(null, "", url);
     setResult(null);
     setView(next);
+    setQuery(next.query);
     setLimit(40);
     setFilter("");
     setNotice("");
@@ -229,7 +230,10 @@ export default function BooksPage({ language = "en" }) {
   }, []);
   useEffect(() => {
     const pop = () => {
-      setView(readRoute());
+      const next = readRoute();
+      setResult(null);
+      setView(next);
+      setQuery(next.query);
       setLimit(40);
     };
     window.addEventListener("popstate", pop);

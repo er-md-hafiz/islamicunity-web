@@ -109,6 +109,9 @@ test("keyword, Arabic, Surah and verse-reference searches use configured endpoin
       decodeURIComponent(url).includes("search/رحمة/all/quran-uthmani"),
     ),
   ).toBe(true);
+  await page.goBack();
+  await expect(page.getByRole("textbox", { name: "Search Quran" })).toHaveValue("mercy");
+  await expect(page.locator(".books-pagination")).toContainText("21–40 / 45");
   for (const [term, expected] of [
     ["114", ".books-surah"],
     ["Al-Fatihah", ".books-surah"],
