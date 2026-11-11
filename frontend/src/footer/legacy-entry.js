@@ -1,9 +1,10 @@
 import "./register-footer";
+import { SITE_PAGES } from "../../../shared/site-navigation.mjs";
 
 // Existing dashboard feature cards with verified destinations bypass its demo modal.
 const destinations = {
-  hajj: "Hajj.html", zakat: "ZakatCalculator.html", charity: "IslamicCharity.html",
-  halal: "index.html#halal",
+  hajj: SITE_PAGES.hajj, zakat: SITE_PAGES.zakat, charity: SITE_PAGES.charity,
+  halal: `${SITE_PAGES.home}#halal`,
 };
 document.querySelectorAll(".feature-item[data-feature]").forEach(card => {
   const path = destinations[card.dataset.feature];

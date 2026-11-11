@@ -53,6 +53,7 @@ import QuranAudioPlayer from "./quran/QuranAudioPlayer";
 import SurahVideoLibrary from "./video/SurahVideoLibrary";
 import SiteFooter from "./footer/SiteFooter";
 import { resourceHref } from "../../shared/resource-navigation.mjs";
+import { sitePageHref } from "../../shared/site-navigation.mjs";
 import "./styles.css";
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -568,7 +569,7 @@ function App() {
     const item = navItems.find((i) => i.id === id);
     if (!item && !["quran", "reminders"].includes(id)) return null;
     const href = resourceHref(id, import.meta.env.BASE_URL)
-      || (id === "donate" ? `${import.meta.env.BASE_URL}donate.html` : null);
+      || (id === "donate" ? sitePageHref("donate", import.meta.env.BASE_URL) : null);
     const Tag = href ? "a" : "button";
     return (
       <Tag

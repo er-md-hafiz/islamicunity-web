@@ -1,5 +1,6 @@
 import css from "./site-footer.css?inline";
 import { footerColumns, socialProfiles } from "./footer-data.mjs";
+import { sitePageHref } from "../../../shared/site-navigation.mjs";
 import facebook from "./brands/facebook-f.svg?raw";
 import instagram from "./brands/instagram.svg?raw";
 import youtube from "./brands/youtube.svg?raw";
@@ -21,7 +22,7 @@ class SiteFooter extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
   connectedCallback() {
-    const home = `${import.meta.env.BASE_URL}index.html`;
+    const home = sitePageHref("home", import.meta.env.BASE_URL);
     this.shadowRoot.innerHTML = `<style>${css}</style>
       <footer aria-label="Islamic Unity website footer" lang="en" dir="ltr">
         <div class="footer-grid">

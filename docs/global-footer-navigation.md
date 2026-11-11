@@ -29,11 +29,11 @@ The duplicate dashboard footer was replaced. Other legacy legal/contact/charity/
 
 Working inline tools such as Zakat, currency, quiz, Quran and video remain available. Features without an actual verified destination keep their existing fallback. No duplicate resource page, redirect HTML file, unrelated destination or Android native change was introduced. The old fallback resource wording was removed from the REST/static export responses as well as the active UI.
 
-The footer uses the explicitly supplied `islamicunity-api` URLs. Those are separate external pages; this repository's shared footer is installed on the local published resource copies, not on another repository's source. The existing public API URLs were checked rather than replaced with guessed paths.
+All internal footer destinations now use the canonical `islamicunity-web` website through `shared/site-navigation.mjs`. Every original filename is preserved and already exists locally. No internal navigation depends on the retired repository. External Google Play, social, Quran audio, video and prayer integrations remain unchanged.
 
 ## Verification
 
-- All **eight unique external URLs** in the supplied footer return HTTP 200: see [link report](./footer-link-verification.json). Mailto is checked as an exact attribute without sending email.
+- All **eight unique HTTP destinations** in the footer return HTTP 200: seven internal website pages and Google Play. See [link report](./footer-link-verification.json). Mailto is checked as an exact attribute without sending email.
 - Six new browser tests verify footer coverage across every menu route and all 15 HTML pages, every supplied link, social configuration, dynamic year, desktop/tablet/phone layout, dark/RTL layout, Back to top, direct resource clicks, old hashes, whole-card links and legacy feature navigation.
 - Existing resource integrity tests continue checking all 45 files, the compatibility alias and native menu identifiers. Calculator, quiz, games, guide language switching, donation controls, Quran text/audio and video regression tests remain passing.
 - Desktop and mobile footer screenshots were inspected. The donation page was checked at 390px with no horizontal overflow. No payment, email, subscription or social action was initiated.

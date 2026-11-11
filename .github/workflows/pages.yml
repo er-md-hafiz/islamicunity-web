@@ -43,6 +43,8 @@ jobs:
         env:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
           VITE_API_URL: ${{ vars.VITE_API_URL }}
+      - name: Audit internal URLs and complete page destinations
+        run: npm run test:urls
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Wait for any legacy Pages publication

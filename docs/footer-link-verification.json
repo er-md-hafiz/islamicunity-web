@@ -1,20 +1,20 @@
 {
-  "checkedAt": "2026-11-10T19:01:04.674Z",
+  "checkedAt": "2026-11-11T04:44:43.625Z",
   "results": [
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/PrivacyPolicy.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/PrivacyPolicy.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/PrivacyPolicy.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/PrivacyPolicy.html"
     },
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/terms_and_conditions.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/terms_and_conditions.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/terms_and_conditions.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/terms_and_conditions.html"
     },
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/SupportOurCommunity.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/SupportOurCommunity.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/SupportOurCommunity.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/SupportOurCommunity.html"
     },
     {
       "url": "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en",
@@ -22,26 +22,26 @@
       "finalUrl": "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en"
     },
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/donate.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/donate.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/donate.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/donate.html"
     },
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/Hajj.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/Hajj.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/Hajj.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/Hajj.html"
     },
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/Umrah.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/Umrah.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/Umrah.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/Umrah.html"
     },
     {
-      "url": "https://er-md-hafiz.github.io/islamicunity-api/islamicunity.html",
+      "url": "https://er-md-hafiz.github.io/islamicunity-web/islamicunity.html",
       "status": 200,
-      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-api/islamicunity.html"
+      "finalUrl": "https://er-md-hafiz.github.io/islamicunity-web/islamicunity.html"
     }
   ],
-  "socialProfiles": "Superseded by social-profile-verification.json: Instagram and confirmed YouTube active; Facebook unavailable and X 404 remain unlinked.",
+  "socialProfiles": "See social-profile-verification.json: Instagram and confirmed YouTube active; unavailable Facebook and X remain unlinked.",
   "email": "mailto:islamic.unity.app@gmail.com"
 }

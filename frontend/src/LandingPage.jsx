@@ -31,6 +31,7 @@ import {
 import { locales } from "./i18n";
 import { landingText } from "./landing-copy";
 import SiteFooter from "./footer/SiteFooter";
+import { sitePageHref } from "../../shared/site-navigation.mjs";
 import "./landing.css";
 
 const PLAY =
@@ -646,7 +647,7 @@ export default function LandingPage({ section }) {
             <p>{t("donateBody")}</p>
             <a
               className="lp-button lp-button-gold"
-              href={`${RESOURCES}donate.html`}
+              href={sitePageHref("donate", RESOURCES)}
             >
               <HandHeart size={20} />
               {t("support")}

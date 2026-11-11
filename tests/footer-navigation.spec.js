@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { footerColumns, socialMedia } from "../frontend/src/footer/footer-data.mjs";
 import { resourcePages } from "../shared/resource-navigation.mjs";
+import { SITE_BASE_URL } from "../shared/site-navigation.mjs";
 const prefix = "/islamicunity-web/";
 const manifest = JSON.parse(readFileSync("migration/resource-manifest.json", "utf8"));
 test.beforeEach(async ({ page }) => {
@@ -106,4 +107,31 @@ test("external resource cards are direct links and legacy feature cards bypass t
     await page.locator(`.feature-item[data-feature="${id}"]`).click();
     await expect(page).toHaveURL(prefix + destination);
   }
+});
+
+test("every migrated footer destination loads and refreshes on phone and desktop without retired requests or missing assets", async ({ page }) => {
+  test.setTimeout(120000);
+  const oldHost = "er-md-hafiz.github.io/" + ["islamicunity", "api"].join("-");
+  const retiredRequests = [], missing = [], errors = [];
+  page.on("request", request => { if (request.url().includes(oldHost)) retiredRequests.push(request.url()); });
+  page.on("response", response => { if (response.url().startsWith("http://127.0.0.1:4174") && response.status() >= 400) missing.push(response.url()); });
+  page.on("pageerror", error => errors.push(error.message));
+  await page.goto(prefix + "index.html");
+  const hrefs = await page.locator("iu-site-footer nav a").evaluateAll(nodes => nodes.map(node => node.href));
+  const internal = hrefs.filter(href => href.startsWith(SITE_BASE_URL));
+  expect(internal).toHaveLength(13);
+  const paths = [...new Set(internal.map(href => href.slice(SITE_BASE_URL.length)))];
+  expect(paths).toHaveLength(7);
+  for (const width of [390, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const path of paths) {
+      const response = await page.goto(prefix + path, { waitUntil: "domcontentloaded" });
+      expect(response.status(), path).toBe(200);
+      await expect(page.locator("iu-site-footer footer")).toHaveCount(1);
+      const refreshed = await page.reload({ waitUntil: "domcontentloaded" });
+      expect(refreshed.status(), path).toBe(200);
+      await expect(page.locator("iu-site-footer footer")).toHaveCount(1);
+    }
+  }
+  expect(retiredRequests).toEqual([]); expect(missing).toEqual([]); expect(errors).toEqual([]);
 });
