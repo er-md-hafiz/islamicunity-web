@@ -57,20 +57,6 @@ export const content = {
       { title: "الْغَفُورُ · Al-Ghafoor", body: "The All-Forgiving" },
     ],
   },
-  dua: {
-    title: "Words from the heart",
-    description: "Simple supplications for everyday moments.",
-    items: [
-      {
-        title: "For knowledge · Quran 20:114",
-        body: "رَبِّ زِدْنِي عِلْمًا — Rabbi zidni ilma. My Lord, increase me in knowledge.",
-      },
-      {
-        title: "For goodness · Quran 2:201",
-        body: "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina adhaban-nar. Our Lord, grant us good in this world and in the Hereafter, and protect us from the punishment of the Fire.",
-      },
-    ],
-  },
   halal: {
     title: "Mindful everyday choices",
     description:
@@ -147,28 +133,5 @@ export const content = {
       "Illustrative rates only. Not live exchange rates or a transaction quote.",
     rates: { INR: 83, USD: 1, SAR: 3.75, AED: 3.67, GBP: 0.79 },
     items: [],
-  },
-  quiz: {
-    title: "A little knowledge, every day",
-    description: "Take a moment to test what you know.",
-    questions: [
-      {
-        question: "How many chapters (surahs) are in the Quran?",
-        options: ["30", "99", "114", "120"],
-        answer: 2,
-        explanation: "The Quran contains 114 surahs.",
-      },
-      {
-        question: "Which direction do Muslims face in prayer?",
-        options: [
-          "The Kaaba in Makkah",
-          "East everywhere",
-          "The North Pole",
-          "The nearest mosque",
-        ],
-        answer: 0,
-        explanation: "The Qibla is the direction toward the Kaaba in Makkah.",
-      },
-    ],
   },
 };

@@ -1,3 +1,4 @@
+import { mockSharedData } from './remote-fixtures.mjs';
 import { test, expect } from "@playwright/test";
 import { resourcePages } from "../shared/resource-navigation.mjs";
 const timings = {
@@ -59,6 +60,7 @@ test("geolocation updates prayer and Qibla coordinates", async ({
   ).toContainText("19.0760");
 });
 test.beforeEach(async ({ page }) => {
+  await mockSharedData(page);
   await page.route("**/api/prayertimes?*", (route) =>
     route.fulfill({
       json: {
@@ -151,7 +153,7 @@ test("Hindi and Urdu navigation, mobile layout and accessible drawer", async ({
 });
 test("quiz provides correct answer feedback", async ({ page }) => {
   await page.goto("/#quiz");
-  await page.getByRole("button", { name: "114", exact: true }).click();
+  await page.getByRole("button", { name: "Muharram", exact: true }).click();
   await expect(page.getByRole("status")).toContainText("Correct!");
 });
 test("Hindi speech prefers a female Hindi device voice", async ({ page }) => {

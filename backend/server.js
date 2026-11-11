@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import { resolve } from "node:path";
 import { verse, content } from "./content.js";
 import { bearing, calendar } from "../shared/faith.mjs";
+import { normalizeContent, requestJson } from "../shared/remote-content.mjs";
 export { bearing, calendar };
 
 const menu = JSON.parse(
@@ -138,9 +139,15 @@ app.get("/api/tasbih", (_req, res) =>
     target: 33,
   }),
 );
-app.get("/api/features/:id", (req, res) => {
+app.get("/api/features/:id", async (req, res) => {
   const item = menu.home.items.find((i) => i.id === req.params.id);
   if (!item) return res.status(404).json({ error: "Feature not found" });
+  if (["quiz", "dua"].includes(item.id)) {
+    try {
+      const key = item.id === "quiz" ? "quizJsonUrl" : "duasJsonUrl";
+      return res.json(normalizeContent(item.id, await requestJson(menu.commonUrls.content[key])));
+    } catch { return res.status(502).json({ error: "Shared content is unavailable. Please try again." }); }
+  }
   res.json({
     id: item.id,
     ...content[item.id],

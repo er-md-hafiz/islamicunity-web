@@ -53,8 +53,8 @@
     {
       "path": "islamicunity.html",
       "sourceSha256": "42c809dbaeec6a2ac3937710bdf8500819c400ba00804841761c8a27f42d2401",
-      "sha256": "df5bd35de16b05c9ecb1cb218b69aa911e5535f15464a9a3e886b2e7dc65e1f5",
-      "bytes": 119102
+      "sha256": "ca5197ddbb6a896e46b414f11d58e2efec7bd19401abb55f05702f1df91518c7",
+      "bytes": 115535
     },
     {
       "path": "iu.svg",
@@ -107,8 +107,8 @@
     {
       "path": "quiz.html",
       "sourceSha256": "9ecaa185627c8ce984874e1751025d4b87586c0ffc260d5e324e566b4093d807",
-      "sha256": "1ef2f6d7251ce1575b5e1a95efab342b817ef44c1f6c2ebce61664ab59998f1d",
-      "bytes": 76682
+      "sha256": "35458c63338d77b3567f653e986fcc8ae0c0d32c971cad811113ed12e88b6923",
+      "bytes": 35092
     },
     {
       "path": "quiz.json",
@@ -357,6 +357,7 @@
     "assets/quran-audio.js",
     "assets/site-footer.js",
     "assets/qibla-finder.js",
-    "assets/site-header.js"
+    "assets/site-header.js",
+    "assets/content-data.js"
   ]
 }

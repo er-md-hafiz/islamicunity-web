@@ -12,7 +12,9 @@ export default defineConfig(({ mode }) => {
     server: { proxy: { "/api": "http://127.0.0.1:3001" } },
     build: {
       rollupOptions: {
+        preserveEntrySignatures: "strict",
         input: {
+          contentData: fileURLToPath(new URL("./src/config/legacy-entry.js", import.meta.url)),
           main: fileURLToPath(new URL("./index.html", import.meta.url)),
           siteFooter: fileURLToPath(new URL("./src/footer/legacy-entry.js", import.meta.url)),
           siteHeader: fileURLToPath(new URL("./src/header/legacy-entry.jsx", import.meta.url)),
@@ -23,7 +25,7 @@ export default defineConfig(({ mode }) => {
         },
         output: {
           entryFileNames: (chunk) =>
-            chunk.name === "siteHeader"
+            chunk.name === "contentData" ? "assets/content-data.js" : chunk.name === "siteHeader"
               ? "assets/site-header.js"
               : chunk.name === "qiblaFinder"
               ? "assets/qibla-finder.js"
@@ -41,6 +43,11 @@ export default defineConfig(({ mode }) => {
         name: "legacy-quran-dev-entry",
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
+            if (req.url?.split("?")[0] === "/assets/content-data.js") {
+              res.setHeader("Content-Type", "application/javascript");
+              res.end(`export * from ${JSON.stringify(server.config.base + "src/config/legacy-entry.js")};`);
+              return;
+            }
             if (req.url?.split("?")[0] === "/assets/site-footer.js") {
               res.setHeader("Content-Type", "application/javascript");
               res.end(`import ${JSON.stringify(server.config.base + "src/footer/legacy-entry.js")};`);

@@ -50,6 +50,8 @@ import { translate, locales } from "./i18n";
 import { api } from "./api";
 import LandingPage from "./LandingPage";
 import QuranAudioPlayer from "./quran/QuranAudioPlayer";
+import QuranReader from "./quran/QuranReader";
+import { localized } from "./config/common-urls.mjs";
 import SurahVideoLibrary from "./video/SurahVideoLibrary";
 import QiblaFinder from "./qibla/QiblaFinder";
 import { useAccurateLocation } from "./qibla/useAccurateLocation";
@@ -102,6 +104,7 @@ const core = [
   "prayer_times",
   "qibla",
   "quran",
+  "audio",
   "reminders",
   "tasbih",
   "calendar",
@@ -1025,11 +1028,12 @@ function App() {
               </>
             ) : page === "qibla" ? (
               <QiblaFinder location={qiblaLocation} language={language} expanded />
-            ) : page === "quran" ? (
+            ) : page === "quran" || page === "audio" ? (
               <>
                 <PageHeading title={t(page)} subtitle={t("quranSubtitle")} />
                 {VerseCard({ expanded: true })}
                 <QuranAudioPlayer language={language} />
+                <QuranReader language={language} />
               </>
             ) : page === "video" ? (
               <SurahVideoLibrary language={language} />
@@ -1100,6 +1104,7 @@ function App() {
                     content?.description || "Discover more with Islamic Unity."
                   }
                 />
+                {["quiz", "dua"].includes(page) && <button className="button secondary" onClick={() => setReload(r => r + 1)}>{({ en: "Refresh shared data", hi: "नया डेटा लाएँ", ur: "نیا ڈیٹا لائیں", ar: "تحديث البيانات" })[language]}</button>}
                 {contentError ? (
                   <ErrorBox
                     message={contentError}
@@ -1115,6 +1120,7 @@ function App() {
                     page={page}
                     speak={speak}
                     t={t}
+                    language={language}
                   />
                 )}
               </>
@@ -1248,14 +1254,14 @@ function PageHeading({ title, subtitle }) {
 function ErrorBox({ message, retry }) {
   return (
     <div className="error-box" role="alert">
-      <p>{message}. Check that the API is running.</p>
+      <p>{message}. Please check your connection and try again.</p>
       <button className="button secondary" onClick={retry}>
         Try again
       </button>
     </div>
   );
 }
-function FeatureContent({ content, page, speak, t }) {
+function FeatureContent({ content, page, speak, t, language }) {
   const [amount, setAmount] = useState(""),
     [currency, setCurrency] = useState("INR"),
     [to, setTo] = useState("SAR"),
@@ -1350,9 +1356,9 @@ function FeatureContent({ content, page, speak, t }) {
         <span className="tiny-badge">
           {t("question")} {quiz + 1} / {content.questions.length}
         </span>
-        <h2>{q.question}</h2>
+        <h2>{localized(q.question, language)}</h2>
         <div className="quiz-options">
-          {q.options.map((o, i) => (
+          {(Array.isArray(q.options) ? q.options : q.options[language] || q.options.en).map((o, i) => (
             <button
               key={o}
               disabled={answer !== null}
@@ -1368,7 +1374,7 @@ function FeatureContent({ content, page, speak, t }) {
           <>
             <p role="status">
               {answer === q.answer ? "Correct! " : "Keep learning. "}
-              {q.explanation}
+              {localized(q.explanation, language)}
             </p>
             <button
               className="button"
@@ -1396,8 +1402,9 @@ function FeatureContent({ content, page, speak, t }) {
           <span className="resource-icon">
             <Icon name={page} size={27} />
           </span>
-          <h2>{item.title}</h2>
-          <p>{item.body}</p>
+          <h2>{localized(item.title, language)}</h2>
+          {item.arabic && <p className="arabic" lang="ar" dir="rtl">{item.arabic}</p>}
+          <p>{localized(item.body, language)}</p>
           {item.speech && !linked && (
             <button
               className="button secondary"

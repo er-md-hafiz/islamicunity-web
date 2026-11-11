@@ -12,9 +12,10 @@ if (JSON.stringify(androidMenu) !== JSON.stringify(menu))
     "Android root menu and REST menu differ. Update both together.",
   );
 const directory = new URL("../public/data/", import.meta.url);
-// Compatibility filename; surah-videos.json remains the only authored dataset.
-await writeFile(new URL("../public/surah_video.json", import.meta.url),
-  await readFile(new URL("../public/surah-videos.json", import.meta.url)));
+// The URL named in commonUrls is authoritative; preserve edits to that JSON.
+// Publish the previous filename as a compatibility copy, never overwrite the source.
+await writeFile(new URL("../public/surah-videos.json", import.meta.url),
+  await readFile(new URL("../public/surah_video.json", import.meta.url)));
 await mkdir(new URL("features/", directory), { recursive: true });
 const write = (path, data) =>
   writeFile(new URL(path, directory), JSON.stringify(data));

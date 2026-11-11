@@ -1,23 +1,12 @@
 # Quran audio player delivery
 
-## Integration
+## Integration and shared configuration
 
-- The existing React Quran route, `/#quran`, retains its daily Arabic verse, translations, transliteration, reflection, and Hindi reading aid. The recitation player is added immediately below those existing reading controls.
-- The existing `islamicunity.html` WebView/dashboard retains its Quran widget, original six-Surah reading list, bookmarks, reading modal, Arabic text, and translation. Only its simulated playback controls/timer are replaced. Its existing Play buttons now call the same real player through a small event bridge.
-- Both views use `QuranAudioPlayer.jsx` and the same HTML5 controller. There is no separate audio page or second implementation. The WebView widget uses an isolated style root and a compiled `assets/quran-audio.js` entry; the normal Vite build publishes the entry and its shared dependencies.
-- `menu.json`, fragment destinations, analytics keys, and native Android source are unchanged. The existing sample reading material is preserved; this audio change does not replace it with a new Quran text database.
+The React Quran and Audio routes use the shared HTML5 player. The standalone library uses the same player and its existing list Play buttons through an event bridge. Its list now loads all 114 Surahs; its Read controls open the complete API-backed Quran reader in the web app.
 
-## Source and metadata
+The current source is resolved at runtime from `menu.json.commonUrls.quran.audioSurahUrl`. `getSurahAudioUrl(number, template)` validates numbers 1–114 and substitutes the number without padding. The configured reciter is Mishary Rashid Alafasy. The displayed provider link derives from the configured URL, and no recording is bundled or rehosted.
 
-All 114 tracks use exactly:
-
-`https://cdn.mp3quran.net/audio/mishary-alafasy/r1/NNN.mp3`
-
-`getSurahAudioUrl(number)` rejects non-integers and values outside 1–114, and pads filenames to three digits: `001.mp3`, `010.mp3`, `114.mp3`. No fallback reciter, synthetic recitation, or alternative CDN is used.
-
-The local structured metadata contains all 114 Arabic/English names and Ayah counts, obtained from the [Quran.com chapters API](https://api.quran.com/api/v4/chapters?language=en). Chapter numbers are consecutive and the Ayah counts total 6,236. Search supports numbers, Arabic names (including diacritic-insensitive matching), and transliterated English names. Metadata does not require runtime network calls.
-
-The player identifies **Mishary Rashid Alafasy** and links the attribution **Quran audio recitation provided by MP3Quran.net** to the original provider. The provider's [official privacy/usage policy](https://mp3quran.org/eng/privacy), checked on 2026-11-10, permits visitors and developers to use its material or links and identifies the alternate domains it owns. The canonical `www.mp3quran.net/eng/privacy` endpoint returned 403 to the research client, so the provider's accessible official alternate-domain policy was reviewed. Recordings are streamed directly; no audio is rehosted or bundled.
+Surah names and Ayah counts load from `surahUrl`. The full Arabic Uthmani reader uses `quranViewUrl`, `sajdaUrl` with edition `quran-uthmani`, and `metaUrl`. Shared data failures offer retry. The local Surah metadata file remains a historical/test fixture, not the active player source. Menu identifiers, destinations and native Android code remain unchanged.
 
 ## Behavior
 
@@ -40,7 +29,7 @@ The checked-in [114-track report](./quran-audio-verification.json) records a HEA
 - **Zero inaccessible URLs** at the recorded check time.
 - Probe responses were canceled; no MP3 files were saved or published.
 
-The separate [real-browser report](./quran-browser-playback.json) records actual Chrome MP3 decoding/playback for Surahs **1, 2, 10, 18, 36, 55, 67, 112, 113, and 114**, including finite durations and advancing playback time. It also covers first-track seek/resume and control interactions, plus real Surah 1 playback in a phone-sized Chrome viewport and the legacy WebView widget. This is real CDN playback, distinct from the deterministic media-event tests.
+The historical MP3Quran-provider [real-browser report](./quran-browser-playback.json) records actual Chrome MP3 decoding/playback for Surahs **1, 2, 10, 18, 36, 55, 67, 112, 113, and 114**, including finite durations and advancing playback time. It also covers first-track seek/resume and control interactions, plus real Surah 1 playback in a phone-sized Chrome viewport and the legacy WebView widget. That report predates the configured-provider migration and does not establish decoding on the current provider. The current 114-track HEAD/Range report above checks the configured provider.
 
 Automated tests additionally cover all metadata/URLs, no initial audio request, search, boundaries, controls, auto-next, stale-promise races, offline/retry, load timeouts, route disposal, legacy reader preservation, mobile layout, and language switching. The existing API, navigation, homepage, and migrated-resource tests are retained.
 

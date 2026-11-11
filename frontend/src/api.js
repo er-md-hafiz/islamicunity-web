@@ -1,4 +1,5 @@
 import { bearing, calendar } from "../../shared/faith.mjs";
+import { loadConfiguredContent } from "./config/common-urls.mjs";
 
 const API = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 const STATIC = import.meta.env.PROD && !API;
@@ -14,6 +15,7 @@ async function json(url, timeout = 12000) {
 // GitHub Pages hosts static assets; no Express server is available at /api.
 // An explicitly configured VITE_API_URL always takes precedence over static mode.
 export async function api(path) {
+  if (path === "features/quiz" || path === "features/dua") return loadConfiguredContent(path.split("/")[1]);
   if (!STATIC) return json(`${API}/api/${path}`);
   const url = new URL(path, "https://local.invalid/");
   const query = url.searchParams;

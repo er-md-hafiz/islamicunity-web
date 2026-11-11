@@ -1,6 +1,8 @@
+import { mockSharedData } from './remote-fixtures.mjs';
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+test.beforeEach(async ({ page }) => { await mockSharedData(page); });
 const prefix = "/islamicunity-web/";
 const manifest = JSON.parse(readFileSync('migration/resource-manifest.json','utf8'));
 

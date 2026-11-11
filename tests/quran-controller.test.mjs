@@ -55,9 +55,11 @@ class Media extends EventTarget {
     this.event("loadedmetadata");
   }
 }
+const template = JSON.parse(await readFile(new URL('../backend/menu.json', import.meta.url), 'utf8')).commonUrls.quran.audioSurahUrl;
 function setup(options = {}) {
   const media = [];
   const controller = new QuranAudioController({
+    audioUrl: n => getSurahAudioUrl(n, template),
     audioFactory: () => {
       const a = new Media();
       media.push(a);
@@ -89,8 +91,8 @@ test("metadata covers all 114 chapters, including standard names and all 6236 ay
 test("deterministic audio URLs and validation cover every chapter and requested examples", () => {
   for (let n = 1; n <= 114; n++)
     assert.equal(
-      getSurahAudioUrl(n),
-      `https://cdn.mp3quran.net/audio/mishary-alafasy/r1/${String(n).padStart(3, "0")}.mp3`,
+      getSurahAudioUrl(n, template),
+      template.replace("{number}", n),
     );
   for (const value of [0, 115, -1, 1.5, NaN, "10", null])
     assert.throws(() => getSurahAudioUrl(value), /Invalid/);
@@ -107,7 +109,7 @@ test("no media is created or loaded until explicit Play; chapter selection alone
   await c.play();
   assert.equal(media.length, 1);
   assert.equal(media[0].preload, "none");
-  assert.equal(media[0].src, getSurahAudioUrl(55));
+  assert.equal(media[0].src, getSurahAudioUrl(55, template));
   assert.equal(c.state.playing, true);
   c.dispose();
 });
@@ -156,7 +158,7 @@ test("switching releases old sources and rejects stale playback/errors without a
   media[0].event("error");
   assert.equal(c.state.number, 2);
   assert.equal(c.state.status, "playing");
-  assert.equal(media[1].src, getSurahAudioUrl(2));
+  assert.equal(media[1].src, getSurahAudioUrl(2, template));
   c.dispose();
 });
 test("previous/next respect boundaries and volume, mute and rate survive track changes", async () => {

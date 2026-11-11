@@ -1,6 +1,8 @@
+import { mockSharedData } from './remote-fixtures.mjs';
 import { test, expect } from "@playwright/test";
 const root = "/islamicunity-web/";
 test.beforeEach(async ({ page }) => {
+  await mockSharedData(page);
   await page.route("https://fonts.googleapis.com/**", (r) => r.abort());
   await page.route("https://fonts.gstatic.com/**", (r) => r.abort());
   await page.addInitScript(() => {
@@ -117,7 +119,7 @@ test("play/pause, progress, volume, speed and continuous listening follow media 
   );
   await expect(page.locator(".qa-track-number strong")).toHaveText("002");
   expect(await page.evaluate(() => window.__quranMedia.at(-1).src)).toMatch(
-    /002\.mp3$/,
+    /2\.mp3$/,
   );
   await page.getByRole("link", { name: "Islamic Unity homepage" }).click();
   expect(
@@ -158,7 +160,7 @@ test("legacy reader keeps Arabic content and list actions while sharing the real
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto(root + "islamicunity.html");
   await expect(page.locator("#quranAudioMount .qa-player")).toBeVisible();
-  await expect(page.locator("#surahList .surah-item")).toHaveCount(6);
+  await expect(page.locator("#surahList .surah-item")).toHaveCount(114);
   await page
     .locator("#surahList .surah-item")
     .nth(1)
@@ -166,16 +168,12 @@ test("legacy reader keeps Arabic content and list actions while sharing the real
     .click();
   await expect(page.locator(".qa-track-number strong")).toHaveText("002");
   expect(await page.evaluate(() => window.__quranMedia.at(-1).src)).toMatch(
-    /002\.mp3$/,
+    /2\.mp3$/,
   );
   await page.locator("#viewFullQuran").click();
-  await expect(page.locator("#quranModal")).toBeVisible();
-  await expect(page.locator("#quranModalContent")).toContainText(
-    "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-  );
-  await expect(page.locator("#quranModalContent")).toContainText(
-    "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
-  );
+  await expect(page).toHaveURL(/index\.html#quran$/);
+  await expect(page.locator('.quran-reader')).toBeVisible();
+  await expect(page.locator('.quran-ayahs')).toContainText('آية 1');
   expect(errors).toEqual([]);
 });
 test("player remains usable at phone widths in English, Hindi, Urdu and Arabic", async ({

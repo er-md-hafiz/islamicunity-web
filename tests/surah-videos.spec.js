@@ -1,8 +1,10 @@
+import { mockSharedData } from './remote-fixtures.mjs';
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 const fixture = JSON.parse(readFileSync("frontend/public/surah-videos.json", "utf8"));
 const prefix = "/islamicunity-web/";
 test.beforeEach(async ({ page }) => {
+  await mockSharedData(page);
   await page.route("https://fonts.googleapis.com/**", r => r.abort());
   await page.route("https://fonts.gstatic.com/**", r => r.abort());
   // Mapping tests verify every embed without depending on YouTube ads/cookies/network.
@@ -56,7 +58,7 @@ test("player switches in place, traps focus, supports Escape and cleans up on na
 });
 test("API failure, malformed data, loading skeletons and retry recover without breaking the page", async ({ page }) => {
   let requests = 0; let release; const pending = new Promise(resolve => { release = resolve; });
-  await page.route("**/surah-videos.json", async route => {
+  await page.route("**/surah_video.json", async route => {
     requests++;
     if (requests === 1) { await pending; await route.fulfill({ status: 503, body: "Unavailable" }); }
     else if (requests === 2) await route.fulfill({ json: { surahs: [] } });
@@ -69,7 +71,7 @@ test("API failure, malformed data, loading skeletons and retry recover without b
 });
 test("missing media is safe, counts ignore stale metadata, and route revisits reuse cached JSON", async ({ page }) => {
   const data = structuredClone(fixture); data.availableVideos = 900; data.totalSurahs = 1; data.surahs[0].embedUrl = "https://evil.test/";
-  let requests = 0; await page.route("**/surah-videos.json", route => { requests++; return route.fulfill({ json: data }); });
+  let requests = 0; await page.route("**/surah_video.json", route => { requests++; return route.fulfill({ json: data }); });
   await page.goto(prefix + "index.html#video"); await expect(page.locator(".sv-stats strong")).toHaveText(["114", "65", "49"]);
   await expect(page.locator('[data-surah="1"] .sv-play')).toHaveCount(0);
   await page.evaluate(() => { location.hash = "tasbih"; }); await expect(page.locator(".tasbih-card")).toBeVisible();

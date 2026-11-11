@@ -59,7 +59,7 @@ export function filterSurahs(surahs, search, filter) {
       || String(s.number) === query.replace(/^0+(?=\d)/, "")));
 }
 
-// Relative to Vite's base: the production URL is the requested GitHub Pages API.
+// Read the shared URL at runtime, including when a fresh request is requested.
 // Five-minute in-memory cache also shares concurrent requests; failures are never cached.
 export function loadVideoLibrary({ fresh = false } = {}) {
   if (!fresh && cached && Date.now() - cached.at < TTL) return Promise.resolve(cached.data);
@@ -67,7 +67,11 @@ export function loadVideoLibrary({ fresh = false } = {}) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   inFlight = (async () => {
-    const response = await fetch(`${import.meta.env.BASE_URL}surah-videos.json`, {
+    const { loadCommonUrls } = await import("../config/common-urls.mjs");
+    const config = await loadCommonUrls();
+    const url = config.quran?.surahVideoUrl;
+    if (typeof url !== "string" || !/^https:\/\//.test(url)) throw new Error("Missing shared video URL");
+    const response = await fetch(url, {
       signal: controller.signal, cache: "no-cache", headers: { Accept: "application/json" },
     });
     if (!response.ok) throw new Error(`Video request failed (${response.status})`);

@@ -920,3 +920,6 @@
 .qa-volume input::-webkit-slider-thumb {
   margin-top: -4px;
 }
+
+.quran-ayahs {max-height: 640px; overflow-y: auto; margin-top: 24px; font-size: 26px; line-height: 2.2; text-align: right;}
+.quran-ayahs p {padding: 12px; border-bottom: 1px solid #b8bda533;}

@@ -4,7 +4,7 @@ The existing `index.html#video` menu route now renders the dynamic library. Navi
 
 ## Data and updates
 
-`frontend/public/surah-videos.json` is the supplied JSON, published at [surah-videos.json](https://er-md-hafiz.github.io/islamicunity-web/surah-videos.json). This is the only source of Surah video names, order, IDs and links. The component fetches it at runtime using Vite's deployment base path; it does not import the dataset into the JavaScript bundle. Editing this JSON and publishing the site updates the library without changes to UI code.
+`frontend/public/surah_video.json` is the authoritative supplied JSON, published at [surah_video.json](https://er-md-hafiz.github.io/islamicunity-web/surah_video.json) and selected by `commonUrls.quran.surahVideoUrl`. This is the source of Surah video names, order, IDs and links. The component fetches the configured URL at runtime; it does not import the dataset into the JavaScript bundle. Editing this JSON and publishing it updates the library without changes to UI code. The build copies this source to the previous `surah-videos.json` filename for compatibility, preserving edits to the shared URL's file.
 
 The supplied dataset contains 114 Surahs, 66 video entries and 48 Coming Soon entries. Statistics are recalculated from validated records rather than trusting the metadata counters. Records are sorted into Quran order. The complete 114-record structure is required; malformed or incomplete libraries show the retry state. Missing, mismatched or unsafe media fields make that record Coming Soon. No alternate videos or names are substituted.
 

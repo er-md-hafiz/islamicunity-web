@@ -4,11 +4,13 @@ export const PLAYBACK_RATES = [0.75, 1, 1.25, 1.5, 2];
 export class QuranAudioController {
   constructor({
     audioFactory = () => new Audio(),
+    audioUrl = getSurahAudioUrl,
     timeout = 20000,
     isOnline = () =>
       typeof navigator === "undefined" || navigator.onLine !== false,
   } = {}) {
     this.audioFactory = audioFactory;
+    this.audioUrl = audioUrl;
     this.timeout = timeout;
     this.isOnline = isOnline;
     this.listeners = new Set();
@@ -185,7 +187,7 @@ export class QuranAudioController {
     return audio;
   }
   select(number) {
-    getSurahAudioUrl(number);
+    if (!Number.isInteger(number) || number < 1 || number > 114) throw new Error("Invalid Surah number");
     if (this.disposed) return;
     this.release();
     this.emit({
@@ -207,7 +209,7 @@ export class QuranAudioController {
     if (!audio) {
       try {
         audio = this.createMedia();
-        audio.src = getSurahAudioUrl(this.state.number);
+        audio.src = this.audioUrl(this.state.number);
         audio.load();
         // Some WebViews reset the rate on load.
         audio.playbackRate = this.state.rate;

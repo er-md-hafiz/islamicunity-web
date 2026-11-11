@@ -1,8 +1,9 @@
-export const AUDIO_BASE = "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/";
-export function getSurahAudioUrl(number) {
+export function getSurahAudioUrl(number, template) {
   if (!Number.isInteger(number) || number < 1 || number > 114)
     throw new Error("Invalid Surah number");
-  return `${AUDIO_BASE}${String(number).padStart(3, "0")}.mp3`;
+  if (typeof template !== "string" || !template.startsWith("https://") || !template.includes("{number}"))
+    throw new Error("Missing configured audio URL template");
+  return template.replaceAll("{number}", String(number));
 }
 export function formatAudioTime(value) {
   if (!Number.isFinite(value) || value < 0) return "0:00";

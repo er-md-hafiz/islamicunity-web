@@ -102,6 +102,9 @@ export default function SurahVideoLibrary({ language = "en" }) {
     </div> : status === "error" ? <div className="sv-state card" role="alert"><Video size={32} /><p>{copy.error}</p>
       <button className="sv-button" onClick={() => setAttempt(n => n + 1)}><RotateCcw size={16} />{copy.retry}</button></div> : <>
       <div className="sv-toolbar">
+        <button className="sv-button" onClick={() => setAttempt(n => n + 1)}>
+          <RotateCcw size={16} />{({ en: "Refresh shared data", hi: "नया डेटा लाएँ", ur: "نیا ڈیٹا لائیں", ar: "تحديث البيانات" })[language] || "Refresh shared data"}
+        </button>
         <label className="sv-search"><Search size={19} /><span className="sv-sr-only">{copy.search}</span>
           <input type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder={copy.placeholder} />
         </label>

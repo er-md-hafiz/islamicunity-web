@@ -16,9 +16,9 @@ import {
   AudioLines,
   ExternalLink,
 } from "lucide-react";
-import surahs from "./surahs.json";
+import { loadQuranSources } from "../config/common-urls.mjs";
 import { QuranAudioController, PLAYBACK_RATES } from "./audio-controller.mjs";
-import { formatAudioTime } from "./audio-source.mjs";
+import { formatAudioTime, getSurahAudioUrl } from "./audio-source.mjs";
 import { playerText } from "./player-copy";
 import "./quran-audio.css";
 
@@ -33,13 +33,33 @@ export function normalizeSurahSearch(value) {
     .replace(/[\s\-'’]/g, "")
     .toLowerCase();
 }
-export default function QuranAudioPlayer({
+export default function QuranAudioPlayer(props) {
+  const [sources, setSources] = useState(null), [error, setError] = useState(""), [retry, setRetry] = useState(0);
+  useEffect(() => {
+    let active = true;
+    setError("");
+    loadQuranSources().then(data => {
+      if (!active) return;
+      if (props.controller) props.controller.audioUrl = number => getSurahAudioUrl(number, data.urls.audioSurahUrl);
+      setSources(data);
+    }).catch(e => { if (active) setError(e.message); });
+    return () => { active = false; };
+  }, [retry, props.controller]);
+  if (!sources) return <section className="qa-player" role="status">
+    {error || playerText("loading", props.language)}
+    {error && <button onClick={() => setRetry(n => n + 1)}>{playerText("retry", props.language)}</button>}
+  </section>;
+  return <ConfiguredPlayer {...props} sources={sources} />;
+}
+function ConfiguredPlayer({
   language = "en",
   controller: suppliedController,
   compact = false,
+  sources,
 }) {
+  const { surahs, urls } = sources;
   const [controller] = useState(
-    () => suppliedController || new QuranAudioController(),
+    () => suppliedController || new QuranAudioController({ audioUrl: number => getSurahAudioUrl(number, urls.audioSurahUrl) }),
   );
   const state = useSyncExternalStore(
     controller.subscribe,
@@ -308,11 +328,11 @@ export default function QuranAudioPlayer({
       <p className="qa-hint">{t("hint")}</p>
       <a
         className="qa-attribution"
-        href="https://www.mp3quran.net/"
+        href={getSurahAudioUrl(state.number, urls.audioSurahUrl)}
         target="_blank"
         rel="noreferrer"
       >
-        {t("attribution")}
+        {new URL(urls.audioSurahUrl).hostname}
         <ExternalLink size={11} />
       </a>
     </section>

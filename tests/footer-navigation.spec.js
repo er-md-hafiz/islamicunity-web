@@ -3,9 +3,11 @@ import { readFileSync } from "node:fs";
 import { footerColumns, socialMedia } from "../frontend/src/footer/footer-data.mjs";
 import { resourcePages } from "../shared/resource-navigation.mjs";
 import { SITE_BASE_URL } from "../shared/site-navigation.mjs";
+import { mockSharedData, menu } from "./remote-fixtures.mjs";
 const prefix = "/islamicunity-web/";
 const manifest = JSON.parse(readFileSync("migration/resource-manifest.json", "utf8"));
 test.beforeEach(async ({ page }) => {
+  await mockSharedData(page);
   await page.route("https://fonts.googleapis.com/**", r => r.abort());
   await page.route("https://fonts.gstatic.com/**", r => r.abort());
   await page.route("https://api.aladhan.com/**", r => r.abort());
@@ -113,7 +115,8 @@ test("every migrated footer destination loads and refreshes on phone and desktop
   test.setTimeout(120000);
   const oldHost = "er-md-hafiz.github.io/" + ["islamicunity", "api"].join("-");
   const retiredRequests = [], missing = [], errors = [];
-  page.on("request", request => { if (request.url().includes(oldHost)) retiredRequests.push(request.url()); });
+  const allowedContentUrls = new Set(Object.values(menu.commonUrls.content));
+  page.on("request", request => { if (request.url().includes(oldHost) && !allowedContentUrls.has(request.url())) retiredRequests.push(request.url()); });
   page.on("response", response => { if (response.url().startsWith("http://127.0.0.1:4174") && response.status() >= 400) missing.push(response.url()); });
   page.on("pageerror", error => errors.push(error.message));
   await page.goto(prefix + "index.html");

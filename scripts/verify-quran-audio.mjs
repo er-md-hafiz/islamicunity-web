@@ -1,12 +1,14 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile } from "node:fs/promises";
 import {
   getSurahAudioUrl,
-  AUDIO_BASE,
+
 } from "../frontend/src/quran/audio-source.mjs";
+const menu = JSON.parse(await readFile(new URL('../backend/menu.json', import.meta.url), 'utf8'));
+const template = menu.commonUrls.quran.audioSurahUrl;
 const results = new Array(114);
 let cursor = 0;
 async function inspect(number) {
-  const url = getSurahAudioUrl(number);
+  const url = getSurahAudioUrl(number, template);
   try {
     const head = await fetch(url, {
       method: "HEAD",
@@ -55,7 +57,7 @@ await Promise.all(
 );
 const report = {
   checkedAt: new Date().toISOString(),
-  baseUrl: AUDIO_BASE,
+  urlTemplate: template,
   method:
     "HEAD plus GET Range bytes=0-1; response bodies canceled; no MP3 files saved",
   total: 114,
