@@ -1,0 +1,17 @@
+.iu-header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; position: relative; min-width: 0; color: var(--text, #253c33); font-family: "DM Sans", system-ui, sans-serif; }
+.iu-location-button { display: flex; align-items: center; gap: 8px; min-height: 44px; border: 1px solid var(--line, #dfe8df); background: var(--card, #fff); color: inherit; border-radius: 9px; padding: 7px 10px; text-align: start; font: inherit; cursor: pointer; }
+.iu-location-button span { font-size: 11px; font-weight: 600; line-height: 1.5; }
+.iu-location-button small { display: block; font-size: 10px; font-weight: 400; color: inherit; line-height: 1.5; }
+.iu-location-button > svg { flex-shrink: 0; }
+.iu-location-button:disabled { opacity: .65; cursor: wait; }
+.iu-notification-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: inherit; flex-shrink: 0; text-decoration: none; }
+.iu-notification-button:hover { background: var(--pale, #eaf1e9); }
+.iu-avatar { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #e9eee2; color: #365c44; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.iu-location-button:focus-visible, .iu-notification-button:focus-visible { outline: 3px solid #ebb53f; outline-offset: 3px; }
+.iu-location-feedback { position: absolute; z-index: 70; top: calc(100% + 8px); right: 0; margin: 0; padding: 12px 14px; width: min(320px, calc(100vw - 36px)); border: 1px solid #d4b36c; border-radius: 9px; background: #fff5df; color: #62481a; font-size: 12px; line-height: 1.6; box-shadow: 0 8px 24px #17352520; }
+.iu-location-loading { animation: iu-location-spin 1s linear infinite; }
+@keyframes iu-location-spin { to { transform: rotate(360deg); } }
+.app-shell .topbar { height: auto; min-height: 78px; flex-wrap: wrap; gap: 10px; padding-block: 12px; }
+.app-shell .topbar-actions { flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-inline-start: auto; }
+@media (max-width: 700px) { .lp-header-actions { flex-wrap: wrap; justify-content: flex-end; } .lp-header-actions > .iu-header-actions { flex-basis: 100%; order: 4; } .lp-header-inner { padding-block: 12px; } .iu-location-button { padding: 6px 8px; } }
+@media (prefers-reduced-motion: reduce) { .iu-location-loading { animation: none; } }

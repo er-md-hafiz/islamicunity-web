@@ -49,7 +49,7 @@ export default function QiblaFinder({ location, language = "en", expanded = fals
     <header className="qf-heading"><div><Title id={expanded ? "qf-title" : "qf-preview-title"}><Compass size={20} />{copy.title}</Title><p>{copy.subtitle}</p></div><span className="qf-makkah">MAKKAH</span></header>
     <div className="qf-main"><CompassDial angle={angle} heading={live ? trueHeading : null} live={live} />
       <div className="qf-bearing"><strong className="bearing">{qibla === null ? "—" : qibla.toFixed(1)}<span>°</span></strong><p>{copy.north}</p>{qibla !== null && <span className={`qf-mode ${live ? "is-live" : ""}`}>{live ? copy.live : copy.manual}</span>}
-        <button className="qf-button" onClick={expanded ? location.request : onOpen} disabled={location.status === "loading"}><LocateFixed size={17} />{location.status === "loading" ? copy.locating : expanded ? position ? copy.refresh : location.error ? copy.retry : copy.find : copy.find}</button>
+        {!expanded && <button className="qf-button" onClick={onOpen}><LocateFixed size={17} />{copy.find}</button>}
       </div>
     </div>
     {location.status === "initial" && <p className="qf-note">{copy.initial}</p>}

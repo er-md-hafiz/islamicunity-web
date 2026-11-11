@@ -53,6 +53,9 @@ test("every migrated HTML page renders on a phone without local 404s or script e
     });
     expect(response.status(), file.path).toBe(200);
     await expect(page.locator("body")).toBeVisible();
+    await expect(page.locator("iu-site-header .iu-location-button")).toHaveCount(1);
+    await expect(page.locator("iu-site-header .iu-notification-button")).toHaveCount(1);
+    await expect(page.locator("iu-site-header .iu-avatar")).toHaveText("IU");
     for (const header of await page.locator("header,.navbar,.app-header,.app-name-big").all())
       await expect(header).not.toContainText(/Islamic\s*Unity|YOUR SPACE FOR FAITH & PEACE|A little closer to your faith, every day\./i);
     expect(await page.title(), file.path).not.toBe("");

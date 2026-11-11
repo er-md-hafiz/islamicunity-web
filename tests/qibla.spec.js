@@ -12,7 +12,7 @@ test.beforeEach(async({page})=>{
     window.__emitHeading=fields=>{const e=new Event("deviceorientationabsolute");for(const[k,v]of Object.entries(fields))Object.defineProperty(e,k,{value:v});window.dispatchEvent(e);};
   });
 });
-const locate=async page=>{await page.locator(".qf-bearing button").click();await expect(page.locator(".qf-location")).toContainText("28.6139");};
+const locate=async page=>{await page.locator(".iu-location-button").click();await expect(page.locator(".qf-location")).toContainText("28.6139");};
 test("shared header omits the removed branding and widgets keep one title; no location is invented",async({page})=>{
   await page.goto(base);await expect(page.locator(".lp-hero")).toBeVisible();await expect(page.locator(".lp-brand")).toHaveText("");await expect(page.locator("#homepage-title")).toHaveText("Home");
   await page.goto(base+"#prayer_times");await expect(page.locator(".welcome-heading h1,.welcome-heading .small-overline")).toHaveCount(0);await expect(page.locator(".sidebar > .brand")).toHaveText("");
@@ -22,12 +22,16 @@ test("shared header omits the removed branding and widgets keep one title; no lo
   expect(await page.evaluate(()=>window.__geoCalls[0])).toEqual({enableHighAccuracy:true,timeout:15000,maximumAge:0});
   await expect(page.locator(".qf-location")).toContainText("±12 m");await expect(page.locator(".qf-dial")).toHaveAttribute("data-mode","manual");
   await page.evaluate(()=>{location.hash="tasbih";});await expect(page.locator(".page-heading h2")).toHaveText("Digital Tasbih");await expect(page.locator(".expanded.tasbih-card .eyebrow")).not.toContainText("Digital Tasbih");
+  await expect(page.locator(".iu-location-button")).toContainText("Update location");await expect(page.locator("main .iu-location-button,main .location-button")).toHaveCount(0);expect(await page.evaluate(()=>window.__geoCalls.length)).toBe(1);
+  expect(await page.locator(".iu-header-actions").evaluate(el=>[...el.children].slice(0,3).map(n=>n.className))).toEqual(["iu-notification-button","iu-location-button","iu-avatar"]);
+  await page.goto(base+"Hajj.html");await expect(page.locator("iu-site-header .iu-location-button")).toContainText("Update location");expect(await page.evaluate(()=>window.__geoCalls.length)).toBe(0);
+  await page.locator("iu-site-header .iu-notification-button").click();await expect(page.locator(".reminders-card")).toBeVisible();await expect(page.locator(".iu-location-button")).toContainText("Update location");expect(await page.evaluate(()=>window.__geoCalls.length)).toBe(0);
 });
 test("denied, unavailable, timeout and hanging location requests recover without a fallback city",async({page})=>{
   await page.goto(base+"#qibla");
-  for(const code of [1,2,3]){await page.evaluate(c=>{window.__geoFailure=c;},code);await page.locator(".qf-bearing button").click();await expect(page.locator(".qf-warning")).toBeVisible();await expect(page.locator(".qf-needle")).toHaveCount(0);}
+  for(const code of [1,2,3]){await page.evaluate(c=>{window.__geoFailure=c;},code);await page.locator(".iu-location-button").click();await expect(page.locator(".qf-warning")).toBeVisible();await expect(page.locator(".qf-needle")).toHaveCount(0);}
   await page.evaluate(()=>{window.__geoFailure=0;});await locate(page);
-  await page.clock.install();await page.evaluate(()=>{window.__geoPending=true;});await page.getByRole("button",{name:"Refresh location",exact:true}).click();await expect(page.locator(".qf-bearing button")).toBeDisabled();await page.clock.runFor(16001);await expect(page.locator(".qf-warning")).toContainText("timed out");await expect(page.locator(".qf-needle")).toHaveCount(0);
+  await page.clock.install();await page.evaluate(()=>{window.__geoPending=true;});await page.locator(".iu-location-button").click();await expect(page.locator(".iu-location-button")).toBeDisabled();await page.clock.runFor(16001);await expect(page.locator(".qf-warning")).toContainText("timed out");await expect(page.locator(".qf-needle")).toHaveCount(0);
 });
 test("absolute Android-style readings require confirmed north, rotate the dial/arrow correctly and handle landscape",async({page})=>{
   await page.goto(base+"#qibla");await locate(page);await page.getByRole("button",{name:"Enable device compass",exact:true}).click();
@@ -64,7 +68,7 @@ test("expired magnetic models retain the true-north fallback without pretending 
 test("shared legacy widget removes all random compass behavior and retains the reader and mosque control",async({page})=>{
   const errors=[];page.on("pageerror",e=>errors.push(e.message));await page.goto(base+"islamicunity.html");
   await expect(page.locator("#qiblaMount .qf")).toBeVisible();await expect(page.locator("#qiblaMount .qf-needle")).toHaveCount(0);
-  await page.locator("#qiblaMount .qf-bearing button").click();await expect(page.locator("#qiblaMount .bearing")).toContainText(bearing(28.6139,77.209).toFixed(1));
+  await page.locator("iu-site-header .iu-location-button").click();await expect(page.locator("#qiblaMount .bearing")).toContainText(bearing(28.6139,77.209).toFixed(1));
   await expect(page.locator("#findNearbyMosques")).toBeAttached();await expect(page.locator("#quranAudioMount .qa-player")).toBeAttached();expect(errors).toEqual([]);
 });
 test("compass fits phone, landscape, tablet, desktop and four language layouts",async({page})=>{

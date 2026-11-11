@@ -16,6 +16,8 @@ Download buttons use the verified [Google Play listing](https://play.google.com/
 
 ## Run locally
 
+Use the common top header's location control between the notifications bell and IU avatar. It is shared by the homepage, app sections and standalone pages; widget pages no longer repeat the control. Verified GPS selections are retained for up to five minutes in session storage for navigation between pages. Qibla and prayer tools share the selection, and location access still starts only after a user action.
+
 The version-2 root menu includes the shared `commonUrls` configuration. Quran video metadata is also published as `surah_video.json`, referenced by `commonUrls.quran.surahVideoUrl`; its contents stay synchronized with `surah-videos.json` during the build. Existing menu items and settings are unchanged.
 
 The shared headers use logo marks without the removed brand wordmarks or daily-faith heading. Qibla Finder requests actual GPS coordinates, separates manual bearing from live compass guidance, and applies offline WMM2025 correction only with a known north reference. The legacy widget shares this implementation instead of simulated movement. See [Qibla verification](docs/qibla-branding-fix.md), including sensor limitations and Android/iOS device-testing status. Run `npm run test:qibla` for math/model checks.

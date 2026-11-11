@@ -31,6 +31,7 @@ import {
 import { locales } from "./i18n";
 import { landingText } from "./landing-copy";
 import SiteFooter from "./footer/SiteFooter";
+import HeaderActions from "./header/HeaderActions";
 import { sitePageHref } from "../../shared/site-navigation.mjs";
 import "./landing.css";
 
@@ -390,6 +391,7 @@ export default function LandingPage({ section }) {
             >
               {mobileMenu ? <X /> : <Menu />}
             </button>
+            <HeaderActions language={language} />
           </div>
         </div>
       </header>

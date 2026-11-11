@@ -56,6 +56,7 @@ import { useAccurateLocation } from "./qibla/useAccurateLocation";
 import SiteFooter from "./footer/SiteFooter";
 import { resourceHref } from "../../shared/resource-navigation.mjs";
 import { sitePageHref } from "../../shared/site-navigation.mjs";
+import HeaderActions from "./header/HeaderActions";
 import "./styles.css";
 function useStored(key, initial) {
   const [value, setValue] = useState(() => {
@@ -220,8 +221,6 @@ function App() {
   const qiblaLocation = useAccurateLocation(position => {
     setCoords({ ...position, name: "Current location" });
   });
-  const locating = qiblaLocation.status === "loading";
-  const locate = qiblaLocation.request;
   const [month, setMonth] = useState(
     new Date(new Date().getFullYear(), new Date().getMonth(), 1),
   );
@@ -942,38 +941,10 @@ function App() {
                 ))}
               </select>
             </div>
-            <button
-              className="notification-button icon-button"
-              aria-label="Open reminders"
-              onClick={() => navigate("reminders")}
-            >
-              <Bell size={19} />
-              <i />
-            </button>
-            <span className="avatar">IU</span>
+            <HeaderActions language={language} onReminders={() => navigate("reminders")} />
           </div>
         </header>
         <main>
-          {page !== "qibla" && <div className="welcome-heading">
-            <button
-              className="location-button"
-              onClick={locate}
-              disabled={locating}
-            >
-              {locating ? (
-                <LoaderCircle className="spin" size={16} />
-              ) : (
-                <MapPin size={16} />
-              )}
-              <span>
-                {coords.name === "Current location"
-                  ? t("currentLocation")
-                  : coords.name}
-                <small>{locating ? t("locating") : t("location")}</small>
-              </span>
-              <ChevronRight size={14} />
-            </button>
-          </div>}
           <div className="page-content" key={page}>
             {page === "prayer_times" ? (
               <>
