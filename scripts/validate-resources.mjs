@@ -98,7 +98,8 @@ const backendMenu = JSON.parse(
   await readFile(resolve(root, "backend/menu.json"), "utf8"),
 );
 assert.deepEqual(menu, backendMenu, "Android and REST menus must match");
-const { commonUrls, ...existingMenu } = menu;
+// Additive configuration stays outside the original native navigation contract.
+const { commonUrls, news, ...existingMenu } = menu;
 const shape = JSON.parse(JSON.stringify(existingMenu), (key, value) =>
   ["url", "icon"].includes(key) ? undefined : value,
 );

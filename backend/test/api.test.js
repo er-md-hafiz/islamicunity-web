@@ -15,6 +15,14 @@ test("menu preserves all original home sections and CORS", async () => {
   assert.equal(data.home.items.length, 21);
   assert.equal(data.version, 2);
   assert.deepEqual(Object.keys(data).slice(0, 3), ["version", "commonUrls", "home"]);
+  assert.equal(data.news.enabled, true);
+  assert.equal(data.news.apiUrl, "https://newsapi.org/v2/everything");
+  assert.deepEqual(data.news.categories.map(({ id, query, enabled }) => [id, query, enabled]), [
+    ["islamic_news", "islam", true], ["finance", "finance", true], ["opinion", "opinion", true],
+    ["education", "education", true], ["sport", "sport", true], ["science_technology", "science-and-technology", true],
+    ["economy", "economy", true], ["features", "features", true], ["gallery", "gallery", true],
+    ["video", "video", true], ["podcast", "podcast", true],
+  ]);
   const legacy = "https://er-md-hafiz.github.io/" + ["islamicunity", "api"].join("-") + "/";
   const { books, ...existingUrls } = data.commonUrls;
   assert.equal(books.hadithResources.length, 6);
@@ -26,6 +34,11 @@ test("menu preserves all original home sections and CORS", async () => {
     store: { playStoreUrl: "https://play.google.com/store/apps/details?id=com.islamicunity.android&hl=en" },
     content: { quizJsonUrl: legacy + "quiz.json", duasJsonUrl: legacy + "duas.json" },
     pages: { islamicCharityUrl: legacy + "IslamicCharity.html", currencyGuideUrl: legacy + "CurrencyGuide.html" },
+    services: {
+      pixabayImagesUrl: "https://pixabay.com/api/",
+      pixabayVideosUrl: "https://pixabay.com/api/videos/",
+      overpassBaseUrl: "https://overpass-api.de/",
+    },
     quran: {
       audioSurahUrl: "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{number}.mp3",
       surahUrl: "https://api.alquran.cloud/v1/surah",
@@ -33,6 +46,7 @@ test("menu preserves all original home sections and CORS", async () => {
       sajdaUrl: "https://api.alquran.cloud/v1/sajda/{edition}",
       metaUrl: "https://api.alquran.cloud/v1/meta",
       surahVideoUrl: "https://er-md-hafiz.github.io/islamicunity-web/surah_video.json",
+      ayahImageUrl: "https://cdn.islamic.network/quran/images/high-resolution/{surah}_{ayah}.png",
     },
   });
   assert.equal(r.headers.get("access-control-allow-origin"), "*");

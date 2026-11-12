@@ -19,13 +19,19 @@
       "islamicCharityUrl": "https://er-md-hafiz.github.io/islamicunity-api/IslamicCharity.html",
       "currencyGuideUrl": "https://er-md-hafiz.github.io/islamicunity-api/CurrencyGuide.html"
     },
+    "services": {
+      "pixabayImagesUrl": "https://pixabay.com/api/",
+      "pixabayVideosUrl": "https://pixabay.com/api/videos/",
+      "overpassBaseUrl": "https://overpass-api.de/"
+    },
     "quran": {
       "audioSurahUrl": "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/{number}.mp3",
       "surahUrl": "https://api.alquran.cloud/v1/surah",
       "quranViewUrl": "https://api.alquran.cloud/v1/quran/quran-uthmani",
       "sajdaUrl": "https://api.alquran.cloud/v1/sajda/{edition}",
       "metaUrl": "https://api.alquran.cloud/v1/meta",
-      "surahVideoUrl": "https://er-md-hafiz.github.io/islamicunity-web/surah_video.json"
+      "surahVideoUrl": "https://er-md-hafiz.github.io/islamicunity-web/surah_video.json",
+      "ayahImageUrl": "https://cdn.islamic.network/quran/images/high-resolution/{surah}_{ayah}.png"
     },
     "books": {
       "pdfResources": [
@@ -550,6 +556,78 @@
             "analytics": "app_version"
           }
         ]
+      }
+    ]
+  },
+  "news": {
+    "enabled": true,
+    "apiUrl": "https://newsapi.org/v2/everything",
+    "categories": [
+      {
+        "id": "islamic_news",
+        "title": "Islamic News",
+        "query": "islam",
+        "enabled": true
+      },
+      {
+        "id": "finance",
+        "title": "Finance",
+        "query": "finance",
+        "enabled": true
+      },
+      {
+        "id": "opinion",
+        "title": "Opinion",
+        "query": "opinion",
+        "enabled": true
+      },
+      {
+        "id": "education",
+        "title": "Education",
+        "query": "education",
+        "enabled": true
+      },
+      {
+        "id": "sport",
+        "title": "Sport",
+        "query": "sport",
+        "enabled": true
+      },
+      {
+        "id": "science_technology",
+        "title": "Science and Technology",
+        "query": "science-and-technology",
+        "enabled": true
+      },
+      {
+        "id": "economy",
+        "title": "Economy",
+        "query": "economy",
+        "enabled": true
+      },
+      {
+        "id": "features",
+        "title": "Features",
+        "query": "features",
+        "enabled": true
+      },
+      {
+        "id": "gallery",
+        "title": "Gallery",
+        "query": "gallery",
+        "enabled": true
+      },
+      {
+        "id": "video",
+        "title": "Video",
+        "query": "video",
+        "enabled": true
+      },
+      {
+        "id": "podcast",
+        "title": "Podcast",
+        "query": "podcast",
+        "enabled": true
       }
     ]
   }
